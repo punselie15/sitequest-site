@@ -20,7 +20,8 @@ function toast(msg) {
 /* ============ Smooth scroll + GSAP ============ */
 let lenis;
 if (window.gsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
-if (!REDUCED && window.Lenis) {
+// Smooth scrolling only for mouse and trackpad; phones keep their own native, momentum scrolling
+if (!REDUCED && window.Lenis && !matchMedia("(pointer: coarse)").matches) {
   lenis = new Lenis({ lerp: .1, smoothWheel: true, prevent: n => !!n.closest(".browser__view, .panel, .modal, .cmp__scroll") });
   if (window.gsap) { lenis.on("scroll", ScrollTrigger.update); gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0); }
   else { const raf = t => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf); }
@@ -160,7 +161,7 @@ const hero = (() => {
   kinds.innerHTML = HERO_KINDS.map(([l, id]) => `<button class="chip" type="button" data-id="${id}" aria-pressed="false">${l}</button>`).join("");
   const scale = () => { const m = $(".mini:not(.is-old)", view); if (m) m.style.transform = `scale(${view.clientWidth / 1280})`; };
   // Until the visitor types, the hero demonstrates itself with example businesses.
-  const DEMO = [["Bakkerij Jansen", "bakery"], ["Studio Mila", "barber"], ["Atelier Noor", "shop"], ["Druppel Loodgieters", "plumber"], ["Hotel De Linde", "hotel"]];
+  const DEMO = [["Jansen’s Bakery", "bakery"], ["Studio Mila", "barber"], ["Atelier Noor", "shop"], ["Drip Plumbing", "plumber"], ["The Linden Hotel", "hotel"]];
   let demo = null, demoI = 0, demoT, typeT;
   function render() {
     const own = !!me.name || picked;
@@ -721,6 +722,21 @@ function sizeThumb(th) {
   th.style.setProperty("--scroll-to", -Math.max(0, m.offsetHeight * sc - th.clientHeight) + "px");
 }
 const thumbRO = new ResizeObserver(es => es.forEach(e => sizeThumb(e.target)));
+
+/* Portfolio: the full kebab site live in a frame, plus three concept sites that open in the viewer */
+{
+  const fr = $(".folio__frame iframe");
+  if (fr) {
+    new IntersectionObserver(([e], o) => { if (e.isIntersecting) { fr.src = fr.dataset.src; o.disconnect(); } }, { rootMargin: "400px" }).observe(fr);
+    new ResizeObserver(([e]) => { fr.style.transform = `scale(${e.contentRect.width / 1440})`; }).observe(fr.parentElement);
+  }
+  const box = $("#folioMore");
+  if (box) {
+    const PICKS = [["auto", "Car dealer"], ["spa", "Thermal spa"], ["pizza", "Pizzeria"]];
+    box.innerHTML = PICKS.map(([id, kind]) => { const s = siteById(id); return s ? `<div class="card folio__card"><button class="card__thumb" data-id="${id}" aria-label="Open ${s.name}"></button><div><b>${s.name}</b><span>${kind}</span></div></div>` : ""; }).join("");
+    $$(".card__thumb", box).forEach(th => { thumbIO.observe(th); thumbRO.observe(th); th.addEventListener("click", () => openModal(th.dataset.id, th)); });
+  }
+}
 
 function renderGrid() {
   const list = ORDERED.filter(s =>
