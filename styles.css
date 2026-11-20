@@ -1052,3 +1052,4 @@ a.case:hover .case__link { text-decoration: underline; text-underline-offset: 3p
 /* the slogan needs four lines: keep it inside the first screen */
 .hero h1 { font-size: clamp(46px, 6.1vw, 104px); }
 .work__score { display: none; }
+.hero__note { display: none; }

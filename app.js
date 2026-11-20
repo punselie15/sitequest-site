@@ -129,27 +129,23 @@ class Bloom {
     this.raf = requestAnimationFrame(step);
   }
 }
-const bloom = new Bloom($("#bloom"));
-const bloom2 = new Bloom($("#bloom2"), { dark: true, startOpen: 1, interactive: false, speed: .6 });
 
 /* ============ Hero intro: the one orchestrated moment ============ */
 if (window.gsap && !REDUCED) {
   const tl = gsap.timeline({ delay: .15 });
   tl.from(".hero h1 .line > span", { yPercent: 110, duration: 1.1, ease: "expo.out", stagger: .09 })
-    .to(bloom, { open: 1, duration: 2.4, ease: "expo.out" }, 0.1)
     .from(".hero__sub > *", { y: 20, opacity: 0, duration: .9, ease: "expo.out", stagger: .1 }, .55)
     .from(".hero__note", { opacity: 0, duration: 1 }, 1.4)
     .from(".nav", { yPercent: -100, duration: .9, ease: "expo.out", clearProps: "transform" }, .3);
   // Safety net: the menu bar must always end up visible, even if the intro was interrupted (e.g. a background tab)
   setTimeout(() => gsap.set(".nav", { clearProps: "transform" }), 2500);
-  ScrollTrigger.create({ trigger: ".hero", start: "top top", end: "bottom top", scrub: true, onUpdate: s => { bloom.scroll = s.progress; } });
   gsap.to(".hero__canvas-wrap", { yPercent: 18, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 
   $$(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 88%" } }));
   gsap.to(".steps__progress", { scaleX: 1, ease: "none", scrollTrigger: { trigger: "#steps", start: "top 80%", end: "bottom 55%", scrub: true } });
   gsap.from("#steps li", { opacity: 0, y: 30, stagger: .12, duration: .9, ease: "expo.out", scrollTrigger: { trigger: "#steps", start: "top 80%" } });
 } else {
-  bloom.open = 1; $$(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+  $$(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
 }
 
 /* ============ Personalised hero: your name, blooming into a site ============ */
@@ -207,12 +203,12 @@ const hero = (() => {
   }
   function stopDemo() {
     if (!demo && !demoT) return;
-    clearTimeout(demoT); clearInterval(typeT); demoT = null; demo = null;
-    input.placeholder = "Your business name"; last = ""; render();
+    clearTimeout(demoT); clearInterval(typeT); demoT = null;
+    input.placeholder = "Your business name";
   }
   input.addEventListener("focus", stopDemo);
   kinds.addEventListener("pointerdown", stopDemo);
-  if (!me.name) setTimeout(() => { if (!me.name && !picked && document.activeElement !== input) stepDemo(); }, REDUCED ? 300 : 2600);
+  if (!me.name) setTimeout(() => { if (!me.name && !picked && document.activeElement !== input) stepDemo(); }, REDUCED ? 0 : 500);
   // On phones the preview sits above the headline: bring it into view once they've typed or picked.
   const reveal = () => {
     if (!shown || !matchMedia("(max-width: 960px)").matches) return false;
@@ -232,8 +228,8 @@ const hero = (() => {
     saveBrief(); if (calc.step === 4) renderStage(false);
   });
   new ResizeObserver(scale).observe(view);
-  // Returning visitors: let the flower open first, then bloom into their site.
-  if (me.name) { picked = true; setTimeout(render, REDUCED ? 0 : 2200); }
+  // Returning visitors see their own site straight away.
+  if (me.name) { picked = true; setTimeout(render, REDUCED ? 0 : 300); }
   return { render, syncInput: () => { if (input !== document.activeElement) input.value = me.name; } };
 })();
 // Called whenever the visitor's business name changes, from any input on the page.
