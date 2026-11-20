@@ -223,8 +223,8 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 /* ---------- cart drawer ---------- */
-.cart{position:fixed;z-index:80;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--cream);color:var(--char);display:flex;flex-direction:column;transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:-30px 0 80px rgba(0,0,0,.5)}
-.cart.on{transform:none}
+.cart{position:fixed;z-index:80;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--cream);color:var(--char);display:flex;flex-direction:column;transform:translateX(105%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.cart.on{transform:none;box-shadow:-30px 0 80px rgba(0,0,0,.5)}
 .cart__h{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 14px}
 .cart__h h3{font:900 40px/1 var(--f-d);text-transform:uppercase}
 .cart__h button{width:42px;height:42px;border-radius:50%;background:rgba(28,19,16,.08);font-size:22px}

@@ -32,10 +32,9 @@
     </a>
     <nav aria-label="Main">
       <ul class="nav__links" id="navLinks">
-        <li><a href="#work">Clients</a></li>
+        <li><a href="#work">Reviews</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#promise">How it works</a></li>
-        <li><a href="#showroom">Examples</a></li>
         <li><a href="#packages">Prices</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -68,7 +67,7 @@
         </form>
         <div class="hero__actions">
           <a href="#pricing" class="btn" id="heroCta">Get a free quote</a>
-          <a href="#showroom" class="btn btn--ghost">See examples</a>
+          <a href="#portfolio" class="btn btn--ghost">See our work</a>
         </div>
       </div>
     </div>
@@ -82,7 +81,9 @@
       <p class="hero__note" id="heroNote">Type your business name and see your own homepage appear.</p>
     </div>
   </div>
-  <div class="hero__scroll" aria-hidden="true"></div>
+  <div class="reel" aria-label="Sites we designed">
+    <div class="reel__track" id="reel"></div>
+  </div>
 </section>
 
 
@@ -101,8 +102,8 @@
   <div class="wrap">
     <div class="work__head">
       <div>
-        <h2 class="reveal">Some of our clients</h2>
-        <p class="lede reveal">Real businesses. Live right now. Built by us.</p>
+        <h2 class="reveal">Client reviews</h2>
+        <p class="lede reveal">Three real businesses we designed and built for. All three are live, and all three rated us 5 out of 5.</p>
       </div>
       <p class="work__score reveal" id="workScore"></p>
     </div>
@@ -115,63 +116,26 @@
 <section class="section folio" id="portfolio">
   <div class="wrap">
     <div class="folio__head">
-      <h2 class="reveal">Full sites we designed</h2>
-      <p class="lede reveal">Complete, clickable concept sites. Open one and try it the way your customers would.</p>
+      <h2 class="reveal">Portfolio</h2>
+      <p class="lede reveal">Full sites you can click through, and <span id="showTotal">85</span> more designs in 20 styles. Tap any of them to look around.</p>
     </div>
-    <article class="folio__hero reveal">
-      <a class="folio__shot" href="portfolio/kebab/" aria-label="Open the Ember and Spit site">
-        <div class="folio__chrome" aria-hidden="true"><i></i><i></i><i></i><span>emberandspit.com</span></div>
-        <div class="folio__frame"><iframe src="about:blank" data-src="portfolio/kebab/" title="Ember and Spit, live preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+    <div class="fulls">
+      <a class="full reveal" href="portfolio/kebab/">
+        <div class="full__shot"><div class="folio__chrome" aria-hidden="true"><i></i><i></i><i></i><span>emberandspit.com</span></div><img src="img/work/kebab.jpg" alt="Ember &amp; Spit, homepage" loading="lazy" width="1200" height="750"></div>
+        <div class="full__info"><p class="folio__kind">Restaurant ordering site</p><h3>Ember &amp; Spit</h3><p>A 3D doner that turns in the hero, animated menus with choices, build your own kebab and a cart for pickup or delivery.</p><span class="full__go">Open the full site <span aria-hidden="true">↗</span></span></div>
       </a>
-      <div class="folio__info">
-        <p class="folio__kind">Restaurant ordering site</p>
-        <h3>Ember &amp; Spit</h3>
-        <p>A charcoal doner shop that takes orders online. A 3D spit that turns in the hero, an animated menu with choices for meat, bread and sauces, a build-your-own kebab with a live price, and a cart for pickup or delivery.</p>
-        <ul class="folio__feats"><li>3D rotating doner</li><li>Animated menu</li><li>Build your own</li><li>Cart and checkout</li><li>Phone and app mock-ups</li></ul>
-        <a class="btn" href="portfolio/kebab/">Open the full site</a>
-      </div>
-    </article>
-    <article class="folio__hero folio__hero--flip reveal">
-      <a class="folio__shot folio__shot--sun" href="portfolio/sandwich/" aria-label="Open the Two Slices site">
-        <div class="folio__chrome" aria-hidden="true"><i></i><i></i><i></i><span>twoslices.com</span></div>
-        <div class="folio__frame"><iframe src="about:blank" data-src="portfolio/sandwich/" title="Two Slices, live preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+      <a class="full reveal" href="portfolio/clothing/">
+        <div class="full__shot"><div class="folio__chrome" aria-hidden="true"><i></i><i></i><i></i><span>plainweave.com</span></div><img src="img/work/clothing.jpg" alt="Plainweave, homepage" loading="lazy" width="1200" height="750"></div>
+        <div class="full__info"><p class="folio__kind">Clothing webshop</p><h3>Plainweave</h3><p>An editorial fashion store with quick view, colour and size picker, a drag-to-scroll lookbook and a bag with free-shipping progress.</p><span class="full__go">Open the full site <span aria-hidden="true">↗</span></span></div>
       </a>
-      <div class="folio__info">
-        <p class="folio__kind">Sandwich bar ordering site</p>
-        <h3>Two Slices</h3>
-        <p>Customers build their own sandwich in 3D. Every ingredient they pick drops onto the bread and stacks up, they can turn it around, toast it and name it, and the price updates with each layer. House favourites open in the same 3D builder.</p>
-        <ul class="folio__feats"><li>3D sandwich builder</li><li>Live price</li><li>House favourites</li><li>Pickup time slots</li><li>Cart and checkout</li></ul>
-        <a class="btn" href="portfolio/sandwich/">Open the full site</a>
-      </div>
-    </article>
-    <div class="folio__more" id="folioMore"></div>
-  </div>
-</section>
-
-<!-- ============ PROMISE ============ -->
-<section class="section dark promise" id="promise">
-  <div class="wrap">
-    <div class="promise__top">
-      <h2 class="reveal">See it first. <em>Pay later.</em></h2>
-      <p class="lede reveal promise__lede">We design your homepage before you pay a cent. Don’t love it? Walk away, owe nothing.</p>
+      <a class="full reveal" href="portfolio/sandwich/">
+        <div class="full__shot"><div class="folio__chrome" aria-hidden="true"><i></i><i></i><i></i><span>twoslices.com</span></div><img src="img/work/sandwich.jpg" alt="Two Slices, homepage" loading="lazy" width="1200" height="750"></div>
+        <div class="full__info"><p class="folio__kind">Sandwich bar ordering site</p><h3>Two Slices</h3><p>Customers stack their own sandwich in 3D, layer by layer, with a live price, toasting, house favourites and pickup times.</p><span class="full__go">Open the full site <span aria-hidden="true">↗</span></span></div>
+      </a>
     </div>
-    <ol class="steps" id="steps">
-      <span class="steps__progress" aria-hidden="true"></span>
-      <li><h3>Build your menu</h3><p>A few taps and your wishes. About two minutes.</p></li>
-      <li><h3>We review it</h3><p>We reply within two working days with questions or a go.</p></li>
-      <li><h3>Your private preview</h3><p>A designed homepage, in your colours, on a private link.</p></li>
-      <li><h3>You decide</h3><p>Ask for changes, approve it, or walk away. Nothing owed.</p></li>
-      <li class="pay"><h3>We build and launch</h3><p>Only now do you pay: half to start, half at launch.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ SHOWROOM ============ -->
-<section class="section showroom" id="showroom">
-  <div class="wrap">
-    <div class="show__head">
-      <h2 class="reveal">Find your style.</h2>
-      <p class="lede reveal"><span id="showTotal">85</span> example sites, 20 styles. Tap one to look around, tap the heart to save it to your menu.</p>
+    <div class="folio__sub">
+      <h3 class="reveal">Find your style</h3>
+      <p class="reveal">Our favourites are at the top. Filter by business or style, and tap the heart to save one to your menu.</p>
     </div>
     <div class="filters">
       <div class="filters__cats" id="fIndustry" role="group" aria-label="Category"></div>
@@ -194,6 +158,26 @@
     <p class="kicker" style="margin-top:28px;text-align:center">All example brands are made up, to show what’s possible.</p>
   </div>
 </section>
+
+<!-- ============ PROMISE ============ -->
+<section class="section dark promise" id="promise">
+  <div class="wrap">
+    <div class="promise__top">
+      <h2 class="reveal">See it first. <em>Pay later.</em></h2>
+      <p class="lede reveal promise__lede">We design your homepage before you pay a cent. Don’t love it? Walk away, owe nothing.</p>
+    </div>
+    <ol class="steps" id="steps">
+      <span class="steps__progress" aria-hidden="true"></span>
+      <li><h3>Build your menu</h3><p>A few taps and your wishes. About two minutes.</p></li>
+      <li><h3>We review it</h3><p>We reply within two working days with questions or a go.</p></li>
+      <li><h3>Your private preview</h3><p>A designed homepage, in your colours, on a private link.</p></li>
+      <li><h3>You decide</h3><p>Ask for changes, approve it, or walk away. Nothing owed.</p></li>
+      <li class="pay"><h3>We build and launch</h3><p>Only now do you pay: half to start, half at launch.</p></li>
+    </ol>
+  </div>
+</section>
+
+
 
 <!-- ============ PACKAGES + DEMO ============ -->
 <section class="section packages" id="packages">
@@ -296,7 +280,7 @@
     </a>
         <p class="kicker" style="margin-top:14px;max-width:32ch">Websites, webshops, apps and logos. See it before you pay.</p>
       </div>
-      <div><h4>Explore</h4><ul><li><a href="#work">Clients</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#showroom">Examples</a></li><li><a href="#packages">Prices</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#work">Reviews</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#packages">Prices</a></li></ul></div>
       <div><h4>Start</h4><ul><li><a href="#pricing">Get a free quote</a></li><li><a href="#promise">How it works</a></li><li><a href="mailto:hello@sitequest.studio">hello@sitequest.studio</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#cookies">Cookies</a></li></ul></div>
     </div>

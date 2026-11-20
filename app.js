@@ -650,7 +650,7 @@ const INDUSTRY_GROUPS = ["All", ...GROUPS.filter(g => SITES.some(s => s.group ==
 const STYLES = ["All", ...STYLE_IDS];
 // Interleave by layout so the first screen shows as many different designs as possible.
 // The strongest concepts open the showroom; the rest follow, interleaved by layout for variety.
-const FEATURED = ["auto", "spa", "cyber", "shop", "gilded", "bnb", "pizza", "nimbus", "skincare", "kaleido", "bikes", "hotel"];
+const FEATURED = ["hotel", "fashion", "auto", "restaurant", "spa", "florist", "winery", "cyber", "interior", "sushi", "skincare", "climbing", "tattoo", "cocktail", "bikes", "gilded", "pizza", "garden", "realestate", "bnb"];
 const ORDERED = (() => {
   const first = FEATURED.map(siteById).filter(Boolean);
   const byLayout = {}; SITES.filter(s => !FEATURED.includes(s.id)).forEach(s => (byLayout[s.layout] ||= []).push(s));
@@ -723,17 +723,35 @@ function sizeThumb(th) {
 }
 const thumbRO = new ResizeObserver(es => es.forEach(e => sizeThumb(e.target)));
 
-/* Portfolio: the full kebab site live in a frame, plus three concept sites that open in the viewer */
+/* Hero reel: the best sites slide past; full sites link out, concepts open in the viewer */
 {
-  $$(".folio__frame iframe").forEach(fr => {
-    new IntersectionObserver(([e], o) => { if (e.isIntersecting) { fr.src = fr.dataset.src; o.disconnect(); } }, { rootMargin: "400px" }).observe(fr);
-    new ResizeObserver(([e]) => { fr.style.transform = `scale(${e.contentRect.width / 1440})`; }).observe(fr.parentElement);
-  });
-  const box = $("#folioMore");
-  if (box) {
-    const PICKS = [["auto", "Car dealer"], ["spa", "Thermal spa"], ["pizza", "Pizzeria"]];
-    box.innerHTML = PICKS.map(([id, kind]) => { const s = siteById(id); return s ? `<div class="card folio__card"><button class="card__thumb" data-id="${id}" aria-label="Open ${s.name}"></button><div><b>${s.name}</b><span>${kind}</span></div></div>` : ""; }).join("");
-    $$(".card__thumb", box).forEach(th => { thumbIO.observe(th); thumbRO.observe(th); th.addEventListener("click", () => openModal(th.dataset.id, th)); });
+  const reel = $("#reel");
+  if (reel) {
+    const ITEMS = [
+      { full: "kebab", name: "Ember & Spit", kind: "Restaurant", url: "emberandspit.com" },
+      { id: "hotel", kind: "Hotel" },
+      { full: "clothing", name: "Plainweave", kind: "Clothing webshop", url: "plainweave.com" },
+      { id: "auto", kind: "Car dealer" },
+      { full: "sandwich", name: "Two Slices", kind: "Sandwich bar", url: "twoslices.com" },
+      { id: "fashion", kind: "Fashion label" },
+      { id: "restaurant", kind: "Restaurant" },
+      { id: "spa", kind: "Spa" },
+      { id: "florist", kind: "Florist" },
+    ];
+    const card = (it, dup) => {
+      const s = it.id && siteById(it.id); if (it.id && !s) return "";
+      const name = it.full ? it.name : s.name, url = it.full ? it.url : slug(s.name) + ".com";
+      const inner = it.full ? `<img src="img/work/${it.full}.jpg" alt="" loading="lazy">` : `<div class="mini" data-mini="${it.id}"></div>`;
+      const attrs = dup ? ' tabindex="-1" aria-hidden="true"' : "";
+      const open = it.full ? `href="portfolio/${it.full}/"` : `href="#portfolio" data-concept="${it.id}"`;
+      return `<a class="reel__item" ${open}${attrs}><div class="reel__shot"><div class="reel__bar"><i></i><i></i><i></i><span>${url}</span></div><div class="reel__view">${inner}</div></div><p><b>${name}</b><span>${it.kind}</span></p></a>`;
+    };
+    reel.innerHTML = ITEMS.map(i => card(i, false)).join("") + ITEMS.map(i => card(i, true)).join("");
+    const fill = () => $$(".reel__view .mini[data-mini]", reel).forEach(m => { if (!m.childElementCount) m.innerHTML = renderSite(siteById(m.dataset.mini), { motion: 1, thumb: true }); });
+    const fit = () => $$(".reel__view", reel).forEach(v => { const m = $(".mini", v); if (m) m.style.transform = `scale(${v.clientWidth / 1280})`; });
+    "requestIdleCallback" in window ? requestIdleCallback(() => { fill(); fit(); }) : setTimeout(() => { fill(); fit(); }, 300);
+    addEventListener("resize", fit);
+    reel.addEventListener("click", e => { const c = e.target.closest("[data-concept]"); if (c) { e.preventDefault(); openModal(c.dataset.concept, c); } });
   }
 }
 
