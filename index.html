@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiteQuest Studio · Websites, apps and branding</title>
+  <meta name="description" content="SiteQuest Studio designs websites, online stores, apps and logos for small businesses. See your website before you pay anything.">
+  <meta name="theme-color" content="#F4F5F2">
+  <link rel="canonical" href="https://sitequest.studio/">
+  <meta property="og:site_name" content="SiteQuest Studio">
+  <meta property="og:title" content="SiteQuest Studio · Because the first impression isn’t only important for people">
+  <meta property="og:description" content="Websites, webshops, apps and logos for small businesses. See a free preview of your homepage first, and only pay once you love it.">
+  <meta property="og:url" content="https://sitequest.studio/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sitequest.studio/img/icon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@300..700&family=Fraunces:opsz,wght@9..144,400..700&family=DM+Serif+Display&family=Syne:wght@500..800&family=Space+Grotesk:wght@400..700&family=Cormorant+Garamond:wght@400;600&family=Archivo:wdth,wght@62..125,400..800&family=Nunito:wght@400..800&family=Playfair+Display:wght@400..800&family=Space+Mono:wght@400;700&family=Fredoka:wght@400..700&family=Italiana&family=Unbounded:wght@400..800&family=Bebas+Neue&family=Caveat:wght@500..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+  <link rel="apple-touch-icon" href="img/icon-180.png">
+</head>
+<body>
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="logo" aria-label="SiteQuest Studio home">
+      <img class="logo__img" src="img/sitequest-logo.png" alt="SiteQuest" width="1479" height="355">
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#work">Clients</a></li>
+        <li><a href="#promise">How it works</a></li>
+        <li><a href="#showroom">Examples</a></li>
+        <li><a href="#packages">Prices</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a href="#pricing" class="btn btn--sm nav__cta">Get a free quote</a>
+      <button class="nav__menu" id="navMenu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div>
+      <h1 aria-label="Because the first impression isn’t only important for people.">
+        <span class="line"><span>Because the first</span></span>
+        <span class="line"><span>impression isn’t</span></span>
+        <span class="line"><span>only important</span></span>
+        <span class="line"><span>for people.</span></span>
+      </h1>
+      <div class="hero__sub">
+        <p class="lede">For most customers, your website is their first impression of you. We design websites, webshops and apps for small businesses: see a free preview first, pay only when you love it.</p>
+        <form class="try" id="tryForm" autocomplete="off">
+          <label for="tryName">Type your business name and watch it become a website.</label>
+          <input id="tryName" name="name" maxlength="32" placeholder="Your business name" spellcheck="false">
+          <div class="try__kinds" id="tryKinds" role="group" aria-label="Kind of business"></div>
+        </form>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn" id="heroCta">Get a free quote</a>
+          <a href="#showroom" class="btn btn--ghost">See examples</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__canvas-wrap">
+      <canvas id="bloom" aria-hidden="true"></canvas>
+      <div class="hero__site" id="heroSite" aria-hidden="true">
+        <div class="browser">
+          <div class="browser__bar"><div class="browser__dots"><i></i><i></i><i></i></div><div class="browser__url" id="heroUrl">your-business.com</div></div>
+          <div class="hero__view" id="heroView"></div>
+        </div>
+      </div>
+      <p class="hero__note" id="heroNote">Move your cursor. This flower is drawn live in your browser, the same way we build your site: by hand, in code.</p>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"></div>
+</section>
+
+
+
+<section class="proof" aria-label="Why small businesses choose SiteQuest">
+  <div class="wrap proof__row">
+    <div class="proof__item"><b><span class="proof__stars" aria-hidden="true">★★★★★</span> 5.0</b><span>rated by every client</span></div>
+    <div class="proof__item"><b>€0 upfront</b><span>pay when you love it</span></div>
+    <div class="proof__item"><b>2 days</b><span>for a reply from a real person</span></div>
+    <div class="proof__item"><b>100% yours</b><span>site, domain and content</span></div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section work" id="work">
+  <div class="wrap">
+    <div class="work__head">
+      <div>
+        <h2 class="reveal">Some of our clients</h2>
+        <p class="lede reveal">Real businesses. Live right now. Built by us.</p>
+      </div>
+      <p class="work__score reveal" id="workScore"></p>
+    </div>
+    <div class="work__grid" id="workGrid"></div>
+    <div class="founder reveal" id="founder"></div>
+  </div>
+</section>
+
+<!-- ============ PROMISE ============ -->
+<section class="section dark promise" id="promise">
+  <div class="wrap">
+    <div class="promise__top">
+      <h2 class="reveal">See it first. <em>Pay later.</em></h2>
+      <p class="lede reveal promise__lede">We design your homepage before you pay a cent. Don’t love it? Walk away, owe nothing.</p>
+    </div>
+    <ol class="steps" id="steps">
+      <span class="steps__progress" aria-hidden="true"></span>
+      <li><h3>Build your menu</h3><p>A few taps and your wishes. About two minutes.</p></li>
+      <li><h3>We review it</h3><p>We reply within two working days with questions or a go.</p></li>
+      <li><h3>Your private preview</h3><p>A designed homepage, in your colours, on a private link.</p></li>
+      <li><h3>You decide</h3><p>Ask for changes, approve it, or walk away. Nothing owed.</p></li>
+      <li class="pay"><h3>We build and launch</h3><p>Only now do you pay: half to start, half at launch.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SHOWROOM ============ -->
+<section class="section showroom" id="showroom">
+  <div class="wrap">
+    <div class="show__head">
+      <h2 class="reveal">Find your style.</h2>
+      <p class="lede reveal"><span id="showTotal">85</span> example sites, 20 styles. Tap one to look around, tap the heart to save it to your menu.</p>
+    </div>
+    <div class="filters">
+      <div class="filters__cats" id="fIndustry" role="group" aria-label="Category"></div>
+      <div class="filters__bar">
+        <div class="pick" id="pStyle"></div>
+        <div class="pick" id="pCx"></div>
+        <div class="pick" id="pPk"></div>
+        <button class="pick__clear" id="fClear" type="button" hidden>Clear filters</button>
+      </div>
+    </div>
+    <div class="show__bar">
+      <p class="show__count" id="showCount" aria-live="polite"></p>
+      <div class="show__me">
+        <input id="showName" maxlength="32" placeholder="Your business name" aria-label="Your business name" spellcheck="false">
+        <label class="switch"><input type="checkbox" id="showMe"><span aria-hidden="true"></span>Show every concept with my name</label>
+      </div>
+    </div>
+    <div class="grid" id="grid" style="margin-top:18px"></div>
+    <div class="show__more"><button class="btn btn--ghost" id="showMore" type="button">Show all concepts</button></div>
+    <p class="kicker" style="margin-top:28px;text-align:center">All example brands are made up, to show what’s possible.</p>
+  </div>
+</section>
+
+<!-- ============ PACKAGES + DEMO ============ -->
+<section class="section packages" id="packages">
+  <div class="wrap">
+    <div class="pk__head">
+      <div>
+        <h2 class="reveal">Three sizes.<br>Same care.</h2>
+        <p class="lede reveal" style="margin-top:20px">One coffee brand, built three ways. Switch to see what each package gets you.</p>
+      </div>
+      <div class="seg" role="group" aria-label="Choose a package" id="pkSeg">
+        <span class="seg__pill" aria-hidden="true"></span>
+        <button type="button" data-pk="essential" aria-pressed="true">Essential</button>
+        <button type="button" data-pk="business" aria-pressed="false">Business</button>
+        <button type="button" data-pk="signature" aria-pressed="false">Signature</button>
+      </div>
+    </div>
+
+    <div class="pk__stage">
+      <aside class="pk__info" id="pkInfo" aria-live="polite"></aside>
+      <div>
+        <div class="browser" id="pkBrowser">
+          <div class="browser__bar">
+            <div class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="browser__url" id="pkUrl">halden-coffee.com</div>
+            <div class="browser__tools" role="group" aria-label="Preview size">
+              <button class="icon-btn" data-device="desktop" aria-pressed="true" aria-label="Desktop preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+              <button class="icon-btn" data-device="mobile" aria-pressed="false" aria-label="Mobile preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></button>
+            </div>
+          </div>
+          <div class="browser__view" id="pkView" role="region" aria-label="Example website for a fictional coffee brand"></div>
+        </div>
+        <p class="pk__compare">Halden Coffee is a fictional brand made to show the packages. It is not client work.</p>
+      </div>
+    </div>
+
+    <details class="cmp">
+      <summary><span>Compare every feature</span><i aria-hidden="true">+</i></summary>
+      <div class="cmp__scroll">
+        <table id="cmpTable"></table>
+      </div>
+      <p class="kicker" style="margin-top:14px">A standard page is one page of content with up to six sections, like Home, About or Contact. Prices are starting prices, excluding VAT.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section build" id="pricing">
+  <div class="wrap">
+    <div class="build__head">
+      <h2 class="reveal">Build your site.<br>See the price.</h2>
+      <p class="lede reveal">Five quick steps, about two minutes. Tap what you like, watch the price, get a free quote.</p>
+    </div>
+    <ol class="build__rail" id="bRail" aria-label="Steps"></ol>
+    <div class="build__grid">
+      <div>
+        <div class="build__stage" id="bStage"></div>
+        <div class="build__nav"><button class="btn btn--ghost" id="bBack2" type="button">Back</button><button class="btn" id="bNext2" type="button">Next</button></div>
+      </div>
+      <aside class="ticket" id="ticket" aria-live="polite">
+        <div class="ticket__top"><b>Your estimate</b><small id="tKind">Website</small></div>
+        <div class="ticket__lines" id="rLines"></div>
+        <div class="ticket__tear" aria-hidden="true"></div>
+        <div class="ticket__total"><span>One-time</span><b id="rTotal">€499</b></div>
+        <div class="ticket__monthly"><span>Monthly</span><span id="rMonthly">€0</span></div>
+        <p class="ticket__fine">Excl. 21% VAT. Pay nothing until you approve your free preview.</p>
+        <button class="btn btn--petal ticket__next" id="tNext" type="button">Next</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="wrap faq__grid">
+    <div>
+      <h2 class="reveal">Questions</h2>
+      <p class="lede reveal" style="margin-top:20px">Still wondering? Email <a href="mailto:hello@sitequest.studio">hello@sitequest.studio</a>. A real person replies within two working days.</p>
+    </div>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section dark final">
+  <canvas id="bloom2" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h2 class="reveal">Make the first impression count.</h2>
+    <p class="reveal">Two minutes to build your menu. Two days for our reply. Nothing to pay until you love it.</p>
+    <a href="#pricing" class="btn btn--petal">Get a free quote</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a href="#top" class="logo" aria-label="SiteQuest Studio home">
+      <img class="logo__img" src="img/sitequest-logo.png" alt="SiteQuest" width="1479" height="355">
+    </a>
+        <p class="kicker" style="margin-top:14px;max-width:32ch">Websites, webshops, apps and logos. See it before you pay.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#work">Clients</a></li><li><a href="#showroom">Examples</a></li><li><a href="#packages">Prices</a></li></ul></div>
+      <div><h4>Start</h4><ul><li><a href="#pricing">Get a free quote</a></li><li><a href="#promise">How it works</a></li><li><a href="mailto:hello@sitequest.studio">hello@sitequest.studio</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#cookies">Cookies</a></li></ul></div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 SiteQuest Studio · <a href="mailto:hello@sitequest.studio">hello@sitequest.studio</a></span>
+      <span id="speed"></span>
+      <span>Prices exclude VAT.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__dialog">
+    <div class="modal__top">
+      <div class="modal__title"><h3 id="mTitle"></h3><p id="mSub"></p></div>
+      <div class="modal__tools">
+        <div class="seg" role="group" aria-label="Preview size" id="mDevice">
+          <span class="seg__pill" aria-hidden="true"></span>
+          <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+          <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+        </div>
+        <button class="btn btn--sm btn--petal" id="mInspire" type="button">I like this one</button>
+        <button class="btn btn--sm btn--ghost" data-close type="button">Close</button>
+      </div>
+    </div>
+    <div class="modal__body"><div class="browser" id="mBrowser"><div class="browser__bar"><div class="browser__dots"><i></i><i></i><i></i></div><div class="browser__url" id="mUrl"></div></div><div class="browser__view" id="mView" role="region" aria-label="Example website"></div></div></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="photos.js"></script>
+<script src="sites.js"></script>
+<script src="sites2.js"></script>
+<script src="sites3.js"></script>
+<script src="sites4.js"></script>
+<script src="portfolio.js"></script>
+<script src="app.js"></script>
+<script src="briefdoc.js"></script>
+</body>
+</html>
