@@ -725,11 +725,10 @@ const thumbRO = new ResizeObserver(es => es.forEach(e => sizeThumb(e.target)));
 
 /* Portfolio: the full kebab site live in a frame, plus three concept sites that open in the viewer */
 {
-  const fr = $(".folio__frame iframe");
-  if (fr) {
+  $$(".folio__frame iframe").forEach(fr => {
     new IntersectionObserver(([e], o) => { if (e.isIntersecting) { fr.src = fr.dataset.src; o.disconnect(); } }, { rootMargin: "400px" }).observe(fr);
     new ResizeObserver(([e]) => { fr.style.transform = `scale(${e.contentRect.width / 1440})`; }).observe(fr.parentElement);
-  }
+  });
   const box = $("#folioMore");
   if (box) {
     const PICKS = [["auto", "Car dealer"], ["spa", "Thermal spa"], ["pizza", "Pizzeria"]];

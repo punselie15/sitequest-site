@@ -1087,3 +1087,14 @@ a.case:hover .case__link { text-decoration: underline; text-underline-offset: 3p
   .folio__hero { grid-template-columns: 1fr; }
   .folio__more { grid-template-columns: 1fr; }
 }
+
+.folio__hero + .folio__hero { margin-top: clamp(48px, 7vw, 96px); }
+.folio__hero--flip { grid-template-columns: 1fr 1.45fr; }
+.folio__hero--flip .folio__shot { order: 2; }
+.folio__shot--sun { background: #F4C542; }
+.folio__shot--sun .folio__chrome { background: #2B2118; }
+.folio__shot--sun:hover { transform: translateY(-4px) rotate(.4deg); }
+@media (max-width: 900px) {
+  .folio__hero--flip { grid-template-columns: 1fr; }
+  .folio__hero--flip .folio__shot { order: 0; }
+}
