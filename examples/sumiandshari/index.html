@@ -152,6 +152,7 @@ section{scroll-margin-top:70px}
 .card__media img,.card__media canvas{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:contain;z-index:1;transition:transform .7s var(--ease)}
 .card:hover .card__media img{transform:scale(1.05) rotate(-2deg)}
 .card__media canvas{z-index:2}
+.card__media.live img{opacity:0;transition:none}
 .card__3d{position:absolute;right:10px;top:10px;z-index:3;font-size:12px;font-weight:700;letter-spacing:.06em;background:rgba(251,248,242,.9);padding:6px 10px;border-radius:8px;box-shadow:var(--sh-1);min-height:32px}
 .card__3d[aria-pressed=true]{background:var(--ink);color:#fff}
 .card .pdot{position:absolute;left:12px;top:12px;z-index:3;width:22px;height:22px}
@@ -1093,9 +1094,9 @@ $("#menu").addEventListener("click",e=>{const a=e.target.closest("[data-add]"),s
 // one small 3D viewer that moves into whichever card you hover
 let hovCard=null,hovCv=null;
 function startHover(card){if(!V||!card)return;stopHover();const it=BYID[card.dataset.id];hovCard=card;const media=card.querySelector(".card__media");
-  hovCv=document.createElement("canvas");hovCv.width=media.clientWidth*Math.min(2,devicePixelRatio);hovCv.height=media.clientHeight*Math.min(2,devicePixelRatio);media.appendChild(hovCv);
+  hovCv=document.createElement("canvas");hovCv.width=media.clientWidth*Math.min(2,devicePixelRatio);hovCv.height=media.clientHeight*Math.min(2,devicePixelRatio);media.appendChild(hovCv);media.classList.add("live");
   viewerShow(it.id,it.k);V.rot=.55;V.hovT=performance.now();const b=card.querySelector(".card__3d");b&&b.setAttribute("aria-pressed","true")}
-function stopHover(){if(hovCv){hovCv.remove();hovCv=null}if(hovCard){const b=hovCard.querySelector(".card__3d");b&&b.setAttribute("aria-pressed","false")}hovCard=null}
+function stopHover(){if(hovCv){hovCv.parentElement&&hovCv.parentElement.classList.remove("live");hovCv.remove();hovCv=null}if(hovCard){const b=hovCard.querySelector(".card__3d");b&&b.setAttribute("aria-pressed","false")}hovCard=null}
 $("#menu").addEventListener("pointerover",e=>{if(e.pointerType!=="mouse")return;const c=e.target.closest(".card");if(c&&c!==hovCard&&c.closest("#menuGrid"))startHover(c)});
 $("#menu").addEventListener("pointerout",e=>{if(e.pointerType!=="mouse"||!hovCard)return;if(!hovCard.contains(e.relatedTarget))stopHover()});
 function hoverTick(){if(!hovCv||!V)return;const w=hovCv.width,h=hovCv.height;V.R.setPixelRatio(1);V.R.setSize(w,h,false);V.cam.aspect=w/h;V.cam.updateProjectionMatrix();
