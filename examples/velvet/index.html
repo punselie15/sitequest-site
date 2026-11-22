@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Velvet Nail &amp; Beauty · Polished, never rushed</title>
+<meta name="description" content="Velvet Nail & Beauty: gel and BIAB manicures, nail art, lashes, brows and facials. Try a colour on our virtual hand, buy a gift card or book online. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#F8E4E3">
+<meta property="og:title" content="Velvet Nail &amp; Beauty · Polished, never rushed">
+<meta property="og:description" content="Treatment menu, nail-colour picker, gift cards and booking. A concept site by SiteQuest Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='20' fill='%23F8E4E3'/%3E%3Cpath d='M20 6c6 0 9 7 9 15v11a3 3 0 0 1-3 3H14a3 3 0 0 1-3-3V21c0-8 3-15 9-15z' fill='%23D27C93'/%3E%3Cpath d='M16 12c1-2 2.5-3 4-3' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --milk:#FFF8F6;--blush:#F8E4E3;--blush2:#F1D0D2;--rose:#D27C93;--rose-d:#A9506B;--plum:#4A1D35;--plum2:#6B2F4D;
+  --gold:#C9A26B;--ink:#3A2430;--muted:#7D6470;--line:rgba(74,29,53,.12);
+  --f-d:"DM Serif Display",Georgia,serif;--f-b:"Outfit",system-ui,sans-serif;--r:32px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--milk);color:var(--ink);font:400 16.5px/1.6 var(--f-b);overflow-x:hidden}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--rose-d);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+em{font-style:italic}
+
+.concept{background:var(--plum);color:#F6E3E8;font-size:13px;text-align:center;padding:8px 16px}
+.concept a{color:#F7C6D3;font-weight:500}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(255,248,246,.82);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line)}
+.nav__in{display:flex;align-items:center;gap:28px;height:74px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:1}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{display:block;font:italic 400 30px/.9 var(--f-d);color:var(--plum)}
+.brand small{display:block;font:500 9.5px/1 var(--f-b);letter-spacing:.3em;color:var(--rose-d);margin-top:4px}
+.nav__links{display:flex;gap:6px;margin-left:auto;list-style:none;font-size:15px}
+.nav__links a{text-decoration:none;color:var(--muted);padding:10px 14px;border-radius:999px;transition:background .25s,color .25s}
+.nav__links a:hover{background:var(--blush);color:var(--plum)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 28px;border-radius:999px;font-weight:500;font-size:15.5px;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+.btn--plum{background:linear-gradient(180deg,var(--plum2),var(--plum));color:#fff;box-shadow:0 12px 30px -12px rgba(74,29,53,.7),inset 0 1px 0 rgba(255,255,255,.18)}
+.btn--plum:hover{transform:translateY(-2px);box-shadow:0 18px 36px -14px rgba(74,29,53,.8),inset 0 1px 0 rgba(255,255,255,.18)}
+.btn--soft{background:#fff;color:var(--plum);box-shadow:0 0 0 1px var(--line)}
+.btn--soft:hover{background:var(--blush)}
+.btn svg{width:17px;height:17px}
+.nav .btn{min-height:46px;padding:10px 22px}
+
+/* hero */
+.hero{position:relative;padding:60px 0 90px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 70% at 85% 20%,#F6D3D9 0%,transparent 70%),radial-gradient(50% 60% at 0% 100%,#F9E6DA 0%,transparent 70%)}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:14px;color:var(--rose-d);font-weight:500}
+.tag svg{width:14px;height:14px}
+.hero h1{font:400 clamp(54px,7.4vw,108px)/.95 var(--f-d);color:var(--plum);margin:24px 0 24px;letter-spacing:-.01em}
+.hero h1 em{color:var(--rose);display:inline-block}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(30px);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .w:nth-child(2){animation-delay:.12s}.hero h1 .w:nth-child(3){animation-delay:.24s}
+@keyframes up{to{opacity:1;transform:none}}
+.lede{font-size:19px;color:var(--muted);max-width:44ch;font-weight:300}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.trust{display:flex;align-items:center;gap:16px;margin-top:40px;font-size:14px;color:var(--muted)}
+.trust__av{display:flex}
+.trust__av span{width:38px;height:38px;border-radius:50%;border:3px solid var(--milk);margin-left:-10px;display:grid;place-items:center;font:italic 16px var(--f-d);color:#fff}
+.trust__av span:first-child{margin-left:0}
+.trust b{color:var(--plum);font-weight:600}
+.hero__art{position:relative;max-width:520px;justify-self:center;width:100%}
+.blob{aspect-ratio:1/1.08;border-radius:46% 54% 42% 58%/52% 44% 56% 48%;overflow:hidden;box-shadow:0 50px 90px -40px rgba(122,44,78,.55);animation:morph 14s ease-in-out infinite;background:var(--blush2)}
+.blob img{width:100%;height:100%;object-fit:cover}
+@keyframes morph{50%{border-radius:56% 44% 52% 48%/44% 56% 44% 56%}}
+.spark{position:absolute;width:26px;height:26px;color:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.9));animation:tw 3s ease-in-out infinite}
+.spark--g{color:var(--gold);filter:none}
+@keyframes tw{0%,100%{transform:scale(.5) rotate(0);opacity:.3}50%{transform:scale(1) rotate(45deg);opacity:1}}
+.float{position:absolute;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:20px;padding:12px 16px;box-shadow:0 20px 40px -20px rgba(74,29,53,.45);font-size:13px;color:var(--muted);animation:fl 7s ease-in-out infinite}
+.float b{display:block;font:400 21px/1.1 var(--f-d);color:var(--plum)}
+.float--a{left:-34px;top:16%}.float--b{right:-18px;bottom:12%;animation-delay:-3.5s}
+.float--b .dots{display:flex;gap:4px;margin-top:6px}
+.float--b .dots i{width:14px;height:14px;border-radius:50%;box-shadow:inset -2px -2px 4px rgba(0,0,0,.18),inset 2px 2px 3px rgba(255,255,255,.6)}
+@keyframes fl{50%{transform:translateY(-12px)}}
+
+/* sections */
+section{scroll-margin-top:86px}
+.sec{padding:110px 0}
+.sec--blush{background:var(--blush)}
+.head{text-align:center;max-width:680px;margin:0 auto 54px}
+.head .tag{margin-bottom:18px}
+.h2{font:400 clamp(42px,5.2vw,72px)/1 var(--f-d);color:var(--plum)}
+.h2 em{color:var(--rose)}
+.head p{color:var(--muted);margin-top:16px;font-size:17.5px;font-weight:300}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s!important}.d2{transition-delay:.16s!important}.d3{transition-delay:.24s!important}
+
+/* menu */
+.tabs{display:flex;gap:6px;padding:6px;background:#fff;border-radius:999px;box-shadow:0 0 0 1px var(--line);width:max-content;max-width:100%;margin:0 auto 36px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{min-height:44px;padding:10px 20px;border-radius:999px;font-weight:500;color:var(--muted);white-space:nowrap;transition:background .3s,color .3s}
+.tabs button[aria-selected=true]{background:var(--plum);color:#fff}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.item{background:#fff;border-radius:24px;padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:start;box-shadow:0 0 0 1px var(--line);transition:transform .3s,box-shadow .3s;animation:pop .5s cubic-bezier(.2,.8,.2,1) both}
+.item:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line),0 24px 40px -28px rgba(74,29,53,.5)}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}}
+.item h3{font:400 23px/1.15 var(--f-d);color:var(--plum)}
+.item h3 small{font:500 11px var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--rose);padding:3px 8px;border-radius:999px;vertical-align:middle;margin-left:6px}
+.item p{grid-column:1;color:var(--muted);font-size:14.5px;font-weight:300}
+.item .pr{grid-row:1/3;grid-column:2;text-align:right}
+.item .pr b{font:400 26px/1 var(--f-d);color:var(--plum)}
+.item .pr span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+
+/* picker */
+.picker{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(160deg,#fff,#FDF1F1);border-radius:40px;padding:48px;box-shadow:0 0 0 1px var(--line),0 50px 90px -60px rgba(74,29,53,.5)}
+.stage{position:relative;aspect-ratio:1/1.05;border-radius:32px;background:radial-gradient(circle at 50% 40%,#FBEDEE 0%,#F3D9DC 70%);overflow:hidden}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.stage__lab{position:absolute;left:18px;top:18px;background:rgba(255,255,255,.9);border-radius:999px;padding:8px 14px;font-size:13.5px;color:var(--plum);font-weight:500;display:flex;gap:8px;align-items:center}
+.stage__lab i{width:14px;height:14px;border-radius:50%}
+.front{transition:clip-path .6s cubic-bezier(.4,.1,.2,1)}
+.front.paint{clip-path:inset(100% 0 0 0)}
+.ctl h3{font:400 34px/1.1 var(--f-d);color:var(--plum)}
+.ctl > p{color:var(--muted);margin:8px 0 22px;font-weight:300}
+.ctl__lab{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:20px 0 10px;display:flex;justify-content:space-between}
+.ctl__lab span{letter-spacing:0;text-transform:none;font-size:14px;color:var(--plum)}
+.sw{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.sw button{aspect-ratio:1;border-radius:50%;position:relative;box-shadow:inset -3px -4px 8px rgba(0,0,0,.2),inset 3px 3px 6px rgba(255,255,255,.55),0 0 0 1px rgba(74,29,53,.08);transition:transform .25s;min-width:44px}
+.sw button:hover{transform:scale(1.1)}
+.sw button[aria-pressed=true]{box-shadow:inset -3px -4px 8px rgba(0,0,0,.2),inset 3px 3px 6px rgba(255,255,255,.55),0 0 0 3px #fff,0 0 0 5px var(--plum)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{min-height:44px;padding:9px 16px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:14.5px;transition:all .2s}
+.seg button[aria-pressed=true]{background:var(--plum);color:#fff;box-shadow:none}
+.skins{display:flex;gap:10px}
+.skins button{width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 1px var(--line)}
+.skins button[aria-pressed=true]{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--rose)}
+.ctl .btn{margin-top:28px}
+
+/* gift */
+.gift{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.gcard{position:relative;aspect-ratio:1.6;border-radius:26px;padding:30px;color:#fff;overflow:hidden;box-shadow:0 40px 70px -35px rgba(74,29,53,.7);display:flex;flex-direction:column;justify-content:space-between;transition:background .5s;transform:rotate(-3deg);max-width:520px}
+.gcard::after{content:"";position:absolute;inset:-50%;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);animation:sheen 5s ease-in-out infinite}
+@keyframes sheen{0%,60%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+.gcard.blush{background:linear-gradient(135deg,#F3B8C6,#D27C93)}
+.gcard.plum{background:linear-gradient(135deg,#7B3A5C,#3A1529)}
+.gcard.gold{background:linear-gradient(135deg,#E6CB9B,#B48749);color:#3A2430}
+.gcard__top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}
+.gcard__top b{font:italic 400 34px/1 var(--f-d)}
+.gcard__top small{display:block;font-size:10px;letter-spacing:.3em;margin-top:4px;opacity:.85}
+.gcard__amt{font:400 64px/1 var(--f-d);position:relative;z-index:1}
+.gcard__to{display:flex;justify-content:space-between;align-items:flex-end;font-size:14px;position:relative;z-index:1;gap:16px}
+.gcard__to span{opacity:.85;display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.gform{background:#fff;border-radius:32px;padding:32px;box-shadow:0 0 0 1px var(--line)}
+.gform h3{font:400 30px/1.1 var(--f-d);color:var(--plum);margin-bottom:6px}
+.amts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.amts button{min-height:50px;border-radius:16px;box-shadow:0 0 0 1px var(--line);font:400 20px var(--f-d);color:var(--plum);transition:all .2s}
+.amts button[aria-pressed=true]{background:var(--plum);color:#fff;box-shadow:none}
+.designs{display:flex;gap:10px}
+.designs button{width:56px;height:38px;border-radius:10px}
+.designs button[aria-pressed=true]{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--plum)}
+
+/* forms */
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--muted);font-weight:500}
+.f--w{grid-column:1/-1}
+.f input,.f select,.f textarea{min-height:50px;padding:12px 16px;border-radius:16px;border:1.5px solid var(--blush2);background:var(--milk);font-size:16px;color:var(--ink);font-weight:400;transition:border-color .2s,background .2s}
+.f textarea{min-height:90px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--rose);background:#fff}
+
+/* team / about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about__img{position:relative}
+.about__img img{border-radius:220px 220px 32px 32px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about__badge{position:absolute;right:-20px;bottom:40px;width:130px;height:130px;border-radius:50%;background:var(--plum);color:#fff;display:grid;place-items:center;text-align:center;font-size:12.5px;line-height:1.2;box-shadow:0 20px 40px -20px rgba(74,29,53,.8)}
+.about__badge b{display:block;font:400 38px/1 var(--f-d);color:#F7C6D3}
+.about p{color:var(--muted);font-weight:300;font-size:17.5px;margin-top:18px;max-width:50ch}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.tm{background:#fff;border-radius:24px;padding:20px;box-shadow:0 0 0 1px var(--line);text-align:center}
+.tm i{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;font:italic 400 28px var(--f-d);color:#fff;box-shadow:inset -4px -6px 12px rgba(0,0,0,.15),inset 4px 4px 8px rgba(255,255,255,.4)}
+.tm b{display:block;font:400 21px var(--f-d);color:var(--plum)}
+.tm span{font-size:13px;color:var(--muted)}
+.stats{display:flex;gap:40px;margin-top:34px}
+.stats div{font-size:13.5px;color:var(--muted)}
+.stats b{display:block;font:400 42px/1 var(--f-d);color:var(--plum)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:14px}
+.gal figure{position:relative;border-radius:28px;overflow:hidden;background:var(--blush2)}
+.gal figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.9);border-radius:999px;font-size:13px;padding:6px 12px;color:var(--plum)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border-radius:28px;padding:30px;box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;gap:16px}
+.rev .st{color:var(--rose);letter-spacing:3px}
+.rev q{font:400 22px/1.35 var(--f-d);color:var(--plum);quotes:none;flex:1}
+.rev footer{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)}
+.rev footer i{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font:italic 18px var(--f-d);color:#fff;flex:none}
+.rev footer b{display:block;color:var(--ink);font-weight:500;font-size:15px}
+
+/* faq */
+.acc{max-width:820px;margin:0 auto;display:grid;gap:10px}
+.acc__i{background:#fff;border-radius:22px;box-shadow:0 0 0 1px var(--line)}
+.acc__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;text-align:left;font:400 21px/1.25 var(--f-d);color:var(--plum);min-height:44px}
+.acc__q i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--blush);position:relative;transition:transform .4s,background .3s}
+.acc__q i::before,.acc__q i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;border-radius:2px;background:var(--plum);transform:translate(-50%,-50%)}
+.acc__q i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s}
+.acc__q[aria-expanded=true] i{background:var(--rose);transform:rotate(180deg)}
+.acc__q[aria-expanded=true] i::before,.acc__q[aria-expanded=true] i::after{background:#fff}
+.acc__q[aria-expanded=true] i::after{transform:translate(-50%,-50%) rotate(0)}
+.acc__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.acc__a>div{overflow:hidden}
+.acc__a p{padding:0 24px 22px;color:var(--muted);font-weight:300}
+.acc__q[aria-expanded=true]+.acc__a{grid-template-rows:1fr}
+
+/* visit + book */
+.vb{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.vcard{background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.map{position:relative;height:260px;background:#F7E7E6}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:50%;top:48%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin b{background:var(--plum);color:#fff;font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.pin i{width:14px;height:14px;border-radius:50%;background:var(--rose);border:3px solid #fff;margin-top:6px;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(210,124,147,.6)}70%,100%{box-shadow:0 0 0 16px rgba(210,124,147,0)}}
+.vcard__b{padding:28px}
+.open{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:999px;background:#EAF4EC;color:#3F7350}
+.open::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.open.closed{background:var(--blush);color:var(--rose-d)}
+.addr{font:400 28px/1.15 var(--f-d);color:var(--plum);margin:14px 0}
+.hours{list-style:none;font-size:15px}
+.hours li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line)}
+.hours li.today{color:var(--rose-d);font-weight:600}
+.bform{background:#fff;border-radius:32px;padding:34px;box-shadow:0 0 0 1px var(--line),0 40px 80px -60px rgba(74,29,53,.6)}
+.bform h3{font:400 34px/1.1 var(--f-d);color:var(--plum)}
+.bform > p{color:var(--muted);margin:6px 0 22px;font-weight:300}
+.look{display:none;align-items:center;gap:10px;padding:10px 14px;border-radius:16px;background:var(--blush);font-size:14px;color:var(--plum);margin-bottom:16px}
+.look.on{display:flex}
+.look i{width:22px;height:22px;border-radius:50%;flex:none;box-shadow:inset -2px -3px 5px rgba(0,0,0,.2)}
+.look button{margin-left:auto;font-size:13px;text-decoration:underline;min-height:32px}
+
+/* footer */
+.foot{background:var(--plum);color:#E8CFD9;padding:70px 0 30px}
+.foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot .brand b{color:#fff}.foot .brand small{color:#F7C6D3}
+.foot h4{font:400 21px var(--f-d);color:#fff;margin-bottom:12px}
+.foot ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.foot a{text-decoration:none}.foot a:hover{color:#fff}
+.soc{display:flex;gap:10px;margin-top:20px}
+.soc a{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:background .25s}
+.soc a:hover{background:var(--rose)}
+.soc svg{width:18px;height:18px}
+.foot__b{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:50px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#C9A6B6}
+.foot__b a{color:#F7C6D3}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:26px;z-index:90;transform:translate(-50%,160%);opacity:0;background:var(--plum);color:#fff;padding:14px 22px;border-radius:999px;font-size:15px;box-shadow:0 20px 40px -18px rgba(74,29,53,.8);transition:transform .5s cubic-bezier(.3,1.3,.4,1),opacity .3s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+@media (max-width:1020px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+  .hero__grid,.picker,.gift,.about,.vb{grid-template-columns:1fr}
+  .hero__art{max-width:440px}
+  .picker{padding:28px}
+  .stage{max-width:480px;width:100%;justify-self:center}
+  .revs{grid-template-columns:1fr}
+  .foot__grid{grid-template-columns:1fr 1fr}
+  .gcard{justify-self:center;width:100%}
+}
+@media (max-width:720px){
+  body{padding-bottom:76px;font-size:16px}
+  .brand b{font-size:26px}
+  .sec{padding:76px 0}
+  .hero{padding:34px 0 70px}
+  .lede{font-size:17px}
+  .float--a{left:-6px;top:6%}.float--b{right:-6px}
+  .menu{grid-template-columns:1fr}
+  .tabs{width:100%}
+  .picker{padding:16px;border-radius:28px;gap:24px}
+  .sw{grid-template-columns:repeat(6,1fr);gap:8px}
+  .sw button{min-width:0}
+  .gcard{padding:22px;transform:rotate(-2deg)}
+  .gcard__amt{font-size:48px}
+  .gform,.bform{padding:22px 18px}
+  .amts{grid-template-columns:repeat(2,1fr)}
+  .fields{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .tm{padding:14px 8px}
+  .tm i{width:50px;height:50px;font-size:22px}
+  .tm b{font-size:18px}
+  .about__badge{right:0;width:110px;height:110px}
+  .about__img img{aspect-ratio:1/1;border-radius:180px 180px 28px 28px}
+  .stats{gap:22px}
+  .gal{grid-template-columns:1fr 1fr;gap:10px;grid-auto-rows:170px}
+  .gal figure{border-radius:20px}
+  .gal figure:nth-child(1){grid-row:span 1;grid-auto-rows:220px}
+  .acc__q{font-size:19px;padding:18px}
+  .acc__a p{padding:0 18px 18px}
+  .foot__grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,248,246,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mbar .btn{min-height:50px;padding:10px}
+  .toast{bottom:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .hero h1 .w{opacity:1;transform:none}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#beauty">More nail &amp; beauty examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a href="#top" class="brand" aria-label="Velvet Nail and Beauty, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9A2B5"/><stop offset="1" stop-color="#A9506B"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="#F8E4E3"/><path d="M20 6.5c5.6 0 8.6 6.6 8.6 14.2V31a3 3 0 0 1-3 3H14.4a3 3 0 0 1-3-3V20.7C11.4 13.1 14.4 6.5 20 6.5z" fill="url(#lg)"/><path d="M15.8 13.2c.9-2 2.4-3.2 4-3.4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" opacity=".9"/><path d="M31 8l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="#C9A26B"/></svg>
+      <span><b>Velvet</b><small>NAIL &amp; BEAUTY</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#menu">Treatments</a></li>
+      <li><a href="#colours">Try a colour</a></li>
+      <li><a href="#gift">Gift cards</a></li>
+      <li><a href="#about">Studio</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#book" class="btn btn--plum">Book now</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>Nail &amp; beauty studio · Rose Lane</span>
+      <h1><span class="w">Polished,</span> <span class="w"><em>never</em></span> <span class="w">rushed.</span></h1>
+      <p class="lede">Gel, BIAB and hand-painted nail art, plus lashes, brows and glow facials. Every appointment gets the time it deserves, and a cup of something nice.</p>
+      <div class="hero__cta">
+        <a href="#book" class="btn btn--plum">Book an appointment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="#colours" class="btn btn--soft">Try a colour</a>
+      </div>
+      <div class="trust">
+        <div class="trust__av" aria-hidden="true"><span style="background:#D27C93">A</span><span style="background:#6B2F4D">M</span><span style="background:#C9A26B">S</span><span style="background:#E9A2B5">+</span></div>
+        <div><b>4.9 ★</b> from 540 happy hands<br>Same chair, same tech, every visit</div>
+      </div>
+    </div>
+    <div class="hero__art">
+      <div class="blob"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=1100&q=70&auto=format&fit=crop" alt="Hand with soft lilac, white and glitter gel nails resting on a cream knit" width="900" height="970" fetchpriority="high"></div>
+      <svg class="spark" style="left:12%;top:4%" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+      <svg class="spark spark--g" style="right:8%;top:30%;animation-delay:-1s;width:20px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+      <svg class="spark" style="left:30%;bottom:10%;animation-delay:-2s;width:18px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+      <div class="float float--a"><b>BIAB from €55</b>Strong, natural, 4 weeks</div>
+      <div class="float float--b"><b>48 shades</b>in stock right now<div class="dots"><i style="background:#F2C9C9"></i><i style="background:#7A1F2B"></i><i style="background:#C7B2DE"></i><i style="background:#A9BFA4"></i><i style="background:#C9A26B"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--blush" id="menu">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">Treatment menu</span><h2 class="h2">Little luxuries, <em>clear prices</em></h2><p>No hidden extras. Removal of our own gel is always free, and we'll tell you the price before we start.</p></div>
+    <div class="tabs rv" role="tablist" id="tabs"></div>
+    <div class="menu" id="menuList" role="tabpanel"></div>
+  </div>
+</section>
+
+<section class="sec" id="colours">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">Colour lab</span><h2 class="h2">Try it on <em>before</em> you book</h2><p>Pick a shade, a finish and a shape. When you love it, book it, and we'll have the bottle ready.</p></div>
+    <div class="picker rv">
+      <div class="stage" id="stage">
+        <span class="stage__lab"><i id="labDot"></i><span id="labTxt">Ballet Slipper · Glossy</span></span>
+        <svg viewBox="0 0 400 420" role="img" aria-label="Illustrated hand showing your chosen nail colour">
+          <defs>
+            <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0"/><stop offset=".55"/><stop offset="1"/></linearGradient>
+            <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0"/><stop offset=".55"/><stop offset="1"/></linearGradient>
+            <linearGradient id="gAc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E6C4"/><stop offset=".5" stop-color="#C9A26B"/><stop offset="1" stop-color="#8E6A3A"/></linearGradient>
+            <pattern id="glit" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="url(#gAc)"/><circle cx="2" cy="2" r="1" fill="#fff" opacity=".8"/><circle cx="6" cy="5" r=".8" fill="#fff" opacity=".6"/></pattern>
+          </defs>
+          <g id="hand" transform="translate(30 34) scale(.86)"></g>
+        </svg>
+      </div>
+      <div class="ctl">
+        <h3>Your shade</h3>
+        <p>Colours shown are close, but nothing beats seeing the real bottle under our daylight lamp.</p>
+        <div class="ctl__lab">Colour <span id="cName">Ballet Slipper</span></div>
+        <div class="sw" id="sw" role="group" aria-label="Nail colours"></div>
+        <div class="ctl__lab">Finish</div>
+        <div class="seg" id="finish"><button aria-pressed="true" data-v="gloss">Glossy</button><button aria-pressed="false" data-v="matte">Matte</button><button aria-pressed="false" data-v="chrome">Chrome</button></div>
+        <div class="ctl__lab">Shape</div>
+        <div class="seg" id="shape"><button aria-pressed="true" data-v="almond">Almond</button><button aria-pressed="false" data-v="square">Square</button><button aria-pressed="false" data-v="round">Round</button></div>
+        <div class="ctl__lab">Accent nail &amp; skin tone</div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+          <div class="seg" id="accent"><button aria-pressed="false" data-v="1">Gold glitter accent</button></div>
+          <div class="skins" id="skins" role="group" aria-label="Skin tone"><button aria-pressed="true" data-v="#F3D3C1" style="background:#F3D3C1" aria-label="Light skin"></button><button aria-pressed="false" data-v="#D9A27E" style="background:#D9A27E" aria-label="Medium skin"></button><button aria-pressed="false" data-v="#8D5A3D" style="background:#8D5A3D" aria-label="Deep skin"></button></div>
+        </div>
+        <a href="#book" class="btn btn--plum" id="bookLook">Book this look <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--blush" id="gift">
+  <div class="wrap gift">
+    <div class="rv">
+      <div class="gcard blush" id="gcard">
+        <div class="gcard__top"><div><b>Velvet</b><small>GIFT CARD</small></div><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg></div>
+        <div class="gcard__amt" id="gAmt">€50</div>
+        <div class="gcard__to"><div><span>For</span><b id="gTo">Someone lovely</b></div><div style="text-align:right"><span>From</span><b id="gFrom">You</b></div></div>
+      </div>
+    </div>
+    <form class="gform rv d1" id="giftForm">
+      <h3>Give a little glow</h3>
+      <p style="color:var(--muted);font-weight:300;margin-bottom:6px">Valid for 12 months on every treatment. Sent by email in minutes, or printed and wrapped in the studio.</p>
+      <div class="ctl__lab">Amount</div>
+      <div class="amts" id="amts"><button type="button" aria-pressed="false" data-v="25">€25</button><button type="button" aria-pressed="true" data-v="50">€50</button><button type="button" aria-pressed="false" data-v="75">€75</button><button type="button" aria-pressed="false" data-v="100">€100</button></div>
+      <div class="ctl__lab">Design</div>
+      <div class="designs" id="designs"><button type="button" aria-pressed="true" data-v="blush" style="background:linear-gradient(135deg,#F3B8C6,#D27C93)" aria-label="Blush design"></button><button type="button" aria-pressed="false" data-v="plum" style="background:linear-gradient(135deg,#7B3A5C,#3A1529)" aria-label="Plum design"></button><button type="button" aria-pressed="false" data-v="gold" style="background:linear-gradient(135deg,#E6CB9B,#B48749)" aria-label="Gold design"></button></div>
+      <div class="fields" style="margin-top:20px">
+        <label class="f">For<input id="inTo" maxlength="22" placeholder="Their name"></label>
+        <label class="f">From<input id="inFrom" maxlength="22" placeholder="Your name"></label>
+        <label class="f f--w">Send to (email)<input type="email" required placeholder="their@email.com" autocomplete="off"></label>
+        <div class="f--w"><button class="btn btn--plum" type="submit" style="width:100%">Buy gift card · <span id="gBtn">€50</span></button></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="about__img rv">
+      <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=1000&q=70&auto=format&fit=crop" alt="A nail technician carefully filing a client's nails" width="800" height="1000" loading="lazy">
+      <div class="about__badge"><div><b data-count="9">9</b>years on<br>Rose Lane</div></div>
+    </div>
+    <div class="rv d1">
+      <span class="tag">Our studio</span>
+      <h2 class="h2" style="margin-top:18px">Small studio, <em>big care</em></h2>
+      <p>Anouk opened Velvet in a former flower shop after a decade of working in busy chains where every manicure was a race. Here, there are three tables, soft music, fresh tea and no one watching the clock.</p>
+      <p>We use hospital-grade sterilised tools, vegan and 12-free polishes, and good ventilation. Your hands (and your lungs) will thank you.</p>
+      <div class="stats"><div><b data-count="21000" data-sep="1">21,000</b>sets of nails</div><div><b data-count="48">48</b>shades in stock</div><div><b data-count="100">100</b>% vegan polish</div></div>
+      <div class="team" id="team"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--blush" id="gallery">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">Fresh sets</span><h2 class="h2">This week at <em>Velvet</em></h2></div>
+    <div class="gal rv">
+      <figure><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1100&q=70&auto=format&fit=crop" alt="Glossy black and tortoiseshell gel nails" width="900" height="600" loading="lazy"><figcaption>Tortoiseshell &amp; ink · Anouk</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=700&q=70&auto=format&fit=crop" alt="Red almond nails with hand-lettered love art" width="500" height="500" loading="lazy"><figcaption>Love letters</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=700&q=70&auto=format&fit=crop" alt="Soft pink almond nails on a pink background" width="500" height="500" loading="lazy"><figcaption>Rose Quartz BIAB</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?w=700&q=70&auto=format&fit=crop" alt="Colourful abstract nail art" width="500" height="500" loading="lazy"><figcaption>Abstract art · Mei</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=700&q=70&auto=format&fit=crop" alt="Natural nude manicure" width="500" height="500" loading="lazy"><figcaption>Clean girl nude</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">Kind words</span><h2 class="h2">Hands <em>down</em> the best</h2></div>
+    <div class="revs">
+      <article class="rev rv"><div class="st" aria-label="5 out of 5">★★★★★</div><q>My BIAB lasted five weeks without a single chip. Mei is a perfectionist in the best way.</q><footer><i style="background:#D27C93">E</i><div><b>Emma L.</b>BIAB overlay · fictional review</div></footer></article>
+      <article class="rev rv d1"><div class="st" aria-label="5 out of 5">★★★★★</div><q>I tried the colour picker at midnight, booked "Velvet Plum" and it was exactly what I hoped.</q><footer><i style="background:#6B2F4D">N</i><div><b>Nadia K.</b>Gel manicure · fictional review</div></footer></article>
+      <article class="rev rv d2"><div class="st" aria-label="5 out of 5">★★★★★</div><q>Sara's lash lift is the reason I stopped buying mascara. Calm studio, lovely tea, zero rush.</q><footer><i style="background:#C9A26B">J</i><div><b>Julia T.</b>Lash lift · fictional review</div></footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--blush" id="faq">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">FAQ</span><h2 class="h2">Good to <em>know</em></h2></div>
+    <div class="acc rv" id="acc"></div>
+  </div>
+</section>
+
+<section class="sec" id="visit">
+  <div class="wrap vb">
+    <div class="vcard rv">
+      <div class="map" role="img" aria-label="Map placeholder showing Velvet on Rose Lane">
+        <svg viewBox="0 0 500 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="260" fill="#F7E7E6"/><circle cx="420" cy="50" r="60" fill="#E7EEDF"/><g stroke="#fff" stroke-width="16" fill="none" stroke-linecap="round"><path d="M-10 140C120 120 300 170 520 120"/><path d="M180 -10L240 270"/><path d="M360 -10C350 100 380 180 420 270" stroke-width="10"/></g><g fill="#F0D6D6"><rect x="40" y="30" width="110" height="70" rx="14"/><rect x="270" y="20" width="70" height="80" rx="14"/><rect x="40" y="170" width="120" height="70" rx="14"/><rect x="270" y="170" width="80" height="70" rx="14"/></g><text x="60" y="128" font-family="Outfit" font-size="11" fill="#A98897" letter-spacing="2">ROSE LANE</text></svg>
+        <div class="pin"><b>Velvet</b><i></i></div>
+      </div>
+      <div class="vcard__b">
+        <span class="open" id="openNow">Open now</span>
+        <div class="addr">Rose Lane 7<br>Market Quarter</div>
+        <ul class="hours" id="hours"></ul>
+      </div>
+    </div>
+    <form class="bform rv d1" id="book">
+      <h3>Book your appointment</h3>
+      <p>Pick a treatment and a time that suits you. We'll text to confirm within the hour.</p>
+      <div class="look" id="look"><i id="lookDot"></i><span id="lookTxt"></span><button type="button" id="lookX">Remove</button></div>
+      <div class="fields">
+        <label class="f f--w">Treatment<select name="t" id="bT" required></select></label>
+        <label class="f">Date<input type="date" name="d" id="bD" required></label>
+        <label class="f">Time<select name="h" required><option value="">Choose a time</option><option>09:30</option><option>10:30</option><option>11:30</option><option>13:00</option><option>14:00</option><option>15:30</option><option>17:00</option><option>18:30</option></select></label>
+        <label class="f f--w">Technician<select name="w"><option>No preference</option><option>Anouk · nail art</option><option>Mei · gel &amp; BIAB</option><option>Sara · lashes, brows &amp; skin</option></select></label>
+        <label class="f">Name<input name="n" required autocomplete="name"></label>
+        <label class="f">Mobile<input name="p" type="tel" required autocomplete="tel"></label>
+        <label class="f f--w">Notes (optional)<textarea name="x" id="bX" placeholder="Inspiration, allergies, or anything we should know"></textarea></label>
+        <div class="f--w"><button type="submit" class="btn btn--plum" style="width:100%">Request appointment</button></div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a href="#top" class="brand" aria-label="Velvet Nail and Beauty, back to top"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#6B2F4D"/><path d="M20 6.5c5.6 0 8.6 6.6 8.6 14.2V31a3 3 0 0 1-3 3H14.4a3 3 0 0 1-3-3V20.7C11.4 13.1 14.4 6.5 20 6.5z" fill="#E9A2B5"/><path d="M15.8 13.2c.9-2 2.4-3.2 4-3.4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M31 8l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="#C9A26B"/></svg><span><b>Velvet</b><small>NAIL &amp; BEAUTY</small></span></a>
+        <p style="margin-top:16px;max-width:30ch;font-size:15px">Nails, lashes, brows and skin in the Market Quarter.</p>
+        <div class="soc">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M10 20l2-8m-1.5 3.5c3 1 6-1 6-4.5a4.5 4.5 0 0 0-9 0c0 1 .3 1.8.8 2.3"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3v11a4 4 0 1 1-4-4M14 3c.5 3 2.5 5 5 5"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Visit</h4><ul><li>Rose Lane 7</li><li>Market Quarter</li><li><a href="tel:+31201234569">020 123 4569</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Tue–Fri 9:30–19:00</li><li>Thu until 20:30</li><li>Sat 9:00–17:00</li><li>Sun–Mon closed</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#menu">Treatments</a></li><li><a href="#colours">Colour lab</a></li><li><a href="#gift">Gift cards</a></li><li><a href="#book">Book</a></li></ul></div>
+    </div>
+    <div class="foot__b"><span>Velvet Nail &amp; Beauty is a fictional studio, created as a concept by <a href="/">SiteQuest Studio</a>.</span><span>Want a site like this? <a href="/#pricing">Get a free quote</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+31201234569" class="btn btn--soft">Call</a><a href="#book" class="btn btn--plum">Book now</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let tT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('on'),3200)}
+const press=(box,btn)=>$$('[aria-pressed]',box).forEach(b=>b.setAttribute('aria-pressed',b===btn));
+
+/* menu */
+const MENU={
+ 'Nails':[['Classic manicure','Shape, cuticle care, polish and hand massage',32,'40 min'],['Gel manicure','Chip-free shine for up to 3 weeks',45,'50 min','Popular'],['BIAB overlay','Builder gel on natural nails, strong and flexible',55,'70 min'],['BIAB infill','Every 3 to 5 weeks',48,'60 min'],['Nail art','Hand-painted details, chrome, French tips',5,'per nail'],['Luxe pedicure','Soak, scrub, mask, massage and gel polish',58,'75 min']],
+ 'Lashes & brows':[['Lash lift & tint','Curl and colour that lasts 6 to 8 weeks',55,'60 min','Popular'],['Brow lamination','Fluffy, brushed-up brows with shape and tint',50,'50 min'],['Brow shape & tint','Wax, tweeze, tint and tidy',28,'30 min'],['Lash & brow combo','Lash lift plus brow lamination',95,'100 min']],
+ 'Skin':[['Express glow facial','Cleanse, exfoliate, mask and massage',49,'30 min'],['Signature facial','Deep cleanse, extractions, LED and massage',85,'60 min','Popular'],['Hydra boost','For dry, tired or winter skin',69,'45 min']],
+ 'Waxing':[['Upper lip or chin','Gentle hot wax',12,'10 min'],['Underarm','Hot wax, soothing finish',18,'15 min'],['Half leg','Lower or upper',30,'30 min'],['Full leg','Including knees',48,'45 min']]
+};
+const cats=Object.keys(MENU);
+$('#tabs').innerHTML=cats.map((c,i)=>`<button role="tab" aria-selected="${i===0}" data-c="${c}">${c}</button>`).join('');
+function showMenu(c){$('#menuList').innerHTML=MENU[c].map((m,i)=>`<article class="item" style="animation-delay:${i*.05}s"><h3>${m[0]}${m[4]?`<small>${m[4]}</small>`:''}</h3><p>${m[1]}</p><div class="pr"><b>${m[0]==='Nail art'?'from ':''}€${m[2]}</b><span>${m[3]}</span></div></article>`).join('');$$('#tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.c===c))}
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)showMenu(b.dataset.c)};
+showMenu('Nails');
+$('#bT').innerHTML='<option value="">Choose a treatment</option>'+cats.map(c=>`<optgroup label="${c}">${MENU[c].map(m=>`<option>${m[0]} · €${m[2]}</option>`).join('')}</optgroup>`).join('');
+
+/* nail colour picker */
+const COL=[['Ballet Slipper','#F2C4C6'],['Milk Bath','#F3ECE4'],['Rose Quartz','#E39AAC'],['Coral Crush','#EE6F5B'],['Cherry Cola','#7A1F2B'],['Velvet Plum','#5B2440'],['Lilac Haze','#C3ACDD'],['Sage Mist','#A3BC9F'],['Butter','#F1DB92'],['Espresso','#3B2A24'],['Midnight','#1F2546'],['Gold Leaf','#C9A26B']];
+const S={c:0,finish:'gloss',shape:'almond',accent:false,skin:'#F3D3C1'};
+$('#sw').innerHTML=COL.map((c,i)=>`<button type="button" aria-pressed="${i===0}" data-i="${i}" style="background:${c[1]}" aria-label="${c[0]}" title="${c[0]}"></button>`).join('');
+const mix=(hex,amt)=>{const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const t=amt<0?0:255,p=Math.abs(amt);r=Math.round((t-r)*p+r);g=Math.round((t-g)*p+g);b=Math.round((t-b)*p+b);return `rgb(${r},${g},${b})`};
+function setGrad(id,hex,finish){const st=$$(`#${id} stop`);const s=finish==='chrome'?[mix(hex,.75),mix(hex,-.25),mix(hex,.45)]:finish==='matte'?[mix(hex,.06),hex,mix(hex,-.06)]:[mix(hex,.3),hex,mix(hex,-.22)];st.forEach((x,i)=>x.setAttribute('stop-color',s[i]))}
+// fingers: x (centre), base y, width, length, rotation
+const F=[{x:118,y:300,w:44,l:150,r:-14},{x:170,y:282,w:50,l:196,r:-5},{x:226,y:276,w:52,l:214,r:2},{x:282,y:288,w:48,l:188,r:9},{x:292,y:346,w:52,l:104,r:50}];
+function nailPath(cx,top,w,shape){const nw=w-14,nh=w*1.12,x=cx-nw/2,y=top+8;
+  if(shape==='square')return `M${x},${y+nh}V${y+5}Q${x},${y} ${x+5},${y}H${x+nw-5}Q${x+nw},${y} ${x+nw},${y+5}V${y+nh}Q${cx},${y+nh+7} ${x},${y+nh}Z`;
+  if(shape==='round')return `M${x},${y+nh}V${y+nw/2}A${nw/2},${nw/2} 0 0 1 ${x+nw},${y+nw/2}V${y+nh}Q${cx},${y+nh+7} ${x},${y+nh}Z`;
+  return `M${x},${y+nh}V${y+nh*.45}Q${x},${y+2} ${cx},${y-nh*.32}Q${x+nw},${y+2} ${x+nw},${y+nh*.45}V${y+nh}Q${cx},${y+nh+7} ${x},${y+nh}Z`}
+function drawHand(){
+  const skin=S.skin,sk2=mix(skin,-.12);let fingers='',back='',front='',shine='';
+  F.forEach((f,i)=>{const top=f.y-f.l,t=`rotate(${f.r} ${f.x} ${f.y})`;
+    fingers+=`<g transform="${t}"><rect x="${f.x-f.w/2}" y="${top}" width="${f.w}" height="${f.l+40}" rx="${f.w/2}" fill="${skin}"/><path d="M${f.x-f.w/2+8} ${top+f.l*.55}h${f.w-16}M${f.x-f.w/2+10} ${top+f.l*.72}h${f.w-20}" stroke="${sk2}" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></g>`;
+    const d=nailPath(f.x,top,f.w,S.shape),acc=S.accent&&i===1;
+    back+=`<path transform="${t}" d="${d}" fill="${acc?'url(#glit)':'url(#gA)'}"/>`;
+    front+=`<path transform="${t}" d="${d}" fill="${acc?'url(#glit)':'url(#gB)'}"/>`;
+    if(S.finish!=='matte')shine+=`<path transform="${t}" d="M${f.x-f.w/2+13} ${top+f.w*.7}Q${f.x-f.w/2+12} ${top+16} ${f.x-2} ${top+10}" stroke="#fff" stroke-width="${S.finish==='chrome'?5:3.5}" stroke-linecap="round" fill="none" opacity="${S.finish==='chrome'?.8:.6}"/>`});
+  $('#hand').innerHTML=`<ellipse cx="210" cy="430" rx="150" ry="22" fill="#000" opacity=".06"/>${fingers}<path d="M96 302C90 262 108 246 132 247L298 258C328 262 346 290 340 332L332 440H106Z" fill="${skin}"/><path d="M150 330q60 18 130 0" stroke="${sk2}" stroke-width="2" fill="none" opacity=".4"/><path d="M96 380h244l6 60H90z" fill="#F7F1EC"/><path d="M96 380h244" stroke="#E7DCD3" stroke-width="10"/><g opacity=".5" stroke="#E7DCD3" stroke-width="3">${Array.from({length:14},(_,k)=>`<path d="M${104+k*17} 392v48"/>`).join('')}</g><g id="nb">${back}</g><g id="nf" class="front">${front}</g><g>${shine}</g>`;
+}
+let prevCol=COL[0][1];
+function paint(animate){
+  const c=COL[S.c];setGrad('gA',prevCol,S.finish);setGrad('gB',c[1],S.finish);drawHand();
+  if(animate&&!RM){const nf=$('#nf');nf.classList.add('paint');nf.getBoundingClientRect();requestAnimationFrame(()=>nf.classList.remove('paint'))}
+  prevCol=c[1];
+  const fin={gloss:'Glossy',matte:'Matte',chrome:'Chrome'}[S.finish];
+  $('#cName').textContent=c[0];$('#labTxt').textContent=`${c[0]} · ${fin}`;$('#labDot').style.background=c[1];
+}
+$('#sw').onclick=e=>{const b=e.target.closest('button');if(!b)return;press(e.currentTarget,b);S.c=+b.dataset.i;paint(true)};
+['finish','shape'].forEach(k=>$('#'+k).onclick=e=>{const b=e.target.closest('button');if(!b)return;press(e.currentTarget,b);S[k]=b.dataset.v;prevCol=COL[S.c][1];paint(false)});
+$('#accent').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.accent=!S.accent;b.setAttribute('aria-pressed',S.accent);paint(false)};
+$('#skins').onclick=e=>{const b=e.target.closest('button');if(!b)return;press(e.currentTarget,b);S.skin=b.dataset.v;paint(false)};
+paint(false);
+$('#bookLook').onclick=()=>{const c=COL[S.c],fin={gloss:'glossy',matte:'matte',chrome:'chrome'}[S.finish];
+  $('#lookDot').style.background=c[1];$('#lookTxt').textContent=`Your look: ${c[0]}, ${fin}, ${S.shape}${S.accent?', gold glitter accent':''}`;$('#look').classList.add('on');
+  const opt=[...$('#bT').options].find(o=>o.text.startsWith(S.finish==='chrome'?'Nail art':'Gel manicure'));if(opt)$('#bT').value=opt.value};
+$('#lookX').onclick=()=>$('#look').classList.remove('on');
+
+/* gift */
+const G={a:50};
+const upd=()=>{$('#gAmt').textContent='€'+G.a;$('#gBtn').textContent='€'+G.a;$('#gTo').textContent=$('#inTo').value||'Someone lovely';$('#gFrom').textContent=$('#inFrom').value||'You'};
+$('#amts').onclick=e=>{const b=e.target.closest('button');if(!b)return;press(e.currentTarget,b);G.a=+b.dataset.v;upd();if(!RM)$('#gAmt').animate([{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:400,easing:'ease-out'})};
+$('#designs').onclick=e=>{const b=e.target.closest('button');if(!b)return;press(e.currentTarget,b);$('#gcard').className='gcard '+b.dataset.v};
+['#inTo','#inFrom'].forEach(s=>$(s).addEventListener('input',upd));
+$('#giftForm').onsubmit=e=>{e.preventDefault();toast('Demo only: nothing was sent and nothing was charged')};
+
+/* team */
+const TEAM=[['Anouk','Founder · nail art','#D27C93'],['Mei','Gel & BIAB','#6B2F4D'],['Sara','Lashes, brows, skin','#C9A26B']];
+$('#team').innerHTML=TEAM.map(t=>`<div class="tm"><i style="background:${t[2]}" aria-hidden="true">${t[0][0]}</i><b>${t[0]}</b><span>${t[1]}</span></div>`).join('');
+
+/* faq */
+const FAQ=[
+ ['How long does gel or BIAB last?','Gel lasts 2 to 3 weeks, BIAB 3 to 5 weeks, depending on how fast your nails grow and how kind you are to them. We\'ll give you aftercare tips at every appointment.'],
+ ['Is BIAB bad for my nails?','Not when it\'s applied and removed properly. We never drill your natural nail and we soak off gently. Many clients find their nails grow longer and stronger with BIAB.'],
+ ['Can I bring my own nail art inspiration?','Yes please! Bring photos or save them to your phone. Complex art may need extra time, so mention it when you book.'],
+ ['What\'s your cancellation policy?','Free to move or cancel up to 24 hours before. Later cancellations or no-shows are charged 50% of the treatment.'],
+ ['Do you do patch tests for lashes and brows?','Yes, we ask for a quick patch test 48 hours before your first tint or lift. Pop in any time during opening hours, no appointment needed.']
+];
+$('#acc').innerHTML=FAQ.map((q,i)=>`<div class="acc__i"><button class="acc__q" aria-expanded="${i===0}" aria-controls="a${i}" id="q${i}">${q[0]}<i aria-hidden="true"></i></button><div class="acc__a" id="a${i}" role="region" aria-labelledby="q${i}"><div><p>${q[1]}</p></div></div></div>`).join('');
+$('#acc').onclick=e=>{const b=e.target.closest('.acc__q');if(b)b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true')};
+
+/* hours + booking */
+const H=[null,null,[9.5,19],[9.5,19],[9.5,20.5],[9.5,19],[9,17]];
+const fmt=h=>`${Math.floor(h)}:${h%1?'30':'00'}`;
+const now=new Date(),dow=now.getDay(),hr=now.getHours()+now.getMinutes()/60;
+$('#hours').innerHTML=[1,2,3,4,5,6,0].map(d=>`<li class="${d===dow?'today':''}"><span>${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d]}</span><span>${H[d]?fmt(H[d][0])+' – '+fmt(H[d][1]):'Closed'}</span></li>`).join('');
+{const o=H[dow]&&hr>=H[dow][0]&&hr<H[dow][1];const el=$('#openNow');el.textContent=o?`Open now · until ${fmt(H[dow][1])}`:'Closed now · book online anytime';el.classList.toggle('closed',!o)}
+{const t=new Date();t.setDate(t.getDate()+1);$('#bD').min=t.toISOString().slice(0,10)}
+$('#book').onsubmit=e=>{e.preventDefault();toast('Demo only: nothing was sent. In real life we\'d text you within the hour.')};
+
+/* reveal + counters */
+function count(el){const to=+el.dataset.count,sep=el.dataset.sep;const f2=v=>sep?Math.round(v).toLocaleString('en'):Math.round(v);if(RM){el.textContent=f2(to);return}let t0=null;const f=t=>{t0??=t;const k=Math.min(1,(t-t0)/1500);el.textContent=f2(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(el=>{if(RM||el.getBoundingClientRect().top<innerHeight)el.classList.add('in');else io.observe(el)});
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);cio.unobserve(e.target)}}));$$('[data-count]').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>

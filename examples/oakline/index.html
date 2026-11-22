@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oakline Builders · Extensions, roofing &amp; painting in Hollowell</title>
+<meta name="description" content="Oakline Builders: extensions, loft conversions, roofing and painting in Hollowell. Fixed quotes, one team from drawing to handover, 10-year guarantee. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#1C1B19">
+<meta property="og:title" content="Oakline Builders · Built properly, finished beautifully">
+<meta property="og:description" content="Extensions, roofing and painting with a fixed quote and a 10-year guarantee. A concept site by SiteQuest Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%231C1B19'/%3E%3Cpath d='M5 15L16 6l11 9' fill='none' stroke='%23D08A47' stroke-width='3' stroke-linecap='square'/%3E%3Cpath d='M9 26V17h14v9' fill='none' stroke='%23F3EDE3' stroke-width='2'/%3E%3Cpath d='M12 21h8M12 24h8' stroke='%23D08A47' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --char:#1C1B19; --char-2:#262422; --char-3:#34312D; --timber:#C27A3E; --timber-2:#D08A47; --oak:#DCC09A;
+  --paper:#F3EDE3; --paper-2:#E8DFD1; --ink:#22201D; --mut:#6B635A; --line:#D6CBBB; --dline:rgba(243,237,227,.14);
+  --f-d:"Fraunces", Georgia, serif; --f-b:"Instrument Sans", system-ui, sans-serif; --f-m:"JetBrains Mono", ui-monospace, monospace;
+  --r:3px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-b);overflow-x:hidden}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--timber);outline-offset:3px}
+.wrap{width:min(1220px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:var(--f-d);font-weight:600;letter-spacing:-.015em;line-height:1.02}
+.mono{font:500 12px/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase}
+
+.concept{background:var(--timber);color:#1C1B19;font-size:13px;text-align:center;padding:7px 16px}
+.concept a{font-weight:700}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(28,27,25,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--paper);border-bottom:1px solid var(--dline)}
+.nav__in{display:flex;align-items:center;gap:32px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--paper)}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{display:block;font:700 22px/1 var(--f-d);letter-spacing:.06em}
+.brand small{display:block;font:600 10px/1 var(--f-b);letter-spacing:.42em;color:var(--oak);margin-top:5px}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{text-decoration:none;font-size:15px;color:#CFC6B8;transition:color .2s;position:relative}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--timber-2);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav__links a:hover{color:#fff}.nav__links a:hover::after{transform:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:var(--r);font-weight:600;text-decoration:none;transition:transform .2s,background .2s,color .2s,border-color .2s;border:1.5px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn--t{background:var(--timber);color:#fff}
+.btn--t:hover{background:#A9652E}
+.btn--l{border-color:var(--dline);color:var(--paper)}
+.btn--l:hover{border-color:var(--paper)}
+.btn--d{background:var(--char);color:var(--paper)}
+.btn--d:hover{background:var(--char-3)}
+.btn--o{border-color:var(--line);color:var(--ink)}
+.btn--o:hover{border-color:var(--ink)}
+.btn[disabled]{opacity:.4;pointer-events:none}
+
+/* hero */
+.hero{background:var(--char);color:var(--paper);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 79px,rgba(243,237,227,.035) 79px 80px);pointer-events:none}
+.hero__grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:72px 0 88px;position:relative}
+.hero .mono{color:var(--oak);display:flex;align-items:center;gap:12px}
+.hero .mono::before{content:"";width:36px;height:1px;background:var(--timber-2)}
+.hero h1{font-size:clamp(46px,6.4vw,92px);margin:22px 0 24px;font-weight:600}
+.hero h1 em{font-style:italic;color:var(--timber-2);font-weight:400}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(30px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.lede{color:#CFC6B8;font-size:clamp(17px,1.4vw,19px);max-width:46ch;margin-bottom:32px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero__facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:40px;margin-top:48px;padding-top:28px;border-top:1px solid var(--dline)}
+.hero__facts b{display:block;font:600 36px/1 var(--f-d);color:#fff}
+.hero__facts div>span{font-size:13px;color:#A99F91}
+.plan{position:relative}
+.plan__img{position:relative;aspect-ratio:4/4.4;overflow:hidden;border-radius:var(--r)}
+.plan__img img{width:100%;height:110%;object-fit:cover;will-change:transform}
+.plan svg.dim{position:absolute;inset:-28px;width:calc(100% + 56px);height:calc(100% + 56px);pointer-events:none;overflow:visible}
+.dim path,.dim line{stroke:var(--oak);stroke-width:1.2;fill:none;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.6s .6s cubic-bezier(.6,0,.2,1) forwards}
+.dim text{fill:var(--oak);font:500 12px var(--f-m);letter-spacing:.06em;opacity:0;animation:fade .6s 1.8s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+.stamp{position:absolute;left:-30px;bottom:40px;width:132px;height:132px;border-radius:50%;background:var(--timber);color:#fff;display:grid;place-items:center;text-align:center;font:600 13px/1.2 var(--f-b);box-shadow:0 20px 40px -10px rgba(0,0,0,.5)}
+.stamp b{display:block;font:700 34px/1 var(--f-d)}
+.stamp svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.marq{background:var(--timber);color:#1C1B19;overflow:hidden;border-block:1px solid #1C1B19}
+.marq__row{display:flex;gap:44px;width:max-content;padding:16px 0;animation:marq 38s linear infinite;font:600 italic 26px/1 var(--f-d);white-space:nowrap}
+.marq__row span::after{content:"✦";font-style:normal;font-size:14px;margin-left:44px;vertical-align:4px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{scroll-margin-top:84px}
+.sec{padding:110px 0}
+.sec--d{background:var(--char);color:var(--paper)}
+.sec--p2{background:var(--paper-2)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+.head .mono{color:var(--timber);display:block;margin-bottom:16px}
+.head h2{font-size:clamp(36px,4.6vw,64px)}
+.head h2 em{font-style:italic;font-weight:400;color:var(--timber)}
+.head p{color:var(--mut);max-width:46ch;justify-self:end}
+.sec--d .head p{color:#A99F91}
+.ruler{height:14px;margin-bottom:28px;background:linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 100%/10px 6px repeat-x,linear-gradient(90deg,var(--ink) 1px,transparent 1px) 0 100%/50px 14px repeat-x;opacity:.5}
+
+/* services price list */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.svc__i{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:start;padding:26px 0;border-top:1px solid var(--line);transition:background .3s}
+.svc__i:hover .svc__n{color:var(--timber)}
+.svc__n{font:500 13px/1 var(--f-m);color:var(--mut);padding-top:8px;transition:color .3s}
+.svc__i h3{font-size:26px;margin-bottom:6px}
+.svc__i p{color:var(--mut);font-size:15px;max-width:40ch}
+.svc__p{text-align:right;white-space:nowrap}
+.svc__p small{display:block;font-size:12px;color:var(--mut)}
+.svc__p b{font:600 24px/1.2 var(--f-d)}
+.svc__note{margin-top:28px;font-size:14px;color:var(--mut);border-left:2px solid var(--timber);padding-left:14px}
+
+/* before/after */
+.ba__tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.ba__tabs button{min-height:44px;padding:0 18px;border:1px solid var(--dline);border-radius:var(--r);color:#CFC6B8;font-weight:500;transition:all .25s}
+.ba__tabs button[aria-selected=true]{background:var(--paper);color:var(--char);border-color:var(--paper)}
+.ba{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:stretch}
+.ba__stage{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r);user-select:none;-webkit-user-select:none;touch-action:pan-y;background:#111}
+.ba__stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba__before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.ba__before img.fx{filter:grayscale(.75) sepia(.35) brightness(.72) contrast(.9) blur(.4px)}
+.ba__lab{position:absolute;top:16px;background:rgba(28,27,25,.8);color:var(--paper);padding:7px 12px;border-radius:2px;backdrop-filter:blur(6px)}
+.ba__lab--b{left:16px}.ba__lab--a{right:16px;background:var(--timber);color:#fff}
+.ba__line{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:var(--paper);transform:translateX(-1px);pointer-events:none}
+.ba__knob{position:absolute;top:50%;left:50%;width:54px;height:54px;border-radius:50%;background:var(--paper);transform:translate(-50%,-50%);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.ba__knob svg{width:26px;height:26px;color:var(--char)}
+.ba__range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba__stage:has(.ba__range:focus-visible){outline:2px solid var(--timber);outline-offset:3px}
+.ba__hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(28,27,25,.75);color:var(--paper);font-size:13px;padding:6px 12px;border-radius:2px;pointer-events:none;transition:opacity .4s}
+.ba__info{border:1px solid var(--dline);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:14px}
+.ba__info h3{font-size:30px}
+.ba__info p{color:#CFC6B8;font-size:15px}
+.ba__info dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin-top:auto;font-size:14px;border-top:1px solid var(--dline);padding-top:18px}
+.ba__info dt{color:#A99F91}
+.ba__info dd{text-align:right;color:#fff;font-weight:500}
+
+/* gallery */
+.filt{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:30px}
+.filt button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-weight:500;transition:all .25s;display:flex;align-items:center;gap:8px}
+.filt button span{font:500 11px var(--f-m);color:var(--mut)}
+.filt button[aria-pressed=true]{background:var(--char);color:var(--paper);border-color:var(--char)}
+.filt button[aria-pressed=true] span{color:var(--oak)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;grid-auto-flow:dense}
+.gal figure{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);background:var(--paper-2);transition:opacity .45s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.gal figure.tall{aspect-ratio:auto;grid-row:span 2}
+.gal figure.hide{display:none}
+.gal figure.enter{opacity:0;transform:scale(.94)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(28,27,25,.85));color:var(--paper);font-size:14px}
+.gal figcaption b{display:block;font:600 18px/1.2 var(--f-d)}
+
+/* process */
+.proc{position:relative;display:grid;gap:0;max-width:900px;margin-left:auto}
+.proc__line{position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:var(--dline)}
+.proc__fill{position:absolute;inset:0;background:var(--timber-2);transform-origin:top;transform:scaleY(var(--p,0))}
+.step{display:grid;grid-template-columns:56px 1fr auto;gap:24px;padding:22px 0;position:relative}
+.step__n{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--dline);background:var(--char);display:grid;place-items:center;font:600 20px var(--f-d);color:#A99F91;position:relative;z-index:1;transition:all .4s}
+.step.on .step__n{background:var(--timber);border-color:var(--timber);color:#fff}
+.step h3{font-size:26px;margin:10px 0 6px}
+.step p{color:#A99F91;max-width:52ch}
+.step__t{font:500 12px var(--f-m);color:var(--oak);padding-top:20px;white-space:nowrap}
+.proc__wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.proc__img{position:sticky;top:110px;align-self:start;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r)}
+.proc__img img{width:100%;height:100%;object-fit:cover}
+
+/* quote stepper */
+.qs{display:grid;grid-template-columns:280px 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -40px rgba(28,27,25,.4)}
+.qs__rail{background:var(--char);color:var(--paper);padding:32px 26px;display:flex;flex-direction:column;gap:6px}
+.qs__rail ol{list-style:none;display:flex;flex-direction:column;gap:4px;margin-top:20px}
+.qs__rail li{display:flex;align-items:center;gap:12px;padding:10px 0;color:#7E766B;font-weight:500;transition:color .3s}
+.qs__rail li i{width:30px;height:30px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font:600 13px var(--f-m);font-style:normal;flex:none;transition:all .3s}
+.qs__rail li.cur{color:#fff}.qs__rail li.cur i{border-color:var(--timber-2);color:var(--timber-2)}
+.qs__rail li.ok{color:var(--oak)}.qs__rail li.ok i{background:var(--timber);border-color:var(--timber);color:#fff}
+.qs__rail .est{margin-top:auto;padding-top:22px;border-top:1px solid var(--dline);font-size:13px;color:#A99F91}
+.qs__rail .est b{display:block;font:600 24px/1.25 var(--f-d);color:#fff}
+.qs__main{padding:36px 40px}
+.qs__p{display:none}
+.qs__p.on{display:block;animation:pIn .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes pIn{from{opacity:0;transform:translateY(14px)}}
+.qs__p h3{font-size:30px;margin-bottom:6px}
+.qs__p>p{color:var(--mut);margin-bottom:24px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opt{border:1.5px solid var(--line);border-radius:var(--r);padding:16px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:96px;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--oak)}
+.opt[aria-pressed=true]{border-color:var(--timber);background:#FBF5EC}
+.opt svg{width:28px;height:28px;color:var(--timber)}
+.opt b{font-weight:600}
+.opt small{color:var(--mut);font-size:13px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.f label{font-weight:600;font-size:14px}
+.f input,.f select,.f textarea{border:1.5px solid var(--line);border-radius:var(--r);padding:12px 14px;min-height:50px;background:#fff;width:100%;transition:border-color .2s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--timber)}
+.f textarea{min-height:100px;resize:vertical}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.size{display:flex;align-items:center;gap:18px}
+.size input[type=range]{flex:1;accent-color:var(--timber);min-height:44px}
+.size output{font:600 28px var(--f-d);min-width:90px;text-align:right}
+.qs__nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.recap{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;font-size:15px;background:var(--paper);padding:20px;border-radius:var(--r);margin-bottom:8px}
+.recap dt{color:var(--mut)}
+.recap dd{font-weight:600}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about__imgs{position:relative;aspect-ratio:1/1}
+.about__imgs img{position:absolute;object-fit:cover;border-radius:var(--r)}
+.about__imgs img:first-child{left:0;top:0;width:72%;height:78%}
+.about__imgs img:last-child{right:0;bottom:0;width:52%;height:52%;border:8px solid var(--paper)}
+.about p{color:var(--mut);margin-bottom:16px}
+.sig{font:italic 400 30px var(--f-d);color:var(--timber);margin-top:8px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.badges span{border:1px solid var(--line);padding:8px 12px;border-radius:2px;font-size:13px;font-weight:500}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:16px;position:relative}
+.rev::before{content:"\201C";position:absolute;right:22px;top:4px;font:700 90px/1 var(--f-d);color:var(--paper-2)}
+.stars{color:var(--timber);letter-spacing:3px}
+.rev p{font:400 18px/1.5 var(--f-d);flex:1;position:relative}
+.rev footer{font-size:14px;color:var(--mut);border-top:1px solid var(--line);padding-top:14px}
+.rev footer b{color:var(--ink);display:block}
+
+/* faq */
+.faq__grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:56px}
+.qa{border-top:1px solid var(--line)}
+.qa:last-child{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;padding:22px 0;font:600 20px/1.3 var(--f-d);min-height:44px}
+.qa button i{position:relative;width:18px;height:18px;flex:none}
+.qa button i::before,.qa button i::after{content:"";position:absolute;left:0;top:8px;width:18px;height:2px;background:var(--timber);transition:transform .35s}
+.qa button i::after{transform:rotate(90deg)}
+.qa.on button i::after{transform:rotate(0)}
+.qa__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.qa.on .qa__a{grid-template-rows:1fr}
+.qa__a>div{overflow:hidden}
+.qa__a p{color:var(--mut);padding-bottom:22px;max-width:62ch}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.vcard{border:1px solid var(--dline);border-radius:var(--r);padding:32px}
+.vcard h3{font-size:28px;margin-bottom:14px}
+.hours{list-style:none;margin:16px 0 22px}
+.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--dline);font-size:15px;color:#CFC6B8}
+.hours li.today{color:#fff;font-weight:600}
+.hours li.today span:first-child::after{content:" · today";color:var(--timber-2);font-weight:500}
+.mapph{position:relative;height:210px;border-radius:var(--r);overflow:hidden;background:#2A2825}
+.mapph svg{width:100%;height:100%}
+.mapph span{position:absolute;left:50%;top:44%;transform:translate(-50%,-130%);background:var(--timber);color:#fff;font-size:13px;font-weight:600;padding:6px 10px;border-radius:2px;white-space:nowrap}
+.vcard .f label{color:var(--paper)}
+.vcard .f input,.vcard .f textarea{background:var(--char-2);border-color:var(--dline);color:var(--paper)}
+.vcard .f input:focus,.vcard .f textarea:focus{border-color:var(--timber-2)}
+
+/* footer */
+.foot{background:#141311;color:#A99F91;padding:64px 0 30px;font-size:14px}
+.foot__g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.foot h4{color:var(--paper);font:600 15px var(--f-b);margin-bottom:12px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot a{text-decoration:none}.foot a:hover{color:#fff}
+.soc{display:flex;gap:8px;margin-top:18px}
+.soc a{width:44px;height:44px;border:1px solid var(--dline);border-radius:var(--r);display:grid;place-items:center;transition:background .2s,border-color .2s}
+.soc a:hover{background:var(--timber);border-color:var(--timber);color:#fff}
+.soc svg{width:18px;height:18px}
+.foot__b{border-top:1px solid var(--dline);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:24px;z-index:95;background:var(--timber);color:#fff;padding:14px 20px;border-radius:var(--r);font-weight:600;box-shadow:0 20px 40px -12px rgba(0,0,0,.4);transform:translate(-50%,160%);opacity:0;visibility:hidden;transition:transform .4s cubic-bezier(.3,1.4,.4,1),opacity .25s,visibility 0s .4s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .4s cubic-bezier(.3,1.4,.4,1),opacity .25s}
+
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.now{transition:none}
+
+@media (max-width:1060px){
+  .hero__grid,.about,.proc__wrap,.faq__grid{grid-template-columns:1fr}
+  .plan{max-width:560px;width:100%;margin:0 auto}
+  .proc__img{display:none}
+  .ba{grid-template-columns:1fr}
+  .qs{grid-template-columns:1fr}
+  .qs__rail ol{flex-direction:row;gap:14px;margin-top:10px;overflow-x:auto}
+  .qs__rail li span{display:none}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .revs{grid-template-columns:1fr 1fr}
+  .foot__g{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto;min-height:44px;padding:0 16px}
+  .brand b{font-size:19px}
+  .hero__grid{padding:44px 0 64px;gap:48px}
+  .hero .mono{letter-spacing:.02em;font-size:11px}
+  .hero__facts{gap:22px}.hero__facts b{font-size:28px}
+  .stamp{left:-6px;bottom:-30px;width:110px;height:110px}.stamp b{font-size:28px}
+  .plan svg.dim{display:none}
+  .sec{padding:76px 0}
+  .head{grid-template-columns:1fr;gap:16px}.head p{justify-self:start}
+  .svc{grid-template-columns:1fr}
+  .svc__i{grid-template-columns:1fr auto;gap:8px 14px}
+  .svc__n{display:none}
+  .svc__i h3{font-size:22px}
+  .ba__info{padding:22px}
+  .gal{grid-template-columns:1fr 1fr;gap:10px}
+  .gal figcaption{padding:30px 10px 10px;font-size:12px}.gal figcaption b{font-size:15px}
+  .step{grid-template-columns:56px 1fr;gap:16px}
+  .step__t{grid-column:2;padding-top:0;margin-top:-14px}
+  .step h3{font-size:22px}
+  .qs__main{padding:26px 18px}.qs__rail{padding:22px 18px}
+  .opts{grid-template-columns:1fr 1fr}
+  .f2{grid-template-columns:1fr}
+  .revs,.visit{grid-template-columns:1fr}
+  .vcard{padding:22px}
+  .foot__g{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(28,27,25,.95);backdrop-filter:blur(10px);border-top:1px solid var(--dline)}
+  body{padding-bottom:72px}
+  .toast{bottom:88px}
+}
+@media (max-width:420px){.opts{grid-template-columns:1fr}.hero__facts{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#builder">More builder examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Oakline Builders, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="3" fill="#2A2825"/><path d="M6 19L20 8l14 11" fill="none" stroke="#D08A47" stroke-width="3.2" stroke-linecap="square"/><path d="M11 32V21h18v11" fill="none" stroke="#F3EDE3" stroke-width="2"/><path d="M14.5 25.5c3-1.5 8-1.5 11 0M14.5 29c3-1.2 8-1.2 11 0" stroke="#D08A47" stroke-width="1.6" fill="none"/></svg>
+      <span><b>OAKLINE</b><small>BUILDERS</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Before &amp; after</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#process">How we work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn--t" href="#quote">Get a quote</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="mono">Builders · Roofers · Painters · Since 2003</span>
+      <h1><span class="w">Built</span> <span class="w" style="animation-delay:.08s">properly.</span><br><em class="w" style="animation-delay:.18s">Finished</em> <em class="w" style="animation-delay:.26s">beautifully.</em></h1>
+      <p class="lede">Extensions, loft conversions, roofs and paintwork across Hollowell and the valley. One team from first sketch to final coat, a fixed quote you can hold us to, and a 10-year guarantee on structural work.</p>
+      <div class="hero__cta">
+        <a class="btn btn--t" href="#quote">Request a quote<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--l" href="#projects">See before &amp; after</a>
+      </div>
+      <div class="hero__facts">
+        <div><b><span data-count="340">340</span>+</b><span>projects finished</span></div>
+        <div><b><span data-count="22">22</span> yrs</b><span>in the valley</span></div>
+        <div><b><span data-count="4.9" data-dec="1">4.9</span>/5</b><span>from 210 clients</span></div>
+      </div>
+    </div>
+    <div class="plan">
+      <div class="plan__img"><img id="heroImg" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1300&q=70&auto=format&fit=crop" alt="A finished timber-clad house extension by Oakline" width="1300" height="1430"></div>
+      <svg class="dim" viewBox="0 0 600 640" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="28" y1="10" x2="572" y2="10"/><path d="M28 2v16M572 2v16"/>
+        <text x="300" y="2" text-anchor="middle">8.40 m</text>
+        <line x1="590" y1="28" x2="590" y2="612"/><path d="M582 28h16M582 612h16"/>
+        <text x="598" y="320" transform="rotate(90 598 320)" text-anchor="middle">6.10 m</text>
+      </svg>
+      <div class="stamp"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="c" d="M60 60m-48 0a48 48 0 1 1 96 0a48 48 0 1 1-96 0"/></defs><text font-size="10.5" font-family="JetBrains Mono,monospace" letter-spacing="3" fill="#fff"><textPath href="#c">GUARANTEED · STRUCTURAL WORK · </textPath></text></svg><span><b>10</b>years</span></div>
+    </div>
+  </div>
+  <div class="marq" aria-hidden="true"><div class="marq__row">
+    <span>Rear extensions</span><span>Loft conversions</span><span>Roofing &amp; leadwork</span><span>Painting &amp; decorating</span><span>Kitchens &amp; joinery</span><span>Garden rooms</span>
+    <span>Rear extensions</span><span>Loft conversions</span><span>Roofing &amp; leadwork</span><span>Painting &amp; decorating</span><span>Kitchens &amp; joinery</span><span>Garden rooms</span>
+  </div></div>
+</section>
+
+<!-- services -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono">01 · Services &amp; prices</span><h2>What we build, and <em>roughly</em> what it costs</h2></div><p>Guide prices from recent jobs, including materials and VAT. Every project gets a free site visit and a written, fixed quote.</p></div>
+    <div class="ruler" aria-hidden="true"></div>
+    <div class="svc">
+      <article class="svc__i rv"><span class="svc__n">01</span><div><h3>House extensions</h3><p>Single or double storey, kitchen-diners and wrap-arounds. Drawings, permits and build in one contract.</p></div><div class="svc__p"><small>from</small><b>€38,000</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">02</span><div><h3>Loft conversions</h3><p>Dormer or roof-light lofts with a proper staircase, insulation and en-suite options.</p></div><div class="svc__p"><small>from</small><b>€29,500</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">03</span><div><h3>Roof repairs</h3><p>Slipped tiles, leaks, flashing and gutters fixed, with photos of what we found.</p></div><div class="svc__p"><small>from</small><b>€350</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">04</span><div><h3>Full re-roof</h3><p>Strip, new battens and membrane, tiles or slate, leadwork and a 15-year roof warranty.</p></div><div class="svc__p"><small>from</small><b>€9,800</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">05</span><div><h3>Interior painting</h3><p>Walls, ceilings and woodwork, with filling, sanding and dust sheets everywhere. Priced per room.</p></div><div class="svc__p"><small>per room from</small><b>€320</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">06</span><div><h3>Exterior painting</h3><p>Window frames, fascias and render, with scaffold, repairs and two coats of weatherproof paint.</p></div><div class="svc__p"><small>from</small><b>€2,400</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">07</span><div><h3>Kitchens &amp; joinery</h3><p>Fitted kitchens, built-in wardrobes and staircases made in our own workshop.</p></div><div class="svc__p"><small>from</small><b>€6,500</b></div></article>
+      <article class="svc__i rv"><span class="svc__n">08</span><div><h3>Garden rooms</h3><p>Insulated timber studios and offices with power, ready to use in three weeks.</p></div><div class="svc__p"><small>from</small><b>€14,900</b></div></article>
+    </div>
+    <p class="svc__note rv">Guide prices only. Your fixed quote follows the free site visit and doesn't change unless you change the plan.</p>
+  </div>
+</section>
+
+<!-- before / after -->
+<section class="sec sec--d" id="projects">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono" style="color:var(--oak)">02 · Before &amp; after</span><h2>Drag the line. <em>See the difference.</em></h2></div><p>Three recent jobs, photographed from the same spot at the start and on handover day.</p></div>
+    <div class="ba__tabs rv" role="tablist" aria-label="Choose a project"></div>
+    <div class="ba rv">
+      <div class="ba__stage" id="baStage">
+        <img id="baAfter" alt="" width="1600" height="1000">
+        <div class="ba__before"><img id="baBefore" alt="" width="1600" height="1000"></div>
+        <span class="ba__lab ba__lab--b mono">Before</span><span class="ba__lab ba__lab--a mono">After</span>
+        <div class="ba__line"><span class="ba__knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+        <input class="ba__range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Slide to compare before and after">
+        <span class="ba__hint" id="baHint">← Drag to compare →</span>
+      </div>
+      <div class="ba__info" id="baInfo" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- gallery -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono">03 · Project gallery</span><h2>Recent work around <em>the valley</em></h2></div><p>Filter by type of job. Every photo is one of ours (well, in this concept, every photo is a stand-in).</p></div>
+    <div class="filt rv" id="filt" aria-label="Filter projects"></div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<!-- process -->
+<section class="sec sec--d" id="process">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono" style="color:var(--oak)">04 · How we work</span><h2>No surprises, <em>from sketch to keys</em></h2></div><p>Five clear stages, one project lead, and a photo update in your inbox every Friday.</p></div>
+    <div class="proc__wrap">
+      <div class="proc__img"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=70&auto=format&fit=crop" alt="Architectural drawings being marked up with a pencil" loading="lazy" width="900" height="1200"></div>
+      <div class="proc" id="proc">
+        <div class="proc__line" aria-hidden="true"><span class="proc__fill" id="procFill"></span></div>
+        <div class="step"><span class="step__n">1</span><div><h3>Free site visit</h3><p>We come round, measure up, listen to what you want and tell you honestly what's realistic for your budget.</p></div><span class="step__t">Week 1</span></div>
+        <div class="step"><span class="step__n">2</span><div><h3>Drawings &amp; fixed quote</h3><p>Plans from our in-house designer and a line-by-line quote. The price is fixed; only changes you ask for change it.</p></div><span class="step__t">Week 2–3</span></div>
+        <div class="step"><span class="step__n">3</span><div><h3>Permits &amp; planning</h3><p>We handle the permit application, structural calculations and the neighbours' letters.</p></div><span class="step__t">4–8 weeks</span></div>
+        <div class="step"><span class="step__n">4</span><div><h3>The build</h3><p>One crew from start to finish, a tidy site every evening and a Friday photo report so you always know where we are.</p></div><span class="step__t">On schedule</span></div>
+        <div class="step"><span class="step__n">5</span><div><h3>Snagging &amp; handover</h3><p>We walk through every detail with you, fix the snag list, and hand over keys, certificates and the guarantee.</p></div><span class="step__t">Handover</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- quote stepper -->
+<section class="sec sec--p2" id="quote">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono">05 · Request a quote</span><h2>Tell us about <em>your project</em></h2></div><p>Four short steps. We reply within one working day to book your free site visit.</p></div>
+    <form class="qs rv" id="qs" novalidate>
+      <aside class="qs__rail">
+        <span class="mono" style="color:var(--oak)">Your request</span>
+        <ol id="qsRail"><li class="cur"><i>1</i><span>Type of project</span></li><li><i>2</i><span>Size &amp; scope</span></li><li><i>3</i><span>Timing &amp; budget</span></li><li><i>4</i><span>Your details</span></li></ol>
+        <div class="est" aria-live="polite">Guide price<b id="qsEst">Pick a project</b><span id="qsEstN">Based on similar recent jobs.</span></div>
+      </aside>
+      <div class="qs__main">
+        <div class="qs__p on" data-p="1">
+          <h3>What would you like built?</h3><p>Choose the main job. You can mention extras later.</p>
+          <div class="opts" id="qsType">
+            <button type="button" class="opt" data-v="Extension" data-m="1650"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 20h20M4 20V10l6-5 6 5v10M16 13h5v7"/></svg><b>Extension</b><small>Add space at ground level</small></button>
+            <button type="button" class="opt" data-v="Loft conversion" data-m="1350"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 20h18M5 20V11l7-7 7 7v9M10 12h4v3h-4z"/></svg><b>Loft conversion</b><small>Use the space upstairs</small></button>
+            <button type="button" class="opt" data-v="Roofing" data-m="95"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 13L12 4l10 9M5 11v9h14v-9M8 14h8M8 17h8"/></svg><b>Roofing</b><small>Repair or full re-roof</small></button>
+            <button type="button" class="opt" data-v="Painting" data-m="28"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="15" height="6" rx="1"/><path d="M18 6h3v5h-9v3M11 14h2v7h-2z"/></svg><b>Painting</b><small>Inside or outside</small></button>
+            <button type="button" class="opt" data-v="Kitchen or joinery" data-m="620"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="10" width="18" height="10"/><path d="M3 14h18M9 10v10M6 4h12v3H6z"/></svg><b>Kitchen / joinery</b><small>Made in our workshop</small></button>
+            <button type="button" class="opt" data-v="Garden room" data-m="1100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9l9-5 9 5v11H3zM8 20v-6h8v6"/></svg><b>Garden room</b><small>Studio or office</small></button>
+          </div>
+        </div>
+        <div class="qs__p" data-p="2">
+          <h3>How big is it?</h3><p>A rough figure is fine. We'll measure properly on the visit.</p>
+          <div class="f"><label for="qsSize" id="qsSizeL">Approximate floor area</label><div class="size"><input type="range" id="qsSize" min="5" max="80" value="20" aria-describedby="qsSizeO"><output id="qsSizeO" for="qsSize">20 m²</output></div></div>
+          <div class="f"><label for="qsSpec">Finish level</label><select id="qsSpec"><option value="1">Standard: solid, good-quality materials</option><option value="1.18" selected>Premium: better glazing, oak, underfloor heating</option><option value="1.4">Bespoke: architect-led, high-end details</option></select></div>
+        </div>
+        <div class="qs__p" data-p="3">
+          <h3>When, and what budget?</h3><p>This helps us plan the crew and suggest the right options.</p>
+          <div class="f2">
+            <div class="f"><label for="qsWhen">Ideal start</label><select id="qsWhen"><option>As soon as possible</option><option selected>In 1–3 months</option><option>In 3–6 months</option><option>Just exploring</option></select></div>
+            <div class="f"><label for="qsBudget">Budget range</label><select id="qsBudget"><option>Under €10,000</option><option>€10,000 – €30,000</option><option selected>€30,000 – €60,000</option><option>€60,000+</option><option>Not sure yet</option></select></div>
+          </div>
+          <div class="f"><label for="qsNote">Anything else? (optional)</label><textarea id="qsNote" placeholder="e.g. we'd love a bigger kitchen with doors to the garden"></textarea></div>
+        </div>
+        <div class="qs__p" data-p="4">
+          <h3>Where can we reach you?</h3><p>We'll call to book the free site visit. No sales calls, ever.</p>
+          <div class="f2">
+            <div class="f"><label for="qsName">Name</label><input id="qsName" autocomplete="name" required></div>
+            <div class="f"><label for="qsTel">Phone</label><input id="qsTel" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="f2">
+            <div class="f"><label for="qsMail">Email</label><input id="qsMail" type="email" autocomplete="email"></div>
+            <div class="f"><label for="qsPc">Postcode</label><input id="qsPc" autocomplete="postal-code"></div>
+          </div>
+        </div>
+        <div class="qs__p" data-p="5">
+          <h3>Thank you. Here's what you sent.</h3><p>This is a demo, so nothing was sent. On the real site, Pieter would call you within one working day.</p>
+          <dl class="recap" id="qsRecap"></dl>
+          <button type="button" class="btn btn--o" id="qsAgain" style="margin-top:14px">Start again</button>
+        </div>
+        <div class="qs__nav" id="qsNav">
+          <button type="button" class="btn btn--o" id="qsBack" disabled>Back</button>
+          <button type="button" class="btn btn--d" id="qsNext" disabled>Next step<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- about -->
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="about__imgs rv">
+      <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1000&q=70&auto=format&fit=crop" alt="An Oakline carpenter cutting timber in the workshop" loading="lazy" width="1000" height="1100">
+      <img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=700&q=70&auto=format&fit=crop" alt="Builder standing on a timber roof frame" loading="lazy" width="700" height="700">
+    </div>
+    <div class="rv">
+      <span class="mono" style="color:var(--timber)">06 · About Oakline</span>
+      <h2 style="font-size:clamp(34px,4.2vw,56px);margin:16px 0 24px">A family firm that still <em style="font-weight:400;color:var(--timber)">sweeps up</em></h2>
+      <p>Pieter started Oakline in 2003 with a van, a mitre saw and a habit of measuring everything twice. Twenty-two years on we're a crew of eighteen: bricklayers, carpenters, roofers and painters who've mostly worked together for over a decade.</p>
+      <p>We take on about fifteen projects a year, so the person who quotes your job is the person who runs it. Our own joinery workshop on Mill Yard makes the staircases, windows and kitchens you won't find in a catalogue.</p>
+      <p class="sig">Pieter de Wolde, founder</p>
+      <div class="badges"><span>Registered master builder</span><span>€5M public liability</span><span>10-yr structural guarantee</span><span>FSC timber only</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="sec sec--p2" id="reviews">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono">07 · Reviews</span><h2>Clients, <em>in their own words</em></h2></div><p>Rated 4.9 out of 5 from 210 reviews. Three of the latest:</p></div>
+    <div class="revs">
+      <article class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><p>"Our kitchen extension came in on budget and two days early. The Friday photo updates meant we could relax on holiday while the walls went up."</p><footer><b>Hannah &amp; Joost V.</b>Rear extension · Church Lane</footer></article>
+      <article class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><p>"They found rot in the old roof and showed us photos before doing anything. New roof, new gutters, garden left spotless. Couldn't fault them."</p><footer><b>Marcus O.</b>Full re-roof · Upper Hollowell</footer></article>
+      <article class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><p>"Three painters, five rooms, one week, and not a drop of paint on the floors. The finish on the woodwork is better than when the house was new."</p><footer><b>Ingrid S.</b>Interior painting · The Orchards</footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="sec" id="faq">
+  <div class="wrap faq__grid">
+    <div class="rv"><span class="mono" style="color:var(--timber)">08 · Questions</span><h2 style="font-size:clamp(34px,4.2vw,56px);margin-top:16px">Asked <em style="font-weight:400;color:var(--timber)">a lot</em></h2><p style="color:var(--mut);margin-top:18px;max-width:34ch">Something else? Call Pieter on 030 555 0192, he's happy to talk it through.</p></div>
+    <div class="rv" id="faq">
+      <div class="qa"><button aria-expanded="false">Is the quote really fixed?<i aria-hidden="true"></i></button><div class="qa__a"><div><p>Yes. After the site visit and drawings you get a line-by-line quote. That price only changes if you change the plan, and any change is priced and signed off by you before we do it.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Do you handle permits and planning?<i aria-hidden="true"></i></button><div class="qa__a"><div><p>We do it all: drawings, structural calculations, the permit application and the neighbour notices. Most extensions in Hollowell need four to eight weeks for a permit.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Can we stay in the house during the build?<i aria-hidden="true"></i></button><div class="qa__a"><div><p>Almost always. We build the new part first and only break through at the end, usually for two or three days. We seal off dust and keep a working kitchen corner for you where we can.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">How far ahead are you booked?<i aria-hidden="true"></i></button><div class="qa__a"><div><p>Large projects usually start 8 to 12 weeks after you sign. Roof repairs and painting jobs can often be fitted in within two weeks.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">How do payments work?<i aria-hidden="true"></i></button><div class="qa__a"><div><p>A 10% deposit to book the start date, then stage payments tied to finished milestones (foundations, roof on, plastered, handover). Never money upfront for work that isn't done.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- visit + contact -->
+<section class="sec sec--d" id="contact">
+  <div class="wrap">
+    <div class="head rv"><div><span class="mono" style="color:var(--oak)">09 · Visit &amp; contact</span><h2>Come by <em>the yard</em></h2></div><p>See samples of brick, tiles, timber and paint colours in our showroom on Mill Yard.</p></div>
+    <div class="visit">
+      <div class="vcard rv">
+        <h3>Oakline Builders</h3>
+        <p style="color:#CFC6B8">Mill Yard 6, 7421 BD Hollowell<br><a href="tel:+31305550192" style="color:#fff">030 555 0192</a> · <a href="mailto:build@oakline.example" style="color:#fff">build@oakline.example</a></p>
+        <ul class="hours" id="hours"></ul>
+        <div class="mapph" role="img" aria-label="Map placeholder showing Mill Yard, Hollowell">
+          <svg viewBox="0 0 400 210" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="210" fill="#2A2825"/><g stroke="#3A3733" stroke-width="1"><path d="M0 30h400M0 60h400M0 90h400M0 120h400M0 150h400M0 180h400M40 0v210M80 0v210M120 0v210M160 0v210M200 0v210M240 0v210M280 0v210M320 0v210M360 0v210"/></g><path d="M0 140C100 120 160 160 260 130S360 100 400 110" stroke="#4A6B7A" stroke-width="14" fill="none"/><path d="M0 70l400 20M180 0l30 210" stroke="#4A4640" stroke-width="10"/><rect x="186" y="78" width="40" height="24" fill="#C27A3E" opacity=".4"/><circle cx="206" cy="92" r="7" fill="#D08A47"/></svg>
+          <span>Mill Yard 6</span>
+        </div>
+      </div>
+      <form class="vcard rv" id="cbForm" novalidate>
+        <h3>Ask a question</h3>
+        <p style="color:#A99F91;margin-bottom:18px">Prefer a quick chat first? Leave your number and we'll call you back today.</p>
+        <div class="f"><label for="cbName">Name</label><input id="cbName" autocomplete="name" required></div>
+        <div class="f"><label for="cbTel">Phone</label><input id="cbTel" type="tel" autocomplete="tel" required></div>
+        <div class="f"><label for="cbMsg">Your question</label><textarea id="cbMsg"></textarea></div>
+        <button class="btn btn--t" style="width:100%">Request a call back</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__g">
+      <div>
+        <a class="brand" href="#top" aria-label="Oakline Builders, back to top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="3" fill="#2A2825"/><path d="M6 19L20 8l14 11" fill="none" stroke="#D08A47" stroke-width="3.2" stroke-linecap="square"/><path d="M11 32V21h18v11" fill="none" stroke="#F3EDE3" stroke-width="2"/><path d="M14.5 25.5c3-1.5 8-1.5 11 0M14.5 29c3-1.2 8-1.2 11 0" stroke="#D08A47" stroke-width="1.6" fill="none"/></svg><span><b>OAKLINE</b><small>BUILDERS</small></span></a>
+        <p style="margin-top:16px;max-width:30ch">Extensions, roofing, painting and joinery in Hollowell and the valley since 2003.</p>
+        <div class="soc">
+          <a href="#" aria-label="Oakline on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="Oakline on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="#" aria-label="Oakline on Pinterest"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.9 1.6 1.9 1.9 0 3.3-2 3.3-4.8 0-2.5-1.8-4.3-4.4-4.3-3 0-4.8 2.3-4.8 4.6 0 .9.4 1.9.8 2.4l.1.4-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.2-2.6-2.2-4.2 0-3.4 2.5-6.6 7.2-6.6 3.8 0 6.7 2.7 6.7 6.3 0 3.7-2.4 6.8-5.7 6.8-1.1 0-2.2-.6-2.5-1.3l-.7 2.6c-.3 1-.9 2.2-1.4 2.9A10 10 0 1 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Extensions &amp; lofts</a></li><li><a href="#services">Roofing</a></li><li><a href="#services">Painting</a></li><li><a href="#services">Kitchens &amp; joinery</a></li></ul></div>
+      <div><h4>Office &amp; showroom</h4><ul><li>Mon–Fri 07:30–17:00</li><li>Sat 09:00–12:00 (showroom)</li><li>Sun closed</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+31305550192">030 555 0192</a></li><li><a href="mailto:build@oakline.example">build@oakline.example</a></li><li>Mill Yard 6, Hollowell</li></ul></div>
+    </div>
+    <div class="foot__b"><span>Oakline Builders is a fictional company, a concept by <a href="/" style="color:#fff">SiteQuest Studio</a>.</span><span>Want a site like this? <a href="/" style="color:#fff">sitequest.studio</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a class="btn btn--l" href="tel:+31305550192">Call</a>
+  <a class="btn btn--t" href="#quote">Get a quote</a>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+document.documentElement.classList.add("js");
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ph=(id,w=1400)=>`https://images.unsplash.com/photo-${id}?w=${w}&q=70&auto=format&fit=crop`;
+const eur=n=>"€"+(Math.round(n/100)*100).toLocaleString("en-US");
+let tT;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),3200)}
+
+/* before / after */
+const BA=[
+ {t:"Rear extension",b:"1785585508606-36e0b82f4887",a:"1600566753190-17f0baa2a6c3",fx:false,h:"Timber-frame rear extension",p:"A cramped back room turned into a 32 m² open kitchen-diner with a timber-clad façade, sliding glass doors and a flat sedum roof.",d:[["Location","Church Lane"],["Size","32 m²"],["Duration","14 weeks"],["Budget","€71,000"]],ba:"Timber frame going up on week 4",aa:"Finished timber-clad extension on handover day"},
+ {t:"Living room repaint",b:"1618221195710-dd6b41faaea6",a:"1618221195710-dd6b41faaea6",fx:true,h:"Living room &amp; hallway repaint",p:"Yellowed walls and tired woodwork filled, sanded and repainted in a warm off-white. Two painters, four days, furniture moved and returned.",d:[["Location","The Orchards"],["Rooms","3"],["Duration","4 days"],["Price","€1,480"]],ba:"The living room with dull, yellowed paint",aa:"The same living room freshly painted in warm white"},
+ {t:"Kitchen refit",b:"1484154218962-a197022b5858",a:"1484154218962-a197022b5858",fx:true,h:"Kitchen refit &amp; joinery",p:"New workshop-made cabinets, quartz worktops and pendant lighting, with the old wall taken out to open up to the dining area.",d:[["Location","Upper Hollowell"],["Size","18 m²"],["Duration","5 weeks"],["Budget","€24,500"]],ba:"The old dark kitchen before the refit",aa:"The bright new kitchen after the refit"}
+];
+const tabs=$(".ba__tabs"),stage=$("#baStage"),range=$("#baRange");
+tabs.innerHTML=BA.map((p,i)=>`<button role="tab" aria-selected="${i===0}" data-i="${i}">${p.t}</button>`).join("");
+function setX(v){stage.style.setProperty("--x",v+"%")}
+function showBA(i){
+  const p=BA[i];
+  $("#baBefore").src=ph(p.b);$("#baAfter").src=ph(p.a);$("#baBefore").alt=p.ba;$("#baAfter").alt=p.aa;
+  $("#baBefore").classList.toggle("fx",p.fx);
+  $("#baInfo").innerHTML=`<span class="mono" style="color:var(--oak)">Project ${String(i+1).padStart(2,"0")} / 03</span><h3>${p.h}</h3><p>${p.p}</p><dl>${p.d.map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join("")}</dl>`;
+  $$(".ba__tabs button").forEach(b=>b.setAttribute("aria-selected",+b.dataset.i===i));
+  if(!REDUCED){let v=50,t0=performance.now();(function sw(t){const k=Math.min(1,(t-t0)/1100);v=50+Math.sin(k*Math.PI*2)*18*(1-k);setX(v);range.value=v;if(k<1)requestAnimationFrame(sw)})(t0)}else{setX(50);range.value=50}
+}
+tabs.addEventListener("click",e=>{const b=e.target.closest("button");if(b)showBA(+b.dataset.i)});
+range.addEventListener("input",()=>{setX(range.value);$("#baHint").style.opacity=0});
+showBA(0);setX(50);
+
+/* gallery */
+const G=[
+ ["ext","1600566753190-17f0baa2a6c3","Timber-clad extension","Church Lane"],
+ ["paint","1562259949-e8e7689d7828","Fresh coat, sharp lines","Interior painting"],
+ ["roof","1632759145351-1d592919f522","Re-roof in progress","Brookside"],
+ ["ext","1508450859948-4e04fabaa4ea","Two-storey frame","Mill Road"],
+ ["kitchen","1556911220-bff31c812dba","Workshop-made kitchen","The Orchards"],
+ ["paint","1586023492125-27b2c045efd7","Living room, calm tones","Hollowell Park"],
+ ["roof","1635424710928-0544e8512eae","New shingle roof","Upper Hollowell"],
+ ["ext","1600585154340-be6161a56a0c","Glass &amp; timber wing","Oak Avenue"],
+ ["paint","1513694203232-719a280e022f","Studio flat refresh","Station Street"],
+ ["roof","1624397640148-949b1732bb0a","Roof with integrated solar","Kings Row"],
+ ["kitchen","1484154218962-a197022b5858","Open-plan kitchen","Upper Hollowell"],
+ ["ext","1580587771525-78b9dba3b914","New-build villa","Lakeside"]
+];
+const CATS=[["all","All projects"],["ext","Extensions"],["paint","Painting"],["roof","Roofing"],["kitchen","Kitchens"]];
+$("#filt").innerHTML=CATS.map((c,i)=>`<button aria-pressed="${i===0}" data-c="${c[0]}">${c[1]} <span>${c[0]==="all"?G.length:G.filter(g=>g[0]===c[0]).length}</span></button>`).join("");
+const TALL=[0,3,6,9];
+$("#gal").innerHTML=G.map((g,i)=>`<figure data-c="${g[0]}" class="${TALL.includes(i)?"tall":""}"><img src="${ph(g[1],800)}" alt="${g[2].replace("&amp;","and")}, ${g[3]}" loading="lazy" width="800" height="1000"><figcaption><b>${g[2]}</b>${g[3]}</figcaption></figure>`).join("");
+$("#filt").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;const c=b.dataset.c;
+  $$("#filt button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  $$("#gal figure").forEach((f,i)=>{f.classList.toggle("tall",c==="all"&&TALL.includes(i));const show=c==="all"||f.dataset.c===c;if(show&&f.classList.contains("hide")){f.classList.remove("hide");f.classList.add("enter");requestAnimationFrame(()=>requestAnimationFrame(()=>f.classList.remove("enter")))}else if(!show)f.classList.add("hide")});
+});
+
+/* process timeline */
+const proc=$("#proc"),fill=$("#procFill"),stepsEl=$$(".step");
+function procUpdate(){
+  const r=proc.getBoundingClientRect(),mid=innerHeight*.6;
+  const p=Math.max(0,Math.min(1,(mid-r.top)/r.height));
+  fill.style.setProperty("--p",p.toFixed(3));
+  stepsEl.forEach(s=>{const sr=s.getBoundingClientRect();s.classList.toggle("on",sr.top+28<mid)});
+}
+let pk=0;addEventListener("scroll",()=>{if(pk)return;pk=requestAnimationFrame(()=>{pk=0;procUpdate()})},{passive:true});procUpdate();
+
+/* quote stepper */
+const S={type:null,step:1};
+const panes=$$(".qs__p"),rail=$$("#qsRail li");
+function estimate(){
+  if(!S.type){$("#qsEst").textContent="Pick a project";return}
+  const m=+S.type.dataset.m,a=+$("#qsSize").value,x=+$("#qsSpec").value;
+  const base=S.type.dataset.v==="Roofing"?m*a*2.4:m*a*x;
+  $("#qsEst").textContent=`${eur(base*.88)} – ${eur(base*1.15)}`;
+  $("#qsEstN").textContent=`${S.type.dataset.v}, about ${a} m²`;
+}
+function ok(){
+  if(S.step===1)return!!S.type;
+  if(S.step===4)return $("#qsName").value.trim().length>1&&$("#qsTel").value.replace(/\D/g,"").length>=8;
+  return S.step<5;
+}
+function goQ(n){
+  S.step=n;panes.forEach(p=>p.classList.toggle("on",+p.dataset.p===n));
+  rail.forEach((l,i)=>{l.classList.toggle("cur",i===n-1);l.classList.toggle("ok",i<n-1)});
+  $("#qsBack").disabled=n===1;$("#qsNav").style.display=n===5?"none":"flex";
+  $("#qsNext").firstChild.textContent=n===4?"Send request":"Next step";
+  $("#qsNext").disabled=!ok();
+  if(n===5){
+    const rows=[["Project",S.type.dataset.v],["Size",$("#qsSize").value+" m²"],["Finish",$("#qsSpec").selectedOptions[0].text.split(":")[0]],["Start",$("#qsWhen").value],["Budget",$("#qsBudget").value],["Guide price",$("#qsEst").textContent],["Name",$("#qsName").value]];
+    $("#qsRecap").innerHTML=rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1].replace(/</g,"&lt;")}</dd>`).join("");
+    toast("Demo only: nothing was sent");
+  }
+}
+$("#qsType").addEventListener("click",e=>{
+  const o=e.target.closest(".opt");if(!o)return;
+  $$("#qsType .opt").forEach(x=>x.setAttribute("aria-pressed",x===o));S.type=o;
+  const v=o.dataset.v,sz=$("#qsSize");
+  if(v==="Roofing"){sz.max=200;sz.value=Math.max(sz.value,60);$("#qsSizeL").textContent="Approximate roof area"}
+  else if(v==="Painting"){sz.max=250;sz.value=Math.max(sz.value,40);$("#qsSizeL").textContent="Approximate wall area to paint"}
+  else{sz.max=80;sz.value=Math.min(sz.value,40);$("#qsSizeL").textContent="Approximate floor area"}
+  $("#qsSizeO").textContent=sz.value+" m²";estimate();$("#qsNext").disabled=false;
+  setTimeout(()=>{if(S.step===1)goQ(2)},REDUCED?0:280);
+});
+$("#qsSize").addEventListener("input",e=>{$("#qsSizeO").textContent=e.target.value+" m²";estimate()});
+$("#qsSpec").addEventListener("change",estimate);
+["#qsName","#qsTel"].forEach(s=>$(s).addEventListener("input",()=>$("#qsNext").disabled=!ok()));
+$("#qsNext").addEventListener("click",()=>{if(ok())goQ(S.step+1)});
+$("#qsBack").addEventListener("click",()=>goQ(Math.max(1,S.step-1)));
+$("#qsAgain").addEventListener("click",()=>{S.type=null;$("#qs").reset();$$("#qsType .opt").forEach(x=>x.setAttribute("aria-pressed","false"));$("#qsSizeO").textContent="20 m²";$("#qsEstN").textContent="Based on similar recent jobs.";estimate();goQ(1)});
+$("#qs").addEventListener("submit",e=>e.preventDefault());
+
+/* faq */
+$$(".qa button").forEach(b=>b.addEventListener("click",()=>{
+  const q=b.parentElement,on=!q.classList.contains("on");
+  $$(".qa").forEach(x=>{x.classList.remove("on");x.querySelector("button").setAttribute("aria-expanded","false")});
+  if(on){q.classList.add("on");b.setAttribute("aria-expanded","true")}
+}));
+
+/* hours */
+const H=[["Monday","07:30–17:00"],["Tuesday","07:30–17:00"],["Wednesday","07:30–17:00"],["Thursday","07:30–17:00"],["Friday","07:30–17:00"],["Saturday","09:00–12:00"],["Sunday","Closed"]];
+const td=(new Date().getDay()+6)%7;
+$("#hours").innerHTML=H.map((h,i)=>`<li class="${i===td?"today":""}"><span>${h[0]}</span><span>${h[1]}</span></li>`).join("");
+
+$("#cbForm").addEventListener("submit",e=>{e.preventDefault();const f=e.target,bad=[...f.querySelectorAll("[required]")].find(i=>!i.value.trim());if(bad){bad.focus();toast("Please add your name and phone number");return}f.reset();toast("Demo only: nothing was sent. Thanks!")});
+
+/* counters + reveal */
+function count(el){const to=+el.dataset.count,dec=+(el.dataset.dec||0),t0=performance.now(),d=REDUCED?1:1500;setTimeout(()=>fin(el),d+80);(function f(t){const p=Math.min(1,(t-t0)/d),v=to*(1-Math.pow(1-p,3));el.textContent=dec?v.toFixed(dec):Math.round(v).toLocaleString("en-US");if(p<1)requestAnimationFrame(f)})(t0)}
+const fin=el=>{const to=+el.dataset.count,dec=+(el.dataset.dec||0);el.textContent=dec?to.toFixed(dec):to.toLocaleString("en-US");el.dataset.done=1};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");if(e.target.dataset.count&&!e.target.dataset.done)count(e.target);e.target.querySelectorAll("[data-count]:not([data-done])").forEach(count);io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px"});
+$$(".rv").forEach(el=>io.observe(el));$$("[data-count]").forEach(el=>{if(!el.closest(".rv"))io.observe(el)});
+function revealVisible(){$$(".rv:not(.in)").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){el.classList.add("in","now");io.unobserve(el)}});$$("[data-count]:not([data-done])").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){fin(el);io.unobserve(el)}})}
+revealVisible();addEventListener("load",()=>{revealVisible();procUpdate()});
+
+/* hero parallax */
+if(!REDUCED){const img=$("#heroImg");let hk=0;addEventListener("scroll",()=>{if(hk)return;hk=requestAnimationFrame(()=>{hk=0;if(scrollY<1000)img.style.transform=`translateY(${-scrollY*.06}px)`})},{passive:true})}
+</script>
+</body>
+</html>

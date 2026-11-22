@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MoveWell · Physio &amp; massage in Riverside</title>
+<meta name="description" content="MoveWell: physiotherapy, sports and deep tissue massage and 1:1 rehab in Riverside. Book online, no referral needed. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#F6F8F4">
+<meta property="og:title" content="MoveWell · Physio & massage in Riverside">
+<meta property="og:description" content="Physiotherapy, massage and rehab. Book online, no referral needed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232F4A3A'/%3E%3Cpath d='M14 42c6-14 12-20 18-20s12 6 18 20' fill='none' stroke='%23CFE0D1' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='16' r='5' fill='%23E3A47F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F8F4; --white:#FFFFFF; --mist:#E9F0EA; --sage:#7E9C86; --sage-2:#A9C2AF; --sage-3:#CFE0D1;
+  --pine:#2F4A3A; --ink:#1D2B23; --muted:#5D6D63; --clay:#D9906B; --clay-2:#F4E1D5; --line:#DCE5DD;
+  --f-d:"Newsreader", Georgia, serif; --f-b:"Manrope", system-ui, sans-serif;
+  --r:22px; --shadow:0 24px 60px -30px rgba(29,43,35,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-b);overflow-x:hidden}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--clay);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.hero__grid>*,.map>*,.book>*,.visit>*,.row>*{min-width:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:var(--f-d);font-weight:400;letter-spacing:-.01em;line-height:1.08}
+em{font-style:italic;color:var(--sage)}
+
+.concept{background:var(--pine);color:var(--sage-3);font-size:13px;text-align:center;padding:8px 16px;line-height:1.45}
+.concept a{color:#fff;font-weight:600}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(246,248,244,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-color:var(--line)}
+.nav__in{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{font:500 25px/1 var(--f-d);letter-spacing:-.02em;color:var(--pine)}
+.logo b i{color:var(--sage);font-style:italic}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{text-decoration:none;font-weight:500;font-size:15px;color:var(--muted);transition:color .2s}
+.nav__links a:hover{color:var(--pine)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .25s,background .25s,box-shadow .25s,color .25s;white-space:nowrap}
+.btn--main{background:var(--pine);color:#fff}
+.btn--main:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(47,74,58,.8)}
+.btn--soft{background:var(--white);color:var(--pine);border:1px solid var(--line)}
+.btn--soft:hover{border-color:var(--sage)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{padding:64px 0 90px;position:relative;overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+.hero h1{font-size:clamp(46px,6.6vw,86px);margin:18px 0 22px;color:var(--pine)}
+.hero__lede{font-size:clamp(17px,1.4vw,19px);color:var(--muted);max-width:46ch}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:42px;padding-top:28px;border-top:1px solid var(--line)}
+.trust div{font-size:14px;color:var(--muted)}
+.trust b{display:block;font:500 30px/1 var(--f-d);color:var(--pine);margin-bottom:4px}
+.visual{position:relative;justify-self:center;width:100%;max-width:500px;aspect-ratio:4/5}
+.breath{position:absolute;inset:-8% -10%;display:grid;place-items:center;z-index:0}
+.breath i{position:absolute;width:100%;aspect-ratio:1;border-radius:50%;border:1px solid var(--sage-2);animation:breathe 8s ease-in-out infinite;opacity:.6}
+.breath i:nth-child(2){width:80%;animation-delay:-2.6s;background:radial-gradient(circle,rgba(207,224,209,.55),transparent 70%)}
+.breath i:nth-child(3){width:60%;animation-delay:-5.2s}
+@keyframes breathe{0%,100%{transform:scale(.88);opacity:.35}50%{transform:scale(1.04);opacity:.8}}
+.arch{position:relative;z-index:1;width:100%;height:100%;border-radius:999px 999px var(--r) var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--sage-3)}
+.arch img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.float{position:absolute;z-index:2;background:var(--white);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);font-size:13.5px;line-height:1.35;animation:bob 7s ease-in-out infinite}
+.float b{display:block;font-size:15px;color:var(--pine)}
+.float--a{left:-8%;bottom:16%;display:flex;gap:12px;align-items:center}
+.float--a .dot{width:12px;height:12px;border-radius:50%;background:#3FA36B;box-shadow:0 0 0 0 rgba(63,163,107,.5);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(63,163,107,0)}100%{box-shadow:0 0 0 0 rgba(63,163,107,0)}}
+.float--b{right:-6%;top:12%;animation-delay:-3.5s;background:var(--clay-2)}
+.stars{color:var(--clay);letter-spacing:2px}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* sections */
+section{scroll-margin-top:84px}
+.sec{padding:100px 0}
+.sec--white{background:var(--white)}
+.sec--mist{background:var(--mist)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head h2{font-size:clamp(38px,4.6vw,60px);color:var(--pine);max-width:16ch;margin-top:12px}
+.head p{max-width:42ch;color:var(--muted)}
+
+/* treatments */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{min-height:44px;padding:10px 20px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:14.5px;color:var(--muted);background:var(--paper);transition:all .25s}
+.filters button[aria-pressed=true]{background:var(--pine);color:#fff;border-color:var(--pine)}
+.treats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.treat{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s,opacity .3s}
+.treat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.treat.hide{display:none}
+.treat__img{aspect-ratio:16/10;overflow:hidden;background:var(--sage-3)}
+.treat__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.treat:hover .treat__img img{transform:scale(1.05)}
+.treat__body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.treat__tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage)}
+.treat h3{font-size:27px;color:var(--pine);margin:6px 0 8px}
+.treat p{color:var(--muted);font-size:15px;flex:1}
+.opts{list-style:none;margin-top:16px;border-top:1px dashed var(--line)}
+.opts li{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.opts li span{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+.opts li span svg{width:16px;height:16px;color:var(--sage)}
+.opts li b{font:500 22px/1 var(--f-d);color:var(--pine)}
+.treat__book{margin-top:16px;align-self:flex-start;font-weight:600;color:var(--pine);display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.treat__book:hover{color:var(--clay)}
+.treat__book svg{width:16px;height:16px;transition:transform .25s}
+.treat__book:hover svg{transform:translateX(4px)}
+
+/* body map */
+.map{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.body{position:relative;background:var(--white);border-radius:32px;padding:30px 20px 24px;box-shadow:var(--shadow);max-width:440px;width:100%;justify-self:center}
+.side{display:flex;background:var(--mist);border-radius:999px;padding:4px;width:max-content;margin:0 auto 14px}
+.side button{min-height:40px;padding:8px 20px;border-radius:999px;font-weight:600;font-size:14px;color:var(--muted);transition:all .25s}
+.side button[aria-pressed=true]{background:var(--white);color:var(--pine);box-shadow:0 4px 14px -6px rgba(29,43,35,.3)}
+.fig{position:relative;width:min(240px,70%);margin:0 auto;aspect-ratio:200/440}
+.fig svg{width:100%;height:100%}
+.fig .limb{stroke:var(--sage-3);fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fig .mass{fill:var(--sage-3)}
+.fig .spine{stroke:var(--sage-2);stroke-width:2;stroke-dasharray:3 5;fill:none;opacity:0;transition:opacity .4s}
+.fig.back .spine{opacity:1}
+.hot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;display:grid;place-items:center}
+.hot::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--clay);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);transition:transform .25s}
+.hot::after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;border:2px solid var(--clay);animation:ring 2.4s ease-out infinite;pointer-events:none}
+.hot:hover::before{transform:scale(1.25)}
+.hot[aria-pressed=true]::before{background:var(--pine);transform:scale(1.35)}
+.hot[aria-pressed=true]::after{border-color:var(--pine)}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.8);opacity:0}}
+.hot[hidden]{display:none}
+.hint{text-align:center;font-size:13px;color:var(--muted);margin-top:10px}
+.advice{background:var(--white);border-radius:var(--r);padding:30px;border:1px solid var(--line);min-height:330px;display:flex;flex-direction:column}
+.advice__empty{margin:auto;text-align:center;color:var(--muted);max-width:30ch}
+.advice__empty svg{display:block;width:56px;height:56px;color:var(--sage-2);margin:0 auto 14px}
+.advice__area{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--clay)}
+.advice h3{font-size:34px;color:var(--pine);margin:6px 0 10px}
+.advice p{color:var(--muted)}
+.rec{display:flex;gap:16px;align-items:center;margin:22px 0;padding:16px;border-radius:18px;background:var(--mist)}
+.rec__ico{width:52px;height:52px;flex:none;border-radius:14px;background:var(--pine);display:grid;place-items:center;color:var(--sage-3)}
+.rec__ico svg{width:26px;height:26px}
+.rec small{display:block;color:var(--muted);font-size:13px}
+.rec b{font-size:17px;color:var(--pine)}
+.rec__price{margin-left:auto;text-align:right;font:500 26px/1 var(--f-d);color:var(--pine)}
+.rec__price small{font-family:var(--f-b)}
+.tip{display:flex;gap:10px;font-size:14.5px;color:var(--muted);margin-bottom:22px}
+.tip svg{flex:none;width:20px;height:20px;color:var(--sage);margin-top:2px}
+.advice .note{font-size:12.5px;margin-top:auto;padding-top:18px;color:var(--muted)}
+.swap{animation:swapIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes swapIn{from{opacity:0;transform:translateY(10px)}}
+
+/* insurance */
+.ins{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--white);border-radius:var(--r);padding:28px;border:1px solid var(--line)}
+.card__ico{width:48px;height:48px;border-radius:14px;background:var(--clay-2);color:var(--clay);display:grid;place-items:center;margin-bottom:18px}
+.card__ico svg{width:24px;height:24px}
+.card h3{font-size:25px;color:var(--pine);margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.cover{margin-top:24px;background:var(--white);border-radius:var(--r);border:1px solid var(--line);overflow:hidden}
+.cover table{width:100%;border-collapse:collapse;font-size:15px}
+.cover th,.cover td{text-align:left;padding:16px 22px;border-bottom:1px solid var(--line)}
+.cover th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--paper)}
+.cover tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12.5px;font-weight:700}
+.pill--y{background:#DDEFE2;color:#24613C}
+.pill--m{background:var(--clay-2);color:#8A4A28}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.person{text-align:left}
+.person__img{aspect-ratio:4/5;border-radius:999px 999px var(--r) var(--r);overflow:hidden;background:var(--sage-3);margin-bottom:16px}
+.person__img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);transition:transform .8s,filter .5s}
+.person:hover .person__img img{transform:scale(1.04);filter:saturate(1)}
+.person h3{font-size:25px;color:var(--pine)}
+.person small{display:block;color:var(--clay);font-weight:600;font-size:13.5px;margin:2px 0 8px}
+.person p{color:var(--muted);font-size:14.5px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px}
+.gal figure{border-radius:var(--r);overflow:hidden;position:relative;background:var(--sage-3)}
+.gal figure:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--pine)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--paper);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--line)}
+.rev blockquote{font:400 21px/1.4 var(--f-d);color:var(--pine)}
+.rev footer{margin-top:auto;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.rev footer i{width:40px;height:40px;border-radius:50%;background:var(--sage-3);display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--pine)}
+.rev footer b{display:block;color:var(--ink)}
+
+/* booking */
+.book{display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:start}
+.panel{background:var(--white);border-radius:28px;padding:32px;border:1px solid var(--line)}
+.step{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.step:last-of-type{border:0;margin-bottom:8px}
+.step h3{font:600 15px/1.2 var(--f-b);display:flex;align-items:center;gap:10px;margin-bottom:14px;color:var(--pine)}
+.step h3 i{width:26px;height:26px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-style:normal;font-size:13px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13.5px;font-weight:600;color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--paper);transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 4px rgba(126,156,134,.2)}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.day{flex:none;width:68px;min-height:72px;border:1px solid var(--line);border-radius:16px;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12.5px;color:var(--muted);transition:all .2s}
+.day b{font:500 24px/1 var(--f-d);color:var(--pine)}
+.day[aria-pressed=true]{background:var(--pine);border-color:var(--pine);color:var(--sage-3)}
+.day[aria-pressed=true] b{color:#fff}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin-top:14px}
+.time{min-height:44px;border:1px solid var(--line);border-radius:12px;font-weight:600;font-size:14.5px;background:var(--paper);transition:all .2s}
+.time:hover:not(:disabled){border-color:var(--sage)}
+.time:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.time[aria-pressed=true]{background:var(--clay);border-color:var(--clay);color:#fff}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--muted);margin-top:14px;font-weight:500}
+.check input{width:20px;min-height:20px;height:20px;margin-top:2px;accent-color:var(--pine)}
+.sum{position:sticky;top:96px;background:var(--pine);color:var(--sage-3);border-radius:28px;padding:28px}
+.sum h3{font-size:30px;color:#fff;margin-bottom:18px}
+.sum dl{display:grid;gap:12px;font-size:14.5px}
+.sum dl div{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(207,224,209,.18)}
+.sum dt{opacity:.8}
+.sum dd{color:#fff;font-weight:600;text-align:right}
+.sum__total{display:flex;justify-content:space-between;align-items:end;margin:20px 0}
+.sum__total b{font:500 44px/1 var(--f-d);color:#fff}
+.sum .btn{width:100%;background:var(--clay);color:#fff}
+.sum .btn:hover{transform:translateY(-2px)}
+.sum p{font-size:12.5px;margin-top:14px;opacity:.8}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;padding:22px 0;font:400 23px/1.3 var(--f-d);color:var(--pine);min-height:44px}
+.qa button span{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .35s,background .3s}
+.qa button[aria-expanded=true] span{transform:rotate(45deg);background:var(--mist)}
+.qa__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.qa__a>div{overflow:hidden}
+.qa__a p{padding:0 0 22px;color:var(--muted);max-width:64ch}
+.qa.open .qa__a{grid-template-rows:1fr}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.hours{list-style:none;margin:18px 0 26px}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+.hours li.today{color:var(--pine);font-weight:700}
+.hours li.today span::after{content:" · today";color:var(--clay);font-weight:600}
+.mapbox{position:relative;border-radius:28px;overflow:hidden;min-height:380px;background:#E4ECE4}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:56%;top:44%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin b{background:var(--pine);color:#fff;padding:8px 14px;border-radius:12px;font-size:14px;white-space:nowrap;box-shadow:var(--shadow)}
+.pin i{width:16px;height:16px;background:var(--pine);transform:rotate(45deg);margin-top:-9px}
+.pin::after{content:"";width:22px;height:8px;border-radius:50%;background:rgba(0,0,0,.18);margin-top:4px}
+.mapbox a{position:absolute;right:16px;bottom:16px}
+
+/* footer */
+.foot{background:var(--ink);color:#B8C7BC;padding:70px 0 120px;font-size:14.5px}
+.foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot .logo b{color:#fff}
+.foot h4{color:#fff;font-weight:600;margin-bottom:12px;font-size:15px}
+.foot ul{list-style:none;display:grid;gap:6px}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff}
+.social{display:flex;gap:10px;margin-top:18px}
+.social a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;transition:background .2s}
+.social a:hover{background:rgba(255,255,255,.08)}
+.social svg{width:18px;height:18px}
+.foot__base{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:24px;z-index:90;background:var(--pine);color:#fff;padding:14px 22px;border-radius:999px;font-weight:600;box-shadow:var(--shadow);transform:translate(-50%,150%);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.3,1.4,.4,1),opacity .3s,visibility 0s .45s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .45s cubic-bezier(.3,1.4,.4,1),opacity .3s}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+@media (max-width:1000px){
+  .nav__links{display:none}
+  .hero__grid,.map,.book,.visit{grid-template-columns:1fr}
+  .visual{max-width:420px}
+  .treats,.ins,.revs{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .sum{position:static}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .sec{padding:72px 0}
+  .hero{padding:36px 0 64px}
+  .nav__in{height:64px}
+  .nav .btn{display:none}
+  .treats,.ins,.revs{grid-template-columns:1fr}
+  .team{gap:14px}
+  .person h3{font-size:21px}
+  .person p{display:none}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:200px 150px 150px}
+  .gal figure:first-child{grid-column:span 2;grid-row:auto}
+  .row{grid-template-columns:1fr}
+  .panel{padding:22px}
+  .float--a{left:0}.float--b{right:0}
+  .cover th:nth-child(3),.cover td:nth-child(3){display:none}
+  .cover th,.cover td{padding:14px}
+  .foot__grid{grid-template-columns:1fr}
+  .rec{flex-wrap:wrap}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(246,248,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mbar .btn{width:100%}
+  .toast{bottom:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#massage">More physio &amp; massage examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="#top" aria-label="MoveWell home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="20" fill="#2F4A3A"/><path d="M13 43c6-13 12-19 19-19s13 6 19 19" fill="none" stroke="#CFE0D1" stroke-width="5.5" stroke-linecap="round"/><path d="M21 43c3-7 7-10 11-10s8 3 11 10" fill="none" stroke="#7E9C86" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="15" r="5" fill="#D9906B"/></svg>
+      <b>Move<i>Well</i></b>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#where">Where it hurts</a></li>
+      <li><a href="#insurance">Insurance</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn--main" href="#book">Book appointment</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="eyebrow rv">Physio · Massage · Rehab</span>
+      <h1 class="rv d1">Move freely,<br><em>feel like you</em> again.</h1>
+      <p class="hero__lede rv d2">Hands-on physiotherapy and massage in the heart of Riverside. We find the cause, treat it properly and give you a plan you can actually stick to. No referral needed.</p>
+      <div class="hero__cta rv d3">
+        <a class="btn btn--main" href="#book">Book an appointment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--soft" href="#where">Where does it hurt?</a>
+      </div>
+      <div class="trust rv d3">
+        <div><b data-count="4.9" data-dec="1">4.9</b>from 610 reviews</div>
+        <div><b data-count="12">12</b>years in Riverside</div>
+        <div><b data-count="48">48</b>hrs to a first visit</div>
+      </div>
+    </div>
+    <div class="visual rv d2">
+      <div class="breath" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="arch"><img id="heroImg" src="https://images.unsplash.com/photo-1706353399656-210cca727a33?w=1600&q=70&auto=format&fit=crop" alt="Physiotherapist treating a patient's shoulder on a treatment table" width="1000" height="1250"></div>
+      <div class="float float--a"><span class="dot" aria-hidden="true"></span><div><b>Next free slot</b><span id="nextSlot">Today, 16:30</span></div></div>
+      <div class="float float--b"><span class="stars" aria-hidden="true">★★★★★</span><b>“Back to running in 6 weeks”</b>Ellie R.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--white" id="treatments">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">Treatments &amp; prices</span><h2 class="rv d1">Care that fits <em>your</em> body.</h2></div>
+      <p class="rv d2">Every first visit starts with a proper assessment. Prices include a personal home-exercise plan in our app.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filter treatments">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button aria-pressed="false" data-f="physio">Physio</button>
+      <button aria-pressed="false" data-f="massage">Massage</button>
+      <button aria-pressed="false" data-f="rehab">Rehab</button>
+    </div>
+    <div class="treats" id="treats"></div>
+  </div>
+</section>
+
+<section class="sec" id="where">
+  <div class="wrap map">
+    <div>
+      <span class="eyebrow rv">Where does it hurt?</span>
+      <h2 class="rv d1" style="font-size:clamp(38px,4.6vw,60px);color:var(--pine);margin:12px 0 16px">Tap the spot. <em>We’ll suggest</em> where to start.</h2>
+      <p class="rv d2" style="color:var(--muted);max-width:44ch;margin-bottom:28px">Not sure what to book? Choose the area that bothers you and we’ll point you to the treatment most people start with. You can always change it at your first visit.</p>
+      <div class="advice rv d2" id="advice" aria-live="polite">
+        <div class="advice__empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M9 11.5V5a1.5 1.5 0 0 1 3 0v6M12 10V3.5a1.5 1.5 0 0 1 3 0V10M15 10V5.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-.5a6 6 0 0 1-5-2.7L3 14.5a1.6 1.6 0 0 1 2.6-1.8L9 15.5"/></svg>
+          Tap a dot on the body to see our suggestion.
+        </div>
+      </div>
+    </div>
+    <div class="body rv d1">
+      <div class="side" role="group" aria-label="Body side">
+        <button aria-pressed="true" data-side="front">Front</button>
+        <button aria-pressed="false" data-side="back">Back</button>
+      </div>
+      <div class="fig" id="fig">
+        <svg viewBox="0 0 200 440" aria-hidden="true">
+          <ellipse class="mass" cx="100" cy="38" rx="25" ry="29"/>
+          <rect class="mass" x="88" y="62" width="24" height="26" rx="10"/>
+          <path class="mass" d="M60 92 Q100 80 140 92 Q150 96 150 112 L144 196 Q142 232 138 252 L62 252 Q58 232 56 196 L50 112 Q50 96 60 92Z"/>
+          <polyline class="limb" stroke-width="21" points="58,102 42,170 34,236"/>
+          <polyline class="limb" stroke-width="21" points="142,102 158,170 166,236"/>
+          <polyline class="limb" stroke-width="29" points="82,246 79,340 77,418"/>
+          <polyline class="limb" stroke-width="29" points="118,246 121,340 123,418"/>
+          <path class="spine" d="M100 70 V240"/>
+        </svg>
+      </div>
+      <p class="hint">Dots pulse where you can tap.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--mist" id="insurance">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">Insurance &amp; costs</span><h2 class="rv d1">Clear about costs, <em>before</em> you come in.</h2></div>
+      <p class="rv d2">We work with all major health insurers. Not insured for physio? Our prices are fixed and shown upfront.</p>
+    </div>
+    <div class="ins">
+      <article class="card rv"><div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Covered by most plans</h3><p>Physio is reimbursed by most supplementary policies, usually 9 to 18 sessions a year. We check your plan for free when you book.</p></article>
+      <article class="card rv d1"><div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><h3>We bill your insurer</h3><p>With most insurers we send the invoice directly, so you never pay upfront. For massage you get a receipt you can claim yourself.</p></article>
+      <article class="card rv d2"><div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg></div><h3>No referral needed</h3><p>Come straight to us. If we think you need a doctor or a scan, we’ll tell you and write to your GP for you.</p></article>
+    </div>
+    <div class="cover rv">
+      <table>
+        <caption class="sr">What is usually covered</caption>
+        <thead><tr><th>Treatment</th><th>Usually covered?</th><th>How it works</th></tr></thead>
+        <tbody>
+          <tr><td>Physiotherapy &amp; dry needling</td><td><span class="pill pill--y">Yes, supplementary plan</span></td><td>We bill your insurer directly</td></tr>
+          <tr><td>Shockwave therapy</td><td><span class="pill pill--y">Yes, as physio session</span></td><td>We bill your insurer directly</td></tr>
+          <tr><td>Rehab &amp; Pilates 1:1</td><td><span class="pill pill--m">Sometimes</span></td><td>Depends on your plan, we check</td></tr>
+          <tr><td>Sports, deep tissue &amp; pregnancy massage</td><td><span class="pill pill--m">Some plans</span></td><td>Receipt to claim yourself</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--white" id="team">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">Our team</span><h2 class="rv d1">Four specialists, <em>one plan</em>.</h2></div>
+      <p class="rv d2">Hannah opened MoveWell in a single room above the bakery in 2014. Today we’re four, and we still talk about every patient together.</p>
+    </div>
+    <div class="team">
+      <article class="person rv"><div class="person__img"><img loading="lazy" src="https://images.unsplash.com/photo-1696960190602-7389f3b24a22?w=800&q=70&auto=format&fit=crop" alt="Portrait of Hannah Clarke" width="600" height="750"></div><h3>Hannah Clarke</h3><small>Founder · Physiotherapist</small><p>Back and neck pain, desk workers, the stubborn cases. 15 years of hands-on experience.</p></article>
+      <article class="person rv d1"><div class="person__img"><img loading="lazy" src="https://images.unsplash.com/photo-1789757099501-2b221a98f9ea?w=800&q=70&auto=format&fit=crop" alt="Portrait of Tom Reyes" width="600" height="750"></div><h3>Tom Reyes</h3><small>Sports physio · Dry needling</small><p>Runners, footballers and weekend warriors. Gets you back to your sport, not just out of pain.</p></article>
+      <article class="person rv d2"><div class="person__img"><img loading="lazy" src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&q=70&auto=format&fit=crop" alt="Portrait of Mira Okafor" width="600" height="750"></div><h3>Mira Okafor</h3><small>Massage therapist</small><p>Sports, deep tissue and pregnancy massage. Firm hands, calm room, no small talk unless you want it.</p></article>
+      <article class="person rv d3"><div class="person__img"><img loading="lazy" src="https://images.unsplash.com/photo-1732166946438-90d000cd032a?w=800&q=70&auto=format&fit=crop" alt="Portrait of Jonas Berg" width="600" height="750"></div><h3>Jonas Berg</h3><small>Rehab &amp; Pilates coach</small><p>Turns your exercise plan into strength that lasts. Post-surgery rehab and clinical Pilates.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">The practice</span><h2 class="rv d1">Light, quiet, <em>unhurried</em>.</h2></div>
+      <p class="rv d2">Three private treatment rooms and a small exercise studio, step-free from the street.</p>
+    </div>
+    <div class="gal rv">
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=1600&q=70&auto=format&fit=crop" alt="Physiotherapist assessing a patient's knee" width="1200" height="900"><figcaption>Treatment room 1</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1761971975651-4fdd4abc200f?w=800&q=70&auto=format&fit=crop" alt="Bright exercise studio with mats" width="600" height="450"><figcaption>Studio</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1787651343496-35b3666dd7d2?w=800&q=70&auto=format&fit=crop" alt="Calm massage room with a made-up table" width="600" height="450"></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=800&q=70&auto=format&fit=crop" alt="Rehab exercise with light dumbbells" width="600" height="450"></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=70&auto=format&fit=crop" alt="Massage therapist working on a client's back" width="600" height="450"><figcaption>Massage</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--white">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow rv">Reviews</span><h2 class="rv d1">What patients <em>say</em>.</h2></div><p class="rv d2"><span class="stars">★★★★★</span> 4.9 average from 610 reviews.</p></div>
+    <div class="revs">
+      <figure class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“Two other places just massaged my knee. Tom found it was my hip. Six weeks later I ran my first 10K.”</blockquote><footer><i aria-hidden="true">ER</i><span><b>Ellie R.</b>Runner, knee pain</span></footer></figure>
+      <figure class="rev rv d1"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“Booked online at 10pm, seen the next morning. Hannah explained everything and I finally sleep without neck pain.”</blockquote><footer><i aria-hidden="true">MK</i><span><b>Marcus K.</b>Office worker</span></footer></figure>
+      <figure class="rev rv d2"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“Mira’s pregnancy massage was the best hour of my third trimester. Calm, kind and so careful.”</blockquote><footer><i aria-hidden="true">SL</i><span><b>Sofia L.</b>Pregnancy massage</span></footer></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--mist" id="book">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow rv">Book online</span><h2 class="rv d1">Pick a time that <em>suits you</em>.</h2></div><p class="rv d2">Free cancellation up to 24 hours before. Prefer to talk? Call <a href="tel:+15550142">(555) 0142</a>.</p></div>
+    <form class="book" id="bookForm" novalidate>
+      <div class="panel rv">
+        <div class="step">
+          <h3><i>1</i>Treatment &amp; therapist</h3>
+          <div class="row">
+            <div><label for="bTreat">Treatment</label><select id="bTreat" name="treatment"></select></div>
+            <div><label for="bWho">Therapist</label><select id="bWho" name="therapist"><option>First available</option><option>Hannah Clarke</option><option>Tom Reyes</option><option>Mira Okafor</option><option>Jonas Berg</option></select></div>
+          </div>
+        </div>
+        <div class="step">
+          <h3><i>2</i>Day &amp; time</h3>
+          <div class="days" id="days" role="group" aria-label="Choose a day"></div>
+          <div class="times" id="times" role="group" aria-label="Choose a time"></div>
+        </div>
+        <div class="step">
+          <h3><i>3</i>Your details</h3>
+          <div class="row">
+            <div><label for="bName">Full name</label><input id="bName" name="name" autocomplete="name" required></div>
+            <div><label for="bPhone">Phone</label><input id="bPhone" name="phone" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div><label for="bMail">Email</label><input id="bMail" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="bIns">Insurance</label><select id="bIns" name="insurance"><option>I’ll pay myself</option><option>Supplementary plan (please check)</option><option>Not sure yet</option></select></div>
+          </div>
+          <div style="margin-top:14px"><label for="bNote">Anything we should know? <span style="font-weight:400">(optional)</span></label><textarea id="bNote" name="note" rows="3" placeholder="E.g. left knee hurts when running downhill"></textarea></div>
+          <label class="check"><input type="checkbox" name="first" checked> This is my first visit to MoveWell</label>
+        </div>
+      </div>
+      <aside class="sum rv d1" aria-label="Booking summary">
+        <h3>Your booking</h3>
+        <dl>
+          <div><dt>Treatment</dt><dd id="sTreat">—</dd></div>
+          <div><dt>Duration</dt><dd id="sDur">—</dd></div>
+          <div><dt>With</dt><dd id="sWho">First available</dd></div>
+          <div><dt>When</dt><dd id="sWhen">Choose a time</dd></div>
+        </dl>
+        <div class="sum__total"><span>Total</span><b id="sPrice">€0</b></div>
+        <button class="btn" type="submit">Confirm booking</button>
+        <p>Demo booking: nothing is sent or charged. Payment happens at the practice or via your insurer.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<section class="sec sec--white">
+  <div class="wrap">
+    <div class="head" style="justify-content:center;text-align:center"><div><span class="eyebrow rv">Questions</span><h2 class="rv d1" style="margin-inline:auto">Good to <em>know</em>.</h2></div></div>
+    <div class="faq" id="faq">
+      <div class="qa rv"><button aria-expanded="false">Do I need a referral from my doctor?<span aria-hidden="true">+</span></button><div class="qa__a"><div><p>No. You can book directly. During your first visit we run a short screening to make sure physio is the right choice, and we’ll refer you on if it isn’t.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">What should I wear?<span aria-hidden="true">+</span></button><div class="qa__a"><div><p>Something comfortable you can move in. For a knee or hip, shorts are handy. We have towels and a private changing area.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">How many sessions will I need?<span aria-hidden="true">+</span></button><div class="qa__a"><div><p>Most people need three to six. At the end of your first visit we give you an honest estimate and a written plan, so you know what to expect.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Can I cancel or move my appointment?<span aria-hidden="true">+</span></button><div class="qa__a"><div><p>Yes, free of charge up to 24 hours before. Use the link in your confirmation email or call us. Late cancellations are charged at 50%.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Is there parking?<span aria-hidden="true">+</span></button><div class="qa__a"><div><p>Two free spaces in front of the practice and a public car park two minutes away. Bus 4 stops right outside at Linden Lane.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit">
+  <div class="wrap visit">
+    <div class="rv">
+      <span class="eyebrow">Visit us</span>
+      <h2 style="font-size:clamp(38px,4.6vw,56px);color:var(--pine);margin:12px 0 8px">14 Linden Lane,<br><em>Riverside</em></h2>
+      <p style="color:var(--muted)">Ground floor, step-free entrance. Two free parking spaces at the door.</p>
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Monday</span><b>07:30 – 20:00</b></li>
+        <li data-d="2"><span>Tuesday</span><b>07:30 – 20:00</b></li>
+        <li data-d="3"><span>Wednesday</span><b>07:30 – 20:00</b></li>
+        <li data-d="4"><span>Thursday</span><b>07:30 – 21:00</b></li>
+        <li data-d="5"><span>Friday</span><b>07:30 – 17:00</b></li>
+        <li data-d="6"><span>Saturday</span><b>09:00 – 13:00</b></li>
+        <li data-d="0"><span>Sunday</span><b>Closed</b></li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--main" href="tel:+15550142">Call (555) 0142</a><a class="btn btn--soft" href="mailto:hello@movewell.example">hello@movewell.example</a></div>
+    </div>
+    <div class="mapbox rv d1" role="img" aria-label="Map showing MoveWell on Linden Lane, next to Riverside Park">
+      <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="420" fill="#E4ECE4"/>
+        <path d="M-20 300 C120 260 200 340 340 300 S520 240 640 270 L640 440 L-20 440Z" fill="#CFE0EA"/>
+        <rect x="380" y="40" width="190" height="150" rx="18" fill="#CFE0D1"/>
+        <circle cx="430" cy="90" r="14" fill="#A9C2AF"/><circle cx="470" cy="130" r="18" fill="#A9C2AF"/><circle cx="520" cy="80" r="12" fill="#A9C2AF"/>
+        <g stroke="#fff" stroke-linecap="round" fill="none"><path d="M0 200 H600" stroke-width="22"/><path d="M330 0 V420" stroke-width="18"/><path d="M80 0 L200 420" stroke-width="12"/><path d="M0 90 H330" stroke-width="10"/></g>
+        <g fill="#D6E0D7"><rect x="100" y="110" width="80" height="60" rx="8"/><rect x="200" y="110" width="100" height="60" rx="8"/><rect x="220" y="225" width="80" height="50" rx="8"/><rect x="360" y="225" width="120" height="40" rx="8"/><rect x="10" y="110" width="60" height="70" rx="8"/></g>
+        <text x="20" y="194" font-family="Manrope,sans-serif" font-size="12" fill="#5D6D63">Linden Lane</text>
+        <text x="420" y="176" font-family="Manrope,sans-serif" font-size="12" fill="#5D6D63">Riverside Park</text>
+      </svg>
+      <div class="pin"><b>MoveWell</b><i></i></div>
+      <a class="btn btn--soft" href="#visit">Get directions</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="logo" href="#top" aria-label="MoveWell home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="20" fill="#7E9C86"/><path d="M13 43c6-13 12-19 19-19s13 6 19 19" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/><path d="M21 43c3-7 7-10 11-10s8 3 11 10" fill="none" stroke="#CFE0D1" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="15" r="5" fill="#D9906B"/></svg><b>Move<i>Well</i></b></a>
+        <p style="margin-top:14px;max-width:32ch">Physiotherapy, massage and rehab in Riverside since 2014.</p>
+        <div class="social">
+          <a href="#top" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#top" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></svg></a>
+          <a href="#top" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm4 6h4v2c.6-1.1 2-2.3 4-2.3 3.5 0 4 2.3 4 5.3v7h-4v-6c0-1.5 0-3.3-2-3.3s-2.3 1.6-2.3 3.2V21H10z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Visit</h4><ul><li>14 Linden Lane</li><li>Riverside</li><li><a href="tel:+15550142">(555) 0142</a></li><li><a href="mailto:hello@movewell.example">hello@movewell.example</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Mon–Wed 07:30–20:00</li><li>Thu 07:30–21:00</li><li>Fri 07:30–17:00</li><li>Sat 09:00–13:00</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#treatments">Treatments</a></li><li><a href="#where">Where it hurts</a></li><li><a href="#insurance">Insurance</a></li><li><a href="#book">Book online</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>© 2026 MoveWell Physio &amp; Massage</span><span>MoveWell is a fictional practice, a concept by <a href="/">SiteQuest Studio</a>.</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn--soft" href="tel:+15550142">Call</a><a class="btn btn--main" href="#book">Book appointment</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const U=(id,w=900)=>`https://images.unsplash.com/photo-${id}?w=${w}&q=70&auto=format&fit=crop`;
+const clock='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+const T=[
+ {id:"assess",cat:"physio",tag:"Physio",name:"Physio assessment",img:"1645005512968-0c1fe99f0093",alt:"Physiotherapist assessing a shoulder",desc:"A full first visit: we listen, test and treat, and you leave with a clear plan.",opts:[[45,68]]},
+ {id:"follow",cat:"physio",tag:"Physio",name:"Follow-up physio",img:"1649751361457-01d3a696c7e6",alt:"Hands-on knee treatment",desc:"Hands-on treatment, progress checks and updating your exercises.",opts:[[30,52]]},
+ {id:"sports",cat:"massage",tag:"Massage",name:"Sports massage",img:"1770653927355-2ba81c1522df",alt:"Massage gun used on a shoulder",desc:"Firm, targeted work for tight muscles, before an event or after a hard block.",opts:[[30,42],[60,70]]},
+ {id:"deep",cat:"massage",tag:"Massage",name:"Deep tissue massage",img:"1768507423533-b87b62769758",alt:"Therapist working deep into the back",desc:"Slow, deep pressure for long-standing tension in the back, neck and shoulders.",opts:[[60,72],[90,98]]},
+ {id:"relax",cat:"massage",tag:"Massage",name:"Relaxation massage",img:"1519823551278-64ac92734fb1",alt:"Calm full-body massage",desc:"Long, flowing strokes and warm oil. The whole hour is just for you.",opts:[[60,62],[90,88]]},
+ {id:"preg",cat:"massage",tag:"Massage",name:"Pregnancy massage",img:"1787651343496-35b3666dd7d2",alt:"Quiet massage room",desc:"Side-lying and safe from 12 weeks, with extra cushions and plenty of time.",opts:[[60,66]]},
+ {id:"needle",cat:"physio",tag:"Physio add-on",name:"Dry needling",img:"1586401100295-7a8096fd231a",alt:"Patient holding light weights",desc:"Fine needles to release stubborn trigger points. Added to a physio session.",opts:[[15,20]]},
+ {id:"shock",cat:"physio",tag:"Physio",name:"Shockwave therapy",img:"1706353399656-210cca727a33",alt:"Physio treating a patient on the table",desc:"For heel pain, tennis elbow and tendon problems that won’t settle.",opts:[[20,55]]},
+ {id:"rehab",cat:"rehab",tag:"Rehab",name:"Rehab & Pilates 1:1",img:"1645005513713-9e2b92a687d3",alt:"Rehab exercises with dumbbells",desc:"Coached strength work after injury or surgery, so the problem stays gone.",opts:[[45,58],[60,72]]}
+];
+const opt=(t,i)=>({t,dur:t.opts[i][0],price:t.opts[i][1]});
+
+// treatments
+$("#treats").innerHTML=T.map((t,i)=>`<article class="treat rv${i%3?" d"+(i%3):""}" data-cat="${t.cat}">
+  <div class="treat__img"><img loading="lazy" src="${U(t.img)}" alt="${t.alt}" width="800" height="500"></div>
+  <div class="treat__body"><span class="treat__tag">${t.tag}</span><h3>${t.name}</h3><p>${t.desc}</p>
+  <ul class="opts">${t.opts.map(o=>`<li><span>${clock}${o[0]} min</span><b>€${o[1]}</b></li>`).join("")}</ul>
+  <button class="treat__book" type="button" data-book="${t.id}">Book this ${arrow}</button></div></article>`).join("");
+$$(".filters button").forEach(b=>b.onclick=()=>{
+  $$(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  $$(".treat").forEach(c=>c.classList.toggle("hide",b.dataset.f!=="all"&&c.dataset.cat!==b.dataset.f));
+});
+
+// body map
+const AREAS={
+ head:{side:"front",x:100,y:30,label:"Head & jaw",title:"Tension headaches",text:"Headaches that start at the back of the neck or around the jaw are often muscular. A mix of hands-on treatment and posture work usually helps quickly.",treat:"assess",tip:"Note when the headaches start. Screens and stress are common triggers."},
+ neck:{side:"front",x:100,y:74,label:"Neck",title:"Stiff or sore neck",text:"Desk work, sleeping awkwardly or stress. We loosen it up and show you three exercises to keep it moving.",treat:"assess",tip:"Gentle movement beats rest. Try slow chin tucks every hour."},
+ shoulder:{side:"front",x:141,y:100,label:"Shoulder",title:"Shoulder pain",text:"Pain lifting your arm or lying on it is often the rotator cuff. It needs a proper test to find out which part.",treat:"assess",tip:"Avoid sleeping on the sore side until we’ve had a look."},
+ elbow:{side:"front",x:42,y:170,label:"Elbow & wrist",title:"Elbow or wrist strain",text:"Tennis or golfer’s elbow and wrist strain from typing or lifting. Tendon problems respond well to loading and shockwave.",treat:"shock",tip:"Ice for 10 minutes after use and keep your grip relaxed."},
+ hip:{side:"front",x:120,y:246,label:"Hip & groin",title:"Hip or groin pain",text:"Often linked to how you walk or run. We check the hip, the lower back and the way you move as a whole.",treat:"assess",tip:"Keep walking, but skip deep squats for now."},
+ knee:{side:"front",x:79,y:338,label:"Knee",title:"Knee pain",text:"Pain on stairs, running or kneeling. The cause is often above or below the knee, so we look at the whole leg.",treat:"assess",tip:"Swap downhill runs for flat routes for a week or two."},
+ ankle:{side:"front",x:123,y:410,label:"Ankle & foot",title:"Ankle or heel pain",text:"Sprains that never quite healed, or sharp heel pain first thing in the morning (plantar fasciitis).",treat:"shock",tip:"Roll your foot over a cold bottle for a few minutes each morning."},
+ nape:{side:"back",x:100,y:76,label:"Upper neck",title:"Neck & shoulder tension",text:"That knot between neck and shoulder blade. A deep tissue massage releases it; physio stops it coming back.",treat:"deep",tip:"Raise your screen to eye height. It makes more difference than you’d think."},
+ upper:{side:"back",x:118,y:128,label:"Upper back",title:"Upper back tightness",text:"Stiffness between the shoulder blades, common for desk workers, parents and cyclists.",treat:"deep",tip:"Every hour, squeeze your shoulder blades together ten times."},
+ lower:{side:"back",x:100,y:212,label:"Lower back",title:"Lower back pain",text:"The most common reason people come to us. Most back pain gets better with the right movement and a bit of hands-on help.",treat:"assess",tip:"Stay active. Bed rest makes most back pain last longer."},
+ ham:{side:"back",x:80,y:296,label:"Hamstring",title:"Tight or pulled hamstring",text:"Common in runners and footballers. Sports massage for tightness, physio and a loading plan for a strain.",treat:"sports",tip:"Don’t stretch hard on a fresh strain. Gentle walking is fine."},
+ calf:{side:"back",x:122,y:372,label:"Calf & Achilles",title:"Calf or Achilles pain",text:"Achilles pain that’s worst in the morning, or calves that cramp and knot. Loading exercises work wonders.",treat:"sports",tip:"Slow heel raises on a step, twice a day, are a great start."}
+};
+const fig=$("#fig");
+Object.entries(AREAS).forEach(([k,a])=>{const b=document.createElement("button");b.type="button";b.className="hot";b.dataset.k=k;b.dataset.side=a.side;b.style.left=a.x/2+"%";b.style.top=a.y/4.4+"%";b.setAttribute("aria-label",a.label);b.setAttribute("aria-pressed","false");b.hidden=a.side!=="front";b.style.animationDelay=Math.random()*-2+"s";fig.appendChild(b)});
+$$(".side button").forEach(b=>b.onclick=()=>{
+  $$(".side button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  fig.classList.toggle("back",b.dataset.side==="back");
+  $$(".hot").forEach(h=>h.hidden=h.dataset.side!==b.dataset.side);
+});
+fig.addEventListener("click",e=>{const h=e.target.closest(".hot");if(!h)return;
+  $$(".hot").forEach(x=>x.setAttribute("aria-pressed",x===h));
+  const a=AREAS[h.dataset.k],t=T.find(x=>x.id===a.treat),o=t.opts[t.opts.length>1?1:0];
+  $("#advice").innerHTML=`<div class="swap" style="display:flex;flex-direction:column;height:100%"><span class="advice__area">${a.label}</span><h3>${a.title}</h3><p>${a.text}</p>
+  <div class="rec"><div class="rec__ico">${clock}</div><div><small>We suggest starting with</small><b>${t.name}</b></div><div class="rec__price">€${o[1]}<br><small>${o[0]} min</small></div></div>
+  <p class="tip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg><span><b style="color:var(--pine)">Tip until then:</b> ${a.tip}</span></p>
+  <div><button class="btn btn--main" type="button" data-book="${t.id}">Book ${t.name.toLowerCase()} ${arrow}</button></div>
+  <p class="note">General guidance only, not a diagnosis. Sudden severe pain, numbness or pain after a fall? Call your GP first.</p></div>`;
+});
+
+// preselect a spot so the demo shows its result
+const k0=$('.hot[data-k="knee"]');if(k0)k0.click();
+
+// booking
+const sel=$("#bTreat");
+sel.innerHTML=T.flatMap(t=>t.opts.map((o,i)=>`<option value="${t.id}:${i}">${t.name} · ${o[0]} min · €${o[1]}</option>`)).join("");
+const days=$("#days"),times=$("#times");let pickDay=null,pickTime=null;
+const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const now=new Date();const list=[];for(let i=0;list.length<12;i++){const d=new Date(now);d.setDate(now.getDate()+i);if(d.getDay()!==0)list.push(d)}
+days.innerHTML=list.map((d,i)=>`<button type="button" class="day" data-i="${i}" aria-pressed="false" aria-label="${DN[d.getDay()]} ${d.getDate()} ${MN[d.getMonth()]}"><span>${d.toDateString()===now.toDateString()?"Today":DN[d.getDay()]}</span><b>${d.getDate()}</b><span>${MN[d.getMonth()]}</span></button>`).join("");
+function slotsFor(d){const sat=d.getDay()===6,end=sat?13:d.getDay()===5?17:20,out=[];for(let h=sat?9:8;h<end;h++)for(const m of[0,30]){const seed=(d.getDate()*31+h*7+m)%11;const past=d.toDateString()===now.toDateString()&&(h*60+m)<=now.getHours()*60+now.getMinutes()+60;out.push({t:`${String(h).padStart(2,"0")}:${m?"30":"00"}`,free:seed>4&&!past})}return out}
+function pickD(i){pickDay=list[i];pickTime=null;$$(".day").forEach(b=>b.setAttribute("aria-pressed",b.dataset.i==i));
+  times.innerHTML=slotsFor(pickDay).map(s=>`<button type="button" class="time" ${s.free?"":"disabled"} aria-pressed="false">${s.t}</button>`).join("");sum()}
+days.onclick=e=>{const b=e.target.closest(".day");if(b)pickD(+b.dataset.i)};
+times.onclick=e=>{const b=e.target.closest(".time");if(!b||b.disabled)return;pickTime=b.textContent;$$(".time").forEach(x=>x.setAttribute("aria-pressed",x===b));sum()};
+function sum(){const[id,i]=sel.value.split(":"),t=T.find(x=>x.id===id),o=t.opts[+i];
+  $("#sTreat").textContent=t.name;$("#sDur").textContent=o[0]+" min";$("#sPrice").textContent="€"+o[1];$("#sWho").textContent=$("#bWho").value;
+  $("#sWhen").textContent=pickDay?`${DN[pickDay.getDay()]} ${pickDay.getDate()} ${MN[pickDay.getMonth()]}${pickTime?", "+pickTime:""}`:"Choose a time"}
+sel.onchange=sum;$("#bWho").onchange=sum;pickD(0);
+for(const d of list){const f=slotsFor(d).find(s=>s.free);if(f){const isT=d.toDateString()===now.toDateString(),tm=new Date(now);tm.setDate(now.getDate()+1);$("#nextSlot").textContent=(isT?"Today":d.toDateString()===tm.toDateString()?"Tomorrow":DN[d.getDay()]+" "+d.getDate())+", "+f.t;break}}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-book]");if(!b)return;const t=T.find(x=>x.id===b.dataset.book);sel.value=t.id+":"+(t.opts.length>1?1:0);sum();$("#book").scrollIntoView({behavior:REDUCED?"auto":"smooth"});toast(`${t.name} selected. Now pick a time.`)});
+$("#bookForm").addEventListener("submit",e=>{e.preventDefault();
+  if(!pickTime){toast("Please choose a time first");return}
+  const n=$("#bName");if(!n.value.trim()){n.focus();toast("Please add your name");return}
+  toast("Demo only: nothing was sent. Thanks, "+n.value.trim().split(" ")[0]+"!");e.target.reset();pickD(0);sum()});
+
+// faq
+$$(".qa button").forEach(b=>b.onclick=()=>{const q=b.parentElement,open=!q.classList.contains("open");q.classList.toggle("open",open);b.setAttribute("aria-expanded",open)});
+
+// hours today
+const today=new Date().getDay();$$("#hours li").forEach(l=>l.classList.toggle("today",+l.dataset.d===today));
+
+// toast
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2800)}
+
+// nav border
+addEventListener("scroll",()=>$("#nav").classList.toggle("scrolled",scrollY>10),{passive:true});
+
+// counters
+function count(el){const to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0;if(REDUCED){el.textContent=to.toFixed(dec);return}
+  const s=performance.now();(function f(n){const p=Math.min((n-s)/1400,1),e=1-Math.pow(1-p,3);el.textContent=(to*e).toFixed(dec);if(p<1)requestAnimationFrame(f)})(s)}
+
+// reveal
+const rvs=$$(".rv");
+if(REDUCED||!("IntersectionObserver" in window)){rvs.forEach(r=>r.classList.add("in"));$$("[data-count]").forEach(count)}
+else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");$$("[data-count]",e.target).forEach(count);io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px"});
+  rvs.forEach(r=>io.observe(r));
+  requestAnimationFrame(()=>rvs.forEach(r=>{if(r.getBoundingClientRect().top<innerHeight){r.classList.add("in");$$("[data-count]",r).forEach(count);io.unobserve(r)}}))}
+
+// hero parallax
+const hi=$("#heroImg");if(!REDUCED){requestAnimationFrame(()=>hi.style.transform="scale(1.06)");addEventListener("scroll",()=>{if(scrollY<900)hi.style.transform=`scale(1.06) translateY(${scrollY*.06}px)`},{passive:true})}
+</script>
+</body>
+</html>

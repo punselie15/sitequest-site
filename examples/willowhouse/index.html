@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Willow House · Countryside bed &amp; breakfast</title>
+<meta name="description" content="The Willow House: a five-room countryside bed and breakfast with a farmhouse breakfast, walks from the door and direct booking at the best price. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#2F3A33">
+<meta property="og:title" content="The Willow House · Countryside B&B">
+<meta property="og:description" content="Five quiet rooms, a farmhouse breakfast and walks from the door. Book direct.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F3A33'/%3E%3Cpath d='M32 14v34' stroke='%23E9DFC9' stroke-width='3'/%3E%3Cpath d='M32 18c-8 2-12 10-13 22M32 18c8 2 12 10 13 22M32 22c-4 4-6 10-6 18M32 22c4 4 6 10 6 18' stroke='%23A9C08F' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M14 50h36' stroke='%23C9A46A' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;1,400;1,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --linen:#F3EEE4; --linen-2:#E9E1D2; --paper:#FBF9F4; --stone:#D7CDBA;
+  --forest:#2F3A33; --forest-2:#3F4C43; --willow:#8E9B7E; --willow-2:#C5CDB7;
+  --gold:#A9834C; --gold-2:#C9A46A; --ink:#262A25; --muted:#61655C; --line:rgba(47,58,51,.15);
+  --f-d:"Marcellus", Georgia, serif; --f-s:"EB Garamond", Georgia, serif; --f-b:"Figtree", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--linen);color:var(--ink);font:400 16.5px/1.7 var(--f-b);overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.kick{font:500 12px/1 var(--f-b);letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--f-d);font-weight:400;line-height:1.08}
+h2{font-size:clamp(38px,4.6vw,62px);margin-top:16px}
+.it{font-family:var(--f-s);font-style:italic}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold)}
+.rule::before,.rule::after{content:"";height:1px;background:currentColor;flex:1;opacity:.5}
+
+.concept{background:var(--forest);color:var(--linen);font-size:13px;text-align:center;padding:8px 16px;line-height:1.45}
+.concept a{color:var(--gold-2);font-weight:500}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(243,238,228,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav__in{display:flex;align-items:center;gap:30px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--forest)}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{display:block;font:400 22px/1 var(--f-d);letter-spacing:.06em}
+.brand small{display:block;font:italic 400 15px/1.2 var(--f-s);color:var(--gold);margin-top:3px}
+.nav__links{display:flex;gap:28px;margin-left:auto;list-style:none;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.nav__links a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav__links a:hover{color:var(--forest)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:13px 28px;font:500 14px var(--f-b);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--forest);transition:background .3s,color .3s,transform .3s}
+.btn--dark{background:var(--forest);color:var(--linen)}
+.btn--dark:hover{background:var(--gold);border-color:var(--gold)}
+.btn--line:hover{background:var(--forest);color:var(--linen)}
+.nav .btn{min-height:44px;padding:10px 20px}
+
+/* hero */
+.hero{position:relative;height:min(88vh,820px);min-height:600px;overflow:hidden;color:var(--paper);display:flex;align-items:flex-end}
+.hero__bg{position:absolute;inset:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;transform-origin:60% 40%;animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16) translate(-1.5%,1%)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,26,22,.15) 0%,rgba(20,26,22,.2) 40%,rgba(20,26,22,.78) 100%)}
+.hero__in{position:relative;z-index:2;margin-inline:auto;padding-bottom:150px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero h1{font-size:clamp(46px,7vw,100px);max-width:13ch;letter-spacing:.01em}
+.hero h1 .it{color:var(--gold-2)}
+.hero p{max-width:46ch;font-size:clamp(17px,1.5vw,20px);margin-top:18px;color:#EDE7DA}
+.hero .kick{color:var(--gold-2);display:inline-block;background:rgba(20,26,22,.62);padding:9px 14px;text-shadow:none;backdrop-filter:blur(4px)}
+.willow{position:absolute;right:-20px;top:-10px;width:min(420px,46vw);z-index:2;pointer-events:none;opacity:.45}
+.willow .br{transform-origin:top center;animation:swayb 7s ease-in-out infinite}
+.willow .br:nth-child(2n){animation-duration:9s;animation-delay:-2s}
+.willow .br:nth-child(3n){animation-duration:8s;animation-delay:-4s}
+@keyframes swayb{50%{transform:rotate(2.6deg)}}
+.bar{position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);width:min(1180px,100% - 32px);background:var(--paper);color:var(--ink);display:grid;grid-template-columns:repeat(3,1fr) auto;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.bar>div{padding:16px 24px;border-right:1px solid var(--line)}
+.bar label{display:block;font:500 11px var(--f-b);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.bar input,.bar select{width:100%;border:0;background:transparent;font:400 18px var(--f-s);padding:4px 0;min-height:36px}
+.bar .btn{height:100%;border:0;padding:0 34px}
+
+/* intro */
+.sec{padding:110px 0}
+section{scroll-margin-top:88px}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.intro p{color:var(--muted);margin-top:18px;max-width:52ch}
+.intro .lead{font:italic 400 26px/1.4 var(--f-s);color:var(--forest)}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:34px}
+.feat div{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.feat svg{flex:none;width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.intro__img{position:relative}
+.intro__img img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.intro__img .frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);z-index:-1}
+.stamp{position:absolute;left:-36px;bottom:40px;background:var(--forest);color:var(--linen);width:130px;height:130px;border-radius:50%;display:grid;place-items:center;text-align:center;font:400 13px/1.3 var(--f-d);letter-spacing:.08em}
+.stamp b{display:block;font:italic 400 40px/1 var(--f-s);color:var(--gold-2)}
+
+/* rooms */
+.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:34px}
+.room{background:var(--paper);display:flex;flex-direction:column;transition:box-shadow .4s,transform .4s}
+.room:hover{box-shadow:0 30px 60px -36px rgba(47,58,51,.5);transform:translateY(-4px)}
+.room__img{position:relative;overflow:hidden;aspect-ratio:3/2;background:var(--linen-2)}
+.room__img img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.room:hover .room__img img{transform:scale(1.05)}
+.room__price{position:absolute;right:0;bottom:0;background:var(--paper);padding:10px 18px;font:400 15px var(--f-b)}
+.room__price b{font:400 28px var(--f-d);color:var(--forest)}
+.room__b{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
+.room h3{font-size:30px}
+.room p{color:var(--muted);margin:10px 0 16px;flex:1}
+.amen{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;list-style:none}
+.amen li{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.room .btn{align-self:flex-start}
+
+/* booking */
+.book{background:var(--forest);color:var(--linen)}
+.book .kick{color:var(--gold-2)}
+.book h2 .it{color:var(--gold-2)}
+.bk>*,.bar>div,.bar input{min-width:0}
+.bk{display:grid;grid-template-columns:1.5fr 1fr;gap:34px;margin-top:44px;align-items:start}
+.cal{background:var(--paper);color:var(--ink);padding:26px}
+.cal__top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.cal__top select{flex:1;min-width:0;max-width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);background:var(--linen);font:400 17px var(--f-s)}
+.cal__nav{display:flex;gap:8px}
+.cal__nav button{width:44px;height:44px;border:1px solid var(--line);display:grid;place-items:center;font-size:18px;transition:background .2s}
+.cal__nav button:hover:not(:disabled){background:var(--linen-2)}
+.cal__nav button:disabled{opacity:.3;cursor:not-allowed}
+.months{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.month h4{font:400 20px var(--f-d);text-align:center;margin-bottom:10px;letter-spacing:.04em}
+.grid7{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}
+.grid7 .dow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:6px 0}
+.d{position:relative;aspect-ratio:1;min-height:36px;min-width:0;display:grid;place-items:center;font-size:15px;transition:background .15s,color .15s}
+.d:not(:disabled):hover{background:var(--linen-2)}
+.d:disabled{color:#B5AFA3;cursor:not-allowed}
+.d.booked{text-decoration:line-through;color:#B9A79A}
+.d.today::after{content:"";position:absolute;bottom:5px;width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.d.inr{background:var(--willow-2)}
+.d.st,.d.en{background:var(--forest)!important;color:var(--linen)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:6px}
+.sum{background:var(--forest-2);padding:28px;border-top:3px solid var(--gold)}
+.sum h3{font-size:28px}
+.sum dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;margin:18px 0;font-size:15px}
+.sum dt{color:var(--willow-2)}
+.sum dd{text-align:right}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(243,238,228,.2);padding-top:14px}
+.sum .tot b{font:400 40px var(--f-d);color:var(--gold-2)}
+.sum .hint{font:italic 400 18px var(--f-s);color:var(--willow-2);margin-top:4px;min-height:26px}
+.gst{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+.gst span{font-size:15px;color:var(--willow-2)}
+.stp{display:flex;align-items:center;gap:10px}
+.stp button{width:44px;height:44px;border:1px solid rgba(243,238,228,.35);font-size:20px;transition:background .2s}
+.stp button:hover{background:rgba(243,238,228,.1)}
+.stp output{min-width:24px;text-align:center;font:400 22px var(--f-d)}
+.sum .fld{margin-top:12px}
+.sum .fld label{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--willow-2);margin-bottom:6px}
+.sum input,.sum textarea{width:100%;min-height:46px;padding:10px 14px;background:transparent;border:1px solid rgba(243,238,228,.3);color:var(--linen)}
+.sum textarea{min-height:70px;resize:vertical}
+.sum .btn{width:100%;margin-top:18px;background:var(--gold);border-color:var(--gold);color:var(--paper)}
+.sum .btn:hover{background:var(--linen);color:var(--forest)}
+.sum .fine{font-size:12.5px;color:var(--willow-2);margin-top:10px;text-align:center}
+
+/* breakfast */
+.bf{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.bf__imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bf__imgs img{width:100%;object-fit:cover}
+.bf__imgs .tall{grid-row:span 2;height:100%;aspect-ratio:auto;min-height:440px}
+.bf__imgs .sq{aspect-ratio:1}
+.menu{list-style:none;margin-top:26px}
+.menu li{padding:14px 0;border-bottom:1px solid var(--line)}
+.menu b{font:400 22px var(--f-d)}
+.menu span{display:block;color:var(--muted);font-size:15px}
+.bf p{color:var(--muted);margin-top:16px}
+.times{display:inline-flex;gap:16px;margin-top:24px;padding:14px 20px;background:var(--paper);font-size:15px}
+.times b{font-family:var(--f-d);font-weight:400}
+
+/* area */
+.area{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tip{background:var(--paper);display:flex;flex-direction:column}
+.tip img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.tip .ic{aspect-ratio:4/3;display:grid;place-items:center;background:var(--willow-2)}
+.tip .ic svg{width:70px;height:70px;stroke:var(--forest);fill:none;stroke-width:1.2}
+.tip div.t{padding:20px 22px 24px}
+.tip .dist{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.tip h3{font-size:23px;margin:6px 0 8px}
+.tip p{font-size:15px;color:var(--muted)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:14px}
+.gal figure{overflow:hidden;background:var(--linen-2)}
+.gal figure:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.gal figure:hover img{transform:scale(1.06)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
+.rev .stars{color:var(--gold);letter-spacing:4px}
+.rev p{font:italic 400 23px/1.45 var(--f-s);margin:14px 0 18px;color:var(--forest)}
+.rev cite{font-style:normal;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.score{display:flex;justify-content:center;gap:40px;margin-top:56px;flex-wrap:wrap;text-align:center}
+.score b{display:block;font:400 44px/1 var(--f-d);color:var(--forest)}
+.score span{font-size:13px;color:var(--muted);letter-spacing:.06em}
+
+/* faq */
+.faq{max-width:820px;margin:48px auto 0}
+.q{border-top:1px solid var(--line)}
+.q:last-child{border-bottom:1px solid var(--line)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;text-align:left;font:400 21px/1.3 var(--f-d);min-height:56px}
+.q .ch{flex:none;width:18px;height:18px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translate(-3px,-3px);transition:transform .35s}
+.q[data-open] .ch{transform:rotate(225deg)}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.q[data-open] .a{grid-template-rows:1fr}
+.q .a>div{overflow:hidden}
+.q .a p{padding:0 0 22px;color:var(--muted);max-width:64ch}
+
+/* find */
+.find{display:grid;grid-template-columns:1fr 1.3fr;gap:0;background:var(--paper)}
+.find__t{padding:46px}
+.find__t dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin-top:22px;font-size:15px}
+.find__t dt{color:var(--gold);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
+.map{position:relative;min-height:440px;background:#E3E1D3;overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map__c{position:absolute;right:20px;top:20px;background:var(--paper);padding:12px 16px;font-size:14px;box-shadow:0 14px 30px -18px rgba(0,0,0,.4)}
+
+/* contact */
+.contact{max-width:760px;margin-inline:auto;text-align:center}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;text-align:left}
+.form .full{grid-column:1/-1}
+.form label{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.form input,.form textarea{width:100%;min-height:50px;padding:12px 14px;border:1px solid var(--stone);background:var(--paper)}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--gold)}
+
+.foot{background:var(--forest);color:var(--linen);padding:76px 0 32px}
+.foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.foot .brand{color:var(--linen)}
+.foot h4{font:500 12px var(--f-b);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin-bottom:14px}
+.foot ul{list-style:none;color:var(--willow-2);font-size:15px}
+.foot li{padding:3px 0}
+.foot a{text-decoration:none}.foot a:hover{color:var(--linen)}
+.soc{display:flex;gap:10px;margin-top:20px}
+.soc a{width:44px;height:44px;border:1px solid rgba(243,238,228,.3);display:grid;place-items:center;border-radius:50%;transition:background .25s}
+.soc a:hover{background:var(--gold)}
+.soc svg{width:18px;height:18px;fill:var(--linen)}
+.foot__bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:50px;padding-top:22px;border-top:1px solid rgba(243,238,228,.15);font-size:13px;color:var(--willow-2)}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:26px;z-index:99;background:var(--forest);color:var(--linen);padding:14px 24px;border-left:3px solid var(--gold);box-shadow:0 20px 40px -16px rgba(0,0,0,.5);transform:translate(-50%,160%);opacity:0;transition:transform .5s cubic-bezier(.3,1.3,.4,1),opacity .3s;max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.now{transition:none}
+
+@media (max-width:1020px){
+  .bk{grid-template-columns:1fr}
+  .area{grid-template-columns:repeat(2,1fr)}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav__links{display:none}.nav .btn{margin-left:auto}
+  .intro,.bf,.find{grid-template-columns:1fr}
+  .rooms,.revs{grid-template-columns:1fr}
+  .hero{height:auto;min-height:0;padding-top:120px}
+  .hero__in{padding-bottom:30px}
+  .bar{position:relative;left:auto;bottom:auto;transform:none;grid-template-columns:1fr 1fr;margin:0 auto 24px}
+  .bar>div{border-bottom:1px solid var(--line)}
+  .bar>div:nth-child(3){grid-column:1/-1;border-right:0}
+  .bar .btn{grid-column:1/-1;min-height:54px}
+  .hero{flex-direction:column;align-items:stretch}
+  .gal{grid-template-columns:1fr 1fr;grid-template-rows:260px 180px 180px}
+  .gal figure:first-child{grid-column:span 2;grid-row:auto}
+  .stamp{left:10px;bottom:-30px;width:110px;height:110px}
+  .intro__img .frame{inset:12px -10px -12px 12px}
+}
+@media (max-width:640px){
+  .sec{padding:76px 0}
+  .brand small{display:none}.brand b{font-size:14px;letter-spacing:.02em;white-space:nowrap}.brand{gap:8px}.nav__in{gap:12px}.brand svg{width:34px;height:34px}
+  .nav .btn{padding:10px 12px;letter-spacing:.06em;white-space:nowrap;font-size:12px}
+  .months{grid-template-columns:1fr}
+  .months .month:nth-child(2){display:none}
+  .cal{padding:16px}
+  .sum{padding:22px 18px}
+  .area{grid-template-columns:1fr}
+  .feat{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .find__t{padding:28px 20px}
+  .foot__grid{grid-template-columns:1fr}
+  .bf__imgs .tall{min-height:300px}
+  .willow{width:60vw}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--paper);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mbar a{min-height:48px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--forest);color:var(--forest)}
+  .mbar a.p{background:var(--forest);color:var(--linen)}
+  body{padding-bottom:72px}
+  .toast{bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#bnb">More B&amp;B examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="The Willow House home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40h32" stroke="#A9834C" stroke-width="1.6" stroke-linecap="round"/><path d="M24 40V12" stroke="#2F3A33" stroke-width="2" stroke-linecap="round"/><g stroke="#8E9B7E" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M24 13c-7 1-11 8-12 19"/><path d="M24 13c7 1 11 8 12 19"/><path d="M24 16c-4 3-6 9-6.5 17"/><path d="M24 16c4 3 6 9 6.5 17"/><path d="M24 12c-10 0-15 6-17 14"/><path d="M24 12c10 0 15 6 17 14"/></g><path d="M18 40v-6l6-4 6 4v6" fill="#FBF9F4" stroke="#2F3A33" stroke-width="1.5" stroke-linejoin="round"/><rect x="22.5" y="35" width="3" height="5" fill="#A9834C"/></svg>
+      <span><b>THE WILLOW HOUSE</b><small>bed &amp; breakfast</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#breakfast">Breakfast</a></li>
+      <li><a href="#area">The area</a></li>
+      <li><a href="#find">Find us</a></li>
+    </ul>
+    <a class="btn btn--dark" href="#book">Book direct</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero__bg"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1800&q=70&auto=format&fit=crop" alt="A red-brick country house among tall trees in morning light" width="1800" height="1200"></div>
+  <svg class="willow" viewBox="0 0 400 360" aria-hidden="true"><g stroke="#C5CDB7" stroke-width="1.6" fill="none" stroke-linecap="round">
+    <path class="br" d="M120 0C130 80 110 160 96 250"/><path class="br" d="M170 0C176 90 166 190 150 300"/><path class="br" d="M220 0C224 100 214 200 206 330"/><path class="br" d="M270 0C268 90 262 180 258 280"/><path class="br" d="M320 0C316 70 312 150 312 230"/><path class="br" d="M370 0C364 60 362 130 364 200"/></g>
+    <g fill="#A9B596" opacity=".85"><g class="br"><ellipse cx="112" cy="90" rx="3" ry="9" transform="rotate(15 112 90)"/><ellipse cx="104" cy="170" rx="3" ry="9" transform="rotate(-10 104 170)"/><ellipse cx="98" cy="232" rx="3" ry="9"/></g><g class="br"><ellipse cx="174" cy="120" rx="3" ry="9" transform="rotate(-12 174 120)"/><ellipse cx="160" cy="220" rx="3" ry="9" transform="rotate(10 160 220)"/><ellipse cx="152" cy="285" rx="3" ry="9"/></g><g class="br"><ellipse cx="222" cy="90" rx="3" ry="9" transform="rotate(12 222 90)"/><ellipse cx="214" cy="200" rx="3" ry="9" transform="rotate(-8 214 200)"/><ellipse cx="208" cy="310" rx="3" ry="9"/></g><g class="br"><ellipse cx="266" cy="140" rx="3" ry="9" transform="rotate(-14 266 140)"/><ellipse cx="260" cy="260" rx="3" ry="9"/></g></g></svg>
+  <div class="hero__in wrap">
+    <span class="kick">Five rooms · Upper Brookfield</span>
+    <h1>Slow mornings in <span class="it">the countryside</span></h1>
+    <p>An old timber farmhouse beside the willows, with five quiet rooms, a breakfast worth getting up for and walks straight from the garden gate.</p>
+  </div>
+  <form class="bar" id="bar">
+    <div><label for="bIn">Check in</label><input type="date" id="bIn"></div>
+    <div><label for="bOut">Check out</label><input type="date" id="bOut"></div>
+    <div><label for="bG">Guests</label><select id="bG"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div>
+    <button class="btn btn--dark" type="submit">Check availability</button>
+  </form>
+</section>
+
+<section class="sec">
+  <div class="wrap intro">
+    <div class="rv">
+      <span class="kick">Welcome</span>
+      <h2>A house that asks you <span class="it">to stay a little longer</span></h2>
+      <p class="lead">“We bought The Willow House as a ruin in 2014 and spent three years bringing it back to life, one window frame at a time.”</p>
+      <p>Today Clara and James welcome guests to five rooms filled with old wood, crisp linen and books you’ll want to borrow. There’s a log fire in the snug, a honesty bar in the hall and an acre of garden that runs down to the brook.</p>
+      <div class="feat">
+        <div><svg viewBox="0 0 32 32"><path d="M6 26h20M9 26V14h14v12M7 14l9-7 9 7"/></svg><span>Old farmhouse, rebuilt with care</span></div>
+        <div><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="9"/><path d="M16 11v5l3 3"/></svg><span>Late check-out on request</span></div>
+        <div><svg viewBox="0 0 32 32"><path d="M6 20c0-6 4-10 10-10s10 4 10 10H6zM4 22h24M14 8h4"/></svg><span>Breakfast included, every day</span></div>
+        <div><svg viewBox="0 0 32 32"><path d="M5 26l8-14 5 8 3-4 6 10z"/></svg><span>Footpaths from the garden gate</span></div>
+      </div>
+    </div>
+    <div class="intro__img rv">
+      <span class="frame"></span>
+      <img src="https://images.unsplash.com/photo-1765547090903-348b711f0eee?w=900&q=70&auto=format&fit=crop" alt="A calm room with an armchair, wooden panelling and a window onto trees" width="900" height="1125" loading="lazy">
+      <div class="stamp"><div><b data-count="9.6">9.6</b>guest rating</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rooms" style="padding-top:20px">
+  <div class="wrap">
+    <div class="rule kick rv" style="margin-bottom:10px">Our rooms</div>
+    <h2 class="rv" style="text-align:center;margin-bottom:48px">Five rooms, <span class="it">each with its own character</span></h2>
+    <div class="rooms" id="roomList"></div>
+  </div>
+</section>
+
+<section class="sec book" id="book">
+  <div class="wrap">
+    <span class="kick">Book direct, best price</span>
+    <h2>Choose your dates <span class="it">and we’ll do the rest</span></h2>
+    <div class="bk">
+      <div class="cal" aria-label="Availability calendar">
+        <div class="cal__top">
+          <label class="sr" for="roomSel">Room</label>
+          <select id="roomSel"></select>
+          <div class="cal__nav"><button type="button" id="prevM" aria-label="Previous month">‹</button><button type="button" id="nextM" aria-label="Next month">›</button></div>
+        </div>
+        <div class="months" id="months"></div>
+        <div class="legend"><span><i style="background:var(--forest)"></i>Your stay</span><span><i style="background:var(--willow-2)"></i>Nights</span><span><i style="background:var(--linen-2);border:1px dashed #B9A79A"></i><s>12</s> Booked</span></div>
+      </div>
+      <form class="sum" id="bookForm" novalidate>
+        <h3 id="sRoom">The Hayloft</h3>
+        <p class="hint" id="sHint">Pick your arrival date</p>
+        <dl>
+          <dt>Arrive</dt><dd id="sIn">–</dd>
+          <dt>Leave</dt><dd id="sOut">–</dd>
+          <dt>Nights</dt><dd id="sN">–</dd>
+          <dt>Rate</dt><dd id="sRate">–</dd>
+          <dt>Breakfast</dt><dd>Included</dd>
+        </dl>
+        <div class="gst"><span id="gL">Guests</span><div class="stp"><button type="button" data-g="-1" aria-label="Fewer guests">−</button><output id="gO" aria-labelledby="gL">2</output><button type="button" data-g="1" aria-label="More guests">+</button></div></div>
+        <div class="tot" style="margin-top:16px"><span>Total</span><b id="sTot">€0</b></div>
+        <div class="fld"><label for="bn">Your name</label><input id="bn" autocomplete="name"></div>
+        <div class="fld"><label for="be">Email</label><input id="be" type="email" autocomplete="email"></div>
+        <div class="fld"><label for="bm">Anything we should know?</label><textarea id="bm" placeholder="Arrival time, dietary needs, a special occasion…"></textarea></div>
+        <button class="btn" type="submit">Send booking request</button>
+        <p class="fine">No payment now. We confirm within a few hours. Free cancellation up to 7 days before.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="breakfast">
+  <div class="wrap bf">
+    <div class="bf__imgs rv">
+      <img class="tall" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=700&q=70&auto=format&fit=crop" alt="French toast stacked with banana and blueberries" width="700" height="1000" loading="lazy">
+      <img class="sq" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&q=70&auto=format&fit=crop" alt="A fried egg on avocado toast" width="500" height="500" loading="lazy">
+      <img class="sq" src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=500&q=70&auto=format&fit=crop" alt="Eggs Benedict with hollandaise" width="500" height="500" loading="lazy">
+    </div>
+    <div class="rv">
+      <span class="kick">Breakfast</span>
+      <h2>Worth getting up for</h2>
+      <p>Served at the long oak table in the old kitchen, or on the terrace when the sun’s out. Eggs from our own hens, bread from the village bakery and jams Clara makes every August.</p>
+      <ul class="menu">
+        <li><b>The Willow full breakfast</b><span>Local sausage, dry-cured bacon, our hens’ eggs, mushrooms, tomatoes, sourdough</span></li>
+        <li><b>Eggs Benedict or Royale</b><span>Ham from the farm shop, or smoked salmon, on a toasted muffin</span></li>
+        <li><b>Brioche French toast</b><span>Berries, banana and maple syrup</span></li>
+        <li><b>The sideboard</b><span>Granola, yoghurt, poached fruit, pastries and fresh juice</span></li>
+      </ul>
+      <div class="times"><span><b>Weekdays</b> 8:00 – 9:30</span><span><b>Weekends</b> 8:30 – 10:30</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="area" style="background:var(--linen-2)">
+  <div class="wrap">
+    <div class="rule kick rv" style="margin-bottom:10px">On our doorstep</div>
+    <h2 class="rv" style="text-align:center;margin-bottom:48px">Clara’s tips <span class="it">for the area</span></h2>
+    <div class="area">
+      <article class="tip rv"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700&q=70&auto=format&fit=crop" alt="A wooden boathouse on a calm lake below mountains" width="700" height="525" loading="lazy"><div class="t"><span class="dist">25 min drive</span><h3>The lakes</h3><p>Hire a rowing boat at the old boathouse and take a picnic. We’ll pack one for you.</p></div></article>
+      <article class="tip rv"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=70&auto=format&fit=crop" alt="Sunlight through tall trees in a forest" width="700" height="525" loading="lazy"><div class="t"><span class="dist">From the gate</span><h3>Brookfield Woods</h3><p>A 6 km loop through beech woods and back along the brook. Muddy boots welcome.</p></div></article>
+      <article class="tip rv"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=70&auto=format&fit=crop" alt="Golden fields at sunset" width="700" height="525" loading="lazy"><div class="t"><span class="dist">10 min walk</span><h3>Sunset over the barley</h3><p>Follow the field path to the top of Long Hill for the best sunset in the county.</p></div></article>
+      <article class="tip rv"><div class="ic"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 54V26l18-12 18 12v28M10 54h44"/><path d="M26 54V40h12v14"/><path d="M22 30h6v6h-6zM36 30h6v6h-6z"/><path d="M44 18v-8h4v11"/></svg></div><div class="t"><span class="dist">15 min walk</span><h3>The village pub</h3><p>Roaring fire, local ale and a Sunday roast to remember. Book ahead at weekends.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="gal">
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1621215052063-6ed29c948b31?w=1100&q=70&auto=format&fit=crop" alt="Bedroom with a lit fireplace and a grey upholstered bed" width="1100" height="1000" loading="lazy"></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1668626339749-179fc5e76f9e?w=600&q=70&auto=format&fit=crop" alt="Breakfast tray in bed with tea, doughnuts and candles" width="600" height="560" loading="lazy"></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1789930153790-6ccf207aed1d?w=600&q=70&auto=format&fit=crop" alt="Warm bedside lamp beside a wooden headboard" width="600" height="560" loading="lazy"></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=70&auto=format&fit=crop" alt="Elegant bedroom with tufted headboard and bench" width="600" height="560" loading="lazy"></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1791444057939-9288c10608d4?w=600&q=70&auto=format&fit=crop" alt="Soft-lit bedside with lamp and cushions" width="600" height="560" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="rule kick rv" style="margin-bottom:44px">Guest book</div>
+    <div class="revs">
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote><p>“The most peaceful three nights we’ve had in years. The breakfast alone is worth the drive.”</p></blockquote><cite>Eleanor &amp; Mark (fictional)</cite></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote><p>“Clara’s walking map was perfect. We came back muddy and happy to tea by the fire.”</p></blockquote><cite>Dev P. (fictional)</cite></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote><p>“The Hayloft is the loveliest room we’ve ever stayed in. We’ve already booked for next spring.”</p></blockquote><cite>Ingrid S. (fictional)</cite></figure>
+    </div>
+    <div class="score rv">
+      <div><b data-count="9.6">9.6</b><span>Guest rating</span></div>
+      <div><b data-count="1240">1240</b><span>Happy guests</span></div>
+      <div><b data-count="38">38</b><span>% come back</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="rule kick">Before you arrive</div>
+    <h2 style="text-align:center">Good to know</h2>
+    <div class="faq">
+      <div class="q"><button aria-expanded="false">What time are check-in and check-out?<span class="ch" aria-hidden="true"></span></button><div class="a"><div><p>Check-in is from 3pm to 8pm, check-out by 11am. Arriving later? Just let us know and we’ll leave a key and a lamp on.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Do you have parking?<span class="ch" aria-hidden="true"></span></button><div class="a"><div><p>Yes, free parking for every room in the old yard, plus a charging point for electric cars.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Are dogs welcome?<span class="ch" aria-hidden="true"></span></button><div class="a"><div><p>Well-behaved dogs are welcome in the Garden Room, which has its own door to the garden. €15 per stay, towels and treats included.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Is there a minimum stay?<span class="ch" aria-hidden="true"></span></button><div class="a"><div><p>Two nights at weekends from April to October. Otherwise one night is fine.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Can you cater for dietary needs at breakfast?<span class="ch" aria-hidden="true"></span></button><div class="a"><div><p>Of course. Vegetarian, vegan and gluten-free breakfasts are always available; tell us when you book.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="find">
+  <div class="wrap">
+    <div class="find rv">
+      <div class="find__t">
+        <span class="kick">Find us</span>
+        <h2 style="font-size:clamp(34px,3.6vw,48px)">Upper Brookfield</h2>
+        <p style="color:var(--muted);margin-top:12px">Two hours from the city, ten minutes from the station. We’re happy to collect you.</p>
+        <dl>
+          <dt>Address</dt><dd>The Willow House, Mill Road<br>Upper Brookfield</dd>
+          <dt>Phone</dt><dd><a href="tel:+441234500700">01234 500 700</a></dd>
+          <dt>Email</dt><dd><a href="mailto:stay@willowhouse.example">stay@willowhouse.example</a></dd>
+          <dt>Reception</dt><dd>Daily 8:00 – 20:00</dd>
+        </dl>
+      </div>
+      <div class="map" role="img" aria-label="Map: The Willow House sits on Mill Road by the brook, ten minutes from the station">
+        <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="440" fill="#E3E1D3"/>
+          <g fill="#D3D8C2"><path d="M0 0h220c-20 60-80 90-140 90H0z"/><path d="M380 300c60-30 160-20 220 10v130H340c-10-60 0-110 40-140z"/></g>
+          <path d="M-10 250C80 230 140 280 230 260S400 190 610 220" stroke="#BFD0CC" stroke-width="14" fill="none"/>
+          <g stroke="#FBF9F4" stroke-width="12" fill="none" stroke-linecap="round"><path d="M-10 150C150 160 280 120 610 140"/><path d="M300 -10C310 120 290 300 320 450"/></g>
+          <g stroke="#C9C2AE" stroke-width="1.5" stroke-dasharray="6 6" fill="none"><path d="M330 210C380 260 440 260 520 330"/></g>
+          <g fill="#8E9B7E" opacity=".7"><circle cx="420" cy="100" r="14"/><circle cx="440" cy="88" r="10"/><circle cx="120" cy="330" r="16"/><circle cx="146" cy="346" r="11"/><circle cx="540" cy="380" r="12"/></g>
+          <text x="60" y="140" font-family="Figtree" font-size="12" letter-spacing="2" fill="#61655C">MILL ROAD</text>
+          <text x="470" y="210" font-family="EB Garamond" font-style="italic" font-size="18" fill="#6E8A85">the brook</text>
+          <g transform="translate(160 100)"><rect x="-26" y="-10" width="52" height="20" fill="#FBF9F4" stroke="#61655C"/><text y="4" text-anchor="middle" font-family="Figtree" font-size="10" fill="#61655C">STATION</text></g>
+          <g transform="translate(330 210)"><circle r="30" fill="#A9834C" opacity=".18"><animate attributeName="r" values="16;34;16" dur="3.4s" repeatCount="indefinite"/></circle><path d="M0 4l-12-12h24z" fill="#2F3A33"/><circle r="12" cy="-14" fill="#2F3A33"/><circle r="4" cy="-14" fill="#C9A46A"/></g>
+        </svg>
+        <div class="map__c"><b>The Willow House</b><br>Free parking · EV charger</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" style="padding-top:20px">
+  <div class="wrap contact rv">
+    <span class="kick">Write to us</span>
+    <h2>Questions, <span class="it">or a special stay in mind?</span></h2>
+    <p style="color:var(--muted);margin-top:14px">Anniversaries, small gatherings or the whole house for a family weekend: we’d love to hear from you.</p>
+    <form class="form" id="contactForm">
+      <div><label for="cn">Name</label><input id="cn" autocomplete="name" required></div>
+      <div><label for="ce">Email</label><input id="ce" type="email" autocomplete="email" required></div>
+      <div class="full"><label for="cm">Message</label><textarea id="cm"></textarea></div>
+      <div class="full" style="text-align:center"><button class="btn btn--dark" type="submit">Send message</button></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="#top" aria-label="The Willow House home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40h32" stroke="#C9A46A" stroke-width="1.6" stroke-linecap="round"/><path d="M24 40V12" stroke="#F3EEE4" stroke-width="2" stroke-linecap="round"/><g stroke="#C5CDB7" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M24 13c-7 1-11 8-12 19"/><path d="M24 13c7 1 11 8 12 19"/><path d="M24 16c-4 3-6 9-6.5 17"/><path d="M24 16c4 3 6 9 6.5 17"/><path d="M24 12c-10 0-15 6-17 14"/><path d="M24 12c10 0 15 6 17 14"/></g><path d="M18 40v-6l6-4 6 4v6" fill="#2F3A33" stroke="#F3EEE4" stroke-width="1.5" stroke-linejoin="round"/><rect x="22.5" y="35" width="3" height="5" fill="#C9A46A"/></svg><span><b>THE WILLOW HOUSE</b><small>bed &amp; breakfast</small></span></a>
+        <p style="margin-top:16px;color:var(--willow-2);max-width:34ch;font-size:15px">A countryside bed &amp; breakfast with five quiet rooms in Upper Brookfield.</p>
+        <div class="soc">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.3 0-4 2.4-4 4v3H7v4h3v11h4V12h3.5l.5-4z"/></svg></a>
+          <a href="mailto:stay@willowhouse.example" aria-label="Email us"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" fill="none" stroke="#F3EEE4" stroke-width="1.8"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Reception</h4><ul><li>Daily 8:00 – 20:00</li><li>Check-in 15:00 – 20:00</li><li>Check-out by 11:00</li></ul></div>
+      <div><h4>Stay</h4><ul><li><a href="#rooms">Rooms</a></li><li><a href="#book">Availability</a></li><li><a href="#breakfast">Breakfast</a></li><li><a href="#area">The area</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>Mill Road, Upper Brookfield</li><li><a href="tel:+441234500700">01234 500 700</a></li><li><a href="mailto:stay@willowhouse.example">stay@willowhouse.example</a></li></ul></div>
+    </div>
+    <div class="foot__bot"><span>© The Willow House. A fictional business.</span><span>Concept site by <a href="/" style="color:var(--gold-2)">SiteQuest Studio</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions"><a href="tel:+441234500700">Call</a><a class="p" href="#book">Book direct</a></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.documentElement.classList.add("js");
+const U=(id,w)=>`https://images.unsplash.com/photo-${id}?w=${w}&q=70&auto=format&fit=crop`;
+let tT;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),3400)}
+
+function countUp(el){const end=+el.dataset.count,dec=String(el.dataset.count).includes(".")?1:0;if(RM){el.textContent=end.toFixed(dec);return}const s=performance.now();
+  (function f(t){const p=Math.min(1,(t-s)/1500);el.textContent=(end*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)})(s)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const tg=e.target;tg.classList.add("in");$$("[data-count]",tg).forEach(countUp);setTimeout(()=>tg.classList.remove("rv","in"),1100);io.unobserve(tg)}),{rootMargin:"0px 0px -6% 0px"});
+
+/* rooms */
+const ROOMS=[
+ {id:"hayloft",n:"The Hayloft",p:145,max:2,img:"1621215052063-6ed29c948b31",d:"Our most-loved room, under the old beams, with a wood-burning fire and a deep roll-top bath.",a:["King bed","Fireplace","Roll-top bath","Garden view"]},
+ {id:"orchard",n:"The Orchard Room",p:120,max:2,img:"1766431066492-9bec8410a57b",d:"Bright and simple, looking over the apple trees. Fresh linen, a reading chair and a rain shower.",a:["Double bed","Rain shower","Orchard view"]},
+ {id:"brook",n:"The Brook Suite",p:175,max:4,img:"1759139445627-5ce9d5fac8f9",d:"Two beds, room to spread out and a view down to the brook. Perfect for families or friends.",a:["Two doubles","Sleeps 4","Sofa","Brook view"]},
+ {id:"nook",n:"The Willow Nook",p:95,max:2,img:"1765464184843-105e144bd54b",d:"A cosy attic room under the eaves, with a window seat and the best sunrise in the house.",a:["Double bed","Window seat","Shower"]}
+];
+$("#roomList").innerHTML=ROOMS.map(r=>`<article class="room rv"><div class="room__img"><img src="${U(r.img,900)}" alt="${r.n}: ${r.d.split(",")[0]}" width="900" height="600" loading="lazy"><span class="room__price">from <b>€${r.p}</b> / night</span></div><div class="room__b"><h3>${r.n}</h3><p>${r.d}</p><ul class="amen">${r.a.map(x=>`<li>${x}</li>`).join("")}</ul><button class="btn btn--line" type="button" data-room="${r.id}">Check dates</button></div></article>`).join("");
+$$(".rv").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){el.classList.add("in","now");$$("[data-count]",el).forEach(countUp);setTimeout(()=>el.classList.remove("rv","in"),1100)}else io.observe(el)});
+
+/* booking calendar */
+const MN=["January","February","March","April","May","June","July","August","September","October","November","December"],DS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const today=new Date();today.setHours(0,0,0,0);
+const key=d=>d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+let room=ROOMS[0],guests=2,start=null,end=null,view=new Date(today.getFullYear(),today.getMonth(),1);
+function booked(d){ /* deterministic "booked" nights per room */
+  const k=key(d)+room.id.length*97,h=Math.sin(k*12.9898)*43758.5453;const r=h-Math.floor(h);
+  const wk=d.getDay()===5||d.getDay()===6;return r<(wk?.42:.16);}
+$("#roomSel").innerHTML=ROOMS.map(r=>`<option value="${r.id}">${r.n} · €${r.p}/night · up to ${r.max}</option>`).join("");
+$("#roomSel").addEventListener("change",e=>{room=ROOMS.find(r=>r.id===e.target.value);if(guests>room.max)guests=room.max;start=end=null;draw()});
+function monthHTML(y,m){const first=new Date(y,m,1),off=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate();
+  let h=`<div class="month"><h4>${MN[m]} ${y}</h4><div class="grid7">${["Mo","Tu","We","Th","Fr","Sa","Su"].map(x=>`<span class="dow">${x}</span>`).join("")}`;
+  for(let i=0;i<off;i++)h+="<span></span>";
+  for(let d=1;d<=days;d++){const dt=new Date(y,m,d),past=dt<today,bk=!past&&booked(dt),k=key(dt);
+    let cls="d";if(k===key(today))cls+=" today";if(bk)cls+=" booked";
+    if(start&&k===key(start))cls+=" st";if(end&&k===key(end))cls+=" en";if(start&&end&&dt>start&&dt<end)cls+=" inr";
+    /* a booked night can still be a check-out day */
+    const coOK=start&&!end&&dt>start&&clear(start,dt);
+    const dis=past||(bk&&!coOK);
+    h+=`<button type="button" class="${cls}" data-k="${k}" ${dis?"disabled":""} aria-label="${d} ${MN[m]}${bk?", booked":""}" aria-pressed="${!!(start&&k===key(start))||!!(end&&k===key(end))}">${d}</button>`}
+  return h+"</div></div>"}
+function clear(a,b){for(let d=new Date(a);d<b;d=addD(d,1))if(booked(d))return false;return true}
+function draw(){const y=view.getFullYear(),m=view.getMonth();
+  $("#months").innerHTML=monthHTML(y,m)+monthHTML(m===11?y+1:y,(m+1)%12);
+  $("#prevM").disabled=y===today.getFullYear()&&m===today.getMonth();
+  $$("#months .d:not(:disabled)").forEach(b=>b.addEventListener("click",()=>pick(b.dataset.k)));
+  sum()}
+function fromKey(k){k=+k;return new Date(Math.floor(k/10000),Math.floor(k/100)%100-1,k%100)}
+function pick(k){const d=fromKey(k);
+  if(!start||end||d<=start){if(booked(d))return;start=d;end=null}
+  else if(clear(start,d))end=d;else{start=d;end=null}
+  draw()}
+$("#prevM").addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);draw()});
+$("#nextM").addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);draw()});
+const fmt=d=>`${DS[d.getDay()]} ${d.getDate()} ${MN[d.getMonth()].slice(0,3)}`;
+function sum(){$("#sRoom").textContent=room.n;$("#gO").textContent=guests;$("#roomSel").value=room.id;
+  const n=start&&end?Math.round((end-start)/864e5):0;
+  $("#sIn").textContent=start?fmt(start):"–";$("#sOut").textContent=end?fmt(end):"–";$("#sN").textContent=n||"–";
+  const extra=guests>2?(guests-2)*25:0;$("#sRate").textContent=`€${room.p+extra} / night`;
+  $("#sTot").textContent="€"+(n*(room.p+extra));
+  $("#sHint").textContent=!start?"Pick your arrival date":!end?"Now pick your departure date":n>=3?"Lovely, a proper break. 10% off applied at check-in.":"Your dates are free. Wonderful!";}
+$$("[data-g]").forEach(b=>b.addEventListener("click",()=>{guests=Math.max(1,Math.min(room.max,guests+ +b.dataset.g));if(guests===room.max&&+b.dataset.g>0&&room.max<4)toast(`${room.n} sleeps up to ${room.max}. Try The Brook Suite for 4.`);sum()}));
+$$("[data-room]").forEach(b=>b.addEventListener("click",()=>{room=ROOMS.find(r=>r.id===b.dataset.room);if(guests>room.max)guests=room.max;start=end=null;draw();$("#book").scrollIntoView({behavior:RM?"auto":"smooth"})}));
+/* hero bar */
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+$("#bIn").min=iso(today);$("#bIn").value=iso(addD(today,7));$("#bOut").value=iso(addD(today,9));
+$("#bIn").addEventListener("change",()=>{$("#bOut").min=$("#bIn").value;if($("#bOut").value<=$("#bIn").value)$("#bOut").value=iso(addD(new Date($("#bIn").value+"T00:00"),2))});
+$("#bar").addEventListener("submit",e=>{e.preventDefault();guests=+$("#bG").value;
+  const a=new Date($("#bIn").value+"T00:00"),b=new Date($("#bOut").value+"T00:00");
+  room=ROOMS.find(r=>r.max>=guests&&clear(a,b))||ROOMS.find(r=>r.max>=guests);
+  view=new Date(a.getFullYear(),a.getMonth(),1);
+  if(clear(a,b)&&b>a){start=a;end=b}else{start=end=null;toast("Those dates are taken in every room. Pick other dates in the calendar.")}
+  draw();$("#book").scrollIntoView({behavior:RM?"auto":"smooth"})});
+{let d=addD(today,7);for(let i=0;i<40;i++,d=addD(d,1)){if(clear(d,addD(d,2))){start=d;end=addD(d,2);break}}view=new Date(start?start.getFullYear():today.getFullYear(),start?start.getMonth():today.getMonth(),1);if(start){$("#bIn").value=iso(start);$("#bOut").value=iso(end)}}
+draw();
+$("#bookForm").addEventListener("submit",e=>{e.preventDefault();if(!start||!end){toast("Pick your arrival and departure dates first");return}toast("Demo only: nothing was sent. Your request would reach Clara right away.")});
+$("#contactForm").addEventListener("submit",e=>{e.preventDefault();toast("Demo only: nothing was sent. Thank you!")});
+
+/* faq */
+$$(".q button").forEach(b=>b.addEventListener("click",()=>{const q=b.parentElement,o=q.hasAttribute("data-open");$$(".q").forEach(x=>{x.removeAttribute("data-open");$("button",x).setAttribute("aria-expanded","false")});if(!o){q.setAttribute("data-open","");b.setAttribute("aria-expanded","true")}}));
+</script>
+</body>
+</html>

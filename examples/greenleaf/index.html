@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Greenleaf Gardens · Garden design &amp; maintenance in Ashby Green</title>
+<meta name="description" content="Greenleaf Gardens: garden design, landscaping and year-round maintenance plans in Ashby Green. Book a free garden visit. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#1E3B2C">
+<meta property="og:title" content="Greenleaf Gardens · Gardens that grow better every season">
+<meta property="og:description" content="Garden design, landscaping and maintenance plans. A concept site by SiteQuest Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231E3B2C'/%3E%3Cpath d='M9 23C9 13 15 8 24 8c0 9-5 15-15 15z' fill='%237DB46C'/%3E%3Cpath d='M9 23L19 13' stroke='%23F6F4EA' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1E3B2C; --forest-2:#2B4F3B; --moss:#3F7D4E; --leaf:#7DB46C; --lime:#D4E9A0; --mint:#E8F2DA;
+  --cream:#F6F4EA; --sand:#EAE5D3; --clay:#D9774B; --ink:#1B2A21; --mut:#5C6B60; --line:#DCD8C6;
+  --f-d:"Bricolage Grotesque", system-ui, sans-serif; --f-b:"Figtree", system-ui, sans-serif;
+  --r:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 16.5px/1.6 var(--f-b);overflow-x:hidden}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:10px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:var(--f-d);font-weight:700;letter-spacing:-.025em;line-height:1}
+
+.concept{background:var(--forest);color:#C9D9C4;font-size:13px;text-align:center;padding:7px 16px}
+.concept a{color:#fff;font-weight:600}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(246,244,234,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav__in{display:flex;align-items:center;gap:28px;height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--forest)}
+.brand svg{width:42px;height:42px;flex:none}
+.brand span{font:800 23px/1 var(--f-d);letter-spacing:-.03em}
+.brand small{display:block;font:600 11px/1 var(--f-b);letter-spacing:.24em;color:var(--moss);margin-top:4px;text-transform:uppercase}
+.nav__links{display:flex;gap:6px;margin-left:auto;list-style:none;background:#fff;padding:5px;border-radius:999px;border:1px solid var(--line)}
+.nav__links a{display:block;text-decoration:none;font-weight:500;font-size:15px;color:var(--mut);padding:8px 14px;border-radius:999px;transition:background .2s,color .2s}
+.nav__links a:hover{background:var(--mint);color:var(--forest)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .25s cubic-bezier(.3,1.4,.4,1),background .2s;border:0;cursor:pointer;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn--f{background:var(--forest);color:var(--cream)}
+.btn--f:hover{background:var(--forest-2)}
+.btn--l{background:var(--lime);color:var(--forest)}
+.btn--w{background:#fff;color:var(--forest);border:1.5px solid var(--line)}
+
+/* hero */
+.hero{position:relative;padding:40px 0 20px;overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--forest);font-weight:600;font-size:14px;padding:7px 14px 7px 8px;border-radius:999px}
+.pill i{width:24px;height:24px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;color:#fff;font-style:normal;font-size:13px}
+.hero h1{font-size:clamp(50px,7vw,104px);font-weight:800;color:var(--forest);margin:24px 0 24px}
+.hero h1 .sw{display:inline-block;color:var(--moss);position:relative}
+.hero h1 .sw svg{position:absolute;right:-.48em;top:-.32em;width:.62em;height:.62em;transform-origin:20% 90%;animation:sway 4s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(14deg)}}
+.lede{font-size:clamp(17px,1.4vw,20px);color:var(--mut);max-width:44ch;margin-bottom:32px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.proof{display:flex;align-items:center;gap:14px;margin-top:36px;font-size:14px;color:var(--mut)}
+.faces{display:flex}
+.faces span{width:40px;height:40px;border-radius:50%;border:3px solid var(--cream);margin-left:-10px;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff}
+.faces span:first-child{margin-left:0}
+.proof b{color:var(--forest);display:block;font-size:15px}
+.art{position:relative;height:620px}
+.arch{position:absolute;right:0;top:0;width:76%;height:92%;border-radius:999px 999px 28px 28px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(30,59,44,.6)}
+.arch img{width:100%;height:115%;object-fit:cover;will-change:transform}
+.round{position:absolute;left:0;bottom:0;width:42%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:10px solid var(--cream);box-shadow:0 30px 50px -30px rgba(30,59,44,.6)}
+.round img{width:100%;height:100%;object-fit:cover}
+.tagc{position:absolute;right:58%;top:12%;background:#fff;border-radius:22px;padding:16px 18px;box-shadow:0 24px 50px -24px rgba(30,59,44,.5);font-size:13px;color:var(--mut);animation:bob 6s ease-in-out infinite;width:190px}
+.tagc b{display:block;font:700 26px/1.1 var(--f-d);color:var(--forest)}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.sun{position:absolute;right:-60px;top:-40px;width:180px;height:180px;border-radius:50%;background:var(--lime);opacity:.6;z-index:-1}
+.leaves{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.leaves svg{position:absolute;top:-40px;width:26px;height:26px;animation:fall linear infinite}
+@keyframes fall{0%{transform:translate(0,-40px) rotate(0)}50%{transform:translate(40px,340px) rotate(180deg)}100%{transform:translate(-10px,760px) rotate(360deg);opacity:0}}
+
+/* strip */
+.strip{background:var(--forest);color:var(--cream);border-radius:var(--r);margin-top:64px;position:relative;z-index:3}
+.strip ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);padding:28px}
+.strip li{padding:0 22px;border-left:1px solid rgba(246,244,234,.14)}
+.strip li:first-child{border:0}
+.strip b{display:block;font:800 38px/1 var(--f-d);color:var(--lime)}
+.strip li>span{font-size:14px;color:#B9CDB5}
+
+section{scroll-margin-top:90px}
+.sec{padding:110px 0}
+.sec--sand{background:var(--sand)}
+.sec--f{background:var(--forest);color:var(--cream)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--moss);margin-bottom:14px}
+.eyebrow svg{width:18px;height:18px}
+.sec--f .eyebrow{color:var(--lime)}
+.sec h2{font-size:clamp(38px,5vw,68px);color:var(--forest);max-width:16ch}
+.sec--f h2{color:var(--cream)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:48px}
+.head p{color:var(--mut);max-width:42ch}
+.sec--f .head p{color:#B9CDB5}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc__c{background:#fff;border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px;transition:transform .35s cubic-bezier(.3,1.4,.4,1),box-shadow .3s;position:relative;overflow:hidden}
+.svc__c:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 24px 40px -24px rgba(30,59,44,.4)}
+.svc__c::after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:var(--mint);transition:transform .5s cubic-bezier(.3,1.4,.4,1);z-index:0}
+.svc__c:hover::after{transform:scale(1.5)}
+.svc__c>*{position:relative;z-index:1}
+.svc__ic{width:52px;height:52px;border-radius:18px;background:var(--mint);color:var(--moss);display:grid;place-items:center}
+.svc__ic svg{width:26px;height:26px}
+.svc__c h3{font-size:22px;color:var(--forest)}
+.svc__c p{font-size:14.5px;color:var(--mut);flex:1}
+.price{font-weight:600;color:var(--forest)}
+.price b{font:800 24px var(--f-d)}
+.price small{color:var(--mut);font-weight:500}
+.svc__c--big{grid-column:span 2;background:var(--moss);color:var(--cream)}
+.svc__c--big h3,.svc__c--big .price{color:#fff}
+.svc__c--big p,.svc__c--big .price small{color:#D9E8D2}
+.svc__c--big::after{background:rgba(212,233,160,.18)}
+.svc__c--big .svc__ic{background:rgba(255,255,255,.15);color:var(--lime)}
+
+/* plans */
+.plans__ctl{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:34px}
+.tog{position:relative;display:inline-flex;background:var(--forest-2);border-radius:999px;padding:5px}
+.tog button{position:relative;z-index:1;min-height:44px;padding:0 20px;border-radius:999px;font-weight:600;color:#B9CDB5;transition:color .3s;display:flex;align-items:center;gap:8px}
+.tog button[aria-pressed=true]{color:var(--forest)}
+.tog button em{font-style:normal;font-size:12px;background:var(--clay);color:#fff;padding:2px 8px;border-radius:999px}
+.tog__k{position:absolute;top:5px;bottom:5px;left:0;background:var(--lime);border-radius:999px;transition:transform .45s cubic-bezier(.3,1.4,.4,1),width .45s cubic-bezier(.3,1.4,.4,1)}
+.sizes{display:flex;gap:6px;align-items:center;font-size:14px;color:#B9CDB5}
+.sizes button{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid rgba(246,244,234,.2);color:var(--cream);font-weight:500;transition:all .2s}
+.sizes button[aria-pressed=true]{background:var(--cream);color:var(--forest);border-color:var(--cream)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:var(--forest-2);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:16px;border:1.5px solid rgba(246,244,234,.08);transition:transform .35s cubic-bezier(.3,1.4,.4,1)}
+.plan:hover{transform:translateY(-6px)}
+.plan--hot{background:var(--cream);color:var(--ink);position:relative}
+.plan--hot .badge{position:absolute;top:-14px;left:32px;background:var(--clay);color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px}
+.plan h3{font-size:30px}
+.plan__d{color:#B9CDB5;font-size:15px}
+.plan--hot .plan__d{color:var(--mut)}
+.amt{display:flex;align-items:baseline;gap:6px}
+.amt b{font:800 58px/1 var(--f-d);letter-spacing:-.03em;display:inline-block;transition:transform .3s,opacity .3s}
+.amt b.flip{transform:translateY(-10px);opacity:0}
+.amt span{color:#B9CDB5;font-size:15px}
+.plan--hot .amt span{color:var(--mut)}
+.amt__n{font-size:13px;color:var(--lime);min-height:20px}
+.plan--hot .amt__n{color:var(--moss)}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;font-size:15px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li svg{width:20px;height:20px;flex:none;color:var(--leaf);margin-top:2px}
+.plan .btn{width:100%}
+.plans__note{margin-top:24px;color:#B9CDB5;font-size:14px;text-align:center}
+
+/* gallery */
+.mas{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);gap:16px;align-items:start}
+.mas__col{display:flex;flex-direction:column;gap:16px}
+.mas figure{border-radius:24px;overflow:hidden;position:relative;cursor:zoom-in;background:var(--sand)}
+.mas img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.mas figure:hover img{transform:scale(1.05)}
+.mas figcaption{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:rgba(246,244,234,.92);backdrop-filter:blur(8px);border-radius:16px;padding:10px 14px;font-size:14px;transform:translateY(8px);opacity:.96;transition:transform .35s}
+.mas figure:hover figcaption{transform:none}
+.mas figcaption b{color:var(--forest)}
+.mas figcaption span{color:var(--mut);font-size:13px}
+.mas button{display:block;width:100%;cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(20,36,27,.88);display:grid;place-items:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-height:80vh;width:auto;max-width:100%;border-radius:20px;transform:scale(.94);transition:transform .4s cubic-bezier(.3,1.4,.4,1)}
+.lb.on img{transform:none}
+.lb p{color:var(--cream);text-align:center;margin-top:14px}
+.lb__x{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;background:var(--cream);color:var(--forest);font-size:26px;line-height:1}
+
+/* seasons */
+.seas{display:grid;grid-template-columns:280px 1fr;gap:40px}
+.seas__tabs{display:flex;flex-direction:column;gap:8px}
+.seas__tabs button{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 18px;border-radius:20px;font-weight:600;font-size:18px;color:var(--mut);transition:background .25s,color .25s;min-height:56px}
+.seas__tabs button svg{width:28px;height:28px}
+.seas__tabs button[aria-selected=true]{background:#fff;color:var(--forest);box-shadow:0 12px 30px -20px rgba(30,59,44,.5)}
+.seas__tabs button small{display:block;font-size:12px;font-weight:600;color:var(--clay)}
+.seas__panel{background:#fff;border-radius:var(--r);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.seas__panel.swap{animation:sw .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes sw{from{opacity:0;transform:translateY(14px)}}
+.seas__panel h3{font-size:34px;color:var(--forest);margin-bottom:10px}
+.seas__panel>div>p{color:var(--mut);margin-bottom:20px}
+.tips{list-style:none;display:flex;flex-direction:column;gap:14px}
+.tips li{display:flex;gap:14px;align-items:flex-start;background:var(--cream);border-radius:18px;padding:14px 16px}
+.tips li b{display:block;color:var(--forest)}
+.tips li span{font-size:14.5px;color:var(--mut)}
+.tips i{width:34px;height:34px;border-radius:12px;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-style:normal;font-weight:800;flex:none;font-family:var(--f-d)}
+.seas__img{border-radius:24px;overflow:hidden;aspect-ratio:4/5}
+.seas__img img{width:100%;height:100%;object-fit:cover}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.about__img{position:relative}
+.about__img img{border-radius:200px 200px 28px 28px;aspect-ratio:4/5;object-fit:cover;width:100%;height:auto}
+.about__img .stamp{position:absolute;right:-20px;bottom:40px;width:130px;height:130px;border-radius:50%;background:var(--lime);display:grid;place-items:center;text-align:center;font:700 14px/1.15 var(--f-b);color:var(--forest);transform:rotate(-10deg)}
+.about__img .stamp b{display:block;font:800 36px/1 var(--f-d)}
+.about p{color:var(--mut);margin-bottom:16px}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.vals div{background:#fff;border-radius:20px;padding:18px}
+.vals b{display:block;color:var(--forest);font-size:16px;margin-bottom:4px}
+.vals span{font-size:14px;color:var(--mut)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:#fff;border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:16px}
+.rev:nth-child(2){background:var(--lime);transform:translateY(24px)}
+.stars{color:var(--clay);letter-spacing:2px;font-size:18px}
+.rev p{font-size:17px;flex:1}
+.rev footer{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mut)}
+.rev footer b{display:block;color:var(--forest)}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.qa{background:#fff;border-radius:22px;margin-bottom:10px;padding:0 24px}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;padding:20px 0;font-weight:600;font-size:17.5px;color:var(--forest);min-height:44px}
+.qa button i{width:34px;height:34px;border-radius:50%;background:var(--mint);flex:none;display:grid;place-items:center;transition:transform .4s cubic-bezier(.3,1.4,.4,1),background .3s}
+.qa button i svg{width:16px;height:16px}
+.qa.on button i{transform:rotate(180deg);background:var(--lime)}
+.qa__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.qa.on .qa__a{grid-template-rows:1fr}
+.qa__a>div{overflow:hidden}
+.qa__a p{color:var(--mut);padding-bottom:20px}
+
+/* visit form */
+.book{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:start}
+.book__info{background:var(--forest-2);border-radius:var(--r);padding:32px}
+.book__info h3{font-size:28px;margin-bottom:8px}
+.book__info p{color:#B9CDB5}
+.hours{list-style:none;margin:20px 0}
+.hours li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(246,244,234,.16);font-size:15px;color:#D9E8D2}
+.hours li.today{color:var(--lime);font-weight:700}
+.mapph{position:relative;height:200px;border-radius:22px;overflow:hidden;margin-top:8px}
+.mapph svg{width:100%;height:100%}
+.mapph span{position:absolute;left:50%;top:50%;transform:translate(-50%,-140%);background:var(--cream);color:var(--forest);font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.form{background:var(--cream);color:var(--ink);border-radius:var(--r);padding:34px}
+.form h3{font-size:30px;color:var(--forest);margin-bottom:6px}
+.form>p{color:var(--mut);margin-bottom:22px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.f>label,.f legend{font-weight:600;font-size:14px;color:var(--forest)}
+.f input,.f select,.f textarea{border:1.5px solid var(--line);border-radius:16px;padding:12px 16px;min-height:52px;background:#fff;width:100%;transition:border-color .2s,box-shadow .2s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--moss);box-shadow:0 0 0 4px rgba(125,180,108,.25)}
+.f textarea{min-height:90px;resize:vertical}
+fieldset.f{border:0}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-weight:500;font-size:14.5px;cursor:pointer;transition:all .2s}
+.chips input:checked+span{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.chips input:focus-visible+span{outline:3px solid var(--clay);outline-offset:2px}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:4px}
+.days label{position:relative}
+.days input{position:absolute;opacity:0;width:1px;height:1px}
+.days span{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;border-radius:16px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:12px;color:var(--mut);transition:all .2s}
+.days span b{font:800 20px/1.1 var(--f-d);color:var(--forest)}
+.days input:checked+span{background:var(--lime);border-color:var(--moss)}
+.days input:focus-visible+span{outline:3px solid var(--clay);outline-offset:2px}
+
+/* footer */
+.foot{background:#142519;color:#A9BFA6;padding:64px 0 30px;font-size:14px}
+.foot__g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot .brand{color:var(--cream)}.foot .brand small{color:var(--leaf)}
+.foot h4{color:var(--cream);font-size:15px;margin-bottom:12px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot a{text-decoration:none}.foot a:hover{color:#fff}
+.soc{display:flex;gap:8px;margin-top:18px}
+.soc a{width:44px;height:44px;border-radius:50%;background:rgba(246,244,234,.08);display:grid;place-items:center;transition:background .2s,color .2s}
+.soc a:hover{background:var(--lime);color:var(--forest)}
+.soc svg{width:18px;height:18px}
+.foot__b{border-top:1px solid rgba(246,244,234,.1);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:24px;z-index:95;background:var(--forest);color:var(--cream);padding:14px 22px;border-radius:999px;font-weight:600;box-shadow:0 20px 40px -12px rgba(0,0,0,.4);transform:translate(-50%,160%);opacity:0;visibility:hidden;transition:transform .4s cubic-bezier(.3,1.4,.4,1),opacity .25s,visibility 0s .4s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .4s cubic-bezier(.3,1.4,.4,1),opacity .25s}
+
+.js .rv{opacity:0;transform:translateY(30px) scale(.985);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.now{transition:none}
+
+@media (max-width:1060px){
+  .hero__grid,.about,.faq,.book,.seas{grid-template-columns:1fr}
+  .art{height:520px;max-width:560px;width:100%;margin:0 auto}
+  .svc{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .seas__tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .seas__tabs button{flex:none}
+  .revs{grid-template-columns:1fr}
+  .rev:nth-child(2){transform:none}
+  .mas{--cols:2}
+  .foot__g{grid-template-columns:1fr 1fr}
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+}
+@media (max-width:760px){
+  .nav__in{height:68px}
+  .nav .btn{min-height:44px;padding:0 18px}
+  .brand span{font-size:20px}.brand svg{width:36px;height:36px}
+  .hero{padding:24px 0 10px}
+  .strip{margin-top:40px}
+  .art{height:420px}
+  .tagc{right:auto;left:0;top:4%;width:170px}
+  .strip ul{grid-template-columns:1fr 1fr;gap:20px 0;padding:24px 8px}
+  .strip li:nth-child(3){border:0}
+  .strip b{font-size:30px}
+  .sec{padding:76px 0}
+  .svc{grid-template-columns:1fr}
+  .svc__c--big{grid-column:auto}
+  .plan{padding:26px}
+  .seas__panel{grid-template-columns:1fr;padding:22px}
+  .seas__img{display:none}
+  .seas__tabs button{font-size:16px;padding:10px 14px}
+  .mas,.mas__col{gap:10px}.mas figure{border-radius:18px}
+  .mas figcaption{flex-direction:column;align-items:flex-start;gap:0;padding:8px 10px;font-size:13px}
+  .vals{grid-template-columns:1fr}
+  .about__img .stamp{right:0}
+  .form,.book__info{padding:22px}
+  .f2{grid-template-columns:1fr}
+  .days{grid-template-columns:repeat(3,1fr)}
+  .foot__g{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(246,244,234,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  body{padding-bottom:74px}
+  .toast{bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+  .leaves{display:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#gardener">More gardener examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Greenleaf Gardens, home">
+      <svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="21" fill="#1E3B2C"/><path d="M11 31c0-13 8-20 21-20 0 12-7 20-21 20z" fill="#7DB46C"/><path d="M14 28c3-6 7-10 13-13" stroke="#F6F4EA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M18 23.5l4 .5M21 20l3.5.3" stroke="#F6F4EA" stroke-width="1.6" stroke-linecap="round"/><circle cx="31" cy="30" r="4" fill="#D9774B"/></svg>
+      <span>Greenleaf<small>Gardens</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#plans">Plans</a></li>
+      <li><a href="#gallery">Gardens</a></li>
+      <li><a href="#tips">Seasonal tips</a></li>
+      <li><a href="#visit">Contact</a></li>
+    </ul>
+    <a class="btn btn--f" href="#visit">Free garden visit</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="leaves" aria-hidden="true" id="leaves"></div>
+  <div class="wrap hero__grid">
+    <div>
+      <span class="pill"><i>✓</i>Now booking spring planting for 2027</span>
+      <h1>Gardens that grow <span class="sw">better<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z" fill="#7DB46C"/><path d="M5 19L15 9" stroke="#1E3B2C" stroke-width="1.6" stroke-linecap="round"/></svg></span> every season.</h1>
+      <p class="lede">Design, planting and year-round care for gardens big and small in Ashby Green. We'll make it beautiful, then keep it that way, so you can simply enjoy it.</p>
+      <div class="hero__cta">
+        <a class="btn btn--f" href="#visit">Book a free garden visit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--w" href="#plans">See care plans</a>
+      </div>
+      <div class="proof">
+        <span class="faces" aria-hidden="true"><span style="background:#3F7D4E">AK</span><span style="background:#D9774B">BL</span><span style="background:#1E3B2C">MR</span><span style="background:#7DB46C">+</span></span>
+        <span><b>★ 4.9 from 380 gardens</b>looked after every week</span>
+      </div>
+    </div>
+    <div class="art">
+      <span class="sun" aria-hidden="true"></span>
+      <div class="arch"><img id="heroImg" src="https://images.unsplash.com/photo-1784293449032-200db587788c?w=1200&q=70&auto=format&fit=crop" alt="A landscaped garden with a stone path, white flowers and a green lawn" width="1200" height="1500"></div>
+      <div class="round"><img src="https://images.unsplash.com/photo-1759891038233-9e55634b9838?w=700&q=70&auto=format&fit=crop" alt="Wooden raised beds full of roses and summer flowers" width="700" height="700"></div>
+      <div class="tagc"><b>12 years</b>designing gardens around Ashby Green</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="strip rv">
+      <ul>
+        <li><b><span data-count="380">380</span></b><span>gardens on a care plan</span></li>
+        <li><b><span data-count="1240">1240</span></b><span>trees &amp; shrubs planted this year</span></li>
+        <li><b><span data-count="96">96</span>%</b><span>of clients renew every year</span></li>
+        <li><b>100%</b><span>green waste composted</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>What we do</span><h2>From a quick tidy to a whole new garden</h2></div><p>Clear prices, no surprises. Every bigger job starts with a free visit and a written quote.</p></div>
+    <div class="svc">
+      <article class="svc__c svc__c--big rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 21h18M6 21V11M18 21V8M12 21v-6"/><path d="M6 11c-2 0-3-2-3-4 2 0 3 1 3 4zM6 11c2 0 3-2 3-4-2 0-3 1-3 4zM18 8c-2 0-3-2-3-4 2 0 3 1 3 4zM18 8c2 0 3-2 3-4-2 0-3 1-3 4z"/></svg></span><h3>Garden design &amp; landscaping</h3><p>A plan drawn around how you live: where the sun falls, where the kids play, where you'll have your coffee. Then we build it, from soil to the last plant.</p><span class="price"><small>design from</small> <b>€450</b> <small>· builds quoted</small></span></article>
+      <article class="svc__c rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 18h18M5 18c0-3 1-5 2-7M9 18c0-4 1-7 2-9M13 18c0-4 1-6 2-8M17 18c0-3 1-5 2-6"/></svg></span><h3>Lawn care</h3><p>Mowing, edging, feeding and autumn scarifying.</p><span class="price"><small>from</small> <b>€45</b> <small>/ visit</small></span></article>
+      <article class="svc__c rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 18v3M16 18v3"/></svg></span><h3>Hedge trimming</h3><p>Crisp lines for hedges of every height, waste taken away.</p><span class="price"><small>from</small> <b>€60</b></span></article>
+      <article class="svc__c rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="3"/><path d="M12 6V3M12 15v6M9 9H6M18 9h-3M8 20h8"/></svg></span><h3>Planting &amp; borders</h3><p>New borders, bulbs and pots that flower from March to November.</p><span class="price"><small>from</small> <b>€180</b></span></article>
+      <article class="svc__c rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 9h8v6H3zM13 9h8v6h-8zM8 3h8v6H8zM8 15h8v6H8z"/></svg></span><h3>Patios &amp; paths</h3><p>Natural stone, gravel or wood, laid level and built to last.</p><span class="price"><small>from</small> <b>€95</b> <small>/ m²</small></span></article>
+      <article class="svc__c rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21v-7M12 14c-4 0-7-3-7-6.5S8 2 12 2s7 2 7 5.5S16 14 12 14z"/></svg></span><h3>Tree pruning</h3><p>Safe pruning and crown thinning for more light.</p><span class="price"><small>from</small> <b>€120</b></span></article>
+      <article class="svc__c rv"><span class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16l-1.5 13h-13zM9 7V4h6v3M10 11v6M14 11v6"/></svg></span><h3>Seasonal clean-up</h3><p>Leaves, cut-backs and a full tidy before winter or spring.</p><span class="price"><small>from</small> <b>€140</b></span></article>
+    </div>
+  </div>
+</section>
+
+<!-- plans -->
+<section class="sec sec--f" id="plans">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>Maintenance plans</span><h2>Your garden, looked after all year</h2></div><p>One fixed monthly price, the same friendly gardener every visit, and a seasonal check-in to plan what's next.</p></div>
+    <div class="plans__ctl rv">
+      <div class="tog" role="group" aria-label="Billing period"><span class="tog__k" aria-hidden="true"></span><button aria-pressed="true" data-b="m">Monthly</button><button aria-pressed="false" data-b="y">Yearly <em>2 months free</em></button></div>
+      <div class="sizes" role="group" aria-label="Garden size"><span>Garden size:</span><button aria-pressed="false" data-s=".8">Small</button><button aria-pressed="true" data-s="1">Medium</button><button aria-pressed="false" data-s="1.35">Large</button></div>
+    </div>
+    <div class="plans">
+      <article class="plan rv" data-p="69">
+        <h3>Tidy</h3><p class="plan__d">For low-maintenance gardens that just need to stay neat.</p>
+        <div class="amt"><b>€69</b><span class="per">/ month</span></div><p class="amt__n" aria-live="polite"></p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>2 visits a month, March to November</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Mowing, edging and weeding</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Green waste taken away</li></ul>
+        <a class="btn btn--l" href="#visit" data-plan="Tidy">Choose Tidy</a>
+      </article>
+      <article class="plan plan--hot rv" data-p="129">
+        <span class="badge">Most popular</span>
+        <h3>Bloom</h3><p class="plan__d">Our full care plan. The garden always looks its best.</p>
+        <div class="amt"><b>€129</b><span class="per">/ month</span></div><p class="amt__n" aria-live="polite"></p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Weekly visits in season, monthly in winter</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Lawn feed, hedges twice a year, pruning</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Seasonal bulbs &amp; pot refresh included</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>10% off any extra job</li></ul>
+        <a class="btn btn--f" href="#visit" data-plan="Bloom">Choose Bloom</a>
+      </article>
+      <article class="plan rv" data-p="239">
+        <h3>Estate</h3><p class="plan__d">For large gardens, orchards and ponds that need a real team.</p>
+        <div class="amt"><b>€239</b><span class="per">/ month</span></div><p class="amt__n" aria-live="polite"></p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Weekly two-person visits all year</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Everything in Bloom, plus tree care</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Pond and irrigation care</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Yearly design refresh with our designer</li></ul>
+        <a class="btn btn--l" href="#visit" data-plan="Estate">Choose Estate</a>
+      </article>
+    </div>
+    <p class="plans__note rv">No contract lock-in on monthly plans: pause or stop with one month's notice. Prices include VAT.</p>
+  </div>
+</section>
+
+<!-- gallery -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>Our gardens</span><h2>A few gardens we've grown</h2></div><p>Tap a photo to see it larger.</p></div>
+    <div class="mas" id="mas"></div>
+  </div>
+</section>
+
+<!-- seasonal tips -->
+<section class="sec sec--sand" id="tips">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>Seasonal tips</span><h2>What your garden needs right now</h2></div><p>Free advice from our gardeners. We've opened the current season for you.</p></div>
+    <div class="seas rv">
+      <div class="seas__tabs" role="tablist" aria-label="Seasons" id="seasTabs"></div>
+      <div class="seas__panel" role="tabpanel" id="seasPanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="about__img rv"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&q=70&auto=format&fit=crop" alt="A trowel full of fresh potting soil next to a pot" loading="lazy" width="1000" height="1250"><span class="stamp"><span><b>12</b>years of<br>muddy boots</span></span></div>
+    <div class="rv">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>About us</span>
+      <h2 style="font-size:clamp(36px,4.4vw,58px);color:var(--forest);margin-bottom:22px">Gardeners first, designers second</h2>
+      <p>Greenleaf began in 2014 when Anouk swapped an office job for her grandfather's spade. Today we're a team of nine gardeners and one designer, all trained horticulturists who know which plant will thrive in which corner of Ashby Green's clay soil.</p>
+      <p>We garden the way we'd want our own gardens looked after: peat-free, no unnecessary chemicals, plenty of room for bees, and the same gardener at your gate every visit.</p>
+      <div class="vals">
+        <div><b>Same gardener, every visit</b><span>Someone who knows your garden by heart.</span></div>
+        <div><b>Wildlife friendly</b><span>Peat-free, pesticide-free, bee-approved.</span></div>
+        <div><b>Quiet electric tools</b><span>Kinder to you and your neighbours.</span></div>
+        <div><b>Fully insured</b><span>€2.5M liability, qualified tree work.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="sec sec--sand" id="reviews">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>Kind words</span><h2>Happy gardens, happy people</h2></div><p>★ 4.9 average from 380 reviews</p></div>
+    <div class="revs">
+      <article class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><p>"We had a muddy rectangle and two small kids. Greenleaf designed a garden with a lawn, a play corner and a herb patio. Two years later it looks better than the drawings."</p><footer><span class="av" style="background:#3F7D4E">SV</span><span><b>Sophie V.</b>Garden design · Willow Close</span></footer></article>
+      <article class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><p>"On the Bloom plan for three years now. Bram comes every Thursday, always waves, and our borders flower from spring right into October. Worth every euro."</p><footer><span class="av" style="background:#1E3B2C">PH</span><span><b>Peter H.</b>Bloom plan · Old Orchard</span></footer></article>
+      <article class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><p>"Booked a free visit expecting a sales pitch. Instead we got honest advice and a plan we could partly do ourselves. We hired them for the patio and it's perfect."</p><footer><span class="av" style="background:#D9774B">LD</span><span><b>Layla D.</b>New patio · Ashby Green</span></footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div class="rv"><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>FAQ</span><h2 style="font-size:clamp(36px,4.4vw,58px);color:var(--forest)">Questions we often get</h2><p style="color:var(--mut);margin-top:16px;max-width:34ch">Anything else? Call or WhatsApp us on 040 555 0136.</p></div>
+    <div class="rv" id="faqList">
+      <div class="qa"><button aria-expanded="false">Is the garden visit really free?<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3B2C" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i></button><div class="qa__a"><div><p>Yes, completely. We walk round your garden with you for about 45 minutes, listen to your wishes and give honest advice. You'll get a written proposal by email within a week, with no obligation to go ahead.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Do I need to be home when you come?<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3B2C" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i></button><div class="qa__a"><div><p>No. As long as we can get into the garden, we'll get on with it and send you a short message with a photo when we're done.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">What happens to the green waste?<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3B2C" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i></button><div class="qa__a"><div><p>We take it away and compost all of it at our yard. If you'd like, we can set up a compost corner in your own garden instead.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Can I pause my plan in winter or on holiday?<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3B2C" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i></button><div class="qa__a"><div><p>Monthly plans can be paused or stopped with one month's notice. Winter visits are already lighter and priced into the monthly fee, so your payments stay the same all year.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">How far ahead are you booked for new gardens?<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3B2C" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i></button><div class="qa__a"><div><p>Design projects usually start 4 to 8 weeks after you approve the plan. Autumn and early spring are the best planting times, so book your visit early for those.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- visit / booking -->
+<section class="sec sec--f" id="visit">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z"/></svg>Free garden visit</span><h2>Let's have a walk round your garden</h2></div><p>45 minutes, honest advice, a written proposal within a week. No cost, no obligation.</p></div>
+    <div class="book">
+      <div class="book__info rv">
+        <h3>Greenleaf Gardens</h3>
+        <p>Nursery &amp; yard: Brook Lane 21, 5631 AL Ashby Green<br><a href="tel:+31405550136" style="color:#fff">040 555 0136</a> · <a href="mailto:hello@greenleaf.example" style="color:#fff">hello@greenleaf.example</a></p>
+        <ul class="hours" id="hours"></ul>
+        <div class="mapph" role="img" aria-label="Map placeholder showing Brook Lane, Ashby Green">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="#DDE8CF"/><ellipse cx="80" cy="60" rx="70" ry="40" fill="#C3D9AE"/><ellipse cx="330" cy="150" rx="90" ry="50" fill="#C3D9AE"/><path d="M0 130C90 110 150 150 240 120S360 80 400 90" stroke="#9CC3D8" stroke-width="14" fill="none"/><path d="M0 70h400M190 0c-10 70 20 130 0 200" stroke="#fff" stroke-width="10" fill="none"/><g fill="#7DB46C"><circle cx="60" cy="40" r="8"/><circle cx="90" cy="70" r="10"/><circle cx="320" cy="160" r="9"/><circle cx="350" cy="130" r="7"/></g><circle cx="200" cy="100" r="9" fill="#D9774B"/><circle cx="200" cy="100" r="3.5" fill="#fff"/></svg>
+          <span>Brook Lane 21</span>
+        </div>
+      </div>
+      <form class="form rv" id="bookForm" novalidate>
+        <h3>Book your free visit</h3>
+        <p>Pick a day that suits you, and we'll call to agree a time.</p>
+        <div class="f2">
+          <div class="f"><label for="bName">Name</label><input id="bName" autocomplete="name" required></div>
+          <div class="f"><label for="bTel">Phone</label><input id="bTel" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="f2">
+          <div class="f"><label for="bAddr">Street &amp; number</label><input id="bAddr" autocomplete="street-address"></div>
+          <div class="f"><label for="bSize">Garden size</label><select id="bSize"><option>Small (under 50 m²)</option><option selected>Medium (50–200 m²)</option><option>Large (200 m² +)</option><option>Not sure</option></select></div>
+        </div>
+        <fieldset class="f"><legend>What are you interested in?</legend>
+          <div class="chips" id="interest">
+            <label><input type="checkbox" value="New design"><span>New design</span></label>
+            <label><input type="checkbox" value="Care plan" id="chipPlan"><span>Care plan</span></label>
+            <label><input type="checkbox" value="Patio or path"><span>Patio or path</span></label>
+            <label><input type="checkbox" value="Planting"><span>Planting</span></label>
+            <label><input type="checkbox" value="Lawn"><span>Lawn</span></label>
+            <label><input type="checkbox" value="Trees & hedges"><span>Trees &amp; hedges</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="f"><legend>Preferred day</legend><div class="days" id="days"></div></fieldset>
+        <div class="f"><label for="bMsg">Tell us a little about your garden (optional)</label><textarea id="bMsg" placeholder="e.g. north-facing, lots of shade, we'd love more colour and somewhere to sit"></textarea></div>
+        <button class="btn btn--f" style="width:100%">Book my free garden visit</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__g">
+      <div>
+        <a class="brand" href="#top" aria-label="Greenleaf Gardens, back to top"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="21" fill="#2B4F3B"/><path d="M11 31c0-13 8-20 21-20 0 12-7 20-21 20z" fill="#7DB46C"/><path d="M14 28c3-6 7-10 13-13" stroke="#F6F4EA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M18 23.5l4 .5M21 20l3.5.3" stroke="#F6F4EA" stroke-width="1.6" stroke-linecap="round"/><circle cx="31" cy="30" r="4" fill="#D9774B"/></svg><span>Greenleaf<small>Gardens</small></span></a>
+        <p style="margin-top:16px;max-width:30ch">Garden design, landscaping and year-round care in Ashby Green and the villages around.</p>
+        <div class="soc">
+          <a href="#" aria-label="Greenleaf on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="Greenleaf on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="#" aria-label="Greenleaf on Pinterest"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.9 1.6 1.9 1.9 0 3.3-2 3.3-4.8 0-2.5-1.8-4.3-4.4-4.3-3 0-4.8 2.3-4.8 4.6 0 .9.4 1.9.8 2.4l.1.4-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.2-2.6-2.2-4.2 0-3.4 2.5-6.6 7.2-6.6 3.8 0 6.7 2.7 6.7 6.3 0 3.7-2.4 6.8-5.7 6.8-1.1 0-2.2-.6-2.5-1.3l-.7 2.6c-.3 1-.9 2.2-1.4 2.9A10 10 0 1 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#services">Services &amp; prices</a></li><li><a href="#plans">Care plans</a></li><li><a href="#gallery">Our gardens</a></li><li><a href="#tips">Seasonal tips</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Mon–Fri 07:30–17:00</li><li>Sat 08:00–12:00 (nursery)</li><li>Sun closed</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+31405550136">040 555 0136</a></li><li><a href="mailto:hello@greenleaf.example">hello@greenleaf.example</a></li><li>Brook Lane 21, Ashby Green</li></ul></div>
+    </div>
+    <div class="foot__b"><span>Greenleaf Gardens is a fictional business, a concept by <a href="/" style="color:#fff">SiteQuest Studio</a>.</span><span>Want a site like this? <a href="/" style="color:#fff">sitequest.studio</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a class="btn btn--w" href="tel:+31405550136">Call us</a>
+  <a class="btn btn--f" href="#visit">Free visit</a>
+</nav>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="lb__x" id="lbX" aria-label="Close photo">×</button><div><img id="lbImg" alt=""><p id="lbCap"></p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+document.documentElement.classList.add("js");
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ph=(id,w=900)=>`https://images.unsplash.com/photo-${id}?w=${w}&q=70&auto=format&fit=crop`;
+let tT;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),3200)}
+
+/* falling leaves */
+if(!REDUCED){const L=$("#leaves"),cols=["#7DB46C","#3F7D4E","#D4E9A0","#D9774B"];
+  L.innerHTML=Array.from({length:7},(_,i)=>`<svg viewBox="0 0 24 24" style="left:${8+i*13}%;animation-duration:${11+i*2.3}s;animation-delay:${-i*2.7}s;width:${18+(i%3)*6}px"><path d="M3 21C3 9 10 3 22 3c0 11-7 18-19 18z" fill="${cols[i%4]}" opacity=".85"/></svg>`).join("")}
+
+/* plans */
+let bill="m",size=1;
+function money(n){return"€"+Math.round(n).toLocaleString("en-US")}
+function renderPlans(anim){
+  $$(".plan").forEach(p=>{
+    const base=+p.dataset.p*size,b=p.querySelector(".amt b"),per=p.querySelector(".per"),n=p.querySelector(".amt__n");
+    const v=bill==="m"?base:base*10;
+    const set=()=>{b.textContent=money(bill==="m"?Math.round(base):Math.round(v/5)*5);per.textContent=bill==="m"?"/ month":"/ year";n.textContent=bill==="y"?`That's ${money(v/12)} a month, you save ${money(base*2)}`:"Billed monthly, cancel anytime"};
+    if(anim&&!REDUCED){b.classList.add("flip");setTimeout(()=>{set();b.classList.remove("flip")},180)}else set();
+  });
+}
+const tog=$(".tog"),knob=$(".tog__k");
+function moveKnob(){const b=tog.querySelector("[aria-pressed=true]");knob.style.width=b.offsetWidth+"px";knob.style.transform=`translateX(${b.offsetLeft-5}px)`}
+tog.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;bill=b.dataset.b;tog.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));moveKnob();renderPlans(1)});
+$(".sizes").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;size=+b.dataset.s;$$(".sizes button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderPlans(1)});
+renderPlans(0);moveKnob();addEventListener("load",moveKnob);addEventListener("resize",moveKnob);
+$$("[data-plan]").forEach(a=>a.addEventListener("click",()=>{$("#chipPlan").checked=true;const m=$("#bMsg");if(!m.value)m.value=`I'm interested in the ${a.dataset.plan} plan.`}));
+
+/* gallery */
+const G=[
+ ["1681465766418-6474cfdcbb3c","Courtyard with evening lights","Willow Close",900,1200],
+ ["1597201278257-3687be27d954","Formal flower garden","Old Orchard",900,640],
+ ["1612806527197-42af2b64884a","Woodland path","Brook Lane",900,1100],
+ ["1558904541-efa843a96f01","New lawn, laid in April","Mill End",900,600],
+ ["1695616827909-6f147f22d40f","Cottage border","Church Walk",900,1150],
+ ["1567131249273-90a34765c19e","Gravel path &amp; perennials","Ashby Green",900,700],
+ ["1778683326192-898fc982e6a6","Family garden with screen fence","Linden Road",900,620],
+ ["1759891038233-9e55634b9838","Raised rose beds","The Paddocks",900,1000]
+];
+const figs=G.map((g,i)=>`<figure class="rv"><button data-i="${i}" aria-label="View larger: ${g[1].replace("&amp;","and")}"><img src="${ph(g[0])}" alt="${g[1].replace("&amp;","and")}, ${g[2]}" loading="lazy" width="${g[3]}" height="${g[4]}" style="aspect-ratio:${g[3]}/${g[4]};object-fit:cover"></button><figcaption><b>${g[1]}</b><span>${g[2]}</span></figcaption></figure>`);
+let colsNow=0;
+function layoutMas(){
+  const n=innerWidth<=1060?2:3;if(n===colsNow)return;const re=colsNow>0;colsNow=n;
+  const h=Array(n).fill(0),cols=Array.from({length:n},()=>[]);
+  let best=null,bv=1e9;const N=G.length,tot=Math.pow(n,N);
+  for(let m=0;m<tot;m++){const hh=Array(n).fill(0);let x=m;const as=[];for(let i=0;i<N;i++){const k=x%n;x=(x-k)/n;as.push(k);hh[k]+=G[i][4]/G[i][3]}const v=Math.max(...hh)-Math.min(...hh);if(v<bv){bv=v;best=as}}
+  best.forEach((k,i)=>cols[k].push(figs[i]));
+  const M=$("#mas");M.style.setProperty("--cols",n);
+  M.innerHTML=cols.map(c=>`<div class="mas__col">${c.join("")}</div>`).join("");
+  if(re)M.querySelectorAll(".rv").forEach(el=>el.classList.add("in","now"));
+}
+layoutMas();addEventListener("resize",layoutMas);
+const lb=$("#lb");let lastBtn;
+$("#mas").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;lastBtn=b;const g=G[+b.dataset.i];$("#lbImg").src=ph(g[0],1600);$("#lbImg").alt=g[1].replace("&amp;","and");$("#lbCap").innerHTML=`${g[1]} · ${g[2]}`;lb.classList.add("on");$("#lbX").focus()});
+function closeLb(){lb.classList.remove("on");if(lastBtn)lastBtn.focus()}
+$("#lbX").addEventListener("click",closeLb);lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("on"))closeLb()});
+
+/* seasons */
+const ICS={spring:'<path d="M12 21v-8M12 13c-3 0-5-2-5-5 3 0 5 2 5 5zM12 13c3 0 5-2 5-5-3 0-5 2-5 5z"/><circle cx="12" cy="6" r="2"/>',summer:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/>',autumn:'<path d="M12 22v-6M12 16C7 16 4 12 4 8c3 0 5 1 6 3 0-4 1-7 2-9 1 2 2 5 2 9 1-2 3-3 6-3 0 4-3 8-8 8z"/>',winter:'<path d="M12 2v20M4 7l16 10M20 7L4 17M9 4l3 2 3-2M9 20l3-2 3 2"/>'};
+const SEAS=[
+ {k:"spring",n:"Spring",m:"Mar – May",img:"1695616827909-6f147f22d40f",h:"Spring: wake the garden up",p:"The soil warms, everything starts growing at once. A good start now saves work all summer.",t:[["Feed the lawn","Give it a slow-release spring feed once the grass starts growing, and mow high for the first few cuts."],["Plant summer bulbs","Dahlias, lilies and gladioli go in from April once the frost has passed."],["Mulch your borders","A 5 cm layer of compost keeps moisture in and weeds out all summer."]]},
+ {k:"summer",n:"Summer",m:"Jun – Aug",img:"1759891038233-9e55634b9838",h:"Summer: water smart, enjoy more",p:"The garden is at its peak. Focus on watering, dead-heading and simply enjoying it.",t:[["Water early","Water deeply in the morning, twice a week rather than a little every day."],["Dead-head roses","Snip off faded flowers and they'll keep blooming until autumn."],["Raise the mower","Longer grass stays greener in dry spells and shades out weeds."]]},
+ {k:"autumn",n:"Autumn",m:"Sep – Nov",img:"1612806527197-42af2b64884a",h:"Autumn: plant now, smile in spring",p:"The best planting season of the year. Warm soil and autumn rain help new plants root quickly.",t:[["Plant spring bulbs","Tulips, daffodils and alliums go in now, about three times as deep as the bulb is tall."],["Scarify &amp; aerate","Rake out moss and thatch, then spike the lawn so it breathes over winter."],["Leave some leaves","Rake leaves off the lawn, but leave a pile under hedges as a home for hedgehogs."]]},
+ {k:"winter",n:"Winter",m:"Dec – Feb",img:"1681465766418-6474cfdcbb3c",h:"Winter: rest, prune and plan",p:"A quiet season, but the perfect moment to shape trees and dream up next year's garden.",t:[["Prune fruit trees","Apples and pears are best pruned while dormant, on a dry, frost-free day."],["Protect pots","Wrap terracotta pots in fleece and raise them off the ground on feet."],["Plan &amp; book","Book your free garden visit now and be first in line for spring planting."]]}
+];
+const mNow=new Date().getMonth(),cur=mNow<2||mNow===11?3:mNow<5?0:mNow<8?1:2;
+$("#seasTabs").innerHTML=SEAS.map((s,i)=>`<button role="tab" aria-selected="${i===cur}" data-i="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">${ICS[s.k]}</svg><span>${s.n}${i===cur?"<small>Right now</small>":`<small style="color:var(--mut);font-weight:500">${s.m}</small>`}</span></button>`).join("");
+function showSeason(i,anim){
+  const s=SEAS[i],P=$("#seasPanel");
+  P.innerHTML=`<div><h3>${s.h}</h3><p>${s.p}</p><ul class="tips">${s.t.map((t,j)=>`<li><i>${j+1}</i><span><b>${t[0]}</b>${t[1]}</span></li>`).join("")}</ul></div><div class="seas__img"><img src="${ph(s.img,700)}" alt="A Greenleaf garden in ${s.n.toLowerCase()}" loading="lazy" width="700" height="875"></div>`;
+  if(anim){P.classList.remove("swap");void P.offsetWidth;P.classList.add("swap")}
+  $$("#seasTabs button").forEach(b=>b.setAttribute("aria-selected",+b.dataset.i===i));
+}
+$("#seasTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)showSeason(+b.dataset.i,1)});
+showSeason(cur,0);
+
+/* faq */
+$$(".qa button").forEach(b=>b.addEventListener("click",()=>{
+  const q=b.closest(".qa"),on=!q.classList.contains("on");
+  $$(".qa").forEach(x=>{x.classList.remove("on");x.querySelector("button").setAttribute("aria-expanded","false")});
+  if(on){q.classList.add("on");b.setAttribute("aria-expanded","true")}
+}));
+
+/* hours + days */
+const H=[["Monday","07:30–17:00"],["Tuesday","07:30–17:00"],["Wednesday","07:30–17:00"],["Thursday","07:30–17:00"],["Friday","07:30–17:00"],["Saturday","08:00–12:00"],["Sunday","Closed"]];
+const td=(new Date().getDay()+6)%7;
+$("#hours").innerHTML=H.map((h,i)=>`<li class="${i===td?"today":""}"><span>${h[0]}</span><span>${h[1]}</span></li>`).join("");
+const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let d=new Date(),out=[];d.setDate(d.getDate()+1);
+while(out.length<6){if(d.getDay()!==0&&d.getDay()!==6)out.push(new Date(d));d.setDate(d.getDate()+1)}
+$("#days").innerHTML=out.map((x,i)=>`<label><input type="radio" name="day" value="${DN[x.getDay()]} ${x.getDate()} ${MN[x.getMonth()]}" ${i===1?"checked":""}><span>${DN[x.getDay()]}<b>${x.getDate()}</b>${MN[x.getMonth()]}</span></label>`).join("");
+
+$("#bookForm").addEventListener("submit",e=>{
+  e.preventDefault();const f=e.target,bad=[...f.querySelectorAll("[required]")].find(i=>!i.value.trim());
+  if(bad){bad.focus();toast("Please add your name and phone number");return}
+  const day=(f.querySelector("[name=day]:checked")||{}).value||"a day that suits you";
+  toast(`Demo only: nothing was sent. We'd have called about ${day}.`);f.reset();
+});
+
+/* counters + reveal */
+const fin=el=>{const to=+el.dataset.count;el.textContent=to.toLocaleString("en-US");el.dataset.done=1};
+function count(el){const to=+el.dataset.count,t0=performance.now(),dur=REDUCED?1:1500;setTimeout(()=>fin(el),dur+80);(function f(t){const p=Math.min(1,(t-t0)/dur);el.textContent=Math.round(to*(1-Math.pow(1-p,3))).toLocaleString("en-US");if(p<1)requestAnimationFrame(f)})(t0)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-count]:not([data-done])").forEach(count);io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px"});
+$$(".rv").forEach(el=>io.observe(el));
+function revealVisible(){$$(".rv:not(.in)").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){el.classList.add("in","now");el.querySelectorAll("[data-count]").forEach(fin);io.unobserve(el)}})}
+revealVisible();addEventListener("load",revealVisible);
+
+/* hero parallax */
+if(!REDUCED){const img=$("#heroImg");let k=0;addEventListener("scroll",()=>{if(k)return;k=requestAnimationFrame(()=>{k=0;if(scrollY<1000)img.style.transform=`translateY(${-scrollY*.08}px)`})},{passive:true})}
+</script>
+</body>
+</html>

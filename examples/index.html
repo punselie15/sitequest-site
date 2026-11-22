@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example websites by business · SiteQuest Studio</title>
+<meta name="description" content="Find your type of business and click through a full example website: hair salons, barbers, cafés, restaurants, pubs, bakeries, tradespeople and more. Designed by SiteQuest Studio.">
+<meta name="theme-color" content="#F4F5F2">
+<link rel="canonical" href="https://sitequest.studio/examples/">
+<meta property="og:site_name" content="SiteQuest Studio">
+<meta property="og:title" content="What your website could look like · SiteQuest Studio">
+<meta property="og:description" content="Pick your type of business and click through a full example website.">
+<meta property="og:url" content="https://sitequest.studio/examples/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sitequest.studio/img/icon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@300..700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<style>
+:root{
+  --bg:#F4F5F2; --bg-2:#E9ECE7; --ink:#18201F; --ink-2:#5C6866; --lagoon:#0E3B3A; --deep:#082625;
+  --petal:#F4B6C2; --pollen:#F2C14E; --line:rgba(24,32,31,.12); --card:#fff;
+  --f-d:"Bricolage Grotesque",system-ui,sans-serif; --f-b:"Geist",system-ui,sans-serif;
+  --max:1240px; --gut:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:150px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--lagoon);outline-offset:3px;border-radius:8px}
+.wrap{width:min(var(--max),100% - var(--gut)*2);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,245,242,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav__in{display:flex;align-items:center;gap:16px;height:64px}
+.nav__logo img{height:30px;width:auto}
+.nav__back{margin-left:auto;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.nav__back:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--lagoon);color:#fff;text-decoration:none;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:var(--deep);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn--ghost:hover{background:#fff}
+@media (max-width:560px){.nav__back{display:none}.nav .btn{margin-left:auto;padding:8px 14px;font-size:14px}}
+
+/* hero */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(24px,4vw,40px)}
+.hero__kicker{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--lagoon)}
+.hero__kicker::before{content:"";width:28px;height:2px;background:var(--pollen)}
+.hero h1{font:700 clamp(2.4rem,1.4rem + 4.6vw,5.2rem)/.98 var(--f-d);letter-spacing:-.035em;margin:14px 0 18px;max-width:14ch}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--petal) 62% 92%,transparent 92%)}
+.hero p{font-size:clamp(1.05rem,1rem + .3vw,1.25rem);color:var(--ink-2);max-width:56ch}
+.find{margin-top:26px;display:flex;gap:10px;max-width:560px}
+.find input{flex:1;min-width:0;min-height:52px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:12px 20px;font-size:16px}
+.find input:focus{border-color:var(--lagoon);outline:none;box-shadow:0 0 0 4px rgba(14,59,58,.12)}
+
+/* chips */
+.chips{position:sticky;top:64px;z-index:20;background:linear-gradient(var(--bg) 78%,rgba(244,245,242,0));padding:12px 0 16px}
+.chips__row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 4px;scroll-snap-type:x proximity}
+.chips__row::-webkit-scrollbar{display:none}
+.chip{flex:none;scroll-snap-align:start;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--lagoon)}
+.chip.on{background:var(--lagoon);border-color:var(--lagoon);color:#fff}
+.chip b{font-weight:600;opacity:.55;font-size:12px}
+
+/* categories */
+.cat{padding:28px 0 40px;border-top:1px solid var(--line)}
+.cat:target .cat__title,.cat.flash .cat__title{animation:flash 1.6s ease}
+@keyframes flash{0%,40%{background:var(--pollen)}100%{background:transparent}}
+.cat__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.cat__title{font:700 clamp(1.6rem,1.2rem + 1.6vw,2.4rem)/1.05 var(--f-d);letter-spacing:-.02em;display:inline-flex;gap:12px;align-items:center;border-radius:10px;padding:2px 6px;margin-left:-6px}
+.cat__link{font-size:14px;color:var(--ink-2);background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
+.card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 30px -12px rgba(8,38,37,.18);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.05),0 22px 50px -18px rgba(8,38,37,.32)}
+.card__shot{position:relative;display:block;aspect-ratio:16/10;background:var(--bg-2);overflow:hidden}
+.card__chrome{position:absolute;inset:0 0 auto 0;height:26px;background:rgba(255,255,255,.92);display:flex;align-items:center;gap:5px;padding:0 10px;z-index:2;font-size:11px;color:var(--ink-2)}
+.card__chrome i{width:8px;height:8px;border-radius:50%;background:#ddd}
+.card__chrome span{margin-left:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card__shot img{width:100%;height:100%;object-fit:cover;object-position:top;padding-top:26px;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card__shot img{transform:scale(1.04)}
+.card__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card__kind{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lagoon)}
+.card h3{font:700 1.35rem/1.15 var(--f-d);letter-spacing:-.01em}
+.card p{color:var(--ink-2);font-size:15px}
+.card__go{margin-top:auto;padding-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.card__go .btn{font-size:14px;min-height:42px}
+
+/* one example in a category: a wide card, picture beside the text */
+@media (min-width:760px){
+  .cards:has(> .card:only-child){grid-template-columns:1fr}
+  .card:only-child{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+  .card:only-child .card__shot{aspect-ratio:16/10;height:100%}
+  .card:only-child .card__body{padding:clamp(20px,3vw,36px);justify-content:center;gap:10px}
+  .card:only-child h3{font-size:clamp(1.6rem,1.2rem + 1vw,2.2rem)}
+  .card:only-child p{font-size:16px;max-width:42ch}
+  .card:only-child .card__go{margin-top:8px;flex-grow:0}
+}
+.empty{padding:40px 0;color:var(--ink-2);display:none}
+.cta{margin:40px 0 64px;background:var(--lagoon);color:#fff;border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;gap:14px}
+.cta h2{font:700 clamp(1.8rem,1.3rem + 2vw,3rem)/1.02 var(--f-d);letter-spacing:-.02em;max-width:18ch}
+.cta p{opacity:.85;max-width:52ch}
+.cta .btn{background:var(--pollen);color:var(--ink);justify-self:start}
+.cta .btn:hover{background:#fff}
+.foot{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--ink-2);display:flex;gap:12px 24px;flex-wrap:wrap;justify-content:space-between}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;font-size:14px;font-weight:500;transition:.3s;pointer-events:none;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#list">Skip to the examples</a>
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="/" aria-label="SiteQuest Studio home"><img src="/img/sitequest-logo.png" alt="SiteQuest" width="1479" height="355"></a>
+    <a class="nav__back" href="/#portfolio">← All our work</a>
+    <a class="btn" href="/#pricing">Get a free quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero__kicker">Examples by business</span>
+      <h1>See what <em>your</em> website could look like.</h1>
+      <p>Find your type of business and click through a full example site. Every one works on phones, shows your prices, and lets customers book, order or get in touch. We build yours in the same quality, with your name, photos and style.</p>
+      <form class="find" role="search" onsubmit="return false">
+        <label class="sr-only" for="q">Your type of business</label>
+        <input id="q" type="search" placeholder="Your business, e.g. barber, bakery, plumber" autocomplete="off">
+      </form>
+    </div>
+  </section>
+
+  <nav class="chips" aria-label="Types of business"><div class="wrap"><div class="chips__row" id="chips"></div></div></nav>
+
+  <div class="wrap" id="list" aria-live="polite"></div>
+  <p class="wrap empty" id="empty">No example for that yet. <a href="/#pricing">Tell us about your business</a> and we’ll show you a free preview of your homepage instead.</p>
+
+  <div class="wrap">
+    <section class="cta reveal">
+      <h2>Like one of these? Yours can look like this.</h2>
+      <p>We make a free preview of your homepage first, with your own name and style. You only pay once you love it.</p>
+      <a class="btn" href="/#pricing">Get my free preview</a>
+    </section>
+  </div>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 SiteQuest Studio · <a href="mailto:hello@sitequest.studio">hello@sitequest.studio</a></span>
+  <span>All example brands, names, prices and reviews are made up, to show what’s possible.</span>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  let data;
+  try {
+    data = await (await fetch("catalog.json", { cache: "no-cache" })).json();
+  } catch {
+    $("#list").innerHTML = '<p style="padding:40px 0">The examples could not load. Please refresh the page.</p>';
+    return;
+  }
+  const cats = data.categories.filter((c) => data.sites.some((s) => s.cat === c.id));
+  const sitesOf = (id) => data.sites.filter((s) => s.cat === id);
+  const host = (s) => s.name.toLowerCase().replace(/[’'&]/g, "").replace(/[^a-z0-9]+/g, "") + ".com";
+  const thumb = (s) => s.thumb || `/examples/thumbs/${s.id}.jpg`;
+
+  $("#chips").innerHTML = cats.map((c) => `<a class="chip" href="#${c.id}" data-id="${c.id}"><span aria-hidden="true">${c.icon}</span>${esc(c.label)} <b>${sitesOf(c.id).length}</b></a>`).join("");
+  $("#list").innerHTML = cats.map((c) => `
+    <section class="cat" id="${c.id}" data-words="${esc([c.label, ...c.words].join(" ").toLowerCase())}">
+      <div class="cat__head">
+        <h2 class="cat__title"><span aria-hidden="true">${c.icon}</span>${esc(c.label)}</h2>
+        <button class="cat__link" type="button" data-copy="${c.id}">Copy link to ${esc(c.label.toLowerCase())}</button>
+      </div>
+      <div class="cards">${sitesOf(c.id).map((s) => `
+        <article class="card reveal">
+          <a class="card__shot" href="${s.path}" aria-label="Open ${esc(s.name)}">
+            <div class="card__chrome" aria-hidden="true"><i></i><i></i><i></i><span>${host(s)}</span></div>
+            <img src="${thumb(s)}" alt="${esc(s.name)}, homepage" loading="lazy" width="1200" height="750">
+          </a>
+          <div class="card__body">
+            <p class="card__kind">${esc(s.kind)}</p>
+            <h3>${esc(s.name)}</h3>
+            <p>${esc(s.blurb)}</p>
+            <div class="card__go">
+              <a class="btn" href="${s.path}">Open the site ↗</a>
+              <a class="btn btn--ghost" href="/#pricing">I want one like this</a>
+            </div>
+          </div>
+        </article>`).join("")}
+      </div>
+    </section>`).join("");
+
+  // scroll reveals
+  const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add("in"), io.unobserve(e.target))), { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // highlight the chip of the category in view
+  const chips = [...document.querySelectorAll(".chip")];
+  const spy = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    chips.forEach((c) => c.classList.toggle("on", c.dataset.id === e.target.id));
+    const on = chips.find((c) => c.dataset.id === e.target.id);
+    on?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  document.querySelectorAll(".cat").forEach((el) => spy.observe(el));
+
+  // links like /examples/#barber land on that category (and flash it)
+  const jump = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const el = id && document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView();
+    el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+  };
+  window.addEventListener("hashchange", jump);
+  setTimeout(jump, 60);
+
+  // type your business: show only the matching categories
+  $("#q").addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll(".cat").forEach((el) => {
+      const hit = !q || el.dataset.words.includes(q) || q.split(/\s+/).some((w) => w.length > 2 && el.dataset.words.includes(w));
+      el.hidden = !hit;
+      if (hit) shown++;
+    });
+    chips.forEach((c) => (c.hidden = !!q && document.getElementById(c.dataset.id).hidden));
+    $("#empty").style.display = shown ? "none" : "block";
+    document.querySelectorAll(".cat:not([hidden]) .reveal").forEach((r) => r.classList.add("in"));
+  });
+
+  // copy a link straight to one category
+  const toast = (t) => { const el = $("#toast"); el.textContent = t; el.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("show"), 2200); };
+  document.addEventListener("click", async (e) => {
+    const id = e.target.closest("[data-copy]")?.dataset.copy;
+    if (!id) return;
+    const url = `${location.origin}/examples/#${id}`;
+    try { await navigator.clipboard.writeText(url); toast("Link copied"); } catch { prompt("Copy this link:", url); }
+  });
+})();
+</script>
+</body>
+</html>

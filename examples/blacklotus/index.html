@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Lotus Tattoo · Custom tattoos, made with patience</title>
+<meta name="description" content="Black Lotus Tattoo: custom blackwork, fine line, Japanese and realism by three resident artists. Browse each artist's portfolio, send your idea and read our aftercare guide. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#0C0B0D">
+<meta property="og:title" content="Black Lotus Tattoo · Custom tattoos, made with patience">
+<meta property="og:description" content="Portfolios per artist, a booking request with your idea, aftercare and FAQ. A concept site by SiteQuest Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230C0B0D'/%3E%3Cg fill='none' stroke='%23E8E2D6' stroke-width='4' stroke-linejoin='round'%3E%3Cpath d='M50 18C60 32 60 52 50 66C40 52 40 32 50 18Z'/%3E%3Cpath d='M50 66C36 60 26 46 26 32C38 36 46 48 50 66ZM50 66C64 60 74 46 74 32C62 36 54 48 50 66Z'/%3E%3Cpath d='M50 66C34 68 18 60 12 48C26 46 40 52 50 66ZM50 66C66 68 82 60 88 48C74 46 60 52 50 66Z'/%3E%3C/g%3E%3Ccircle cx='50' cy='80' r='5' fill='%23C2412D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700;800&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --ink:#0C0B0D;--ink2:#141215;--ink3:#1E1B1F;--paper:#E8E2D6;--paper2:#B9B2A6;--paper3:#7E776E;
+  --red:#C2412D;--red2:#E0583F;--line:rgba(232,226,214,.13);
+  --f-d:"Grenze Gotisch",Georgia,serif;--f-b:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--paper);font:400 16px/1.65 var(--f-b);overflow-x:hidden}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red2);outline-offset:3px}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.concept{background:var(--paper);color:var(--ink);font-size:13px;text-align:center;padding:8px 16px}
+.concept a{font-weight:700;color:#8E2A1C}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(12,11,13,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav__in{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;line-height:1}
+.brand svg{width:42px;height:42px;flex:none}
+.brand b{display:block;font:700 27px/.9 var(--f-d);letter-spacing:.01em}
+.brand small{display:block;font:500 9.5px/1 var(--f-b);letter-spacing:.34em;color:var(--paper3);margin-top:5px}
+.nav__links{display:flex;gap:28px;margin-left:auto;list-style:none;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase}
+.nav__links a{text-decoration:none;color:var(--paper2);transition:color .2s}
+.nav__links a:hover{color:var(--paper)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 26px;font-weight:700;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:transform .25s,background .25s,color .25s,border-color .25s}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn--line{border:1px solid var(--paper3);color:var(--paper)}
+.btn--line:hover{border-color:var(--paper);background:rgba(232,226,214,.05)}
+.btn svg{width:16px;height:16px}
+.nav .btn{min-height:44px;padding:10px 20px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:70px 0 90px}
+.ink{position:absolute;border-radius:50%;filter:blur(60px);z-index:-2;opacity:.55;will-change:transform}
+.ink--a{width:520px;height:520px;background:radial-gradient(circle,#3A1410,transparent 70%);left:-160px;top:-120px;animation:drift 18s ease-in-out infinite}
+.ink--b{width:620px;height:620px;background:radial-gradient(circle,#24202A,transparent 70%);right:-200px;bottom:-240px;animation:drift 22s ease-in-out infinite reverse}
+@keyframes drift{50%{transform:translate(80px,60px) scale(1.12)}}
+.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.over{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper3);display:flex;align-items:center;gap:14px}
+.over i{width:9px;height:9px;background:var(--red);transform:rotate(45deg)}
+.hero h1{font:700 clamp(62px,8.6vw,132px)/.86 var(--f-d);margin:24px 0 28px;letter-spacing:-.005em}
+.hero h1 span{display:block;opacity:0;filter:blur(12px);animation:inkIn 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2){animation-delay:.18s;color:var(--red)}
+.hero h1 span:nth-child(3){animation-delay:.36s}
+@keyframes inkIn{to{opacity:1;filter:blur(0)}}
+.lede{max-width:46ch;font-size:18px;color:var(--paper2);font-weight:300}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__meta{display:flex;gap:40px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line)}
+.hero__meta div{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper3)}
+.hero__meta b{display:block;font:700 40px/1 var(--f-d);color:var(--paper);letter-spacing:0;margin-bottom:6px}
+.hero__art{position:relative;justify-self:center;width:100%;max-width:480px}
+.frame{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--line)}
+.frame img{width:100%;height:112%;object-fit:cover;filter:grayscale(.25) contrast(1.08);will-change:transform}
+.frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(232,226,214,.35);pointer-events:none}
+.lotus{position:absolute;width:62%;left:-26%;bottom:-8%;color:var(--paper);filter:drop-shadow(0 8px 20px rgba(0,0,0,.8))}
+.lotus path{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:240;stroke-dashoffset:240;animation:draw 3s cubic-bezier(.6,.1,.3,1) forwards}
+.lotus path:nth-child(2){animation-delay:.3s}.lotus path:nth-child(3){animation-delay:.6s}.lotus path:nth-child(4){animation-delay:.9s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lotus circle{fill:var(--red);opacity:0;animation:fade .6s 2.4s forwards}
+@keyframes fade{to{opacity:1}}
+.seal{position:absolute;right:-18px;top:28px;width:84px;height:84px;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font:700 13px/1.05 var(--f-d);transform:rotate(6deg);box-shadow:0 18px 40px -16px rgba(0,0,0,.8)}
+.seal b{display:block;font-size:26px}
+
+.strip{border-block:1px solid var(--line);overflow:hidden;background:var(--ink2)}
+.strip__row{display:flex;gap:40px;width:max-content;padding:18px 0;animation:tick 38s linear infinite;font:700 30px/1 var(--f-d);color:var(--paper2);white-space:nowrap}
+.strip__row i{font-style:normal;color:var(--red)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+section{scroll-margin-top:84px}
+.sec{padding:110px 0}
+.sec--alt{background:var(--ink2)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:52px}
+.h2{font:700 clamp(46px,6vw,88px)/.9 var(--f-d)}
+.h2 em{font-style:normal;color:var(--red)}
+.head p{color:var(--paper2);max-width:44ch;justify-self:end;font-weight:300;font-size:17px}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s!important}.d2{transition-delay:.16s!important}.d3{transition-delay:.24s!important}
+
+/* artists */
+.artists{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.art{background:var(--ink);padding:32px;display:flex;flex-direction:column;gap:14px;position:relative;transition:background .4s}
+.art:hover{background:var(--ink3)}
+.art__seal{width:58px;height:58px;display:grid;place-items:center;border:1px solid var(--paper3);font:700 30px var(--f-d)}
+.art h3{font:700 44px/1 var(--f-d)}
+.art__style{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red2)}
+.art p{color:var(--paper2);font-weight:300;font-size:15.5px;flex:1}
+.art__f{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--paper3)}
+.books{display:inline-flex;align-items:center;gap:8px;color:var(--paper)}
+.books i{width:8px;height:8px;border-radius:50%;background:#7FBF7A}
+.books.closed i{background:var(--red)}
+.art .lnk{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;min-height:44px;display:inline-flex;align-items:center;gap:8px;color:var(--paper);text-decoration:none}
+.art .lnk:hover{color:var(--red2)}
+
+/* rates */
+.rates{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:60px}
+.rate{border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:6px}
+.rate span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper3)}
+.rate b{font:700 46px/1 var(--f-d)}
+.rate p{font-size:14px;color:var(--paper2);font-weight:300}
+
+/* portfolio */
+.filters{display:grid;gap:12px;margin-bottom:30px}
+.frow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.frow > span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper3);width:70px}
+.chip{min-height:44px;padding:9px 18px;border:1px solid var(--line);font-size:14px;transition:all .25s;color:var(--paper2)}
+.chip:hover{border-color:var(--paper3);color:var(--paper)}
+.chip[aria-pressed=true]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.port{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pi{position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--ink3);cursor:zoom-in;transition:opacity .45s,transform .45s}
+.pi.out{opacity:0;transform:scale(.94)}
+.pi.gone{display:none}
+.pi img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3);transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .5s}
+.pi:hover img{transform:scale(1.06);filter:none}
+.pi figcaption{position:absolute;inset:auto 0 0 0;padding:44px 14px 14px;background:linear-gradient(0deg,rgba(12,11,13,.92),transparent);font-size:13px;color:var(--paper2)}
+.pi figcaption b{display:block;font:700 22px/1.1 var(--f-d);color:var(--paper)}
+.empty{grid-column:1/-1;padding:60px;text-align:center;color:var(--paper3);border:1px dashed var(--line);display:none}
+.count{font-size:13px;color:var(--paper3);margin-top:16px}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(8,7,9,.95);display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-height:80vh;max-width:min(860px,100%);object-fit:contain}
+.lb p{text-align:center;margin-top:14px;color:var(--paper2);font-size:14px}
+.lb button{position:absolute;top:16px;right:16px;width:48px;height:48px;border:1px solid var(--paper3);font-size:24px}
+
+/* booking */
+.book{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+.bform{border:1px solid var(--line);padding:34px;background:var(--ink);min-width:0}
+.blk{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.blk:last-of-type{border:0;margin:0;padding:0}
+.blk h3{font:700 28px/1 var(--f-d);margin-bottom:6px;display:flex;align-items:baseline;gap:12px}
+.blk h3 span{font:500 12px var(--f-b);letter-spacing:.2em;color:var(--red2)}
+.blk > p{color:var(--paper3);font-size:14.5px;margin-bottom:18px}
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.who label{position:relative;cursor:pointer}
+.who input{position:absolute;opacity:0;inset:0}
+.who span{display:flex;flex-direction:column;gap:4px;min-height:84px;padding:14px;border:1px solid var(--line);transition:all .25s}
+.who span b{font:700 22px/1 var(--f-d)}
+.who span small{font-size:12px;color:var(--paper3)}
+.who input:checked + span{border-color:var(--red);background:rgba(194,65,45,.1)}
+.who input:focus-visible + span{outline:2px solid var(--red2);outline-offset:2px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper3)}
+.f--w{grid-column:1/-1}
+.f input,.f select,.f textarea{min-height:50px;padding:12px 14px;border:1px solid var(--line);background:var(--ink2);font:400 16px var(--f-b);letter-spacing:0;text-transform:none;color:var(--paper);border-radius:0}
+.f textarea{min-height:120px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--paper3)}
+.f input[type=file]{padding:12px;font-size:14px}
+.place{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center}
+.body svg{width:100%;height:auto;display:block}
+.bz{fill:#2A262C;stroke:#4A444C;stroke-width:1;cursor:pointer;transition:fill .25s}
+.bz:hover{fill:#3E383F}
+.bz.on{fill:var(--red);stroke:var(--red2)}
+.bz:focus-visible{outline:none;stroke:var(--paper);stroke-width:2}
+.zones{display:flex;flex-wrap:wrap;gap:6px}
+.zones .chip{min-height:40px;padding:8px 14px;font-size:13.5px}
+.picked{margin-top:14px;font-size:14px;color:var(--paper2)}
+.picked b{color:var(--paper)}
+.size{display:flex;align-items:center;gap:16px}
+.size input[type=range]{flex:1;accent-color:var(--red);height:44px}
+.size output{font:700 34px/1 var(--f-d);min-width:90px;text-align:right}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--paper2);cursor:pointer}
+.check input{width:22px;height:22px;accent-color:var(--red);margin-top:2px;flex:none}
+.est{position:sticky;top:92px;border:1px solid var(--line);background:var(--ink3);padding:28px}
+.est h4{font:700 30px/1 var(--f-d);margin-bottom:4px}
+.est > p{font-size:13.5px;color:var(--paper3);margin-bottom:20px}
+.est dl{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;font-size:14px}
+.est dt{color:var(--paper3)}
+.est dd{text-align:right}
+.est__big{margin:22px 0 4px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper3)}
+.est__big b{display:block;font:700 46px/1 var(--f-d);color:var(--paper);letter-spacing:0;margin-top:6px}
+.est small{display:block;color:var(--paper3);font-size:12.5px;margin-top:12px;line-height:1.5}
+.est .btn{width:100%;margin-top:22px}
+
+/* aftercare */
+.care{display:grid;grid-template-columns:320px 1fr;gap:40px}
+.ctabs{display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.ctabs button{text-align:left;padding:16px 22px;min-height:56px;border-left:2px solid transparent;margin-left:-1px;color:var(--paper3);transition:all .25s;display:flex;flex-direction:column}
+.ctabs button b{font:700 24px/1.1 var(--f-d);color:inherit}
+.ctabs button small{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.ctabs button[aria-selected=true]{border-color:var(--red);color:var(--paper);background:linear-gradient(90deg,rgba(194,65,45,.12),transparent)}
+.cpanel{border:1px solid var(--line);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-content:start;min-height:340px;animation:fadeIn .5s}
+@keyframes fadeIn{from{opacity:0;transform:translateX(10px)}}
+.cpanel h3{grid-column:1/-1;font:700 40px/1 var(--f-d)}
+.cpanel h3 small{display:block;font:300 16px/1.5 var(--f-b);color:var(--paper2);margin-top:12px}
+.cpanel h4{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.cpanel h4.do{color:#8FCB8A}.cpanel h4.dont{color:var(--red2)}
+.cpanel ul{list-style:none;display:grid;gap:10px;color:var(--paper2);font-size:15px}
+.cpanel li{display:flex;gap:10px}
+.cpanel li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;background:currentColor;transform:rotate(45deg);opacity:.6}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;gap:18px;background:var(--ink)}
+.rev .st{color:var(--red2);letter-spacing:4px;font-size:14px}
+.rev q{font:400 19px/1.5 var(--f-b);quotes:none;flex:1;color:var(--paper)}
+.rev q::before{content:"“";display:block;font:700 56px/.5 var(--f-d);color:var(--red);margin:14px 0 6px}
+.rev footer{font-size:13px;color:var(--paper3)}
+.rev footer b{display:block;color:var(--paper);font-size:15px;font-weight:500}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.acc__i{border-bottom:1px solid var(--line)}
+.acc__i:first-child{border-top:1px solid var(--paper3)}
+.acc__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;text-align:left;font:600 19px/1.35 var(--f-b);min-height:44px}
+.acc__q i{flex:none;width:30px;height:30px;position:relative;transition:transform .45s}
+.acc__q i::before,.acc__q i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.acc__q i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc__q[aria-expanded=true] i{transform:rotate(135deg);color:var(--red2)}
+.acc__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.acc__a>div{overflow:hidden}
+.acc__a p{padding:0 50px 22px 0;color:var(--paper2);font-weight:300}
+.acc__q[aria-expanded=true]+.acc__a{grid-template-rows:1fr}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.map{position:relative;min-height:420px;background:#121013;border:1px solid var(--line);overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:58%;top:42%;transform:translate(-50%,-50%);text-align:center}
+.pin svg{position:static;width:54px;height:54px;color:var(--paper);margin:0 auto}
+.pin b{display:block;margin-top:6px;font:700 20px var(--f-d)}
+.vcard{border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;gap:18px;background:var(--ink2)}
+.open{align-self:flex-start;font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:#8FCB8A}
+.open::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.open.closed{color:var(--red2)}
+.addr{font:700 34px/1.05 var(--f-d)}
+.hours{list-style:none;font-size:14.5px}
+.hours li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+.hours li.today{color:var(--paper);font-weight:700}
+.hours li span:last-child{color:var(--paper2)}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:70px 0 30px}
+.foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.foot h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper3);margin-bottom:14px;font-weight:500}
+.foot ul{list-style:none;display:grid;gap:8px;color:var(--paper2);font-size:15px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--paper)}
+.soc{display:flex;gap:8px;margin-top:22px}
+.soc a{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);transition:all .25s}
+.soc a:hover{background:var(--red);border-color:var(--red)}
+.soc svg{width:18px;height:18px}
+.foot__b{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--paper3)}
+.foot__b a{color:var(--paper2)}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:26px;z-index:90;transform:translate(-50%,160%);opacity:0;background:var(--paper);color:var(--ink);padding:14px 22px;font-size:14.5px;font-weight:500;border-left:4px solid var(--red);transition:transform .45s cubic-bezier(.3,1.3,.4,1),opacity .3s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+@media (max-width:1060px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+  .hero__grid,.faq,.visit,.care{grid-template-columns:1fr}
+  .hero__art{max-width:400px}
+  .artists{grid-template-columns:1fr}
+  .book{grid-template-columns:1fr}
+  .est{position:static}
+  .port{grid-template-columns:repeat(3,1fr)}
+  .revs{grid-template-columns:1fr}
+  .head{grid-template-columns:1fr}
+  .head p{justify-self:start}
+  .ctabs{flex-direction:row;overflow-x:auto;border-left:0;border-bottom:1px solid var(--line);scrollbar-width:none}
+  .ctabs button{border-left:0;border-bottom:2px solid transparent;margin:0 0 -1px;flex:none}
+  .ctabs button[aria-selected=true]{background:none}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  body{padding-bottom:76px}
+  .brand b{font-size:23px;white-space:nowrap}
+  .brand small{white-space:nowrap;letter-spacing:.22em}
+  .hs{display:none}
+  .nav__in{gap:12px}
+  .sec{padding:76px 0}
+  .hero{padding:40px 0 70px}
+  .lede{font-size:16.5px}
+  .hero__meta{gap:22px}
+  .hero__meta b{font-size:32px}
+  .lotus{left:-8%;width:52%}
+  .seal{right:-4px}
+  .strip__row{font-size:24px}
+  .rates{grid-template-columns:1fr 1fr;gap:10px}
+  .rate{padding:18px}
+  .rate b{font-size:34px}
+  .port{grid-template-columns:1fr 1fr;gap:8px}
+  .frow > span{width:100%}
+  .bform{padding:20px 16px}
+  .who{grid-template-columns:1fr 1fr}
+  .fields{grid-template-columns:1fr}
+  .place{grid-template-columns:120px 1fr;gap:14px}
+  .cpanel{grid-template-columns:1fr;padding:24px}
+  .cpanel h3{font-size:32px}
+  .map{min-height:300px}
+  .acc__q{font-size:17px}
+  .acc__a p{padding-right:0}
+  .foot__grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(12,11,13,.95);border-top:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .mbar .btn{min-height:50px;padding:10px}
+  .toast{bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .hero h1 span{opacity:1;filter:none}
+  .lotus path{stroke-dashoffset:0}.lotus circle{opacity:1}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#tattoo">More tattoo studio examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a href="#top" class="brand" aria-label="Black Lotus Tattoo, home">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="none" stroke="#E8E2D6" stroke-opacity=".25" stroke-width="1.5"/><g fill="none" stroke="#E8E2D6" stroke-width="3.2" stroke-linejoin="round"><path d="M50 18C60 32 60 52 50 66C40 52 40 32 50 18Z" fill="#E8E2D6"/><path d="M50 66C36 60 26 46 26 32C38 36 46 48 50 66ZM50 66C64 60 74 46 74 32C62 36 54 48 50 66Z"/><path d="M50 66C34 68 18 60 12 48C26 46 40 52 50 66ZM50 66C66 68 82 60 88 48C74 46 60 52 50 66Z"/></g><path d="M30 77h40M38 83h24" stroke="#E8E2D6" stroke-width="2.4" stroke-linecap="round"/><circle cx="50" cy="44" r="4" fill="#C2412D"/></svg>
+      <span><b>Black Lotus</b><small>TATTOO · EST 2016</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#artists">Artists</a></li>
+      <li><a href="#work">Portfolio</a></li>
+      <li><a href="#book">Booking</a></li>
+      <li><a href="#aftercare">Aftercare</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#book" class="btn btn--red">Request<span class="hs">&nbsp;a tattoo</span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <span class="ink ink--a" aria-hidden="true"></span><span class="ink ink--b" aria-hidden="true"></span>
+  <div class="wrap hero__grid">
+    <div>
+      <span class="over"><i></i>Custom tattoo studio · Old Harbour</span>
+      <h1><span>Ink that</span><span>outlives</span><span>trends.</span></h1>
+      <p class="lede">Three resident artists, one quiet private studio. We draw every piece from scratch, take our time, and only tattoo what we'd be proud to sign.</p>
+      <div class="hero__cta">
+        <a href="#book" class="btn btn--red">Send your idea <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="#work" class="btn btn--line">See the work</a>
+      </div>
+      <div class="hero__meta">
+        <div><b data-count="8">8</b>years inking</div>
+        <div><b data-count="3">3</b>resident artists</div>
+        <div><b data-count="4200" data-sep="1">4,200</b>pieces healed</div>
+      </div>
+    </div>
+    <div class="hero__art">
+      <div class="frame"><img id="heroImg" src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=1100&q=70&auto=format&fit=crop" alt="Gloved artist working on a detailed black and grey sleeve" width="900" height="1200" fetchpriority="high"></div>
+      <svg class="lotus" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 18C60 32 60 52 50 66C40 52 40 32 50 18Z"/><path d="M50 66C36 60 26 46 26 32C38 36 46 48 50 66ZM50 66C64 60 74 46 74 32C62 36 54 48 50 66Z"/><path d="M50 66C34 68 18 60 12 48C26 46 40 52 50 66ZM50 66C66 68 82 60 88 48C74 46 60 52 50 66Z"/><path d="M20 76h60M30 82h40M40 88h20"/><circle cx="50" cy="44" r="2.6"/></svg>
+      <div class="seal" aria-hidden="true"><div><b>18+</b>by<br>appt.</div></div>
+    </div>
+  </div>
+</section>
+<div class="strip" aria-hidden="true"><div class="strip__row">
+  <span>Blackwork</span><i>✦</i><span>Fine line</span><i>✦</i><span>Japanese</span><i>✦</i><span>Black &amp; grey realism</span><i>✦</i><span>Botanical</span><i>✦</i><span>Cover-ups</span><i>✦</i>
+  <span>Blackwork</span><i>✦</i><span>Fine line</span><i>✦</i><span>Japanese</span><i>✦</i><span>Black &amp; grey realism</span><i>✦</i><span>Botanical</span><i>✦</i><span>Cover-ups</span><i>✦</i>
+</div></div>
+
+<section class="sec" id="artists">
+  <div class="wrap">
+    <div class="head rv"><h2 class="h2">The <em>artists</em></h2><p>Each artist has their own style and their own calendar. Pick the one whose work makes you stop scrolling.</p></div>
+    <div class="artists" id="artistList"></div>
+    <div class="rates" id="rates"></div>
+  </div>
+</section>
+
+<section class="sec sec--alt" id="work">
+  <div class="wrap">
+    <div class="head rv"><h2 class="h2">Port<em>folio</em></h2><p>Healed and fresh work from the studio. Filter by artist or by style, and tap any piece to see it larger.</p></div>
+    <div class="filters rv">
+      <div class="frow" id="fArtist" role="group" aria-label="Filter by artist"><span>Artist</span></div>
+      <div class="frow" id="fStyle" role="group" aria-label="Filter by style"><span>Style</span></div>
+    </div>
+    <div class="port" id="port"><p class="empty" id="empty">No pieces match that combination yet. Try another style, or ask the artist; they'd love to draw something new.</p></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="sec" id="book">
+  <div class="wrap">
+    <div class="head rv"><h2 class="h2">Request a <em>tattoo</em></h2><p>Tell us your idea. Your artist replies within 3 working days with questions, a price and dates. A deposit secures your slot.</p></div>
+    <div class="book rv">
+      <form class="bform" id="bform" novalidate>
+        <div class="blk"><h3><span>01</span>Your artist</h3><p>Not sure? Let us match you based on your idea.</p><div class="who" id="who"></div></div>
+        <div class="blk"><h3><span>02</span>Your idea</h3><p>The more detail, the better: meaning, mood, elements, things you don't want.</p>
+          <div class="fields">
+            <label class="f">Style<select name="style" id="bStyle"><option>Not sure yet</option><option>Blackwork</option><option>Fine line</option><option>Japanese</option><option>Realism</option><option>Flash (from the wall)</option></select></label>
+            <label class="f">Colour<select name="colour" id="bCol"><option value="bw">Black &amp; grey</option><option value="col">Colour</option></select></label>
+            <label class="f f--w">Describe your idea<textarea name="idea" required placeholder="E.g. a botanical piece with a peony and my grandmother's handwriting, soft and airy, wrapping slightly around the arm"></textarea></label>
+            <label class="f f--w">Reference images (optional)<input type="file" accept="image/*" multiple></label>
+          </div>
+        </div>
+        <div class="blk"><h3><span>03</span>Placement &amp; size</h3><p>Tap the body or pick from the list.</p>
+          <div class="place">
+            <div class="body" id="body"></div>
+            <div><div class="zones" id="zones"></div><p class="picked" id="picked">No placement chosen yet.</p></div>
+          </div>
+          <div class="f" style="margin-top:22px">Approximate size (longest side)
+            <div class="size"><input type="range" id="size" min="3" max="40" value="12" aria-label="Size in centimetres"><output id="sizeOut" for="size">12 cm</output></div>
+          </div>
+        </div>
+        <div class="blk"><h3><span>04</span>About you</h3><p>We only use this to reply about your tattoo.</p>
+          <div class="fields">
+            <label class="f">Name<input name="name" required autocomplete="name"></label>
+            <label class="f">Email<input name="email" type="email" required autocomplete="email"></label>
+            <label class="f f--w">Preferred days<select name="days"><option>Any day</option><option>Weekdays</option><option>Weekends</option><option>Evenings</option></select></label>
+            <label class="check f--w"><input type="checkbox" name="age" required>I'm 18 or older and will bring a valid photo ID to my appointment.</label>
+          </div>
+        </div>
+      </form>
+      <aside class="est" aria-live="polite">
+        <h4>Rough estimate</h4>
+        <p>Based on your choices. Your artist gives the final quote.</p>
+        <dl><dt>Artist</dt><dd id="eA">Best match</dd><dt>Placement</dt><dd id="eP">—</dd><dt>Size</dt><dd id="eS">12 cm</dd><dt>Sessions</dt><dd id="eSe">1</dd><dt>Time</dt><dd id="eT">—</dd></dl>
+        <div class="est__big">Estimated price<b id="eR">€—</b></div>
+        <small>€80 deposit when you book, taken off the final price. Free touch-up within 3 months.</small>
+        <button class="btn btn--red" type="button" id="send">Send request</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--alt" id="aftercare">
+  <div class="wrap">
+    <div class="head rv"><h2 class="h2">After<em>care</em></h2><p>A tattoo is only as good as how it heals. Follow these steps and it'll look sharp for decades.</p></div>
+    <div class="care rv">
+      <div class="ctabs" role="tablist" id="ctabs"></div>
+      <div id="cpanel" role="tabpanel"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="head rv"><h2 class="h2">Worn <em>proudly</em></h2><p>4.9 from 310 reviews. A few words from people who sat in our chairs.</p></div>
+    <div class="revs">
+      <article class="rev rv"><div class="st" aria-label="5 out of 5">★★★★★</div><q>Kai turned my messy idea into a blackwork piece I still stare at in the mirror. Worth every minute.</q><footer><b>Tobias R.</b>Blackwork forearm · fictional review</footer></article>
+      <article class="rev rv d1"><div class="st" aria-label="5 out of 5">★★★★★</div><q>First tattoo, very nervous. Rosa explained everything and the fine line work healed perfectly.</q><footer><b>Femke A.</b>Fine line botanical · fictional review</footer></article>
+      <article class="rev rv d2"><div class="st" aria-label="5 out of 5">★★★★★</div><q>Four sessions with Tomas for a Japanese half sleeve. Patient, precise, and a great storyteller.</q><footer><b>Daan V.</b>Japanese half sleeve · fictional review</footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--alt" id="faq">
+  <div class="wrap faq">
+    <div class="rv"><h2 class="h2">Questions<em>?</em></h2><p style="color:var(--paper2);margin-top:20px;font-weight:300">Still unsure? Drop by the studio on a Saturday for a free chat and a look through the books.</p></div>
+    <div class="acc rv d1" id="acc"></div>
+  </div>
+</section>
+
+<section class="sec" id="visit">
+  <div class="wrap">
+    <div class="head rv"><h2 class="h2">The <em>studio</em></h2><p>Private studio, by appointment only. Ring the bell at the black door next to the bookbinder.</p></div>
+    <div class="visit">
+      <div class="map rv" role="img" aria-label="Map placeholder showing Black Lotus on Harbour Lane">
+        <svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="700" height="420" fill="#121013"/><path d="M0 330C160 290 300 370 460 320S650 260 720 280V420H0z" fill="#16151B"/><g stroke="#24212A" stroke-width="22" fill="none"><path d="M0 170h700M430 0v330M120 0l140 330"/></g><g stroke="#2E2A33" stroke-width="1" fill="none" stroke-dasharray="3 6"><path d="M0 120h700M0 230h700M300 0v330M560 0v330"/></g><text x="150" y="160" fill="#7E776E" font-family="Manrope" font-size="11" letter-spacing="3">HARBOUR LANE</text><text x="150" y="380" fill="#4A444C" font-family="Manrope" font-size="11" letter-spacing="3">OLD HARBOUR</text></svg>
+        <div class="pin"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"><path d="M50 18C60 32 60 52 50 66C40 52 40 32 50 18Z" fill="#C2412D" stroke="#C2412D"/><path d="M50 66C36 60 26 46 26 32C38 36 46 48 50 66ZM50 66C64 60 74 46 74 32C62 36 54 48 50 66Z"/></svg><b>Black Lotus</b></div>
+      </div>
+      <div class="vcard rv d1">
+        <span class="open" id="openNow">Open now</span>
+        <div class="addr">Harbour Lane 31<br>Old Harbour</div>
+        <ul class="hours" id="hours"></ul>
+        <a href="mailto:ink@example.com" class="btn btn--line">ink@blacklotus.example</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a href="#top" class="brand" aria-label="Black Lotus Tattoo, back to top"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="none" stroke="#E8E2D6" stroke-opacity=".25" stroke-width="1.5"/><g fill="none" stroke="#E8E2D6" stroke-width="3.2" stroke-linejoin="round"><path d="M50 18C60 32 60 52 50 66C40 52 40 32 50 18Z" fill="#E8E2D6"/><path d="M50 66C36 60 26 46 26 32C38 36 46 48 50 66ZM50 66C64 60 74 46 74 32C62 36 54 48 50 66Z"/><path d="M50 66C34 68 18 60 12 48C26 46 40 52 50 66ZM50 66C66 68 82 60 88 48C74 46 60 52 50 66Z"/></g><path d="M30 77h40M38 83h24" stroke="#E8E2D6" stroke-width="2.4" stroke-linecap="round"/><circle cx="50" cy="44" r="4" fill="#C2412D"/></svg><span><b>Black Lotus</b><small>TATTOO · EST 2016</small></span></a>
+        <p style="color:var(--paper2);margin-top:18px;max-width:32ch;font-size:15px">Custom tattoos by appointment in the Old Harbour. 18+ only.</p>
+        <div class="soc">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M10 20l2-8m-1.5 3.5c3 1 6-1 6-4.5a4.5 4.5 0 0 0-9 0c0 1 .3 1.8.8 2.3"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3v11a4 4 0 1 1-4-4M14 3c.5 3 2.5 5 5 5"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Studio</h4><ul><li>Harbour Lane 31</li><li>Old Harbour</li><li><a href="tel:+31201234570">020 123 4570</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Tue–Fri 11–19</li><li>Sat 10–17 (walk-in chats)</li><li>Sun–Mon closed</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#work">Portfolio</a></li><li><a href="#book">Booking request</a></li><li><a href="#aftercare">Aftercare</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    </div>
+    <div class="foot__b"><span>Black Lotus Tattoo is a fictional studio, created as a concept by <a href="/">SiteQuest Studio</a>.</span><span>Want a site like this? <a href="/#pricing">Get a free quote</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+31201234570" class="btn btn--line">Call</a><a href="#book" class="btn btn--red">Request</a></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Portfolio viewer"><button type="button" id="lbX" aria-label="Close">×</button><div><img id="lbImg" alt=""><p id="lbCap"></p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ph=(id,w=700)=>`https://images.unsplash.com/photo-${id}?w=${w}&q=70&auto=format&fit=crop`;
+let tT;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('on'),3400)}
+const press=(box,btn)=>$$('[aria-pressed]',box).forEach(b=>b.setAttribute('aria-pressed',b===btn));
+
+/* artists */
+const ART=[
+ {id:'kai',n:'Kai',s:'Blackwork · Ornamental',p:'Bold, graphic blackwork and ornamental patterns that flow with the body. Kai loves big pieces: sleeves, backs and anything with symmetry.',open:true,when:'Books open · March',rate:160},
+ {id:'rosa',n:'Rosa',s:'Fine line · Botanical',p:'Delicate single-needle work, botanicals and script. Rosa is gentle, precise and the artist most first-timers ask for.',open:true,when:'Books open · February',rate:150},
+ {id:'tomas',n:'Tomas',s:'Japanese · Realism',p:'Traditional Japanese motifs and black and grey realism. Tomas plans multi-session pieces with care and tells great stories while he works.',open:false,when:'Waitlist only',rate:170}
+];
+$('#artistList').innerHTML=ART.map((a,i)=>`<article class="art rv d${i}"><span class="art__seal" aria-hidden="true">${a.n[0]}</span><div><span class="art__style">${a.s}</span><h3>${a.n}</h3></div><p>${a.p}</p><a href="#work" class="lnk" data-art="${a.id}">See ${a.n}'s work →</a><div class="art__f"><span class="books ${a.open?'':'closed'}"><i></i>${a.when}</span><span>€${a.rate}/hr</span></div></article>`).join('');
+$('#rates').innerHTML=[['Shop minimum','€120','Small pieces, includes stencil and aftercare'],['Hourly rate','from €150','Varies per artist, quoted up front'],['Full day','€850','Around 6 hours of tattooing'],['Flash','from €100','Ready-drawn designs from the wall'],['Deposit','€80','Taken off your final price'],['Touch-up','Free','Within 3 months of your session']].map((r,i)=>`<div class="rate rv ${['','d1','d2'][i%3]}"><span>${r[0]}</span><b>${r[1]}</b><p>${r[2]}</p></div>`).join('');
+
+/* portfolio */
+const P=[
+ ['1586243287039-23f4c8e2e7ab','Mandala back piece','kai','Blackwork'],
+ ['1562962230-16e4623d36e6','Peony forearm','rosa','Fine line'],
+ ['1611501275019-9b5cda994e8d','Dragon half sleeve','tomas','Japanese'],
+ ['1568515045052-f9a854d70bfd','Ornamental sleeve','kai','Blackwork'],
+ ['1598371839696-5c5bb00bdc28','Peony and serpent shoulder','tomas','Japanese'],
+ ['1769605767701-6e5a680ef685','Rose upper arm, in progress','rosa','Fine line'],
+ ['1552627019-947c3789ffb5','Mandala forearm','kai','Blackwork'],
+ ['1597852075234-fd721ac361d3','Koi outline, session one','tomas','Japanese'],
+ ['1564426622559-5af68da63b96','Portrait study','rosa','Realism'],
+ ['1605647533135-51b5906087d0','Black and grey shading','tomas','Realism'],
+ ['1769485016772-c5a4234a6be3','This month\'s flash wall','kai','Flash'],
+ ['1565058379802-bbe93b2f703a','Linework detail','rosa','Fine line']
+];
+const F={a:'all',s:'all'};
+$('#fArtist').insertAdjacentHTML('beforeend',[['all','All artists'],...ART.map(a=>[a.id,a.n])].map((x,i)=>`<button class="chip" aria-pressed="${i===0}" data-v="${x[0]}">${x[1]}</button>`).join(''));
+$('#fStyle').insertAdjacentHTML('beforeend',['all','Blackwork','Fine line','Japanese','Realism','Flash'].map((x,i)=>`<button class="chip" aria-pressed="${i===0}" data-v="${x}">${x==='all'?'All styles':x}</button>`).join(''));
+$('#port').insertAdjacentHTML('afterbegin',P.map((p,i)=>`<figure class="pi" data-a="${p[2]}" data-s="${p[3]}" data-i="${i}" tabindex="0" role="button" aria-label="Open ${p[1]} by ${ART.find(a=>a.id===p[2]).n}"><img src="${ph(p[0],600)}" alt="${p[1]}, ${p[3].toLowerCase()} tattoo work" loading="lazy" width="450" height="600"><figcaption><b>${p[1]}</b>${ART.find(a=>a.id===p[2]).n} · ${p[3]}</figcaption></figure>`).join(''));
+function filter(){
+  let n=0;$$('.pi').forEach(el=>{const ok=(F.a==='all'||el.dataset.a===F.a)&&(F.s==='all'||el.dataset.s===F.s);if(ok)n++;
+    if(ok){el.classList.remove('gone');requestAnimationFrame(()=>el.classList.remove('out'))}else{el.classList.add('out');setTimeout(()=>{if(el.classList.contains('out'))el.classList.add('gone')},RM?0:420)}});
+  $('#empty').style.display=n?'none':'block';$('#count').textContent=`Showing ${n} of ${P.length} pieces`;
+}
+$('#fArtist').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;press(e.currentTarget,b);F.a=b.dataset.v;filter()};
+$('#fStyle').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;press(e.currentTarget,b);F.s=b.dataset.v;filter()};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-art]');if(!a)return;const b=$(`#fArtist [data-v="${a.dataset.art}"]`);press($('#fArtist'),b);F.a=a.dataset.art;filter()});
+filter();
+const lb=$('#lb');
+function openLb(el){const p=P[+el.dataset.i];$('#lbImg').src=ph(p[0],1400);$('#lbImg').alt=p[1];$('#lbCap').textContent=`${p[1]} · ${ART.find(a=>a.id===p[2]).n} · ${p[3]}`;lb.classList.add('on');$('#lbX').focus()}
+$('#port').addEventListener('click',e=>{const el=e.target.closest('.pi');if(el)openLb(el)});
+$('#port').addEventListener('keydown',e=>{const el=e.target.closest('.pi');if(el&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openLb(el)}});
+const closeLb=()=>lb.classList.remove('on');$('#lbX').onclick=closeLb;lb.onclick=e=>{if(e.target===lb)closeLb()};addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+/* booking */
+$('#who').innerHTML=[...ART.map(a=>[a.id,a.n,a.s.split(' · ')[0]]),['any','Best match','We\'ll pick']].map((a,i)=>`<label><input type="radio" name="artist" value="${a[0]}" ${a[0]==='any'?'checked':''}><span><b>${a[1]}</b><small>${a[2]}</small></span></label>`).join('');
+const Z={Neck:1,Chest:1.2,Stomach:1.3,Ribs:1.5,'Upper arm':1,Forearm:1,Hand:1.4,Hip:1.2,Thigh:1,Calf:1,Ankle:1.2,Back:1.1};
+const R=(x,y,w,h,z,rx=10,t='')=>`<rect class="bz" data-z="${z}" x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" ${t?`transform="${t}"`:''} tabindex="0" role="button" aria-label="${z}"/>`;
+$('#body').innerHTML=`<svg viewBox="0 0 200 400" aria-label="Body map, tap to choose placement"><circle cx="100" cy="32" r="21" fill="#1E1B1F" stroke="#4A444C"/>${R(90,52,20,15,'Neck',5)}${R(66,68,68,48,'Chest',14)}${R(58,104,13,60,'Ribs',6)}${R(129,104,13,60,'Ribs',6)}${R(73,118,54,50,'Stomach',10)}${R(38,72,22,70,'Upper arm',11,'rotate(9 49 72)')}${R(140,72,22,70,'Upper arm',11,'rotate(-9 151 72)')}${R(26,146,20,66,'Forearm',10,'rotate(11 36 146)')}${R(154,146,20,66,'Forearm',10,'rotate(-11 164 146)')}${R(8,214,22,24,'Hand',10)}${R(170,214,22,24,'Hand',10)}${R(70,170,60,30,'Hip',10)}${R(72,202,27,84,'Thigh',12)}${R(101,202,27,84,'Thigh',12)}${R(74,290,23,72,'Calf',11)}${R(103,290,23,72,'Calf',11)}${R(72,366,26,16,'Ankle',7)}${R(102,366,26,16,'Ankle',7)}</svg>`;
+$('#zones').innerHTML=Object.keys(Z).map(z=>`<button type="button" class="chip" aria-pressed="false" data-z="${z}">${z}</button>`).join('');
+const B={zone:null};
+function pickZone(z){B.zone=z;$$('.bz').forEach(r=>r.classList.toggle('on',r.dataset.z===z));$$('#zones .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.z===z));$('#picked').innerHTML=`Placement: <b>${z}</b>${z==='Back'?' (back of the body)':''}`;est()}
+$('#body').addEventListener('click',e=>{const r=e.target.closest('.bz');if(r)pickZone(r.dataset.z)});
+$('#body').addEventListener('keydown',e=>{const r=e.target.closest('.bz');if(r&&(e.key==='Enter'||e.key===' ')){e.preventDefault();pickZone(r.dataset.z)}});
+$('#zones').onclick=e=>{const c=e.target.closest('.chip');if(c)pickZone(c.dataset.z)};
+function est(){
+  const size=+$('#size').value,col=$('#bCol').value==='col',aid=($('#who input:checked')||{}).value,art=ART.find(a=>a.id===aid);
+  const rate=art?art.rate:155,diff=B.zone?Z[B.zone]:1;
+  let hrs=Math.max(1,Math.pow(size,1.35)/14*diff*(col?1.3:1));hrs=Math.round(hrs*2)/2;
+  const lo=Math.max(120,Math.round(hrs*rate*.85/10)*10),hi=Math.max(150,Math.round(hrs*rate*1.15/10)*10);
+  const sess=Math.max(1,Math.ceil(hrs/5));
+  $('#sizeOut').textContent=size+' cm';$('#eS').textContent=size+' cm';$('#eA').textContent=art?art.n:'Best match';$('#eP').textContent=B.zone||'—';
+  $('#eT').textContent=hrs<=1?'about 1 hour':`about ${hrs} hours`;$('#eSe').textContent=sess;$('#eR').textContent=`€${lo}–${hi}`;
+}
+['#size','#bCol'].forEach(s=>$(s).addEventListener('input',est));$('#who').addEventListener('change',est);est();
+$('#send').onclick=()=>{const f=$('#bform');const bad=[...f.querySelectorAll('[required]')].find(el=>el.type==='checkbox'?!el.checked:!el.value.trim()||(el.type==='email'&&!el.checkValidity()));
+  if(!B.zone){toast('Choose a placement first');$('#body').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});return}
+  if(bad){bad.reportValidity?bad.reportValidity():0;bad.focus();toast('Please fill in the highlighted field');return}
+  toast('Demo only: nothing was sent. A real request would reach your artist right away.')};
+
+/* aftercare */
+const CARE=[
+ ['First hours','Day 0','Leave the wrap on for 2 to 4 hours (or as your artist says). Then wash gently with lukewarm water and unscented soap, and pat dry with a clean paper towel.',['Wash your hands before touching it','Let it breathe for 10 minutes after washing','Apply a very thin layer of the balm we give you'],['Re-wrap it in cling film overnight unless told to','Use a towel or sponge on it','Go to the gym or drink heavily']],
+ ['Days 1–3','Weeping','Some plasma and ink will seep out. That\'s normal. Wash two to three times a day and keep the balm thin: shiny, not greasy.',['Sleep in clean sheets and loose clothes','Keep washing gently 2 to 3 times a day','Drink water and rest well'],['Soak it in baths, pools or the sea','Expose it to direct sun','Scratch or rub it']],
+ ['Days 4–14','Peeling','It will flake and itch, like a sunburn. Let the flakes fall off on their own. A cloudy, milky look is part of healing.',['Moisturise lightly when it feels tight','Tap or cool it if it itches','Wear soft fabrics over it'],['Pick or peel the flakes','Shave over it','Use scented lotions']],
+ ['Weeks 2–4','Settling','The surface has closed, the deeper layers are still healing. Colours and lines will look crisp again by the end.',['Keep moisturising daily','Book your free touch-up if needed','Send us a healed photo!'],['Sunbathe or use a sunbed','Swim for long periods yet','Panic about small patchy bits, we\'ll fix them']],
+ ['Forever','Long term','Sun is the number one enemy of tattoos. Protect it and it will stay sharp for decades.',['Use SPF 50 on it every sunny day','Keep your skin hydrated','Come back for a refresh in 5 to 10 years'],['Skip sunscreen in summer','Laser it without talking to us first','Forget to show it off']]
+];
+$('#ctabs').innerHTML=CARE.map((c,i)=>`<button role="tab" aria-selected="${i===0}" data-i="${i}"><small>${c[1]}</small><b>${c[0]}</b></button>`).join('');
+function care(i){const c=CARE[i];$('#cpanel').innerHTML=`<div class="cpanel"><h3>${c[0]}<small>${c[2]}</small></h3><div><h4 class="do">Do</h4><ul>${c[3].map(x=>`<li>${x}</li>`).join('')}</ul></div><div><h4 class="dont">Don't</h4><ul>${c[4].map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`;$$('#ctabs button').forEach(b=>b.setAttribute('aria-selected',+b.dataset.i===i))}
+$('#ctabs').onclick=e=>{const b=e.target.closest('button');if(b)care(+b.dataset.i)};care(0);
+
+/* faq */
+const FAQ=[
+ ['Does it hurt?','Honestly, a bit. Most people describe it as a hot scratch. Ribs, feet and hands are spicier; outer arms and thighs are easiest. We take breaks whenever you need.'],
+ ['How much is the deposit and is it refundable?','€80, taken off the final price. It\'s refundable if you cancel more than 7 days before. Within 7 days it covers the drawing time your artist already put in.'],
+ ['Do you do walk-ins?','Not for tattoos. Everything is by appointment so artists have time to draw. On Saturdays you can drop by for a chat, flash pieces sometimes get done the same day.'],
+ ['Can you cover up an old tattoo?','Often, yes. Send a clear photo of the old tattoo in daylight with your request. Cover-ups usually need to be larger and darker than the original.'],
+ ['Will I see the design before the appointment?','Your artist shares the direction beforehand and finishes the final drawing with you on the day, so you can tweak size and placement in person.'],
+ ['What should I do before my session?','Sleep well, eat a proper meal, stay hydrated and skip alcohol the night before. Wear clothes that give easy access to the area and bring a snack.']
+];
+$('#acc').innerHTML=FAQ.map((q,i)=>`<div class="acc__i"><button class="acc__q" aria-expanded="${i===0}" aria-controls="a${i}" id="q${i}">${q[0]}<i aria-hidden="true"></i></button><div class="acc__a" id="a${i}" role="region" aria-labelledby="q${i}"><div><p>${q[1]}</p></div></div></div>`).join('');
+$('#acc').onclick=e=>{const b=e.target.closest('.acc__q');if(b)b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true')};
+
+/* hours */
+const H=[null,null,[11,19],[11,19],[11,19],[11,19],[10,17]];
+const now=new Date(),dow=now.getDay(),hr=now.getHours()+now.getMinutes()/60;
+$('#hours').innerHTML=[1,2,3,4,5,6,0].map(d=>`<li class="${d===dow?'today':''}"><span>${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d]}</span><span>${H[d]?H[d][0]+':00 – '+H[d][1]+':00':'Closed'}</span></li>`).join('');
+{const o=H[dow]&&hr>=H[dow][0]&&hr<H[dow][1];const el=$('#openNow');el.textContent=o?`Open now · until ${H[dow][1]}:00`:'Closed now · requests open 24/7';el.classList.toggle('closed',!o)}
+
+/* reveal, counters, parallax */
+function count(el){const to=+el.dataset.count,sep=el.dataset.sep;const f2=v=>sep?Math.round(v).toLocaleString('en'):Math.round(v);if(RM){el.textContent=f2(to);return}let t0=null;const f=t=>{t0??=t;const k=Math.min(1,(t-t0)/1600);el.textContent=f2(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(el=>{if(RM||el.getBoundingClientRect().top<innerHeight)el.classList.add('in');else io.observe(el)});
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);cio.unobserve(e.target)}}));$$('[data-count]').forEach(el=>cio.observe(el));
+const hi=$('#heroImg');let tk=false;
+if(!RM)addEventListener('scroll',()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{if(scrollY<1100)hi.style.transform=`translateY(${-scrollY*.07}px)`;tk=false})},{passive:true});
+</script>
+</body>
+</html>

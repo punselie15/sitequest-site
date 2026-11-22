@@ -1,0 +1,439 @@
+{
+ "version": 1,
+ "base": "https://sitequest.studio",
+ "page": "/examples/",
+ "note": "Every example site SiteQuest Studio can show a client, grouped by type of business. The Examples page on sitequest.studio and the HQ's Examples app both read this file, so a new entry here shows up in both. All brands are made up.",
+ "categories": [
+  {
+   "id": "hair",
+   "label": "Hair salons",
+   "icon": "💇‍♀️",
+   "words": [
+    "hairdresser",
+    "kapsalon",
+    "kapper",
+    "hair salon",
+    "haarstudio"
+   ]
+  },
+  {
+   "id": "barber",
+   "label": "Barbershops",
+   "icon": "💈",
+   "words": [
+    "barber",
+    "barbershop",
+    "barbier"
+   ]
+  },
+  {
+   "id": "beauty",
+   "label": "Beauty & nails",
+   "icon": "💅",
+   "words": [
+    "beauty",
+    "nails",
+    "nagelstudio",
+    "schoonheidssalon",
+    "cosmetics"
+   ]
+  },
+  {
+   "id": "cafe",
+   "label": "Cafés & coffee bars",
+   "icon": "☕",
+   "words": [
+    "cafe",
+    "coffee",
+    "koffie",
+    "lunchroom"
+   ]
+  },
+  {
+   "id": "restaurant",
+   "label": "Restaurants & bistros",
+   "icon": "🍽️",
+   "words": [
+    "restaurant",
+    "bistro",
+    "brasserie",
+    "eetcafe"
+   ]
+  },
+  {
+   "id": "bar",
+   "label": "Bars & pubs",
+   "icon": "🍺",
+   "words": [
+    "bar",
+    "pub",
+    "kroeg",
+    "biergarten",
+    "nightclub"
+   ]
+  },
+  {
+   "id": "takeaway",
+   "label": "Takeaways & snack bars",
+   "icon": "🍟",
+   "words": [
+    "fast_food",
+    "snackbar",
+    "takeaway",
+    "kebab",
+    "pizza",
+    "sandwich"
+   ]
+  },
+  {
+   "id": "bakery",
+   "label": "Bakeries",
+   "icon": "🥐",
+   "words": [
+    "bakery",
+    "bakkerij",
+    "bakker",
+    "patisserie"
+   ]
+  },
+  {
+   "id": "butcher",
+   "label": "Butchers & delis",
+   "icon": "🥩",
+   "words": [
+    "butcher",
+    "slagerij",
+    "deli",
+    "cheese",
+    "greengrocer"
+   ]
+  },
+  {
+   "id": "florist",
+   "label": "Florists",
+   "icon": "💐",
+   "words": [
+    "florist",
+    "bloemist",
+    "bloemen"
+   ]
+  },
+  {
+   "id": "bnb",
+   "label": "B&Bs & guesthouses",
+   "icon": "🛏️",
+   "words": [
+    "guest_house",
+    "hotel",
+    "bnb",
+    "b&b"
+   ]
+  },
+  {
+   "id": "tattoo",
+   "label": "Tattoo studios",
+   "icon": "🖋️",
+   "words": [
+    "tattoo",
+    "piercing"
+   ]
+  },
+  {
+   "id": "massage",
+   "label": "Physio & massage",
+   "icon": "💆",
+   "words": [
+    "physiotherapist",
+    "fysio",
+    "massage"
+   ]
+  },
+  {
+   "id": "plumber",
+   "label": "Plumbers & electricians",
+   "icon": "🔧",
+   "words": [
+    "plumber",
+    "electrician",
+    "hvac",
+    "loodgieter",
+    "installatie"
+   ]
+  },
+  {
+   "id": "builder",
+   "label": "Builders, painters & roofers",
+   "icon": "🏗️",
+   "words": [
+    "builder",
+    "painter",
+    "roofer",
+    "carpenter",
+    "tiler",
+    "bouw"
+   ]
+  },
+  {
+   "id": "gardener",
+   "label": "Gardeners & landscapers",
+   "icon": "🌿",
+   "words": [
+    "gardener",
+    "landscaper",
+    "hovenier"
+   ]
+  },
+  {
+   "id": "garage",
+   "label": "Car garages",
+   "icon": "🚗",
+   "words": [
+    "car_repair",
+    "garage",
+    "autobedrijf"
+   ]
+  },
+  {
+   "id": "driving",
+   "label": "Driving schools",
+   "icon": "🚦",
+   "words": [
+    "driving_school",
+    "rijschool"
+   ]
+  },
+  {
+   "id": "photographer",
+   "label": "Photographers",
+   "icon": "📷",
+   "words": [
+    "photographer",
+    "fotograaf",
+    "photo"
+   ]
+  },
+  {
+   "id": "pets",
+   "label": "Pet groomers & pet shops",
+   "icon": "🐾",
+   "words": [
+    "pet",
+    "pet_grooming",
+    "veterinary",
+    "dierenwinkel"
+   ]
+  },
+  {
+   "id": "tailor",
+   "label": "Tailors & repairs",
+   "icon": "🧵",
+   "words": [
+    "tailor",
+    "shoe_repair",
+    "repair",
+    "dry_cleaning",
+    "kleermaker"
+   ]
+  },
+  {
+   "id": "shop",
+   "label": "Clothing & shops",
+   "icon": "👗",
+   "words": [
+    "clothes",
+    "boutique",
+    "shop",
+    "fashion"
+   ]
+  }
+ ],
+ "sites": [
+  {
+   "id": "lumen",
+   "cat": "hair",
+   "name": "Salon Lumen",
+   "path": "/examples/lumen/",
+   "kind": "Hair salon with online booking",
+   "blurb": "A light, airy salon site: services with prices, a booking flow, stylist profiles and a before/after slider."
+  },
+  {
+   "id": "northside",
+   "cat": "barber",
+   "name": "Northside Barbers",
+   "path": "/examples/northside/",
+   "kind": "Barbershop with chair booking",
+   "blurb": "Bold and dark: live walk-in wait time, book a barber, cuts and beard prices, a gallery of fades."
+  },
+  {
+   "id": "velvet",
+   "cat": "beauty",
+   "name": "Velvet Nail & Beauty",
+   "path": "/examples/velvet/",
+   "kind": "Nail and beauty studio",
+   "blurb": "Soft and glossy: treatment menu, a nail-colour picker, gift cards and appointment booking."
+  },
+  {
+   "id": "copperkettle",
+   "cat": "cafe",
+   "name": "Copper Kettle",
+   "path": "/examples/copperkettle/",
+   "kind": "Café and coffee bar",
+   "blurb": "Warm and cosy: today’s opening hours up top, a phone-friendly menu, pastries of the day and a map."
+  },
+  {
+   "id": "maisonthyme",
+   "cat": "restaurant",
+   "name": "Maison Thyme",
+   "path": "/examples/maisonthyme/",
+   "kind": "Bistro with reservations",
+   "blurb": "Elegant bistro: a real text menu with prices, a table booking flow, chef’s story and a photo gallery."
+  },
+  {
+   "id": "lantern",
+   "cat": "bar",
+   "name": "The Lantern",
+   "path": "/examples/lantern/",
+   "kind": "Pub with events calendar",
+   "blurb": "A neighbourhood pub: live music and quiz nights, drinks menu with taps, group bookings."
+  },
+  {
+   "id": "kebab",
+   "cat": "takeaway",
+   "name": "Ember & Spit",
+   "path": "/portfolio/kebab/",
+   "kind": "Takeaway ordering site",
+   "blurb": "A 3D doner turning in the hero, animated menus, build your own kebab and a cart for pickup or delivery.",
+   "thumb": "/img/work/kebab.jpg"
+  },
+  {
+   "id": "sandwich",
+   "cat": "takeaway",
+   "name": "Two Slices",
+   "path": "/portfolio/sandwich/",
+   "kind": "Sandwich bar ordering site",
+   "blurb": "Customers stack their own sandwich in 3D, with a live price, toasting and pickup times.",
+   "thumb": "/img/work/sandwich.jpg"
+  },
+  {
+   "id": "riseandcrumb",
+   "cat": "bakery",
+   "name": "Rise & Crumb",
+   "path": "/examples/riseandcrumb/",
+   "kind": "Bakery with pre-orders",
+   "blurb": "Fresh-from-the-oven feel: today’s bakes, order cakes for pickup, and the baker’s story."
+  },
+  {
+   "id": "hartwell",
+   "cat": "butcher",
+   "name": "Hartwell’s",
+   "path": "/examples/hartwell/",
+   "kind": "Butcher and deli",
+   "blurb": "Craft butcher: weekly offers, BBQ packages to order ahead, cuts guide and opening hours."
+  },
+  {
+   "id": "wildstem",
+   "cat": "florist",
+   "name": "Wild Stem",
+   "path": "/examples/wildstem/",
+   "kind": "Florist with delivery",
+   "blurb": "Bouquets you can order for delivery, wedding and funeral flowers, and a seasonal gallery."
+  },
+  {
+   "id": "willowhouse",
+   "cat": "bnb",
+   "name": "The Willow House",
+   "path": "/examples/willowhouse/",
+   "kind": "B&B with direct booking",
+   "blurb": "Rooms with photos, a date picker for booking requests, breakfast and tips for the area."
+  },
+  {
+   "id": "blacklotus",
+   "cat": "tattoo",
+   "name": "Black Lotus Tattoo",
+   "path": "/examples/blacklotus/",
+   "kind": "Tattoo studio",
+   "blurb": "A portfolio per artist, a booking request with your idea, aftercare guide and FAQ."
+  },
+  {
+   "id": "movewell",
+   "cat": "massage",
+   "name": "MoveWell",
+   "path": "/examples/movewell/",
+   "kind": "Physio and massage practice",
+   "blurb": "Calm and trustworthy: treatments, book an appointment, insurance info and the team."
+  },
+  {
+   "id": "flowright",
+   "cat": "plumber",
+   "name": "FlowRight",
+   "path": "/examples/flowright/",
+   "kind": "Plumber and electrician",
+   "blurb": "A big call button, a quick quote form, service area, emergency help and reviews."
+  },
+  {
+   "id": "oakline",
+   "cat": "builder",
+   "name": "Oakline Builders",
+   "path": "/examples/oakline/",
+   "kind": "Builder, painter and roofer",
+   "blurb": "Before/after projects, services, a step-by-step quote request and real-looking reviews."
+  },
+  {
+   "id": "greenleaf",
+   "cat": "gardener",
+   "name": "Greenleaf Gardens",
+   "path": "/examples/greenleaf/",
+   "kind": "Gardener and landscaper",
+   "blurb": "Garden projects gallery, maintenance plans with prices, and a free garden visit request."
+  },
+  {
+   "id": "torque",
+   "cat": "garage",
+   "name": "Torque Auto Service",
+   "path": "/examples/torque/",
+   "kind": "Car garage",
+   "blurb": "Book a service or inspection online, price list, tyre change and a loan car."
+  },
+  {
+   "id": "greenlight",
+   "cat": "driving",
+   "name": "Green Light",
+   "path": "/examples/greenlight/",
+   "kind": "Driving school",
+   "blurb": "Lesson packages with prices, pass rate, instructors and a sign-up form."
+  },
+  {
+   "id": "northlight",
+   "cat": "photographer",
+   "name": "Northlight Studio",
+   "path": "/examples/northlight/",
+   "kind": "Photographer portfolio",
+   "blurb": "Full-screen galleries, packages for weddings and portraits, and a booking enquiry."
+  },
+  {
+   "id": "pawsandsuds",
+   "cat": "pets",
+   "name": "Paws & Suds",
+   "path": "/examples/pawsandsuds/",
+   "kind": "Pet groomer",
+   "blurb": "Playful grooming site: prices by dog size, book a grooming slot, and happy-dog gallery."
+  },
+  {
+   "id": "needlethread",
+   "cat": "tailor",
+   "name": "Needle & Thread",
+   "path": "/examples/needlethread/",
+   "kind": "Tailor and repairs",
+   "blurb": "Alterations and repairs with prices, how drop-off works, and a made-to-measure section."
+  },
+  {
+   "id": "clothing",
+   "cat": "shop",
+   "name": "Plainweave",
+   "path": "/portfolio/clothing/",
+   "kind": "Clothing webshop",
+   "blurb": "An editorial fashion store with quick view, colour and size picker, a lookbook and a bag.",
+   "thumb": "/img/work/clothing.jpg"
+  }
+ ]
+}

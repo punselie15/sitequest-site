@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Needle &amp; Thread · Tailor, alterations &amp; repairs in Old Market</title>
+<meta name="description" content="Needle & Thread: alterations, repairs and made-to-measure tailoring in Old Market. Clear prices, no appointment needed for drop-off. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#1F2A3C">
+<meta property="og:title" content="Needle & Thread · Tailor, alterations & repairs">
+<meta property="og:description" content="Alterations, repairs and made-to-measure tailoring. Clear prices, walk-in drop-off.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231F2A3C'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23C9A15A' stroke-width='2' stroke-dasharray='4 3'/%3E%3Cpath d='M18 46L46 18' stroke='%23F4EEE3' stroke-width='3.5' stroke-linecap='round'/%3E%3Cellipse cx='43' cy='21' rx='2.4' ry='1' transform='rotate(-45 43 21)' fill='%231F2A3C'/%3E%3Cpath d='M44 20c6 8-4 18-12 12s-2-16-10-10' fill='none' stroke='%23C0473A' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --linen:#F4EEE3; --linen-2:#EAE1D1; --card:#FBF8F2; --navy:#1F2A3C; --navy-2:#2B3850; --ink:#1B1E24; --mute:#5F6066;
+  --brass:#C9A15A; --brass-d:#9C7A3C; --red:#C0473A; --red-d:#A13A2E; --line:#D9CDB8;
+  --f-d:"Playfair Display", Georgia, serif; --f-b:"Karla", system-ui, sans-serif;
+  --r:6px; --stitch:2px dashed var(--brass);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--linen);color:var(--ink);font:400 17px/1.6 var(--f-b);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5;background:repeating-linear-gradient(45deg,rgba(31,42,60,.025) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(31,42,60,.02) 0 2px,transparent 2px 6px)}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero__in>*,.mtm__in>*,.appt>*,.visit>*,.about>*{min-width:0}
+h1,h2,h3{font-family:var(--f-d);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+h1 em,h2 em{color:var(--red);font-style:italic}
+
+.concept{background:var(--navy);color:#C7CDD8;font-size:13px;text-align:center;padding:8px 16px;line-height:1.45}
+.concept a{color:#fff;font-weight:700}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,238,227,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:0;border-bottom:var(--stitch);opacity:.7}
+.nav__in{display:flex;align-items:center;gap:28px;height:74px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:46px;height:46px;flex:none}
+.logo b{font:700 23px/1 var(--f-d);color:var(--navy);letter-spacing:-.01em}
+.logo b i{color:var(--red);font-style:italic;font-weight:500}
+.logo b small{display:block;font:700 10px/1 var(--f-b);letter-spacing:.28em;text-transform:uppercase;color:var(--brass-d);margin-top:5px}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{text-decoration:none;font-weight:500;font-size:15.5px;padding:6px 0;border-bottom:2px dashed transparent;transition:border-color .25s,color .25s}
+.nav__links a:hover{border-color:var(--red);color:var(--red)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 26px;border-radius:var(--r);font-weight:700;text-decoration:none;letter-spacing:.02em;transition:transform .2s,background .2s,color .2s;white-space:nowrap}
+.btn::after{content:"";position:absolute;inset:4px;border:1.5px dashed currentColor;border-radius:3px;opacity:.45;pointer-events:none}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn--navy{background:var(--navy);color:var(--linen)}
+.btn--navy:hover{background:var(--navy-2);transform:translateY(-2px)}
+.btn--ghost{border:1.5px solid var(--navy);color:var(--navy)}
+.btn--ghost::after{display:none}
+.btn--ghost:hover{background:var(--navy);color:var(--linen)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{position:relative;padding:60px 0 0;overflow:hidden}
+.hero__in{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.tagline{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-d)}
+.tagline svg{width:34px;height:12px}
+.hero h1{font-size:clamp(48px,6.6vw,92px);margin:20px 0 22px;color:var(--navy)}
+.hero__lede{font-size:clamp(17px,1.4vw,20px);color:var(--mute);max-width:46ch}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.chipf{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1.5px dashed var(--line);border-radius:999px;padding:7px 14px;font-weight:500;font-size:14.5px}
+.chipf b{color:var(--red)}
+.frame{position:relative;justify-self:center;width:100%;max-width:470px}
+.frame__img{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--linen-2);box-shadow:0 30px 60px -30px rgba(31,42,60,.55)}
+.frame__img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.frame__img.in img{transform:scale(1)}
+.frame__img::after{content:"";position:absolute;inset:12px;border:2px dashed rgba(244,238,227,.75);border-radius:2px;pointer-events:none}
+.tag{position:absolute;right:-18px;top:46px;width:128px;transform-origin:50% 0;animation:swing 5s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(0,0,0,.18))}
+@keyframes swing{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-5deg)}}
+.spool{position:absolute;left:-40px;bottom:40px;width:110px;animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-4deg)}}
+.thread{position:absolute;left:0;right:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.thread path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-dasharray:10 9;opacity:.6}
+.hero .wrap{position:relative;z-index:1}
+
+/* tape */
+.tape{margin-top:70px;height:62px;background:#E9C66E;border-block:2px solid var(--navy);position:relative;overflow:hidden}
+.tape__in{position:absolute;top:0;bottom:0;left:0;width:calc(100% + 400px);animation:tape 24s linear infinite;
+  background:repeating-linear-gradient(90deg,var(--navy) 0 2px,transparent 2px 40px) 0 0/100% 26px no-repeat,repeating-linear-gradient(90deg,var(--navy) 0 1px,transparent 1px 8px) 0 0/100% 12px no-repeat,repeating-linear-gradient(90deg,var(--navy) 0 1px,transparent 1px 40px) 20px 0/100% 18px no-repeat}
+.tape__nums{position:absolute;left:0;bottom:8px;display:flex;font:700 15px/1 var(--f-b);color:var(--navy);white-space:nowrap}
+.tape__nums span{width:40px;flex:none;text-indent:4px}
+.tape__label{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:var(--navy);color:#E9C66E;font:700 12px/1 var(--f-b);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border-radius:3px;z-index:2}
+@keyframes tape{to{transform:translateX(-400px)}}
+
+/* sections */
+section{scroll-margin-top:84px}
+.sec{padding:100px 0}
+.sec--card{background:var(--card)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.head h2,.h2{font-size:clamp(40px,5vw,66px);color:var(--navy);max-width:16ch;margin-top:12px}
+.head p{max-width:42ch;color:var(--mute)}
+.kick{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-d)}
+.kick::before{content:"";width:34px;border-top:2px dashed currentColor}
+.seam{height:0;border-top:var(--stitch);opacity:.6}
+
+/* price list */
+.pl{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.pl__side{position:sticky;top:100px;display:grid;gap:18px}
+.search{position:relative}
+.search svg{position:absolute;left:14px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--mute)}
+.search input{width:100%;min-height:52px;padding:12px 14px 12px 44px;border:1.5px solid var(--navy);border-radius:var(--r);background:#fff}
+.search input:focus{outline:none;box-shadow:0 0 0 4px rgba(192,71,58,.18);border-color:var(--red)}
+.cats{display:flex;flex-direction:column;gap:4px}
+.cats button{display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:8px 14px;border-radius:var(--r);text-align:left;font-weight:500;transition:background .2s,color .2s}
+.cats button small{font-size:13px;color:var(--mute)}
+.cats button:hover{background:var(--linen-2)}
+.cats button[aria-pressed=true]{background:var(--navy);color:var(--linen)}
+.cats button[aria-pressed=true] small{color:#AEB6C4}
+.express{display:flex;gap:12px;align-items:center;padding:14px;border:1.5px dashed var(--brass);border-radius:var(--r);background:#FFF9EC;font-size:14.5px;cursor:pointer}
+.express input{position:absolute;opacity:0;width:1px;height:1px}
+.sw{position:relative;flex:none;width:46px;height:26px;border-radius:999px;background:var(--line);transition:background .25s}
+.sw::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .25s}
+.express input:checked+.sw{background:var(--red)}
+.express input:checked+.sw::after{transform:translateX(20px)}
+.express input:focus-visible+.sw{outline:2px solid var(--red);outline-offset:2px}
+.express b{display:block;color:var(--navy)}
+.list{background:#fff;border-radius:var(--r);padding:8px 28px 18px;position:relative;box-shadow:0 20px 50px -34px rgba(31,42,60,.5)}
+.list::before{content:"";position:absolute;inset:8px;border:var(--stitch);border-radius:3px;pointer-events:none;opacity:.55}
+.grp h3{font-size:26px;color:var(--navy);padding:22px 0 8px;display:flex;align-items:baseline;gap:12px}
+.grp h3 small{font:500 13px/1 var(--f-b);color:var(--mute)}
+.item{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--linen-2)}
+.item:last-child{border-bottom:0}
+.item__name{font-weight:500}
+.item__name small{display:block;color:var(--mute);font-size:14px;font-weight:400}
+.item__dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-5px);min-width:20px}
+.item__price{font:700 19px/1 var(--f-d);color:var(--navy);white-space:nowrap;transition:color .3s}
+.item__price.exp{color:var(--red)}
+.item__price em{font:400 12.5px/1 var(--f-b);color:var(--mute);font-style:normal;margin-right:4px}
+mark{background:#F7E2A8;color:inherit;border-radius:2px;padding:0 1px}
+.empty{text-align:center;padding:50px 10px;color:var(--mute)}
+.empty b{display:block;font:500 26px/1.2 var(--f-d);color:var(--navy);margin-bottom:6px}
+.count{font-size:14px;color:var(--mute)}
+.fadein{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps::before{content:"";position:absolute;left:12%;right:12%;top:46px;border-top:2.5px dashed var(--red);opacity:.55}
+.step{position:relative;text-align:center;padding:0 8px}
+.step__ico{width:92px;height:92px;margin:0 auto 20px;border-radius:50%;background:var(--card);border:2px solid var(--navy);display:grid;place-items:center;position:relative;transition:transform .3s}
+.step__ico::after{content:"";position:absolute;inset:6px;border-radius:50%;border:1.5px dashed var(--brass)}
+.step:hover .step__ico{transform:rotate(-8deg) scale(1.05)}
+.step__ico svg{width:40px;height:40px;color:var(--navy)}
+.step__n{position:absolute;top:-6px;right:-6px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:700 14px/30px var(--f-b);z-index:1}
+.step h3{font-size:24px;color:var(--navy);margin-bottom:8px}
+.step p{color:var(--mute);font-size:15.5px}
+.note{margin-top:40px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:15.5px;text-align:center}
+.note span{display:inline-flex;align-items:center;gap:8px}
+.note span::before{content:"";width:8px;height:8px;background:var(--brass);transform:rotate(45deg)}
+
+/* made to measure */
+.mtm{background:var(--navy);color:#D6DBE4;position:relative;overflow:hidden}
+.mtm::before{content:"";position:absolute;inset:0;opacity:.18;background:repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0 1px,transparent 1px 7px),repeating-linear-gradient(0deg,rgba(255,255,255,.08) 0 1px,transparent 1px 7px)}
+.mtm .wrap{position:relative}
+.mtm__in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.mtm h2{color:var(--linen)}
+.mtm h2 em{color:var(--brass)}
+.mtm .kick{color:var(--brass)}
+.mtm p.lead{margin:18px 0 26px;max-width:46ch}
+.suit{position:relative;background:radial-gradient(circle at 50% 35%,#FBF8F2,#E6DCC9);border-radius:8px;padding:30px 24px 24px;text-align:center}
+.suit::after{content:"";position:absolute;inset:10px;border:2px dashed var(--brass);border-radius:4px;pointer-events:none}
+.suit svg{width:min(260px,70%);height:auto;margin:0 auto;filter:drop-shadow(0 18px 18px rgba(31,42,60,.25))}
+.suit svg .cloth{transition:fill .6s ease}
+.suit__name{font:500 28px/1.1 var(--f-d);color:var(--navy);margin-top:14px}
+.suit__meta{font-size:14.5px;color:var(--mute);margin-top:4px}
+.swatches{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1}
+.swatches button{width:46px;height:46px;border-radius:50%;border:3px solid transparent;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35),0 2px 6px rgba(0,0,0,.2);transition:transform .2s,border-color .2s}
+.swatches button:hover{transform:scale(1.1)}
+.swatches button[aria-pressed=true]{border-color:var(--red);transform:scale(1.12)}
+.mprices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.mprices div{border:1.5px dashed rgba(201,161,90,.55);border-radius:var(--r);padding:16px}
+.mprices span{display:block;font-size:13.5px;color:#AEB6C4}
+.mprices b{font:500 28px/1.1 var(--f-d);color:var(--linen)}
+.timeline{list-style:none;display:grid;gap:0;margin-bottom:30px}
+.timeline li{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15.5px}
+.timeline li b{color:var(--brass);font-weight:700}
+.mtm .btn--ghost{border-color:var(--linen);color:var(--linen)}
+.mtm .btn--ghost:hover{background:var(--linen);color:var(--navy)}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.polaroids{position:relative;height:520px}
+.pol{position:absolute;background:#fff;padding:12px 12px 46px;box-shadow:0 20px 40px -20px rgba(31,42,60,.5);transition:transform .5s}
+.pol img{width:100%;height:100%;object-fit:cover}
+.pol figcaption{position:absolute;left:0;right:0;bottom:12px;text-align:center;font:italic 500 17px/1 var(--f-d);color:var(--navy)}
+.pol--a{left:0;top:20px;width:62%;height:400px;transform:rotate(-4deg)}
+.pol--b{right:0;top:150px;width:52%;height:330px;transform:rotate(5deg)}
+.pol--a:hover{transform:rotate(-2deg) translateY(-6px)}.pol--b:hover{transform:rotate(3deg) translateY(-6px)}
+.pin{position:absolute;top:-10px;left:50%;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E3786C,var(--red-d));box-shadow:0 3px 4px rgba(0,0,0,.3);transform:translateX(-50%)}
+.about p{color:var(--mute);margin-top:16px;max-width:54ch}
+.sign{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
+.sign div b{display:block;font:700 40px/1 var(--f-d);color:var(--red)}
+.sign div span{font-size:14px;color:var(--mute)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.gal figure{position:relative;overflow:hidden;border-radius:4px;background:var(--linen-2)}
+.gal figure:nth-child(1){grid-row:span 2}
+.gal figure:nth-child(5){grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figure::after{content:"";position:absolute;inset:8px;border:1.5px dashed rgba(255,255,255,.7);border-radius:2px;opacity:0;transition:opacity .3s}
+.gal figure:hover::after{opacity:1}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:var(--linen);padding:5px 10px;border-radius:3px;font-size:13px;font-weight:700;color:var(--navy)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{position:relative;background:#fff;border-radius:var(--r);padding:30px 28px;display:flex;flex-direction:column;gap:14px}
+.rev::before{content:"";position:absolute;inset:7px;border:1.5px dashed var(--line);border-radius:3px;pointer-events:none}
+.stars{color:var(--brass);letter-spacing:3px}
+.rev blockquote{font:italic 500 20px/1.45 var(--f-d);color:var(--navy)}
+.rev footer{margin-top:auto;font-size:14.5px;color:var(--mute)}
+.rev footer b{color:var(--ink)}
+
+/* faq */
+.faq{max-width:840px;margin:0 auto}
+.qa{border-bottom:2px dashed var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;padding:22px 0;font:500 22px/1.3 var(--f-d);color:var(--navy);min-height:44px}
+.qa button svg{flex:none;width:26px;height:26px;color:var(--red);transition:transform .4s}
+.qa button[aria-expanded=true] svg{transform:rotate(135deg)}
+.qa__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.qa__a>div{overflow:hidden}
+.qa__a p{padding:0 0 22px;color:var(--mute);max-width:66ch}
+.qa.open .qa__a{grid-template-rows:1fr}
+
+/* appointment */
+.appt{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.appt__side p{color:var(--mute);margin-top:14px}
+.walk{margin-top:26px;background:var(--navy);color:var(--linen);border-radius:var(--r);padding:22px;position:relative}
+.walk::after{content:"";position:absolute;inset:6px;border:1.5px dashed rgba(201,161,90,.6);border-radius:3px;pointer-events:none}
+.walk b{font:500 22px/1.2 var(--f-d);display:block;margin-bottom:6px;color:#fff}
+.walk span{color:#C7CDD8;font-size:15px}
+.form{position:relative;background:#fff;border-radius:var(--r);padding:34px;box-shadow:0 24px 50px -34px rgba(31,42,60,.55)}
+.form::before{content:"";position:absolute;inset:8px;border:var(--stitch);border-radius:3px;pointer-events:none;opacity:.5}
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.types label{position:relative;cursor:pointer}
+.types input{position:absolute;opacity:0;width:1px;height:1px}
+.types span{display:flex;flex-direction:column;gap:2px;min-height:76px;justify-content:center;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r);font-weight:700;font-size:15px;transition:all .2s;background:var(--card)}
+.types span small{font-weight:400;color:var(--mute);font-size:13px}
+.types input:checked+span{border-color:var(--red);background:#FCEFEC;box-shadow:inset 0 0 0 1px var(--red)}
+.types input:focus-visible+span{outline:2px solid var(--red);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.row>*{min-width:0}
+label.l{display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--navy)}
+.form input:not([type=radio]),.form select,.form textarea{width:100%;min-height:50px;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--card);transition:border-color .2s,box-shadow .2s}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(31,42,60,.12)}
+.form .btn{width:100%;margin-top:6px}
+.fine{font-size:13px;color:var(--mute);text-align:center;margin-top:12px}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.hours{list-style:none;margin:18px 0 24px}
+.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1.5px dashed var(--line);font-size:16px}
+.hours li.today{font-weight:700;color:var(--red)}
+.mapbox{position:relative;min-height:400px;border-radius:var(--r);overflow:hidden;background:#E7DFCF}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.mapbox .mk{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);text-align:center}
+.mapbox .mk b{display:block;background:var(--navy);color:var(--linen);font:500 16px/1 var(--f-d);padding:10px 14px;border-radius:4px;white-space:nowrap;outline:1.5px dashed var(--brass);outline-offset:-5px}
+.mapbox .mk i{display:block;width:3px;height:26px;background:var(--navy);margin:0 auto}
+.mapbox .mk i::after{content:"";display:block;width:12px;height:12px;border-radius:50%;background:var(--red);margin:22px 0 0 -4.5px}
+
+/* footer */
+.foot{background:var(--navy);color:#AEB6C4;padding:70px 0 120px;font-size:15px;position:relative}
+.foot::before{content:"";position:absolute;left:0;right:0;top:10px;border-top:2px dashed rgba(201,161,90,.6)}
+.foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.foot .logo b{color:var(--linen)}
+.foot h4{color:var(--linen);font:500 20px/1 var(--f-d);margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:6px}
+.foot a{text-decoration:none}.foot a:hover{color:#fff}
+.social{display:flex;gap:10px;margin-top:18px}
+.social a{width:44px;height:44px;border-radius:50%;border:1.5px dashed rgba(201,161,90,.7);display:grid;place-items:center;transition:background .2s}
+.social a:hover{background:rgba(255,255,255,.08)}
+.social svg{width:18px;height:18px}
+.foot__base{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:24px;z-index:90;background:var(--navy);color:var(--linen);padding:14px 22px;border-radius:var(--r);font-weight:700;outline:1.5px dashed var(--brass);outline-offset:-6px;box-shadow:0 20px 40px -18px rgba(0,0,0,.5);transform:translate(-50%,160%);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.3,1.4,.4,1),opacity .3s,visibility 0s .45s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .45s cubic-bezier(.3,1.4,.4,1),opacity .3s}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.draw path{stroke-dashoffset:0}
+
+@media (max-width:1000px){
+  .nav__links{display:none}
+  .hero__in,.mtm__in,.appt,.visit,.about{grid-template-columns:1fr}
+  .pl{grid-template-columns:1fr}
+  .pl__side{position:static}
+  .cats{flex-direction:row;flex-wrap:wrap}
+  .cats button small{margin-left:8px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+  .steps::before{display:none}
+  .revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .gal figure:nth-child(5){grid-column:auto}
+  .gal figure:nth-child(1){grid-row:auto}
+  .foot__grid{grid-template-columns:1fr 1fr}
+  .frame{max-width:400px}
+}
+@media (max-width:640px){
+  .sec{padding:72px 0}
+  .hero{padding-top:36px}
+  .nav__in{height:66px}
+  .nav .btn{display:none}
+  .logo svg{width:40px;height:40px}
+  .tag{right:-4px;width:100px}
+  .spool{left:-10px;width:80px}
+  .list{padding:4px 18px 14px}
+  .item{flex-wrap:wrap;gap:4px 10px}
+  .item__dots{display:none}
+  .item__name{flex:1 1 60%}
+  .steps{grid-template-columns:1fr}
+  .mprices{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .mprices div{padding:10px}.mprices b{font-size:21px}
+  .timeline li{grid-template-columns:70px 1fr}
+  .polaroids{height:420px}
+  .pol--a{height:300px;width:66%}.pol--b{height:250px;top:140px;width:56%}
+  .types{grid-template-columns:1fr}
+  .types span{min-height:60px}
+  .swatches button{width:44px;height:44px}
+  .swatches{gap:8px}
+  .row{grid-template-columns:1fr}
+  .form{padding:24px 20px}
+  .foot__grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1.5fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(244,238,227,.96);border-top:2px dashed var(--brass)}
+  .mbar .btn{width:100%}
+  .toast{bottom:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .frame__img img{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#tailor">More tailor examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="#top" aria-label="Needle and Thread home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#1F2A3C"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#C9A15A" stroke-width="1.6" stroke-dasharray="3.5 3"/><path d="M17 47L46 18" stroke="#F4EEE3" stroke-width="3.4" stroke-linecap="round"/><ellipse cx="43" cy="21" rx="2.6" ry="1.1" transform="rotate(-45 43 21)" fill="#1F2A3C"/><path d="M43.5 20.5c7 7.5-2 19-11 13.5s-1.5-15.5-11-11.5c-4 1.8-4 6-1 8" fill="none" stroke="#C0473A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <b>Needle <i>&amp;</i> Thread<small>Tailors since 1987</small></b>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#dropoff">Drop-off</a></li>
+      <li><a href="#measure">Made to measure</a></li>
+      <li><a href="#about">Our story</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn--red" href="#appointment">Book a fitting</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <svg class="thread" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true"><path id="threadPath" d="M-20 600 C 200 520, 330 690, 560 600 S 880 420, 1040 520 S 1300 640, 1460 420"/></svg>
+  <div class="wrap hero__in">
+    <div>
+      <span class="tagline rv"><svg viewBox="0 0 34 12" aria-hidden="true"><path d="M1 6h32" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/></svg>Alterations · Repairs · Bespoke</span>
+      <h1 class="rv d1">Clothes that fit like they were <em>made for you.</em></h1>
+      <p class="hero__lede rv d2">Hems, zips, tears and full made-to-measure suits. Three generations of tailors on Old Market Street. Walk in, we’ll pin it, quote it and text you when it’s ready.</p>
+      <div class="hero__cta rv d3">
+        <a class="btn btn--red" href="#prices">See our prices
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#appointment">Book a fitting</a>
+      </div>
+      <div class="hero__facts rv d3">
+        <span class="chipf"><b>3–5 days</b> most repairs</span>
+        <span class="chipf"><b>Express</b> next day</span>
+        <span class="chipf"><b>No</b> appointment for drop-off</span>
+      </div>
+    </div>
+    <div class="frame rv d2">
+      <div class="frame__img" id="heroFrame"><img src="https://images.unsplash.com/photo-1584184924103-e310d9dc82fc?w=1200&q=70&auto=format&fit=crop" alt="Tailor's hands cutting dark fabric on a wooden workbench" width="900" height="1125"></div>
+      <svg class="tag" viewBox="0 0 128 170" aria-hidden="true"><path d="M64 0 V26" stroke="#9C7A3C" stroke-width="2"/><path d="M14 40 L40 22 H88 L114 40 V160 Q114 166 108 166 H20 Q14 166 14 160 Z" fill="#FBF8F2" stroke="#1F2A3C" stroke-width="2"/><circle cx="64" cy="36" r="6" fill="#F4EEE3" stroke="#1F2A3C" stroke-width="2"/><rect x="22" y="52" width="84" height="106" rx="2" fill="none" stroke="#C9A15A" stroke-width="1.5" stroke-dasharray="4 3"/><text x="64" y="80" text-anchor="middle" font-family="Karla,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#9C7A3C">EST.</text><text x="64" y="112" text-anchor="middle" font-family="Playfair Display,serif" font-size="32" font-weight="700" fill="#1F2A3C">1987</text><text x="64" y="138" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="#C0473A">Old Market</text></svg>
+      <svg class="spool" viewBox="0 0 110 120" aria-hidden="true"><rect x="10" y="4" width="90" height="16" rx="4" fill="#B98A5A" stroke="#1F2A3C" stroke-width="2"/><rect x="10" y="100" width="90" height="16" rx="4" fill="#B98A5A" stroke="#1F2A3C" stroke-width="2"/><rect x="20" y="20" width="70" height="80" fill="#C0473A" stroke="#1F2A3C" stroke-width="2"/><g stroke="#A13A2E" stroke-width="2"><path d="M20 30h70M20 40h70M20 50h70M20 60h70M20 70h70M20 80h70M20 90h70"/></g><path d="M90 60 C 104 64, 108 80, 100 96" fill="none" stroke="#C0473A" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="tape" aria-hidden="true"><div class="tape__in" id="tape"><div class="tape__nums" id="tapeNums"></div></div><span class="tape__label">Measured twice</span></div>
+</section>
+
+<section class="sec" id="prices">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick rv">Alterations &amp; repairs</span><h2 class="rv d1">Honest prices, <em>pinned</em> up front.</h2></div>
+      <p class="rv d2">Prices are for a standard garment. Lined, beaded or leather pieces may cost a little more, and we always tell you before we start.</p>
+    </div>
+    <div class="pl">
+      <div class="pl__side rv">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <label class="sr" for="q">Search alterations and repairs</label>
+          <input id="q" type="search" placeholder="Try “hem”, “zip” or “jeans”" autocomplete="off">
+        </div>
+        <div class="cats" id="cats" role="group" aria-label="Filter by garment"></div>
+        <label class="express"><input type="checkbox" id="express"><span class="sw" aria-hidden="true"></span><span><b>Express, next day</b>Show prices with +40% express fee</span></label>
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+      <div class="list rv d1" id="list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--card" id="dropoff">
+  <div class="wrap">
+    <div class="head" style="justify-content:center;text-align:center"><div><span class="kick rv">How drop-off works</span><h2 class="rv d1" style="margin-inline:auto">Four easy <em>stitches.</em></h2></div></div>
+    <div class="steps">
+      <div class="step rv"><div class="step__ico"><span class="step__n">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a2 2 0 1 1 2 2c-1 0-2 .8-2 2v1L3 16.5c-.8.6-.4 1.5.5 1.5h17c.9 0 1.3-.9.5-1.5L12 9"/></svg></div><h3>Bring it in</h3><p>No appointment needed. Pop in during opening hours with your garment, and the shoes you’ll wear with it.</p></div>
+      <div class="step rv d1"><div class="step__ico"><span class="step__n">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="3"/><path d="M9 9l11 11M16 4l-4 4M20 8l-4 4"/></svg></div><h3>We pin &amp; quote</h3><p>Try it on in our fitting room. We pin it exactly right and give you a fixed price on the spot.</p></div>
+      <div class="step rv d2"><div class="step__ico"><span class="step__n">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 6.5h4M9 12l2 2 4-4"/></svg></div><h3>We text you</h3><p>Most jobs are ready in 3 to 5 days, next day with express. You get a text the moment it’s done.</p></div>
+      <div class="step rv d3"><div class="step__ico"><span class="step__n">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l-5 4 3 4 2-1v11h8V10l2 1 3-4-5-4c0 2-2 3-4 3S8 5 8 3z"/></svg></div><h3>Collect &amp; try on</h3><p>Try it on before you pay. Not perfect? We adjust it again for free, no questions asked.</p></div>
+    </div>
+    <p class="note rv"><span>Pay on collection</span><span>Card or cash</span><span>Free re-adjustment within 30 days</span></p>
+  </div>
+</section>
+
+<section class="sec mtm" id="measure">
+  <div class="wrap mtm__in">
+    <div class="rv">
+      <span class="kick">Made to measure</span>
+      <h2 class="h2">A suit cut for <em>one person</em>: you.</h2>
+      <p class="lead">Over thirty measurements, a fabric you choose by hand and two fittings in our workshop. Made-to-measure suits, shirts and trousers that fit from the first day you wear them.</p>
+      <div class="mprices">
+        <div><span>Two-piece suit</span><b>from €1,150</b></div>
+        <div><span>Shirt</span><b>from €145</b></div>
+        <div><span>Trousers</span><b>from €320</b></div>
+      </div>
+      <ol class="timeline">
+        <li><b>Week 1</b><span>Consultation, style and fabric choice, measuring (60 min)</span></li>
+        <li><b>Week 3</b><span>First fitting in a basted garment</span></li>
+        <li><b>Week 5</b><span>Second fitting and final details</span></li>
+        <li><b>Week 6</b><span>Collect your finished piece, pressed and ready</span></li>
+      </ol>
+      <a class="btn btn--ghost" href="#appointment" data-type="mtm">Book a free consultation</a>
+    </div>
+    <div class="suit rv d1">
+      <svg viewBox="0 0 240 280" aria-hidden="true">
+        <path d="M120 6 L96 20 L100 34 L120 22 L140 34 L144 20 Z" fill="#FBF8F2"/>
+        <path class="cloth" id="cloth" fill="#2D3A55" d="M96 20 L52 36 Q30 44 26 72 L14 230 Q13 242 26 244 L44 246 L52 120 L56 268 Q57 276 66 276 L174 276 Q183 276 184 268 L188 120 L196 246 L214 244 Q227 242 226 230 L214 72 Q210 44 188 36 L144 20 L140 34 L120 22 L100 34 Z"/>
+        <path d="M100 34 L120 22 L140 34 L124 120 L120 140 L116 120 Z" fill="#FBF8F2"/>
+        <path d="M114 30 L120 26 L126 30 L123 60 L120 66 L117 60 Z" fill="#C0473A"/>
+        <path d="M100 34 L86 70 L104 80 L116 120 M140 34 L154 70 L136 80 L124 120" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="2"/>
+        <path d="M120 140 V272" stroke="rgba(0,0,0,.3)" stroke-width="2"/>
+        <circle cx="126" cy="170" r="4" fill="rgba(0,0,0,.45)"/><circle cx="126" cy="200" r="4" fill="rgba(0,0,0,.45)"/>
+        <path d="M70 196 h30 M140 196 h30" stroke="rgba(0,0,0,.35)" stroke-width="2"/>
+        <path d="M150 104 h22" stroke="rgba(0,0,0,.35)" stroke-width="2"/>
+        <path d="M152 98 l6 -10 l4 10" fill="#FBF8F2"/>
+        <g fill="none" stroke="#C9A15A" stroke-width="1.4" stroke-dasharray="4 3" opacity=".8"><path d="M54 126 L58 266 M186 126 L182 266"/><path d="M28 74 L16 228 M212 74 L224 228"/></g>
+      </svg>
+      <p class="suit__name" id="suitName">Midnight navy wool</p>
+      <p class="suit__meta" id="suitMeta">Super 110s · all seasons · from €1,150</p>
+      <div class="swatches" id="swatches" role="group" aria-label="Choose a fabric"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="polaroids rv">
+      <figure class="pol pol--a"><span class="pin"></span><img loading="lazy" src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=900&q=70&auto=format&fit=crop" alt="A finished blue checked three-piece suit" width="600" height="800"><figcaption style="text-align:left;padding-left:18px">Wedding suits</figcaption></figure>
+      <figure class="pol pol--b"><span class="pin"></span><img loading="lazy" src="https://images.unsplash.com/photo-1528578577235-b963df6db908?w=800&q=70&auto=format&fit=crop" alt="Colourful pincushion full of pins" width="600" height="600"><figcaption>Nonna’s pincushion</figcaption></figure>
+    </div>
+    <div class="rv d1">
+      <span class="kick">Our story</span>
+      <h2 class="h2">Three generations, <em>one</em> workshop.</h2>
+      <p>Rosa Bellini opened Needle &amp; Thread in 1987 with one sewing machine and a rail of other people’s trousers. Her son Marco learned to cut suits at her table. Today Marco and his daughter Giulia run the shop, with Rosa still popping in to check the hems.</p>
+      <p>We fix what others won’t, explain what we’re doing, and never charge for a job we can’t do well. That’s it. That’s the whole secret.</p>
+      <div class="sign">
+        <div><b data-count="38">38</b><span>years on Old Market Street</span></div>
+        <div><b data-count="9400" data-plus="+">9400</b><span>repairs last year</span></div>
+        <div><b data-count="3">3</b><span>generations of tailors</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--card">
+  <div class="wrap">
+    <div class="head"><div><span class="kick rv">From the workshop</span><h2 class="rv d1">Recently <em>finished.</em></h2></div><p class="rv d2">A few pieces from the last month. Follow @needleandthread for more before-and-afters.</p></div>
+    <div class="gal rv">
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&q=70&auto=format&fit=crop" alt="Man buttoning a tailored navy suit jacket" width="600" height="900"><figcaption>Jacket taken in</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=700&q=70&auto=format&fit=crop" alt="Stack of folded jeans" width="600" height="440"><figcaption>Jeans hemmed</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?w=700&q=70&auto=format&fit=crop" alt="Navy checked blazer on a man" width="600" height="440"></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1100&q=70&auto=format&fit=crop" alt="Rail of knitwear and coats ready for collection" width="900" height="440"><figcaption>Ready for collection</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=700&q=70&auto=format&fit=crop" alt="Denim jacket with corduroy collar on a hanger" width="600" height="440"><figcaption>New collar</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=700&q=70&auto=format&fit=crop" alt="Outfit laid flat: jeans, shirt, tie, blazer and shoes" width="600" height="440"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><div><span class="kick rv">Reviews</span><h2 class="rv d1">Fitted, <em>happy</em> customers.</h2></div><p class="rv d2"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 from 780 reviews</p></div>
+    <div class="revs">
+      <figure class="rev rv"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“My wedding dress was two sizes too big three weeks before the day. Giulia made it look like it was made for me.”</blockquote><footer><b>Nadia F.</b> · Wedding dress alteration</footer></figure>
+      <figure class="rev rv d1"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“Brought in my favourite coat with a broken zip, collected it two days later. €38, perfect job, lovely people.”</blockquote><footer><b>Peter H.</b> · Zip replacement</footer></figure>
+      <figure class="rev rv d2"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“My first made-to-measure suit. Marco talked me out of a bad fabric choice and he was right. Best I’ve ever looked.”</blockquote><footer><b>Owen T.</b> · Made-to-measure suit</footer></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--card" id="faq">
+  <div class="wrap">
+    <div class="head" style="justify-content:center;text-align:center"><div><span class="kick rv">Questions</span><h2 class="rv d1" style="margin-inline:auto">Before you <em>pop in.</em></h2></div></div>
+    <div class="faq">
+      <div class="qa rv"><button aria-expanded="false">Do I need an appointment?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="qa__a"><div><p>Not for alterations and repairs: just walk in. For wedding dresses, made-to-measure and anything that needs a long fitting, please book so we can give you our full attention.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Can you do it while I wait?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="qa__a"><div><p>Small jobs like buttons, simple hems and patches can often be done in 30 minutes. Ask at the counter and we’ll tell you honestly.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Do you alter wedding and prom dresses?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="qa__a"><div><p>Yes, it’s one of Giulia’s specialities. Book your first fitting six to eight weeks before the day. Most dresses need two or three fittings.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">What if I don’t collect my item?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="qa__a"><div><p>We keep everything for three months and send you a friendly reminder after four weeks. After three months, unclaimed items are donated to a local charity.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Do you repair leather and bags?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="qa__a"><div><p>Yes: leather jackets, bag straps and zips. Shoes we send to a cobbler friend two doors down, so you can drop them off with us too.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="appointment">
+  <div class="wrap appt">
+    <div class="appt__side rv">
+      <span class="kick">Book a fitting</span>
+      <h2 class="h2">Let’s get you <em>measured.</em></h2>
+      <p>For wedding dresses, made-to-measure and bigger alterations, book a fitting and we’ll set aside proper time for you.</p>
+      <div class="walk"><b>Just a hem or a zip?</b><span>No need to book. Walk in any time we’re open, Tuesday to Saturday.</span></div>
+    </div>
+    <form class="form rv d1" id="form" novalidate>
+      <div class="types" role="radiogroup" aria-label="Type of appointment">
+        <label><input type="radio" name="type" value="alt" checked><span>Alteration fitting<small>30 min · free</small></span></label>
+        <label><input type="radio" name="type" value="bridal"><span>Wedding &amp; occasion<small>60 min · free</small></span></label>
+        <label><input type="radio" name="type" value="mtm"><span>Made to measure<small>60 min · free</small></span></label>
+      </div>
+      <div class="row">
+        <div><label class="l" for="fDate">Date</label><input id="fDate" type="date" name="date" required></div>
+        <div><label class="l" for="fTime">Time</label><select id="fTime" name="time"><option>09:30</option><option>10:30</option><option>11:30</option><option>13:30</option><option>14:30</option><option>15:30</option><option>16:30</option></select></div>
+      </div>
+      <div class="row">
+        <div><label class="l" for="fName">Name</label><input id="fName" name="name" autocomplete="name" required></div>
+        <div><label class="l" for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div style="margin-bottom:14px"><label class="l" for="fNote">What can we help with?</label><textarea id="fNote" name="note" rows="3" placeholder="E.g. bridesmaid dress, take in at the waist and shorten"></textarea></div>
+      <button class="btn btn--red" type="submit">Request appointment</button>
+      <p class="fine">Demo form: nothing is sent. We confirm every booking by text.</p>
+    </form>
+  </div>
+</section>
+
+<section class="sec sec--card" id="visit">
+  <div class="wrap visit">
+    <div class="rv">
+      <span class="kick">Visit the shop</span>
+      <h2 class="h2" style="font-size:clamp(36px,4vw,52px)">42 Old Market Street</h2>
+      <p style="color:var(--mute);margin-top:8px">Between the bakery and the bookshop, look for the red door.</p>
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Monday</span><span>Closed</span></li>
+        <li data-d="2"><span>Tuesday</span><span>09:00 – 17:30</span></li>
+        <li data-d="3"><span>Wednesday</span><span>09:00 – 17:30</span></li>
+        <li data-d="4"><span>Thursday</span><span>09:00 – 19:00</span></li>
+        <li data-d="5"><span>Friday</span><span>09:00 – 17:30</span></li>
+        <li data-d="6"><span>Saturday</span><span>09:30 – 16:00</span></li>
+        <li data-d="0"><span>Sunday</span><span>Closed</span></li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn--navy" href="tel:+15550127">Call (555) 0127</a><a class="btn btn--ghost" href="mailto:hello@needlethread.example">Email us</a></div>
+    </div>
+    <div class="mapbox rv d1" role="img" aria-label="Map showing Needle and Thread on Old Market Street, by the market square">
+      <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="420" fill="#E7DFCF"/>
+        <rect x="360" y="230" width="150" height="120" rx="6" fill="#DCD2BE"/>
+        <g fill="#C9A15A" opacity=".5"><circle cx="400" cy="270" r="6"/><circle cx="430" cy="300" r="6"/><circle cx="470" cy="265" r="6"/><circle cx="455" cy="320" r="6"/></g>
+        <g stroke="#F4EEE3" fill="none" stroke-linecap="round"><path d="M-10 200 Q300 170 610 210" stroke-width="22"/><path d="M300 -10 L320 430" stroke-width="14"/><path d="M120 -10 L60 430" stroke-width="10"/><path d="M0 330 H600" stroke-width="10"/></g>
+        <path d="M-10 200 Q300 170 610 210" stroke="#C9A15A" stroke-width="1.5" stroke-dasharray="6 5" fill="none"/>
+        <g fill="#DCD2BE"><rect x="150" y="80" width="120" height="70" rx="4"/><rect x="350" y="80" width="140" height="70" rx="4"/><rect x="150" y="230" width="120" height="70" rx="4"/><rect x="10" y="80" width="80" height="70" rx="4"/></g>
+        <text x="20" y="190" font-family="Karla,sans-serif" font-size="12" font-weight="700" fill="#5F6066">Old Market Street</text>
+        <text x="372" y="368" font-family="Karla,sans-serif" font-size="12" font-weight="700" fill="#5F6066">Market Square</text>
+      </svg>
+      <div class="mk"><b>Needle &amp; Thread</b><i></i></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Needle and Thread home"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#F4EEE3"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#9C7A3C" stroke-width="1.6" stroke-dasharray="3.5 3"/><path d="M17 47L46 18" stroke="#1F2A3C" stroke-width="3.4" stroke-linecap="round"/><ellipse cx="43" cy="21" rx="2.6" ry="1.1" transform="rotate(-45 43 21)" fill="#F4EEE3"/><path d="M43.5 20.5c7 7.5-2 19-11 13.5s-1.5-15.5-11-11.5c-4 1.8-4 6-1 8" fill="none" stroke="#C0473A" stroke-width="2.4" stroke-linecap="round"/></svg><b>Needle <i>&amp;</i> Thread<small>Tailors since 1987</small></b></a>
+        <p style="margin-top:16px;max-width:32ch">Alterations, repairs and made-to-measure tailoring on Old Market Street.</p>
+        <div class="social">
+          <a href="#top" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#top" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></svg></a>
+          <a href="#top" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8c-1-.4-1.8-1.2-2.2-2.2l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Visit</h4><ul><li>42 Old Market Street</li><li>Old Market</li><li><a href="tel:+15550127">(555) 0127</a></li><li><a href="mailto:hello@needlethread.example">hello@needlethread.example</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Tue–Fri 09:00–17:30</li><li>Thu until 19:00</li><li>Sat 09:30–16:00</li><li>Sun &amp; Mon closed</li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#prices">Price list</a></li><li><a href="#dropoff">How drop-off works</a></li><li><a href="#measure">Made to measure</a></li><li><a href="#appointment">Book a fitting</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>© 2026 Needle &amp; Thread Tailors</span><span>Needle &amp; Thread is a fictional business, a concept by <a href="/">SiteQuest Studio</a>.</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn--ghost" href="tel:+15550127">Call</a><a class="btn btn--red" href="#appointment">Book a fitting</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// tape measure numbers
+$("#tapeNums").innerHTML=Array.from({length:90},(_,i)=>`<span>${i+1}</span>`).join("");
+
+// price list: [name, note, price, from?]
+const PL={
+ "Trousers & jeans":[["Shorten hem","Standard trousers",16],["Shorten jeans, original hem","Keeps the faded factory hem",22],["Take in or let out waist","",24],["Taper legs","From the knee down",32],["Replace zip","",22],["Patch or darn a tear","Per area",14,1]],
+ "Dresses & skirts":[["Shorten dress or skirt","Unlined",26],["Shorten lined or layered dress","",42,1],["Take in at the sides","",34],["Adjust straps","",14],["Wedding dress alteration","Quoted at fitting",180,1],["Replace invisible zip","",28]],
+ "Jackets & coats":[["Shorten sleeves","Buttonless cuff",34],["Shorten sleeves, working buttons","",58],["Take in jacket","Back and sides",48],["Replace coat zip","",38],["Replace lining","Jacket or coat",95,1],["Re-button","All buttons, buttons supplied",12]],
+ "Shirts & tops":[["Shorten shirt sleeves","",22],["Take in shirt","With darts",24],["Replace collar","Turned or new",28],["Shorten T-shirt or top","",14]],
+ "Knitwear & repairs":[["Invisible mend (knit)","Per hole",18,1],["Elbow patches","Leather or suede, pair",36],["Re-stitch a seam","",9,1],["Sew on a button","",3]],
+ "Home & other":[["Shorten curtains","Per panel, unlined",28],["Cushion cover zip","",16],["Bag strap repair","",22,1],["Leather jacket zip","",65]]
+};
+const CATS=Object.keys(PL);let cat="All";
+$("#cats").innerHTML=["All",...CATS].map(c=>`<button type="button" aria-pressed="${c==="All"}" data-c="${c}"><span>${c}</span><small>${c==="All"?CATS.reduce((n,k)=>n+PL[k].length,0):PL[c].length}</small></button>`).join("");
+const esc=s=>s.replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]));
+function hl(t,q){if(!q)return esc(t);const i=t.toLowerCase().indexOf(q);if(i<0)return esc(t);return esc(t.slice(0,i))+"<mark>"+esc(t.slice(i,i+q.length))+"</mark>"+esc(t.slice(i+q.length))}
+function render(){const q=$("#q").value.trim().toLowerCase(),ex=$("#express").checked;let n=0;
+  const html=CATS.filter(c=>cat==="All"||c===cat).map(c=>{const items=PL[c].filter(i=>!q||(i[0]+" "+i[1]+" "+c).toLowerCase().includes(q));n+=items.length;if(!items.length)return"";
+    return`<div class="grp fadein"><h3>${c}<small>${items.length} ${items.length>1?"items":"item"}</small></h3>${items.map(i=>{const p=ex?Math.round(i[2]*1.4):i[2];return`<div class="item"><span class="item__name">${hl(i[0],q)}${i[1]?`<small>${hl(i[1],q)}</small>`:""}</span><span class="item__dots" aria-hidden="true"></span><span class="item__price${ex?" exp":""}">${i[3]?"<em>from</em>":""}€${p}</span></div>`}).join("")}</div>`}).join("");
+  $("#list").innerHTML=html||`<div class="empty fadein"><b>Can’t find it?</b>We fix almost anything. Bring it in or <a href="tel:+15550127">call us</a> for a quick quote.</div>`;
+  $("#count").textContent=`${n} ${n===1?"service":"services"}${ex?" · express prices":""}`}
+$("#q").addEventListener("input",render);$("#express").addEventListener("change",render);
+$("#cats").onclick=e=>{const b=e.target.closest("button");if(!b)return;cat=b.dataset.c;$$("#cats button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};
+render();
+
+// fabric swatches
+const F=[["Midnight navy wool","Super 110s · all seasons · from €1,150","#2D3A55"],["Charcoal flannel","Brushed wool · autumn & winter · from €1,240","#4A4C52"],["Heritage tweed","Herringbone · country & weekend · from €1,320","#7A6448"],["Sand linen","Irish linen · summer weddings · from €1,090","#CDB892"],["Bottle green velvet","Cotton velvet · evening · from €1,390","#2F4F3E"],["Burgundy wool","Wool & mohair · statement · from €1,260","#6E2B33"]];
+$("#swatches").innerHTML=F.map((f,i)=>`<button type="button" aria-pressed="${!i}" aria-label="${f[0]}" style="background:${f[2]}" data-i="${i}"></button>`).join("");
+$("#swatches").onclick=e=>{const b=e.target.closest("button");if(!b)return;const f=F[+b.dataset.i];$$("#swatches button").forEach(x=>x.setAttribute("aria-pressed",x===b));$("#cloth").setAttribute("fill",f[2]);$("#suitName").textContent=f[0];$("#suitMeta").textContent=f[1]};
+document.addEventListener("click",e=>{const a=e.target.closest("[data-type]");if(a){const r=$(`input[name=type][value=${a.dataset.type}]`);if(r)r.checked=true}});
+
+// appointment form
+const d=$("#fDate"),tm=new Date();tm.setDate(tm.getDate()+1);d.min=tm.toISOString().slice(0,10);
+$("#form").addEventListener("submit",e=>{e.preventDefault();
+  if(!d.value){d.focus();toast("Please choose a date");return}
+  const day=new Date(d.value+"T12:00").getDay();if(day===0||day===1){d.focus();toast("We’re closed on Sundays and Mondays. Please pick another day.");return}
+  const n=$("#fName");if(!n.value.trim()){n.focus();toast("Please add your name");return}
+  toast(`Demo only: nothing was sent. Thanks, ${n.value.trim().split(" ")[0]}!`);e.target.reset()});
+
+// faq, hours, toast
+$$(".qa button").forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains("open");q.classList.toggle("open",o);b.setAttribute("aria-expanded",o)});
+const today=new Date().getDay();$$("#hours li").forEach(l=>l.classList.toggle("today",+l.dataset.d===today));
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2800)}
+
+// thread drawing in the hero
+const tp=$("#threadPath");
+if(!REDUCED&&tp.getTotalLength){const L=tp.getTotalLength();tp.style.strokeDasharray=`${L}`;tp.style.strokeDashoffset=L;tp.getBoundingClientRect();tp.style.transition="stroke-dashoffset 3.2s cubic-bezier(.4,0,.2,1) .4s";requestAnimationFrame(()=>tp.style.strokeDashoffset=0);
+  tp.addEventListener("transitionend",()=>{tp.style.transition="none";tp.style.strokeDasharray="10 9";tp.style.strokeDashoffset=0;let o=0;(function f(){o-=.4;tp.style.strokeDashoffset=o;requestAnimationFrame(f)})()},{once:true})}
+
+// counters + reveal
+function count(el){const to=+el.dataset.count,plus=el.dataset.plus||"";const fmt=v=>Math.round(v).toLocaleString("en")+(v>=to?plus:"");if(REDUCED){el.textContent=fmt(to);return}
+  const s=performance.now();(function f(n){const p=Math.min((n-s)/1600,1);el.textContent=fmt(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)}
+function act(r){r.classList.add("in");$$("[data-count]",r).forEach(count);const fi=$(".frame__img",r);if(fi)fi.classList.add("in")}
+const rvs=$$(".rv");
+if(REDUCED||!("IntersectionObserver" in window))rvs.forEach(act);
+else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){act(e.target);io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px"});
+  rvs.forEach(r=>io.observe(r));requestAnimationFrame(()=>rvs.forEach(r=>{if(r.getBoundingClientRect().top<innerHeight){act(r);io.unobserve(r)}}))}
+</script>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Lantern · Neighbourhood pub</title>
+<meta name="description" content="The Lantern: twelve taps, live music every weekend, Tuesday quiz, every big match on the screens and rooms for your party. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#1A120D">
+<meta property="og:title" content="The Lantern · Neighbourhood pub">
+<meta property="og:description" content="Pints, live music and a proper welcome. A concept site by SiteQuest Studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A120D'/%3E%3Cpath d='M24 18h16l4 6v22l-4 6H24l-4-6V24z' fill='none' stroke='%23C9A253' stroke-width='3.5'/%3E%3Cpath d='M32 10v8' stroke='%23C9A253' stroke-width='3.5'/%3E%3Cpath d='M32 28c4 5 5 8 5 11a5 5 0 0 1-10 0c0-3 1-6 5-11z' fill='%23F2A33A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --walnut:#1A120D;--walnut-2:#241912;--walnut-3:#33241A;--ox:#6A1E1F;--ox-2:#8A2A27;--brass:#C9A253;--brass-2:#E2C27A;
+  --cream:#F3E6CC;--cream-2:#CDBB9C;--green:#1F3A2E;--chalk:#23292A;--glow:#F2A33A;--line:rgba(243,230,204,.14);
+  --f-d:"Alfa Slab One",Rockwell,Georgia,serif;--f-c:"Caveat",cursive;--f-b:"Work Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--walnut);color:var(--cream);font:400 16.5px/1.6 var(--f-b);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass-2);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1220px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{scroll-margin-top:80px}
+
+.concept{background:var(--brass);color:var(--walnut);font-size:13px;font-weight:500;text-align:center;padding:8px 16px}
+.concept a{font-weight:700}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(26,18,13,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav__in{display:flex;align-items:center;gap:26px;height:74px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand svg{width:36px;height:48px;flex:none}
+.brand b{display:block;font:400 24px/1 var(--f-d);letter-spacing:.04em;color:var(--cream)}
+.brand small{display:block;font:700 10px/1 var(--f-b);letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-top:5px}
+.nav__links{display:flex;gap:26px;margin-left:auto;list-style:none}
+.nav__links a{text-decoration:none;font-weight:600;font-size:15px;color:var(--cream-2);padding:10px 0;transition:color .2s}
+.nav__links a:hover{color:var(--brass-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:6px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn--brass{background:var(--brass);color:var(--walnut);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}
+.btn--brass:hover{background:var(--brass-2);transform:translateY(-2px)}
+.btn--ox{background:var(--ox-2);color:var(--cream);box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
+.btn--ox:hover{background:#A3332F;transform:translateY(-2px)}
+.btn--line{border:2px solid var(--line);color:var(--cream)}
+.btn--line:hover{border-color:var(--brass);color:var(--brass-2)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:80px 0 0}
+.hero__bg{position:absolute;inset:0;z-index:-2}
+.hero__bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(26,18,13,.95) 0,rgba(26,18,13,.8) 45%,rgba(26,18,13,.45)),linear-gradient(transparent 60%,var(--walnut))}
+.hero__grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;min-height:560px}
+.since{display:inline-flex;align-items:center;gap:12px;font:700 13px/1 var(--f-b);letter-spacing:.3em;text-transform:uppercase;color:var(--brass)}
+.since::before,.since::after{content:"";width:28px;height:2px;background:currentColor}
+.hero h1{font:400 clamp(46px,6.6vw,96px)/1 var(--f-d);margin:22px 0 22px;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.hero h1 span{color:var(--glow)}
+.hero p{font-size:clamp(16px,1.4vw,19px);color:var(--cream-2);max-width:46ch;margin-bottom:32px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.lamp{position:relative;justify-self:center;width:240px;height:440px}
+.lamp svg{width:100%;height:100%;overflow:visible}
+.lamp .swing{transform-origin:120px 0;animation:swing 5s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.lamp .halo{transform-origin:120px 260px;animation:flick 2.4s ease-in-out infinite}
+.lamp .flame{transform-origin:120px 290px;animation:flame 1.2s ease-in-out infinite alternate}
+@keyframes flick{0%,100%{opacity:.9;transform:scale(1)}30%{opacity:.7;transform:scale(.94)}60%{opacity:1;transform:scale(1.04)}}
+@keyframes flame{from{transform:scale(1,1)}to{transform:scale(.88,1.1) translateY(-2px)}}
+.tonight{position:relative;margin-top:50px;background:var(--cream);color:var(--walnut);border-radius:10px;padding:22px 26px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.tonight::before{content:"";position:absolute;inset:6px;border:1.5px solid rgba(26,18,13,.18);border-radius:6px;pointer-events:none}
+.tonight__d{text-align:center;background:var(--ox);color:var(--cream);border-radius:8px;padding:10px 14px;min-width:84px}
+.tonight__d small{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.tonight__d b{font:400 32px/1 var(--f-d)}
+.tonight h2{font:400 26px/1.1 var(--f-d)}
+.tonight p{font-size:15px;color:#5A4636;margin-top:4px}
+.tonight .lbl{font:700 22px/1 var(--f-c);color:var(--ox-2)}
+
+.ticker{background:var(--ox);border-block:3px double var(--brass);overflow:hidden;margin-top:70px}
+.ticker__row{display:flex;width:max-content;animation:tick 36s linear infinite}
+.ticker span{font:400 21px/1 var(--f-d);letter-spacing:.04em;padding:16px 24px;white-space:nowrap;color:var(--cream)}
+.ticker span::after{content:"✦";color:var(--brass);margin-left:48px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+.sec{padding:110px 0}
+.kick{font:700 26px/1 var(--f-c);color:var(--brass)}
+.sec h2{font:400 clamp(38px,5vw,66px)/1.02 var(--f-d);margin-top:8px}
+.sec h2 span{color:var(--glow)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:44px}
+.head p{color:var(--cream-2);max-width:46ch}
+
+/* events */
+.ev__grid{display:grid;grid-template-columns:330px 1fr;gap:36px;align-items:start}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid var(--line);font-weight:600;font-size:15px;transition:all .2s}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--c,var(--brass))}
+.chip:hover{border-color:var(--brass)}
+.chip[aria-pressed=true]{background:var(--cream);border-color:var(--cream);color:var(--walnut)}
+.cal{background:var(--walnut-2);border:1px solid var(--line);border-radius:12px;padding:22px;position:sticky;top:96px}
+.cal__h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cal__h b{font:400 21px/1 var(--f-d)}
+.cal__h button{width:44px;height:44px;border-radius:8px;border:1px solid var(--line);font-size:18px}
+.cal__h button:disabled{opacity:.3}
+.cal__dow,.cal__days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal__dow span{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--cream-2);padding:4px 0}
+.cal__days button{position:relative;min-height:44px;border-radius:8px;font-weight:600;font-size:14px;color:var(--cream-2);transition:background .2s}
+.cal__days button:hover:not(:disabled){background:var(--walnut-3)}
+.cal__days button:disabled{opacity:.25;cursor:default}
+.cal__days button.has{color:var(--cream)}
+.cal__days button .dots{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);display:flex;gap:2px}
+.cal__days button .dots i{width:5px;height:5px;border-radius:50%;background:var(--c)}
+.cal__days button.today{box-shadow:inset 0 0 0 2px var(--brass)}
+.cal__days button[aria-pressed=true]{background:var(--brass);color:var(--walnut)}
+.cal__f{margin-top:16px;font-size:13.5px;color:var(--cream-2);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cal__f button{color:var(--brass-2);font-weight:700;min-height:44px}
+.evs{display:grid;gap:12px}
+.ev{display:grid;grid-template-columns:76px 1fr auto;gap:20px;align-items:center;background:var(--walnut-2);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px;padding:16px 18px;animation:in .45s cubic-bezier(.2,.8,.2,1) both;transition:transform .25s,background .25s}
+.ev:hover{transform:translateX(4px);background:var(--walnut-3)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.ev__d{text-align:center;line-height:1}
+.ev__d small{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-2)}
+.ev__d b{display:block;font:400 34px/1 var(--f-d);margin:4px 0 2px}
+.ev__d em{font-style:normal;font-size:12px;color:var(--cream-2)}
+.ev h3{font:400 21px/1.15 var(--f-d)}
+.ev p{font-size:14.5px;color:var(--cream-2);margin-top:3px}
+.ev__meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.ev__meta span{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(243,230,204,.08)}
+.ev__meta .type{background:var(--c);color:var(--walnut)}
+.ev .btn{min-height:44px;padding:8px 16px;font-size:14px}
+.empty{padding:40px;text-align:center;color:var(--cream-2);border:2px dashed var(--line);border-radius:12px}
+.more{margin-top:18px;text-align:center}
+
+/* taps */
+.taps{background:linear-gradient(var(--walnut),var(--walnut-2))}
+.board{background:var(--chalk);border-radius:12px;border:14px solid #5B3B24;box-shadow:inset 0 0 80px rgba(0,0,0,.6),0 40px 80px -40px rgba(0,0,0,.9);padding:36px clamp(18px,4vw,44px);position:relative;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:6px 6px}
+.board::before{content:"";position:absolute;inset:-14px;border-radius:12px;border:2px solid #7A5333;pointer-events:none}
+.dtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px;border-bottom:1px dashed rgba(243,230,204,.25);padding-bottom:18px}
+.dtabs button{min-height:44px;padding:6px 14px;font:700 25px/1 var(--f-c);color:rgba(243,230,204,.6);border-radius:6px;transition:color .2s,background .2s}
+.dtabs button[aria-selected=true]{color:var(--cream);background:rgba(243,230,204,.08)}
+.dtabs button[aria-selected=true]::after{content:"";display:block;height:3px;border-radius:3px;background:var(--glow);margin-top:4px}
+.dlist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 44px}
+.dhead{display:grid;grid-template-columns:1fr 64px 64px 64px;gap:10px;font:700 12px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,230,204,.5);padding-bottom:6px}
+.dhead span:not(:first-child){text-align:right}
+.drow{display:grid;grid-template-columns:1fr 64px 64px 64px;gap:10px;align-items:center;padding:12px 0;border-bottom:1px dashed rgba(243,230,204,.14);animation:in .4s both}
+.drow h3{font:700 27px/1 var(--f-c);color:#fff}
+.drow h3 em{font:700 12px/1 var(--f-b);font-style:normal;background:var(--glow);color:var(--walnut);padding:3px 7px;border-radius:4px;vertical-align:5px;margin-left:6px;letter-spacing:.06em}
+.drow p{font-size:13.5px;color:rgba(243,230,204,.62)}
+.drow span{text-align:right;font:700 22px/1 var(--f-c);color:var(--brass-2)}
+.drow span.abv{color:rgba(243,230,204,.8);font-size:19px}
+.abvbar{display:block;height:3px;border-radius:3px;background:rgba(243,230,204,.12);margin-top:6px;overflow:hidden}
+.abvbar i{display:block;height:100%;background:var(--glow);width:var(--w)}
+.board__foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:26px;font:700 22px/1.3 var(--f-c);color:rgba(243,230,204,.7)}
+
+/* story */
+.story__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.frame{position:relative;padding:14px;border:2px solid var(--brass);border-radius:10px}
+.frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,83,.4);border-radius:6px;pointer-events:none}
+.frame img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:4px}
+.frame__badge{position:absolute;right:-24px;bottom:-24px;width:130px;height:130px;border-radius:50%;background:var(--ox);border:3px double var(--brass);display:grid;place-items:center;text-align:center;font:400 15px/1.1 var(--f-d);color:var(--cream);animation:spin 30s linear infinite}
+.frame__badge b{display:block;font-size:30px;color:var(--brass-2)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.story h2{margin-bottom:22px}
+.story p{color:var(--cream-2);margin-top:14px;max-width:54ch}
+.sign{font:700 32px/1 var(--f-c);color:var(--brass-2);margin-top:22px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.nums div{border:1px solid var(--line);border-radius:10px;padding:18px;text-align:center}
+.nums b{display:block;font:400 38px/1 var(--f-d);color:var(--glow)}
+.nums span{font-size:13px;color:var(--cream-2)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:12px}
+.gal figure{position:relative;overflow:hidden;border-radius:10px}
+.gal figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal figure:nth-child(6),.gal figure:nth-child(7){grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;left:12px;bottom:12px;font:700 22px/1 var(--f-c);background:rgba(26,18,13,.8);padding:6px 12px;border-radius:6px;transform:translateY(8px);opacity:0;transition:all .3s}
+.gal figure:hover figcaption{transform:none;opacity:1}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--cream);color:var(--walnut);border-radius:10px;padding:30px;position:relative;transform:rotate(var(--r,0deg));transition:transform .3s}
+.rev:hover{transform:rotate(0) translateY(-4px)}
+.rev:nth-child(1){--r:-1deg}.rev:nth-child(3){--r:1deg}
+.rev::before{content:"“";position:absolute;right:20px;top:-10px;font:400 90px/1 var(--f-d);color:var(--ox);opacity:.18}
+.rev .st{color:var(--ox-2);letter-spacing:3px}
+.rev blockquote{font-size:17px;margin:14px 0 18px;line-height:1.55}
+.rev cite{font-style:normal;font:700 24px/1 var(--f-c);color:var(--ox)}
+.rev cite small{display:block;font:500 13px/1.4 var(--f-b);color:#6E5A48;margin-top:4px}
+
+/* faq */
+.faq__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.qa{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:var(--walnut-2);transition:border-color .3s}
+.qa.open{border-color:var(--brass)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 22px;text-align:left;font-weight:700;font-size:17px;min-height:60px}
+.qa button span{flex:none;width:30px;height:30px;border-radius:6px;background:var(--walnut-3);display:grid;place-items:center;color:var(--brass-2);transition:transform .35s}
+.qa.open button span{transform:rotate(45deg)}
+.qa__p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.qa__p>div{overflow:hidden}
+.qa__p p{padding:0 22px 20px;color:var(--cream-2)}
+.qa.open .qa__p{grid-template-rows:1fr}
+
+/* visit */
+.visit__grid{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:20px}
+.card{background:var(--walnut-2);border:1px solid var(--line);border-radius:12px;padding:28px}
+.card h3{font:400 24px/1.1 var(--f-d);margin-bottom:14px}
+.card ul{list-style:none}
+.card li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+.card li.today{color:var(--brass-2);font-weight:700}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:6px 12px;border-radius:999px;background:rgba(127,183,126,.15);color:#A8D5A0;margin-bottom:12px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.status.closed{background:rgba(220,110,100,.15);color:#E9A097}
+.card p{color:var(--cream-2)}
+.map{position:relative;min-height:330px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#2A1E16}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map__pin{position:absolute;left:46%;top:42%;transform:translate(-50%,-100%);text-align:center}
+.map__pin b{display:block;background:var(--brass);color:var(--walnut);font:400 15px/1 var(--f-d);padding:9px 12px;border-radius:6px;white-space:nowrap}
+.map__pin i{display:block;width:3px;height:16px;background:var(--brass);margin:0 auto}
+.map__pin em{display:block;width:14px;height:14px;border-radius:50%;background:var(--glow);margin:0 auto;box-shadow:0 0 0 0 rgba(242,163,58,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%,100%{box-shadow:0 0 0 18px rgba(242,163,58,0)}}
+.map .btn{position:absolute;right:16px;bottom:16px}
+
+/* booking */
+.bookf{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+.panel{background:var(--walnut-2);border:1px solid var(--line);border-radius:14px;padding:32px}
+.lbl{display:block;font-weight:700;font-size:14px;margin-bottom:10px;color:var(--cream)}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.area{position:relative;cursor:pointer}
+.area input{position:absolute;opacity:0}
+.area div{border:2px solid var(--line);border-radius:10px;padding:16px;height:100%;transition:all .2s}
+.area svg{width:36px;height:36px;color:var(--brass);margin-bottom:10px}
+.area b{display:block;font:400 19px/1.1 var(--f-d)}
+.area small{display:block;font-size:13.5px;color:var(--cream-2);margin-top:4px}
+.area input:checked+div{border-color:var(--brass);background:rgba(201,162,83,.1)}
+.area input:focus-visible+div{outline:3px solid var(--brass-2);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f label{font-size:14px;font-weight:700}
+.f input,.f select,.f textarea{min-height:50px;padding:12px 14px;border-radius:8px;border:2px solid var(--line);background:var(--walnut);color:var(--cream)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--brass)}
+.f textarea{min-height:90px;resize:vertical}
+.stepper{display:flex;align-items:center;border:2px solid var(--line);border-radius:8px;min-height:50px;background:var(--walnut)}
+.stepper button{width:48px;height:46px;font-size:22px;font-weight:700;color:var(--brass-2)}
+.stepper output{flex:1;text-align:center;font:400 22px/1 var(--f-d)}
+.food{display:grid;gap:8px;margin-bottom:22px}
+.food label{display:flex;align-items:center;gap:12px;padding:12px 14px;border:2px solid var(--line);border-radius:8px;cursor:pointer;min-height:52px;transition:border-color .2s}
+.food input{width:20px;height:20px;accent-color:var(--brass)}
+.food span{flex:1}
+.food b{color:var(--brass-2)}
+.food label:has(input:checked){border-color:var(--brass)}
+.quote{background:var(--cream);color:var(--walnut);border-radius:14px;padding:28px;position:sticky;top:96px}
+.quote h3{font:400 26px/1.1 var(--f-d);margin-bottom:6px}
+.quote .chalk{font:700 22px/1.2 var(--f-c);color:var(--ox-2)}
+.quote ul{list-style:none;margin:18px 0}
+.quote li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed rgba(26,18,13,.2);font-size:15px}
+.quote .tot{font:400 34px/1 var(--f-d);display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 4px}
+.quote .tot small{font:500 13px/1 var(--f-b);color:#6E5A48}
+.quote p{font-size:13.5px;color:#6E5A48;margin:10px 0 18px}
+.quote .btn{width:100%}
+.warn{font-size:13.5px;color:var(--brass-2);margin:-12px 0 20px;min-height:20px}
+
+/* footer */
+.foot{background:#120C08;color:var(--cream-2);padding:70px 0 34px;border-top:3px double var(--brass);font-size:15px}
+.foot__grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}
+.foot h4{font:400 18px/1 var(--f-d);color:var(--cream);margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:7px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--brass-2)}
+.soc{display:flex;gap:10px;margin-top:20px}
+.soc a{width:44px;height:44px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;transition:all .2s}
+.soc a:hover{background:var(--brass);color:var(--walnut)}
+.soc svg{width:19px;height:19px}
+.foot__base{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:26px;z-index:90;background:var(--cream);color:var(--walnut);border:2px solid var(--brass);padding:13px 22px;border-radius:8px;font-weight:700;box-shadow:0 20px 50px -16px rgba(0,0,0,.7);transform:translate(-50%,160%);opacity:0;transition:transform .45s cubic-bezier(.3,1.4,.4,1),opacity .3s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.now{transition:none}
+
+@media (max-width:1040px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+  .ev__grid,.story__grid,.faq__grid,.bookf{grid-template-columns:1fr}
+  .cal,.quote{position:static}
+  .visit__grid{grid-template-columns:1fr 1fr}
+  .map{grid-column:1/-1}
+  .foot__grid{grid-template-columns:1fr 1fr}
+  .dlist{grid-template-columns:1fr}
+  .dlist .dh2{display:none}
+  .hero__grid{grid-template-columns:1fr 200px}
+  .lamp{width:180px;height:340px}
+}
+@media (max-width:720px){
+  body{font-size:16px;padding-bottom:76px}
+  .nav__in{height:64px;gap:10px}
+  .brand b{font-size:19px}
+  .brand small{display:none}
+  .brand svg{width:28px;height:38px}
+  .nav .btn{padding:10px 14px;min-height:44px}
+  .lamp{display:none}
+  .hero{padding-top:44px}
+  .hero__grid{grid-template-columns:1fr;min-height:0}
+  .lamp{position:absolute;right:-30px;top:-40px;width:130px;height:250px;opacity:.55;z-index:-1}
+  .tonight{grid-template-columns:auto 1fr;padding:18px}
+  .tonight .btn{grid-column:1/-1}
+  .ticker{margin-top:50px}
+  .sec{padding:76px 0}
+  .ev{grid-template-columns:58px 1fr;gap:14px;padding:14px}
+  .ev .btn{grid-column:1/-1}
+  .ev__d b{font-size:28px}
+  .board{border-width:10px;padding:24px 16px}
+  .dhead,.drow{grid-template-columns:1fr 46px 46px 46px;gap:6px}
+  .drow h3{font-size:24px}
+  .drow span{font-size:19px}
+  .drow span.abv{font-size:16px}
+  .frame__badge{width:100px;height:100px;right:-6px;bottom:-30px;font-size:12px}
+  .frame__badge b{font-size:24px}
+  .nums{grid-template-columns:repeat(3,1fr);gap:8px}
+  .nums div{padding:12px 6px}
+  .nums b{font-size:28px}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .gal figure:nth-child(6),.gal figure:nth-child(7){grid-column:span 2}
+  .revs{grid-template-columns:1fr}
+  .visit__grid{grid-template-columns:1fr}
+  .areas,.row,.row2{grid-template-columns:1fr}
+  .panel{padding:22px}
+  .foot__grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(26,18,13,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .toast{bottom:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#bar">More bar examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="The Lantern, home">
+      <svg viewBox="0 0 36 48" aria-hidden="true"><path d="M18 1v6" stroke="#C9A253" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="4" r="3" fill="none" stroke="#C9A253" stroke-width="2"/><path d="M8 10h20l-3 5H11z" fill="#C9A253"/><path d="M10 15h16l3 4v18l-3 4H10l-3-4V19z" fill="#2B1C12" stroke="#C9A253" stroke-width="2.2"/><path d="M18 15v26M7 28h22" stroke="#C9A253" stroke-width="1" opacity=".5"/><path d="M18 21c3.5 4.5 4.5 7 4.5 9.5a4.5 4.5 0 0 1-9 0c0-2.5 1-5 4.5-9.5z" fill="#F2A33A"/><path d="M18 26c1.5 2 2 3 2 4a2 2 0 0 1-4 0c0-1 .5-2 2-4z" fill="#FCE3A8"/><path d="M9 41h18l-2 4H11z" fill="#C9A253"/></svg>
+      <span><b>THE LANTERN</b><small>Free house · Est. 1887</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#events">What's on</a></li>
+      <li><a href="#drinks">Drinks</a></li>
+      <li><a href="#story">Our pub</a></li>
+      <li><a href="#visit">Find us</a></li>
+    </ul>
+    <a class="btn btn--brass" href="#book">Book a table</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero__bg"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1800&q=70&auto=format&fit=crop" alt="" width="1800" height="1200"></div>
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <span class="since">Your local since 1887</span>
+        <h1>Proper pints, live music <span>&amp; a warm welcome.</span></h1>
+        <p>Twelve taps, a crackling fire, the Tuesday quiz everyone pretends not to care about, and a band on the little stage every weekend. Come in, pull up a stool.</p>
+        <div class="hero__cta"><a class="btn btn--brass" href="#events">See what's on</a><a class="btn btn--line" href="#book">Book for a group</a></div>
+      </div>
+      <div class="lamp" aria-hidden="true">
+        <svg viewBox="0 0 240 440">
+          <defs><radialGradient id="hg"><stop offset="0" stop-color="#F2A33A" stop-opacity=".75"/><stop offset=".45" stop-color="#F2A33A" stop-opacity=".2"/><stop offset="1" stop-color="#F2A33A" stop-opacity="0"/></radialGradient><linearGradient id="br" x1="0" x2="1"><stop offset="0" stop-color="#8C6B2C"/><stop offset=".5" stop-color="#E2C27A"/><stop offset="1" stop-color="#8C6B2C"/></linearGradient></defs>
+          <g class="swing">
+            <path d="M120 0v150" stroke="#8C6B2C" stroke-width="3"/>
+            <circle cx="120" cy="160" r="12" fill="none" stroke="url(#br)" stroke-width="5"/>
+            <circle class="halo" cx="120" cy="280" r="150" fill="url(#hg)"/>
+            <path d="M80 186h80l-14 26H94z" fill="url(#br)"/>
+            <path d="M88 212h64l16 22v96l-16 22H88l-16-22v-96z" fill="rgba(242,163,58,.12)" stroke="url(#br)" stroke-width="6"/>
+            <path d="M120 212v140M72 282h96" stroke="#C9A253" stroke-width="2" opacity=".55"/>
+            <g class="flame"><path d="M120 250c16 20 21 32 21 43a21 21 0 0 1-42 0c0-11 5-23 21-43z" fill="#F2A33A"/><path d="M120 272c7 9 9 14 9 19a9 9 0 0 1-18 0c0-5 2-10 9-19z" fill="#FFE7AE"/></g>
+            <path d="M76 352h88l-10 18H86z" fill="url(#br)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="tonight rv" id="tonight" aria-live="polite"></div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker__row" id="ticker"></div></div>
+</section>
+
+<section class="sec" id="events">
+  <div class="wrap">
+    <div class="head rv"><div><p class="kick">What's on</p><h2>Live music, quiz &amp; <span>match nights</span></h2></div><p>Entry is free unless it says otherwise. Pick a day in the calendar or filter by the kind of night you're after.</p></div>
+    <div class="filters rv" id="filters" role="group" aria-label="Filter events"></div>
+    <div class="ev__grid">
+      <aside class="cal rv" aria-label="Events calendar">
+        <div class="cal__h"><button type="button" id="prevM" aria-label="Previous month">‹</button><b id="calTitle">Month</b><button type="button" id="nextM" aria-label="Next month">›</button></div>
+        <div class="cal__dow"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+        <div class="cal__days" id="calDays"></div>
+        <div class="cal__f"><span id="calInfo">Showing the next 4 weeks</span><button type="button" id="clearDay" hidden>Show all</button></div>
+      </aside>
+      <div>
+        <div class="evs" id="evs" aria-live="polite"></div>
+        <div class="more"><button class="btn btn--line" id="moreBtn" type="button">Show more nights</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec taps" id="drinks">
+  <div class="wrap">
+    <div class="head rv"><div><p class="kick">At the bar</p><h2>On tap <span>tonight</span></h2></div><p>Six regulars, a rotating guest line and a fridge of local cans. Ask for a taster before you commit. Prices per half and pint.</p></div>
+    <div class="board rv">
+      <div class="dtabs" role="tablist" aria-label="Drinks" id="dtabs"></div>
+      <div id="dpanel" role="tabpanel"></div>
+      <div class="board__foot"><span>Taster paddle, any 3 thirds · €7.50</span><span>Happy hour Mon–Thu 17–19 · €1 off pints</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="story">
+  <div class="wrap story__grid">
+    <div class="frame rv">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1100&q=70&auto=format&fit=crop" alt="The long bar at The Lantern glowing under hanging bulbs" width="1100" height="880" loading="lazy">
+      <div class="frame__badge"><span><b>1887</b>Free<br>house</span></div>
+    </div>
+    <div class="rv">
+      <p class="kick">Our pub</p>
+      <h2>Same bar, <span>new stories</span></h2>
+      <p>The Lantern has stood on the corner of Rope Walk for well over a century: a coaching inn, a dockers' bar, a jazz cellar for one wild summer in 1962. The gas lantern above the door still gets lit every evening.</p>
+      <p>We took the keys in 2016 and changed as little as possible. The fire still roars, the floor still creaks, and the snug is still where everyone wants to sit. What we added: better beer, a proper little stage and a kitchen that does a serious Sunday roast.</p>
+      <p class="sign">Rosie &amp; Callum, landlords</p>
+      <div class="nums">
+        <div><b data-count="12">12</b><span>Taps</span></div>
+        <div><b data-count="150">150</b><span>Gigs a year</span></div>
+        <div><b data-count="9">9</b><span>Local brewers</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><div><p class="kick">Gallery</p><h2>A night at <span>The Lantern</span></h2></div></div>
+    <div class="gal rv">
+      <figure><img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1100&q=70&auto=format&fit=crop" alt="A crowd in front of a band on stage under warm lights" width="1100" height="1000" loading="lazy"><figcaption>Saturday sessions</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&q=70&auto=format&fit=crop" alt="A pint being poured from the tap" width="600" height="480" loading="lazy"><figcaption>Perfect pour</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1763626343502-b0b1f26b43d4?w=600&q=70&auto=format&fit=crop" alt="A long row of brass beer taps" width="600" height="480" loading="lazy"><figcaption>Twelve taps</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1584225064536-d0fbc0a10f18?w=600&q=70&auto=format&fit=crop" alt="A flight of four beers on a wooden paddle" width="600" height="480" loading="lazy"><figcaption>Taster paddle</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1568644396922-5c3bfae12521?w=600&q=70&auto=format&fit=crop" alt="Friends clinking glasses at the bar" width="600" height="480" loading="lazy"><figcaption>Cheers to that</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1000&q=70&auto=format&fit=crop" alt="A big group sharing food and drinks at long tables" width="1000" height="480" loading="lazy"><figcaption>Back room parties</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1623937228271-992646fb0fba?w=1000&q=70&auto=format&fit=crop" alt="A hazy pale ale held up to the light" width="1000" height="480" loading="lazy"><figcaption>Guest tap of the week</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><div><p class="kick">Regulars say</p><h2>Rated <span>4.8</span> by locals</h2></div><p>All names and reviews on this concept site are made up.</p></div>
+    <div class="revs">
+      <article class="rev rv"><div class="st" aria-label="5 out of 5">★★★★★</div><blockquote>Best quiz in town, hands down. Questions are actually funny and the prize bar tab is worth fighting for.</blockquote><cite>Leon B.<small>Team “Quizteama Aguilera”</small></cite></article>
+      <article class="rev rv"><div class="st" aria-label="5 out of 5">★★★★★</div><blockquote>Booked the back room for my 40th. Rosie sorted the platters and a band, and nobody wanted to leave at closing.</blockquote><cite>Grace M.<small>Birthday party, 34 guests</small></cite></article>
+      <article class="rev rv"><div class="st" aria-label="5 out of 5">★★★★★</div><blockquote>Proper pub. Great beer kept well, the fire on in winter, the garden in summer and the match on with the sound up.</blockquote><cite>Tomasz K.<small>Regular since 2017</small></cite></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap faq__grid">
+    <div class="rv"><p class="kick">Good to know</p><h2>Before you <span>pop in</span></h2></div>
+    <div class="rv">
+      <div class="qa"><button aria-expanded="false">Do I need to book for live music?<span aria-hidden="true">+</span></button><div class="qa__p"><div><p>Most gigs are free and first come, first served. For ticketed nights (marked with a price) you can buy at the bar or reserve below.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">How does the quiz work?<span aria-hidden="true">+</span></button><div class="qa__p"><div><p>Every Tuesday at 20:00. Teams of up to six, €2 a head, all of it goes to the winners' bar tab. Tables go fast, so book one if you can.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Do you serve food?<span aria-hidden="true">+</span></button><div class="qa__p"><div><p>Kitchen open 12:00 to 21:00 daily: burgers, pies, sharing boards and a famous Sunday roast. Platters for parties can be ordered in advance.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Are dogs and children welcome?<span aria-hidden="true">+</span></button><div class="qa__p"><div><p>Dogs always. Children until 20:00 with an adult, and anytime in the beer garden in summer.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Is there a charge for the back room?<span aria-hidden="true">+</span></button><div class="qa__p"><div><p>No room hire if you spend €300 or more on food and drinks. We take a 20% deposit to hold the date, which comes off your bill.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head rv"><div><p class="kick">Find us</p><h2>Under the <span>gas lantern</span></h2></div></div>
+    <div class="visit__grid">
+      <div class="card rv"><h3>Opening hours</h3><span class="status" id="status">Open</span><ul id="hours"></ul></div>
+      <div class="card rv"><h3>The Lantern</h3><p style="font-size:19px;color:var(--cream)">22 Rope Walk<br>Harbour Quarter</p><p style="margin-top:14px">Two minutes from the harbour bus stop. Bike racks and a heated beer garden out back. Step-free entrance on the side street.</p><p style="margin-top:14px"><a href="tel:+10123456711" style="color:var(--brass-2);font-weight:700;text-decoration:none">012 345 6711</a><br><a href="#book" style="text-decoration:none">cheers@thelantern.example</a></p><p style="margin-top:14px;font-size:14px">Kitchen 12:00 – 21:00 daily</p></div>
+      <div class="map rv" role="img" aria-label="Map placeholder showing The Lantern on Rope Walk near the harbour">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="400" fill="#2A1E16"/>
+          <path d="M0 300C140 270 260 330 380 300S560 250 600 260V400H0z" fill="#1F3A2E"/>
+          <path d="M0 300C140 270 260 330 380 300S560 250 600 260" stroke="#3B5A4A" stroke-width="2" fill="none"/>
+          <g stroke="#3D2C21" stroke-width="16" fill="none" stroke-linecap="round"><path d="M-10 90H610"/><path d="M-10 200L610 170"/><path d="M150 -10V290"/><path d="M380 -10L400 300"/></g>
+          <g fill="#33241A"><rect x="170" y="10" width="190" height="60" rx="4"/><rect x="10" y="110" width="120" height="70" rx="4"/><rect x="170" y="108" width="190" height="64" rx="4"/><rect x="420" y="10" width="170" height="60" rx="4"/><rect x="420" y="100" width="170" height="60" rx="4"/></g>
+          <text x="210" y="196" fill="#8C7462" font-family="Work Sans" font-size="12" letter-spacing="2">ROPE WALK</text>
+          <text x="80" y="350" fill="#6E8F7D" font-family="Work Sans" font-size="12" letter-spacing="2">HARBOUR</text>
+        </svg>
+        <div class="map__pin"><b>The Lantern</b><i></i><em></em></div>
+        <a class="btn btn--brass" href="#visit">Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="book" style="background:linear-gradient(var(--walnut),var(--walnut-2))">
+  <div class="wrap">
+    <div class="head rv"><div><p class="kick">Tables &amp; parties</p><h2>Book a table <span>or the back room</span></h2></div><p>Birthdays, leaving dos, match nights, wakes and work parties. Tell us what you need and we'll send a quote within a day.</p></div>
+    <form class="bookf" id="bookf" novalidate>
+      <div class="panel rv">
+        <span class="lbl" id="areaLbl">Where would you like to be?</span>
+        <div class="areas" role="radiogroup" aria-labelledby="areaLbl">
+          <label class="area"><input type="radio" name="area" value="snug" data-max="12" checked><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg><b>The Snug</b><small>Cosy, by the fire · up to 12</small></div></label>
+          <label class="area"><input type="radio" name="area" value="back" data-max="40"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 15l2-3 2 2 3-4 2 5"/></svg><b>Back room</b><small>Private, own bar · up to 40</small></div></label>
+          <label class="area"><input type="radio" name="area" value="garden" data-max="30"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18"/><path d="M5 10a7 7 0 0 1 14 0z"/><path d="M8 21h8"/></svg><b>Beer garden</b><small>Heated, covered · up to 30</small></div></label>
+        </div>
+        <div class="row">
+          <div class="f"><span class="lbl" style="margin:0" id="gLbl">Guests</span><div class="stepper" role="group" aria-labelledby="gLbl"><button type="button" id="gMinus" aria-label="Fewer guests">−</button><output id="guests" aria-live="polite">8</output><button type="button" id="gPlus" aria-label="More guests">+</button></div></div>
+          <div class="f"><label for="bd">Date</label><input type="date" id="bd"></div>
+          <div class="f"><label for="bt">Arrival</label><select id="bt"><option>17:00</option><option>18:00</option><option selected>19:00</option><option>20:00</option><option>21:00</option></select></div>
+        </div>
+        <p class="warn" id="warn" aria-live="polite"></p>
+        <div class="f" style="margin-bottom:22px"><label for="bo">Occasion</label><select id="bo"><option>Just drinks</option><option>Birthday</option><option>Leaving do</option><option>Work party</option><option>Match night</option><option>Quiz team</option><option>Something else</option></select></div>
+        <span class="lbl">Food for the table (optional, per person)</span>
+        <div class="food">
+          <label><input type="checkbox" name="food" value="6" data-n="Nibbles &amp; crisps"><span>Bar nibbles, crisps &amp; sausage rolls</span><b>€6</b></label>
+          <label><input type="checkbox" name="food" value="14" data-n="Sharing platters"><span>Sharing platters: wings, sliders, loaded fries</span><b>€14</b></label>
+          <label><input type="checkbox" name="food" value="19" data-n="Sunday roast"><span>Sunday roast, all the trimmings (Sundays only)</span><b>€19</b></label>
+        </div>
+        <div class="row2">
+          <div class="f"><label for="bn">Name</label><input id="bn" autocomplete="name" required></div>
+          <div class="f"><label for="bp">Phone</label><input id="bp" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="f"><label for="bm">Anything else?</label><textarea id="bm" placeholder="A cake, a playlist request, a big screen for the match…"></textarea></div>
+      </div>
+      <aside class="quote rv" aria-live="polite">
+        <p class="chalk">Your quote</p>
+        <h3 id="qArea">The Snug</h3>
+        <ul>
+          <li><span>Guests</span><b id="qGuests">8</b></li>
+          <li><span>When</span><b id="qWhen">—</b></li>
+          <li><span>Food</span><b id="qFood">None</b></li>
+          <li><span>Room hire</span><b id="qHire">Free</b></li>
+        </ul>
+        <div class="tot"><span id="qTot">€0</span><small>food estimate</small></div>
+        <p id="qNote">Drinks paid at the bar. No deposit needed for the snug.</p>
+        <button class="btn btn--ox" type="submit">Send booking request</button>
+        <p style="margin:12px 0 0;text-align:center">Demo form: nothing is sent anywhere.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="#top" aria-label="The Lantern, back to top">
+          <svg viewBox="0 0 36 48" aria-hidden="true"><path d="M18 1v6" stroke="#C9A253" stroke-width="2.4" stroke-linecap="round"/><circle cx="18" cy="4" r="3" fill="none" stroke="#C9A253" stroke-width="2"/><path d="M8 10h20l-3 5H11z" fill="#C9A253"/><path d="M10 15h16l3 4v18l-3 4H10l-3-4V19z" fill="#2B1C12" stroke="#C9A253" stroke-width="2.2"/><path d="M18 15v26M7 28h22" stroke="#C9A253" stroke-width="1" opacity=".5"/><path d="M18 21c3.5 4.5 4.5 7 4.5 9.5a4.5 4.5 0 0 1-9 0c0-2.5 1-5 4.5-9.5z" fill="#F2A33A"/><path d="M18 26c1.5 2 2 3 2 4a2 2 0 0 1-4 0c0-1 .5-2 2-4z" fill="#FCE3A8"/><path d="M9 41h18l-2 4H11z" fill="#C9A253"/></svg>
+          <span><b>THE LANTERN</b><small>Free house · Est. 1887</small></span>
+        </a>
+        <p style="margin-top:18px;max-width:30ch">Proper pints, live music and a warm welcome on Rope Walk.</p>
+        <div class="soc">
+          <a href="#top" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#top" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="#top" aria-label="Spotify playlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M7 9.5c3.5-1 7-.6 10 1M7.5 13c3-.8 5.8-.4 8.3.9M8 16.3c2.3-.5 4.4-.2 6.3.7"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Hours</h4><ul><li>Mon – Thu 12:00 – 23:00</li><li>Fri – Sat 12:00 – 01:00</li><li>Sunday 12:00 – 22:30</li><li>Kitchen 12:00 – 21:00</li></ul></div>
+      <div><h4>Find us</h4><ul><li>22 Rope Walk</li><li>Harbour Quarter</li><li><a href="tel:+10123456711">012 345 6711</a></li><li><a href="#book">cheers@thelantern.example</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#events">What's on</a></li><li><a href="#drinks">On tap</a></li><li><a href="#book">Group bookings</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>© The Lantern. A fictional pub, designed as a concept by <a href="/" style="color:var(--brass-2)">SiteQuest Studio</a>. Please drink responsibly.</span><span>Want a site like this? <a href="/" style="color:var(--brass-2)">Talk to SiteQuest Studio</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions"><a class="btn btn--line" href="tel:+10123456711">Call</a><a class="btn btn--brass" href="#book">Book</a></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+document.documentElement.classList.add("js");
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let tT;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),3200)}
+const DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],MON=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const TYPES={music:["Live music","#F2A33A"],quiz:["Quiz","#7FB7A4"],sport:["Sport","#D96A5A"],food:["Food & specials","#C9A253"]};
+
+/* ---------- events (generated from today, 6 weeks) ---------- */
+const BANDS=["The Velvet Gulls","Harbour Lights","Smoke & Sixpence","Lucy Marlow Trio","The Rope Walkers","Northbound Brass","Pale Moon Club","Dockside Soul Revue","Fennel & the Foxes","The Low Tide Ramblers"];
+const MATCH=["Harbour Town v Riverside (league)","Cup quarter-final: Harbour Town v Ashford","Rugby: home nations, round 3","Derby day: Harbour Town v Northfield","Champions night: double header","Grand prix, live from lights out"];
+const today=new Date();today.setHours(0,0,0,0);
+const EV=[];
+for(let i=0;i<42;i++){const d=new Date(today);d.setDate(today.getDate()+i);const w=d.getDay(),k=i+d.getDate();
+  if(w===2)EV.push({d,t:"quiz",n:"The Lantern Pub Quiz",x:"Six rounds, a picture round and the dreaded music round. Teams up to six.",h:"20:00",p:"€2 pp"});
+  if(w===3&&k%2===0)EV.push({d,t:"sport",n:MATCH[k%MATCH.length],x:"Big screen and every TV on, sound up. Wing deal: 12 for €10.",h:"20:45",p:"Free"});
+  if(w===4)EV.push({d,t:"music",n:"Open mic & acoustic night",x:"Bring a guitar or just a voice. Sign-up sheet on the bar from 19:30.",h:"20:00",p:"Free"});
+  if(w===5)EV.push({d,t:"music",n:BANDS[k%BANDS.length],x:["Indie and old soul favourites, two sets.","Blues and boogie to get the floor moving.","Folk-rock with fiddle and foot stomps."][k%3],h:"21:00",p:k%4===0?"€5":"Free"});
+  if(w===6){EV.push({d,t:"sport",n:MATCH[(k+2)%MATCH.length],x:"Afternoon kick-off on the big screen. Pie and a pint €14.",h:"15:00",p:"Free"});EV.push({d,t:"music",n:BANDS[(k+3)%BANDS.length],x:"Saturday night band on the little stage until late.",h:"21:30",p:k%3===0?"€6":"Free"})}
+  if(w===0){EV.push({d,t:"food",n:"Sunday roast",x:"Beef, pork or nut roast with all the trimmings. Book ahead.",h:"12:00",p:"From €17"});EV.push({d,t:"music",n:"Folk session by the fire",x:"Informal session, join in or just listen.",h:"17:00",p:"Free"})}
+  if(w===1)EV.push({d,t:"food",n:"Burger & pint Monday",x:"Any burger with a pint of house lager or a soft drink.",h:"12:00",p:"€15"});
+}
+const sameDay=(a,b)=>a.toDateString()===b.toDateString();
+
+/* tonight card */
+{const evs=EV.filter(e=>sameDay(e.d,today));const e=evs.find(x=>x.t!=="food")||evs[0];
+ $("#tonight").innerHTML=e?`<div class="tonight__d"><small>${DAYS[e.d.getDay()].slice(0,3)}</small><b>${e.d.getDate()}</b></div><div><span class="lbl">Tonight at The Lantern</span><h2>${e.n}</h2><p>${e.h} · ${e.p==="Free"?"Free entry":e.p} · ${TYPES[e.t][0]}</p></div><a class="btn btn--ox" href="#events">All events</a>`:"";}
+
+/* ticker */
+{const w=["Quiz every Tuesday","Live bands Fri & Sat","Every big match on the big screen","12 taps, 9 local brewers","Sunday roast from noon","Heated beer garden","Dogs welcome"];$("#ticker").innerHTML=[...w,...w].map(x=>`<span>${x}</span>`).join("");}
+
+{const PAGE=innerWidth<720?5:8;let filter="all",day=null,shown=PAGE,month=new Date(today.getFullYear(),today.getMonth(),1);
+ const maxDate=new Date(today);maxDate.setDate(today.getDate()+41);
+ $("#filters").innerHTML=`<button type="button" class="chip" data-f="all" aria-pressed="true">All nights</button>`+Object.entries(TYPES).map(([k,v])=>`<button type="button" class="chip" data-f="${k}" aria-pressed="false" style="--c:${v[1]}"><i></i>${v[0]}</button>`).join("");
+ $("#filters").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;filter=b.dataset.f;$$("#filters .chip").forEach(x=>x.setAttribute("aria-pressed",x===b));shown=PAGE;render()};
+ function list(){return EV.filter(e=>(filter==="all"||e.t===filter)&&(!day||sameDay(e.d,day)))}
+ function render(){
+  const L=list(),vis=day?L:L.slice(0,shown);
+  $("#evs").innerHTML=vis.length?vis.map((e,i)=>`<article class="ev" style="--c:${TYPES[e.t][1]};animation-delay:${Math.min(i,8)*40}ms"><div class="ev__d"><small>${DAYS[e.d.getDay()].slice(0,3)}</small><b>${e.d.getDate()}</b><em>${MON[e.d.getMonth()].slice(0,3)}</em></div><div><h3>${e.n}</h3><p>${e.x}</p><div class="ev__meta"><span class="type">${TYPES[e.t][0]}</span><span>${e.h}</span><span>${e.p==="Free"?"Free entry":e.p}</span></div></div><button type="button" class="btn btn--line" data-ev="${encodeURIComponent(e.n)}">${e.t==="quiz"||e.t==="food"?"Book a table":"Remind me"}</button></article>`).join(""):`<div class="empty">Nothing of that kind on this day. Try another day or <b>All nights</b>.</div>`;
+  $("#moreBtn").parentElement.style.display=(!day&&L.length>shown)?"":"none";
+  $("#calInfo").textContent=day?`${DAYS[day.getDay()]} ${day.getDate()} ${MON[day.getMonth()]}`:`Showing the next 6 weeks`;$("#clearDay").hidden=!day;
+  cal();}
+ function cal(){
+  $("#calTitle").textContent=`${MON[month.getMonth()]} ${month.getFullYear()}`;
+  const first=(month.getDay()+6)%7,n=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();let h="";
+  for(let i=0;i<first;i++)h+=`<span></span>`;
+  for(let dd=1;dd<=n;dd++){const d=new Date(month.getFullYear(),month.getMonth(),dd);const evs=EV.filter(e=>sameDay(e.d,d)&&(filter==="all"||e.t===filter));const out=d<today||d>maxDate;
+   const types=[...new Set(evs.map(e=>e.t))];
+   h+=`<button type="button" ${out||!evs.length?"disabled":""} class="${evs.length?"has":""} ${sameDay(d,today)?"today":""}" data-d="${d.toISOString()}" aria-pressed="${!!day&&sameDay(d,day)}" aria-label="${dd} ${MON[d.getMonth()]}${evs.length?", "+evs.length+" event"+(evs.length>1?"s":""):""}">${dd}<span class="dots">${types.map(t=>`<i style="--c:${TYPES[t][1]}"></i>`).join("")}</span></button>`}
+  $("#calDays").innerHTML=h;
+  $("#prevM").disabled=month<=new Date(today.getFullYear(),today.getMonth(),1);$("#nextM").disabled=new Date(month.getFullYear(),month.getMonth()+1,1)>maxDate;}
+ $("#calDays").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;const d=new Date(b.dataset.d);day=day&&sameDay(day,d)?null:d;render()};
+ $("#prevM").onclick=()=>{month=new Date(month.getFullYear(),month.getMonth()-1,1);cal()};
+ $("#nextM").onclick=()=>{month=new Date(month.getFullYear(),month.getMonth()+1,1);cal()};
+ $("#clearDay").onclick=()=>{day=null;render()};
+ $("#moreBtn").onclick=()=>{shown+=8;render()};
+ $("#evs").onclick=e=>{const b=e.target.closest("[data-ev]");if(!b)return;if(b.textContent==="Book a table"){location.hash="book";return}b.textContent="Reminder set ✓";toast(`Reminder set for ${decodeURIComponent(b.dataset.ev)}. Demo only: nothing was sent.`)};
+ render();}
+
+/* ---------- drinks board ---------- */
+const DR={
+ "On tap":[["Lantern Lager","Crisp house pilsner, brewed 4 miles away",4.6,3.2,5.8,"House"],["Rope Walk Pale","Citrus, pine, easy-drinking",4.2,3.2,5.6],["Old Harbour Bitter","Malty, nutty, served from the cask",3.9,3.0,5.2,"Cask"],["Black Tide Stout","Roast coffee, chocolate, silky",4.8,3.4,6.0],["Juice Box IPA","Hazy, mango and passionfruit",6.2,3.8,6.8,"Guest"],["Orchard Cider","Dry, cloudy, local apples",5.5,3.3,5.9],["Wheat Wave","Bavarian-style, banana and clove",5.2,3.4,6.2],["Sour Cherry Gose","Tart, salty, refreshing",4.5,3.8,6.6,"Guest"],["Lantern Light","Low-alcohol pale",0.5,2.8,4.8]],
+ "Bottles & cans":[["Northfield Double IPA","440ml can",8.0,null,7.5],["Belgian Tripel","330ml bottle",8.5,null,6.8],["Smoked Porter","440ml can",6.0,null,6.5],["Session Sour","330ml can",3.8,null,5.5],["Gluten-free Pale","330ml bottle",4.4,null,5.2],["Alcohol-free Lager","330ml bottle",0.0,null,4.0]],
+ "Wine & spirits":[["House red / white / rosé","175ml glass · bottle €24",12.5,null,6.0],["Prosecco","125ml glass · bottle €29",11.0,null,7.0],["Harbour gin & tonic","Local gin, double",40,null,8.5],["Single malt of the month","25ml",43,null,6.5],["Spiced rum & ginger","Double",37.5,null,8.0],["Espresso martini","Our cocktail of choice",15,null,9.5]],
+ "Soft & zero":[["Fresh lemonade","Made in house",0,null,3.8],["Cola, lemonade, tonic","Glass",0,null,3.0],["Ginger beer","Fiery, 275ml",0,null,3.5],["Zero-proof G&T","Botanical spirit, tonic",0,null,6.0],["Coffee & tea","Americano, flat white, tea",0,null,3.2]]
+};
+{const keys=Object.keys(DR);
+ $("#dtabs").innerHTML=keys.map((k,i)=>`<button role="tab" type="button" aria-selected="${i===0}" data-k="${k}">${k}</button>`).join("");
+ function show(k){const rows=DR[k],tap=k==="On tap",half=Math.ceil(rows.length/2);
+  const col=r=>`<li class="drow"><div><h3>${r[0]}${r[5]?`<em>${r[5]}</em>`:""}</h3><p>${r[1]}</p>${r[2]<15?`<span class="abvbar" aria-hidden="true"><i style="--w:${Math.min(100,r[2]/9*100)}%"></i></span>`:""}</div><span class="abv">${k==="Soft & zero"?"0%":r[2].toFixed(1)+"%"}</span><span>${r[3]?"€"+r[3].toFixed(2):""}</span><span>€${r[4].toFixed(2)}</span></li>`;
+  const hd=`<li class="dhead" aria-hidden="true"><span>${tap?"Beer":"Drink"}</span><span>ABV</span><span>${tap?"Half":""}</span><span>${tap?"Pint":"Price"}</span></li>`;
+  $("#dpanel").innerHTML=`<ul class="dlist">${hd}${hd.replace('dhead"','dhead dh2"')}${rows.map(col).join("")}</ul>`;}
+ $("#dtabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;$$("#dtabs button").forEach(x=>x.setAttribute("aria-selected",x===b));show(b.dataset.k)};
+ show(keys[0]);}
+
+/* ---------- hours ---------- */
+{const H=[["12:00","22:30"],["12:00","23:00"],["12:00","23:00"],["12:00","23:00"],["12:00","23:00"],["12:00","01:00"],["12:00","01:00"]];
+ const now=new Date(),d=now.getDay(),m=now.getHours()*60+now.getMinutes(),toM=s=>{const[a,b]=s.split(":");return +a*60+ +b};
+ $("#hours").innerHTML=[1,2,3,4,5,6,0].map(i=>`<li class="${i===d?"today":""}"><span>${DAYS[i]}</span><span>${H[i][0]} – ${H[i][1]}</span></li>`).join("");
+ const close=c=>{let x=toM(c);return x<toM("06:00")?x+1440:x};const prev=H[(d+6)%7];
+ const open=(m>=toM(H[d][0])&&m<close(H[d][1]))||(close(prev[1])>1440&&m<close(prev[1])-1440);
+ const el=$("#status");el.textContent=open?`Open now · until ${(m<360?prev:H[d])[1]}`:`Closed · opens ${H[m<toM(H[d][0])?d:(d+1)%7][0]}`;el.classList.toggle("closed",!open);}
+
+/* ---------- booking ---------- */
+{const f=$("#bookf"),g=$("#guests");let n=8;const NAMES={snug:"The Snug",back:"The back room",garden:"The beer garden"};
+ const bd=$("#bd"),t=new Date();t.setDate(t.getDate()+7);bd.min=new Date().toISOString().slice(0,10);bd.value=t.toISOString().slice(0,10);
+ function upd(){const a=f.querySelector("[name=area]:checked"),max=+a.dataset.max;
+  if(n>max){n=max;$("#warn").textContent=`${NAMES[a.value]} fits up to ${max}. For bigger groups pick the back room.`}else if(n<2){n=2}
+  g.textContent=n;$("#qGuests").textContent=n;$("#qArea").textContent=NAMES[a.value];
+  const d=bd.value?new Date(bd.value+"T12:00"):null;$("#qWhen").textContent=d?`${DAYS[d.getDay()].slice(0,3)} ${d.getDate()} ${MON[d.getMonth()].slice(0,3)}, ${$("#bt").value}`:"—";
+  const sunday=d&&d.getDay()===0;const roast=f.querySelector("[name=food][value='19']");roast.disabled=!sunday;if(!sunday)roast.checked=false;roast.closest("label").style.opacity=sunday?1:.45;
+  const food=[...f.querySelectorAll("[name=food]:checked")];const pp=food.reduce((s,x)=>s+ +x.value,0);const tot=pp*n;
+  $("#qFood").textContent=food.length?`${food.map(x=>x.dataset.n.replace("&amp;","&")).join(", ")}`:"None";
+  $("#qTot").textContent="€"+tot;
+  const hire=a.value==="back"&&tot<300;$("#qHire").textContent=hire?"€80, or free over €300":"Free";
+  $("#qNote").textContent=a.value==="snug"?"Drinks paid at the bar. No deposit needed for the snug.":`20% deposit to hold the date (about €${Math.round(Math.max(tot,hire?80:0)*.2)}), taken off your final bill.`;}
+ $("#gMinus").onclick=()=>{n--;$("#warn").textContent="";upd()};$("#gPlus").onclick=()=>{n++;$("#warn").textContent="";upd()};
+ f.addEventListener("change",()=>{$("#warn").textContent="";upd()});
+ f.onsubmit=e=>{e.preventDefault();const nm=$("#bn"),ph=$("#bp");if(!nm.value.trim()){nm.focus();toast("Please add your name");return}if(!ph.value.trim()){ph.focus();toast("Please add a phone number");return}toast(`Cheers ${nm.value.trim().split(" ")[0]}! Demo only: nothing was sent.`)};
+ upd();}
+
+/* ---------- FAQ ---------- */
+$$(".qa button").forEach(b=>b.onclick=()=>{const q=b.parentElement,o=!q.classList.contains("open");q.classList.toggle("open",o);b.setAttribute("aria-expanded",o)});
+
+/* ---------- reveal + counters ---------- */
+function count(el){const end=+el.dataset.count;if(REDUCED||end<10){el.textContent=end;return}const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-k,3);el.textContent=Math.round(end*e);if(k<1)requestAnimationFrame(f)})(t0)}
+{const has="IntersectionObserver" in window;
+ const io=has&&new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px"});
+ $$(".rv").forEach(el=>{if(!has||el.getBoundingClientRect().top<innerHeight)el.classList.add("in","now");else io.observe(el)});
+ const co=has&&new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);co.unobserve(e.target)}}));
+ $$("[data-count]").forEach(el=>co&&co.observe(el));}
+if(!REDUCED){const bg=$(".hero__bg img");let r=0;addEventListener("scroll",()=>{if(r)return;r=requestAnimationFrame(()=>{r=0;if(scrollY<900)bg.style.transform=`scale(1.06) translateY(${scrollY*.15}px)`})},{passive:true})}
+</script>
+</body>
+</html>

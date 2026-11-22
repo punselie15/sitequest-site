@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hartwell’s · Family butcher &amp; deli since 1962</title>
+<meta name="description" content="Hartwell’s: a family butcher and deli. Dry-aged beef, free-range pork, homemade sausages, weekly offers and BBQ packages to order ahead. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#6E1A1A">
+<meta property="og:title" content="Hartwell’s · Family butcher & deli">
+<meta property="og:description" content="Dry-aged beef, homemade sausages and BBQ packages to order ahead.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%236E1A1A'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23F1E7D6' stroke-width='2'/%3E%3Cpath d='M18 26h22l6-4v14l-6-4H18z' fill='%23F1E7D6'/%3E%3Crect x='40' y='34' width='4' height='12' rx='2' fill='%23F1E7D6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Courier+Prime:wght@400;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1E7D6; --paper-2:#E6D8C0; --paper-3:#D9C6A6;
+  --ox:#6E1A1A; --ox-2:#8E2424; --blood:#B3322B;
+  --ink:#1F1A16; --ink-2:#4A3F36; --tile:#FBF8F2; --sage:#5E6B4E;
+  --line:rgba(31,26,22,.16);
+  --f-d:"Abril Fatface", Georgia, serif; --f-t:"Courier Prime", ui-monospace, monospace; --f-b:"Libre Franklin", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-b);overflow-x:clip;
+  background-image:radial-gradient(rgba(110,26,26,.035) 1px,transparent 1px);background-size:5px 5px}
+img{display:block;max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blood);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tag{font:700 12px/1 var(--f-t);letter-spacing:.18em;text-transform:uppercase;color:var(--ox)}
+
+.concept{background:var(--ink);color:var(--paper);font-size:13px;text-align:center;padding:8px 16px;line-height:1.45}
+.concept a{color:#F5C9A8;font-weight:600}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(241,231,214,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+.nav__in{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:46px;height:46px;flex:none}
+.brand b{font:400 27px/1 var(--f-d);letter-spacing:.01em}
+.brand small{display:block;font:700 10px/1 var(--f-t);letter-spacing:.22em;color:var(--ox);margin-top:4px}
+.nav__links{display:flex;gap:24px;margin-left:auto;list-style:none}
+.nav__links a{text-decoration:none;font-weight:600;font-size:15px;position:relative;padding:6px 0}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ox);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav__links a:hover::after{transform:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:4px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s;border:2px solid var(--ink)}
+.btn--ox{background:var(--ox);color:var(--paper);border-color:var(--ox);box-shadow:4px 4px 0 var(--ink)}
+.btn--ox:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn--line{background:transparent}
+.btn--line:hover{background:var(--ink);color:var(--paper)}
+.nav .btn{min-height:44px;padding:10px 18px}
+
+/* hero */
+.hero{position:relative;padding:64px 0 72px;overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font:400 clamp(48px,7.2vw,104px)/.95 var(--f-d);letter-spacing:-.01em;margin:18px 0 24px}
+.hero h1 em{font-style:normal;color:var(--ox);position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:-4%;bottom:-.08em;width:108%;height:.3em}
+.hero h1 em path{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.2s .6s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero__lede{font-size:clamp(17px,1.5vw,20px);max-width:46ch;color:var(--ink-2);margin-bottom:30px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero__facts{display:flex;gap:36px;margin-top:44px;padding-top:24px;border-top:1px dashed var(--ink-2);flex-wrap:wrap}
+.hero__facts div{font-size:14px;color:var(--ink-2)}
+.hero__facts b{display:block;font:400 38px/1 var(--f-d);color:var(--ink)}
+.hero__pic{position:relative;justify-self:center;width:100%;max-width:500px}
+.hero__photo{position:relative;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--ox);transform:rotate(1.5deg);background:var(--paper-2);overflow:hidden}
+.hero__photo img{aspect-ratio:4/5;object-fit:cover;width:100%;transform:scale(1.08);will-change:transform}
+.ticket{position:absolute;left:-36px;bottom:40px;background:var(--tile);border:2px solid var(--ink);padding:14px 18px;font-family:var(--f-t);transform:rotate(-4deg);box-shadow:4px 4px 0 var(--ink);animation:sway 6s ease-in-out infinite}
+.ticket::before{content:"";position:absolute;top:-12px;left:50%;width:2px;height:12px;background:var(--ink)}
+.ticket small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ox)}
+.ticket strong{font:700 22px/1.2 var(--f-t)}
+@keyframes sway{50%{transform:rotate(-1deg) translateY(-6px)}}
+.stamp{position:absolute;right:-30px;top:-34px;width:150px;height:150px;animation:spin 26s linear infinite}
+.stamp text{font:700 12.5px var(--f-t);letter-spacing:.26em;fill:var(--ox)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.strip{background:var(--ox);color:var(--paper);border-block:2px solid var(--ink);overflow:hidden}
+.strip__row{display:flex;gap:44px;width:max-content;padding:16px 0;animation:tick 38s linear infinite;font:400 26px/1 var(--f-d);white-space:nowrap}
+.strip__row span::after{content:"✦";margin-left:44px;color:#F5C9A8;font-size:18px;vertical-align:middle}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+section{scroll-margin-top:84px}
+.sec{padding:104px 0}
+.sec--dark{background:var(--ink);color:var(--paper)}
+.sec--dark .tag{color:#F5C9A8}
+.sec--kraft{background:var(--paper-2)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head h2,.h2{font:400 clamp(40px,5.2vw,72px)/1 var(--f-d);margin-top:12px}
+.head p{max-width:44ch;color:var(--ink-2)}
+.sec--dark .head p{color:#CDBFAE}
+
+/* offers */
+.offers{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.offer{position:relative;background:var(--tile);border:2px solid var(--ink);padding:0 0 22px;transition:transform .25s}
+.offer:hover{transform:translateY(-6px) rotate(-.6deg)}
+.offer img{aspect-ratio:4/3;object-fit:cover;width:100%;border-bottom:2px solid var(--ink)}
+.offer__b{padding:18px 20px 0}
+.offer h3{font:400 24px/1.1 var(--f-d);margin-bottom:6px}
+.offer p{font-size:14px;color:var(--ink-2);min-height:44px}
+.offer__p{display:flex;align-items:baseline;gap:10px;margin-top:14px;font-family:var(--f-t)}
+.offer__p b{font-size:28px;color:var(--ox)}
+.offer__p s{color:var(--ink-2)}
+.offer__flag{position:absolute;top:14px;right:-10px;background:var(--blood);color:#fff;font:700 12px/1 var(--f-t);letter-spacing:.12em;padding:8px 12px;transform:rotate(4deg);box-shadow:3px 3px 0 var(--ink)}
+.countdown{display:flex;align-items:center;gap:14px;font-family:var(--f-t);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:4px}
+.countdown b{font-size:20px;color:#F5C9A8}
+
+/* counter list */
+.counter{display:grid;grid-template-columns:260px 1fr;gap:48px}
+.ctabs{display:flex;flex-direction:column;gap:6px}
+.ctabs button{text-align:left;padding:14px 16px;border:2px solid transparent;font-weight:700;border-radius:4px;transition:background .2s;min-height:48px}
+.ctabs button[aria-selected=true]{background:var(--ink);color:var(--paper)}
+.ctabs button:not([aria-selected=true]):hover{border-color:var(--ink)}
+.board{background:var(--tile);border:2px solid var(--ink);padding:30px 34px;box-shadow:8px 8px 0 var(--paper-3);position:relative}
+.board::before{content:"";position:absolute;inset:8px;border:1px dashed var(--paper-3);pointer-events:none}
+.plist{list-style:none}
+.plist li{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.plist li:last-child{border-bottom:0}
+.plist .n{font-weight:700}
+.plist .n small{display:block;font-weight:400;color:var(--ink-2);font-size:14px}
+.plist .dots{flex:1;border-bottom:2px dotted var(--paper-3);transform:translateY(-4px)}
+.plist .pr{font:700 18px var(--f-t);color:var(--ox);white-space:nowrap}
+.panel{display:none;animation:fade .4s}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+
+/* bbq builder */
+.bbq{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:start}
+.presets{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.chip{border:2px solid var(--paper);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;min-height:44px;transition:background .2s,color .2s}
+.chip:hover,.chip[aria-pressed=true]{background:var(--paper);color:var(--ink)}
+.meats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.meat{position:relative;display:flex;gap:14px;align-items:center;padding:14px 16px;border:2px solid rgba(241,231,214,.25);border-radius:6px;cursor:pointer;transition:border-color .2s,background .2s,transform .2s;min-height:72px}
+.meat:hover{border-color:rgba(241,231,214,.6)}
+.meat input{position:absolute;opacity:0;pointer-events:none}
+.meat .box{flex:none;width:26px;height:26px;border:2px solid var(--paper);border-radius:4px;display:grid;place-items:center;transition:background .2s}
+.meat .box svg{width:16px;height:16px;opacity:0;transform:scale(.4);transition:.2s}
+.meat:has(input:checked){border-color:#F5C9A8;background:rgba(179,50,43,.22)}
+.meat:has(input:checked) .box{background:#F5C9A8;border-color:#F5C9A8}
+.meat:has(input:checked) .box svg{opacity:1;transform:none}
+.meat:has(input:focus-visible){outline:3px solid #F5C9A8;outline-offset:2px}
+.meat b{display:block;font-size:15px}
+.meat small{color:#CDBFAE;font-size:13px}
+.meat .pp{margin-left:auto;font:700 15px var(--f-t);color:#F5C9A8;white-space:nowrap}
+.field{margin-top:26px}
+.field>label,.field>.lbl{display:block;font:700 12px var(--f-t);letter-spacing:.16em;text-transform:uppercase;color:#F5C9A8;margin-bottom:10px}
+.guests{display:flex;align-items:center;gap:14px}
+.step{width:48px;height:48px;border:2px solid var(--paper);border-radius:50%;font-size:22px;font-weight:700;display:grid;place-items:center;transition:background .2s,color .2s;flex:none}
+.step:hover{background:var(--paper);color:var(--ink)}
+.guests output{font:400 40px/1 var(--f-d);min-width:56px;text-align:center}
+.guests input[type=range]{flex:1;accent-color:#F5C9A8;min-width:0;height:44px}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.day{border:2px solid rgba(241,231,214,.3);border-radius:6px;padding:10px 4px;text-align:center;line-height:1.2;min-height:60px;transition:.2s}
+.day small{display:block;font-size:12px;color:#CDBFAE}
+.day b{font:400 22px var(--f-d)}
+.day[aria-pressed=true]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.day[aria-pressed=true] small{color:var(--ox)}
+.day:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.sel{width:100%;min-height:48px;padding:10px 14px;border-radius:6px;border:2px solid rgba(241,231,214,.3);background:var(--ink);color:var(--paper)}
+.receipt{position:sticky;top:96px;background:var(--tile);color:var(--ink);padding:28px 26px 30px;font-family:var(--f-t);box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transform:rotate(.8deg)}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:linear-gradient(-45deg,transparent 8px,var(--tile) 0) 0 0/16px 12px,linear-gradient(45deg,transparent 8px,var(--tile) 0) 0 0/16px 12px}
+.receipt h3{font:400 28px/1 var(--f-d);text-align:center}
+.receipt .c{text-align:center;font-size:12px;letter-spacing:.14em;color:var(--ink-2);margin:6px 0 16px;text-transform:uppercase}
+.rl{list-style:none;border-block:1px dashed var(--ink-2);padding:10px 0;min-height:80px;font-size:14px}
+.rl li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;animation:fade .3s}
+.rl .empty{color:var(--ink-2);justify-content:center;padding:18px 0}
+.rsum{font-size:14px;padding-top:10px}
+.rsum div{display:flex;justify-content:space-between;padding:3px 0}
+.rtotal{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);margin-top:10px;padding-top:12px}
+.rtotal b{font-size:30px;color:var(--ox)}
+.receipt .btn{width:100%;margin-top:20px;font-family:var(--f-b)}
+.receipt .note{font-size:12px;color:var(--ink-2);text-align:center;margin-top:12px}
+
+/* cuts */
+.cuts{display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:center}
+.animal-tabs{display:inline-flex;border:2px solid var(--ink);border-radius:999px;padding:4px;margin-bottom:20px}
+.animal-tabs button{padding:10px 22px;border-radius:999px;font-weight:700;min-height:44px}
+.animal-tabs button[aria-selected=true]{background:var(--ox);color:var(--paper)}
+.chart{background:var(--tile);border:2px solid var(--ink);padding:20px;position:relative}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart .rg{fill:var(--paper-2);stroke:var(--ink);stroke-width:2;cursor:pointer;transition:fill .25s}
+.chart .rg:hover,.chart .rg.on{fill:var(--blood)}
+.chart .rg:focus{outline:none}
+.chart .rg:focus-visible{fill:var(--blood);stroke-width:4}
+.chart .lb{font:700 11px var(--f-t);letter-spacing:.08em;text-transform:uppercase;fill:var(--ink);pointer-events:none;transition:fill .25s}
+.chart .lb.on{fill:#fff}
+.chart .solid{fill:var(--ink)}
+.chart .outline{fill:none;stroke:var(--ink);stroke-width:3;pointer-events:none}
+.chart__hint{position:absolute;right:16px;bottom:12px;font:12px var(--f-t);color:var(--ink-2)}
+.cutinfo{background:var(--ink);color:var(--paper);padding:30px 28px;border-radius:4px;min-height:340px;position:relative}
+.cutinfo .tag{color:#F5C9A8}
+.cutinfo h3{font:400 40px/1 var(--f-d);margin:12px 0 12px}
+.cutinfo p{color:#DCCFBE}
+.cutinfo dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;margin-top:22px;font-size:14px}
+.cutinfo dt{font:700 11px var(--f-t);letter-spacing:.14em;text-transform:uppercase;color:#F5C9A8;padding-top:3px}
+.cutinfo .price{position:absolute;right:22px;top:24px;font:700 18px var(--f-t);background:var(--paper);color:var(--ox);padding:6px 10px;transform:rotate(3deg)}
+.cutinfo.swap{animation:fade .35s}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about__pics{position:relative;height:540px}
+.about__pics img{position:absolute;border:2px solid var(--ink);object-fit:cover}
+.about__pics .a{width:72%;height:78%;left:0;top:0;box-shadow:10px 10px 0 var(--ox)}
+.about__pics .b{width:52%;height:50%;right:0;bottom:0;box-shadow:10px 10px 0 var(--ink)}
+.about p{color:var(--ink-2);margin-top:16px;max-width:52ch}
+.about blockquote{font:400 26px/1.25 var(--f-d);margin:28px 0 8px;padding-left:20px;border-left:4px solid var(--ox)}
+.sig{font:700 13px var(--f-t);letter-spacing:.14em;text-transform:uppercase;color:var(--ox)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.stats div{border:2px solid var(--ink);padding:16px;background:var(--tile)}
+.stats b{display:block;font:400 36px/1 var(--f-d);color:var(--ox)}
+.stats span{font-size:13px;color:var(--ink-2)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.gal figure{position:relative;overflow:hidden;border:2px solid var(--ink);background:var(--paper-2)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:10px;bottom:10px;background:var(--paper);font:700 12px var(--f-t);padding:5px 9px;letter-spacing:.06em}
+.gal .w{grid-column:span 2}.gal .t{grid-row:span 2}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:var(--tile);border:2px solid var(--ink);padding:28px;position:relative}
+.rev:nth-child(2){transform:rotate(1deg)}.rev:nth-child(1){transform:rotate(-.8deg)}
+.stars{color:var(--blood);letter-spacing:3px;font-size:18px}
+.rev p{font:400 20px/1.35 var(--f-d);margin:14px 0 18px}
+.rev cite{font:700 12px var(--f-t);letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:var(--ink-2)}
+
+/* faq */
+.faq{max-width:820px;margin-inline:auto}
+.q{border-bottom:2px solid var(--ink)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;text-align:left;font:600 18px/1.35 var(--f-b);min-height:56px}
+.q .pm{flex:none;width:32px;height:32px;border:2px solid var(--ink);border-radius:50%;position:relative;transition:transform .3s,background .3s}
+.q .pm::before,.q .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.q .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+.q[data-open] .pm{background:var(--ox);color:var(--paper);border-color:var(--ox)}
+.q[data-open] .pm::after{transform:translate(-50%,-50%)}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.q[data-open] .a{grid-template-rows:1fr}
+.q .a>div{overflow:hidden}
+.q .a p{padding:0 0 22px;color:var(--ink-2);max-width:66ch}
+
+/* visit */
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px}
+.hours{background:var(--tile);border:2px solid var(--ink);padding:30px}
+.open-now{display:inline-flex;align-items:center;gap:8px;font:700 13px var(--f-t);letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:var(--paper-2)}
+.open-now i{width:10px;height:10px;border-radius:50%;background:#9A8F84}
+.open-now.yes i{background:#3E8E4A;box-shadow:0 0 0 0 rgba(62,142,74,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(62,142,74,0)}100%{box-shadow:0 0 0 0 rgba(62,142,74,0)}}
+.hours table{width:100%;border-collapse:collapse;margin-top:18px;font-family:var(--f-t)}
+.hours td{padding:9px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{font-weight:700;color:var(--ox)}
+.hours tr.today td:first-child::before{content:"▸ "}
+.addr{margin-top:22px;font-size:15px}
+.addr a{font-weight:700}
+.map{position:relative;border:2px solid var(--ink);background:#E9DFCB;min-height:380px;overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map__card{position:absolute;left:18px;bottom:18px;background:var(--tile);border:2px solid var(--ink);padding:12px 16px;font-size:14px;box-shadow:4px 4px 0 var(--ink)}
+.pin{transform-origin:50% 100%;animation:drop 1s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes drop{from{transform:translateY(-40px);opacity:0}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.contact p{color:var(--ink-2);margin-top:14px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .full{grid-column:1/-1}
+.form label{display:block;font:700 12px var(--f-t);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;min-height:50px;padding:12px 14px;border:2px solid var(--ink);border-radius:4px;background:var(--tile)}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;box-shadow:4px 4px 0 var(--ox)}
+
+/* footer */
+.foot{background:var(--ink);color:var(--paper);padding:72px 0 32px}
+.foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot .brand b{color:var(--paper)}
+.foot .brand small{color:#F5C9A8}
+.foot h4{font:700 12px var(--f-t);letter-spacing:.16em;text-transform:uppercase;color:#F5C9A8;margin-bottom:14px}
+.foot ul{list-style:none;font-size:15px;color:#DCCFBE}
+.foot li{padding:3px 0}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.soc{display:flex;gap:10px;margin-top:18px}
+.soc a{width:44px;height:44px;border:1.5px solid rgba(241,231,214,.4);border-radius:50%;display:grid;place-items:center;transition:background .2s}
+.soc a:hover{background:var(--ox)}
+.soc svg{width:18px;height:18px;fill:var(--paper)}
+.foot__bot{margin-top:48px;padding-top:22px;border-top:1px solid rgba(241,231,214,.18);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#B4A797}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:24px;z-index:99;background:var(--ink);color:var(--paper);padding:14px 22px;border-radius:4px;font-weight:600;box-shadow:4px 4px 0 var(--ox);transform:translate(-50%,160%);opacity:0;transition:transform .45s cubic-bezier(.3,1.4,.4,1),opacity .3s;max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.now{transition:none}
+
+@media (max-width:1020px){
+  .offers{grid-template-columns:repeat(2,1fr)}
+  .bbq,.cuts,.visit,.contact{grid-template-columns:1fr}
+  .receipt{position:relative;top:0;transform:none}
+  .foot__grid{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .nav__links{display:none}
+  .nav .btn{margin-left:auto}
+  .hero__grid,.about{grid-template-columns:1fr}
+  .hero{padding:40px 0 64px}
+  .hero__pic{max-width:420px;margin-top:10px}
+  .counter{grid-template-columns:1fr;gap:20px}
+  .ctabs{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .ctabs button{white-space:nowrap}
+  .revs{grid-template-columns:1fr}
+  .about__pics{height:420px}
+}
+@media (max-width:600px){
+  .sec{padding:72px 0}
+  .brand b{font-size:23px}.brand svg{width:40px;height:40px}.brand small{display:none}
+  .nav .btn{padding:10px 14px;font-size:14px}
+  .offers,.meats{grid-template-columns:1fr}
+  .days{grid-template-columns:repeat(3,1fr)}
+  .board{padding:20px 18px}
+  .plist .dots{display:none}
+  .plist li{justify-content:space-between}
+  .form{grid-template-columns:1fr}
+  .stamp{width:110px;height:110px;right:-8px;top:-28px}
+  .ticket{left:-6px;bottom:20px}
+  .hero__photo{box-shadow:8px 8px 0 var(--ox)}
+  .gal{grid-auto-rows:160px}
+  .stats b{font-size:28px}
+  .foot__grid{grid-template-columns:1fr}
+  .about__pics{height:340px}
+  .cutinfo{min-height:0}
+  .chart{padding:10px}
+  .chart .lb{font-size:15px;letter-spacing:0}
+  .chart__hint{position:static;display:block;margin-top:6px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);border-top:2px solid var(--ox);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mbar a{min-height:48px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;text-decoration:none;border-radius:4px;color:var(--paper);border:2px solid rgba(241,231,214,.4)}
+  .mbar a.p{background:var(--ox);border-color:var(--ox)}
+  body{padding-bottom:72px}
+  .toast{bottom:88px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+  .hero h1 em path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#butcher">More butcher examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Hartwell’s home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#6E1A1A"/><circle cx="32" cy="32" r="25.5" fill="none" stroke="#F1E7D6" stroke-width="1.5" stroke-dasharray="2 3"/><path d="M15 24.5h23.5l7.5-4.5v16l-7.5-4.5H15a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z" fill="#F1E7D6"/><circle cx="19" cy="28" r="1.8" fill="#6E1A1A"/><rect x="39.5" y="33" width="4.5" height="14" rx="2.2" fill="#F1E7D6"/><path d="M22 44c3-4 6-4 9 0" stroke="#F1E7D6" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+      <span><b>Hartwell’s</b><small>Butcher &amp; Deli · 1962</small></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#counter">Counter</a></li>
+      <li><a href="#bbq">BBQ packs</a></li>
+      <li><a href="#cuts">Cuts guide</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn--ox" href="#bbq">Order ahead</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="tag rv">Family butchers on Market Row · Three generations</span>
+      <h1 class="rv">Proper meat, cut the way <em>you ask<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 22c60-14 140-18 292-6" fill="none" stroke="#B3322B" stroke-width="6" stroke-linecap="round"/></svg></em>.</h1>
+      <p class="hero__lede rv">Grass-fed beef dry-aged in our own salt room, free-range pork from farms within twenty miles, and sausages made by hand every Thursday. Pop in, or order ahead and skip the queue.</p>
+      <div class="hero__cta rv">
+        <a class="btn btn--ox" href="#bbq">Build a BBQ pack</a>
+        <a class="btn btn--line" href="#offers">This week’s offers</a>
+      </div>
+      <div class="hero__facts rv">
+        <div><b data-count="28">28</b>days dry-aged</div>
+        <div><b data-count="9">9</b>local farms</div>
+        <div><b data-count="14">14</b>sausage recipes</div>
+      </div>
+    </div>
+    <div class="hero__pic rv">
+      <div class="hero__photo"><img id="parallax" src="https://images.unsplash.com/photo-1615937691194-97dbd3f3dc29?w=1000&q=70&auto=format&fit=crop" alt="Three thick-cut fillet steaks on butcher paper with salt and pepper" width="1000" height="1250"></div>
+      <svg class="stamp" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75 75m-56 0a56 56 0 1 1 112 0a56 56 0 1 1-112 0"/></defs><circle cx="75" cy="75" r="72" fill="#F1E7D6" stroke="#6E1A1A" stroke-width="2"/><circle cx="75" cy="75" r="40" fill="none" stroke="#6E1A1A" stroke-width="1.5"/><text><textPath href="#circ">DRY-AGED · ON THE BONE · </textPath></text><text x="75" y="72" text-anchor="middle" style="font:400 26px 'Abril Fatface';letter-spacing:0">28</text><text x="75" y="90" text-anchor="middle" style="font-size:10px;letter-spacing:.2em">DAYS</text></svg>
+      <div class="ticket"><small>Today’s cut</small><strong>Ribeye €34/kg</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="strip__row">
+  <span>Dry-aged beef</span><span>Free-range pork</span><span>Homemade sausages</span><span>Local lamb</span><span>Cheese &amp; charcuterie</span><span>Order ahead</span>
+  <span>Dry-aged beef</span><span>Free-range pork</span><span>Homemade sausages</span><span>Local lamb</span><span>Cheese &amp; charcuterie</span><span>Order ahead</span>
+</div></div>
+
+<section class="sec" id="offers">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tag">On the block this week</span><h2>Weekly offers</h2></div>
+      <div class="countdown" role="timer" aria-live="off"><span>Offers end Saturday 4pm</span><b id="cd">…</b></div>
+    </div>
+    <div class="offers">
+      <article class="offer rv"><span class="offer__flag">SAVE €3</span><img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?w=800&q=70&auto=format&fit=crop" alt="Two raw sirloin steaks on a wooden board" width="800" height="600" loading="lazy"><div class="offer__b"><h3>Sirloin steaks</h3><p>2 × 250g, dry-aged 28 days, fat left on.</p><div class="offer__p"><b>€12</b><s>€15</s></div></div></article>
+      <article class="offer rv"><span class="offer__flag">12 FOR 10</span><img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&q=70&auto=format&fit=crop" alt="A board of sausages, steaks and mince with herbs" width="800" height="600" loading="lazy"><div class="offer__b"><h3>Pork &amp; leek bangers</h3><p>Our best seller, made Thursday with outdoor-bred pork.</p><div class="offer__p"><b>€8.00</b><s>€9.60</s></div></div></article>
+      <article class="offer rv"><span class="offer__flag">BBQ PICK</span><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=70&auto=format&fit=crop" alt="Glazed pork ribs with tomatoes on a board" width="800" height="600" loading="lazy"><div class="offer__b"><h3>Sticky pork ribs</h3><p>Marinated in our smoky house glaze, ready for the grill.</p><div class="offer__p"><b>€9.50<small>/kg</small></b><s>€12</s></div></div></article>
+      <article class="offer rv"><span class="offer__flag">SUNDAY ROAST</span><img src="https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=800&q=70&auto=format&fit=crop" alt="Raw rib of beef with rosemary" width="800" height="600" loading="lazy"><div class="offer__b"><h3>Rib of beef</h3><p>Two-bone joint, feeds six. French-trimmed for you.</p><div class="offer__p"><b>€29<small>/kg</small></b><s>€34</s></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--kraft" id="counter">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Prices at the counter</span><h2>What’s on the block</h2></div><p>Everything is cut to order. Ask for thicker, thinner, boned, rolled or minced twice: that’s what we’re here for.</p></div>
+    <div class="counter">
+      <div class="ctabs" role="tablist" aria-label="Counter categories">
+        <button role="tab" aria-selected="true" aria-controls="p-beef" id="t-beef">Beef</button>
+        <button role="tab" aria-selected="false" aria-controls="p-pork" id="t-pork" tabindex="-1">Pork &amp; lamb</button>
+        <button role="tab" aria-selected="false" aria-controls="p-poultry" id="t-poultry" tabindex="-1">Poultry</button>
+        <button role="tab" aria-selected="false" aria-controls="p-deli" id="t-deli" tabindex="-1">Deli &amp; cheese</button>
+      </div>
+      <div class="board">
+        <div class="panel on" id="p-beef" role="tabpanel" aria-labelledby="t-beef"><ul class="plist">
+          <li><span class="n">Ribeye steak<small>28-day dry-aged, well marbled</small></span><span class="dots"></span><span class="pr">€34.00 /kg</span></li>
+          <li><span class="n">Sirloin steak<small>Fat cap on, cut 2.5cm thick</small></span><span class="dots"></span><span class="pr">€30.00 /kg</span></li>
+          <li><span class="n">Fillet<small>Whole or cut to steaks</small></span><span class="dots"></span><span class="pr">€52.00 /kg</span></li>
+          <li><span class="n">Feather blade<small>For slow braising</small></span><span class="dots"></span><span class="pr">€16.50 /kg</span></li>
+          <li><span class="n">Brisket<small>Rolled or flat, for smoking</small></span><span class="dots"></span><span class="pr">€15.00 /kg</span></li>
+          <li><span class="n">Steak mince<small>15% fat, minced fresh</small></span><span class="dots"></span><span class="pr">€11.00 /kg</span></li>
+        </ul></div>
+        <div class="panel" id="p-pork" role="tabpanel" aria-labelledby="t-pork"><ul class="plist">
+          <li><span class="n">Pork belly<small>Boned and scored</small></span><span class="dots"></span><span class="pr">€12.00 /kg</span></li>
+          <li><span class="n">Pork chops<small>Thick-cut, bone in</small></span><span class="dots"></span><span class="pr">€13.50 /kg</span></li>
+          <li><span class="n">Sausages, 6 pack<small>Pork &amp; leek, Cumberland, chilli &amp; fennel</small></span><span class="dots"></span><span class="pr">€4.80</span></li>
+          <li><span class="n">Dry-cured back bacon<small>Smoked or unsmoked, 8 rashers</small></span><span class="dots"></span><span class="pr">€4.60</span></li>
+          <li><span class="n">Lamb rack<small>French-trimmed, 6 bones</small></span><span class="dots"></span><span class="pr">€38.00 /kg</span></li>
+          <li><span class="n">Lamb shoulder<small>Whole or half, for roasting</small></span><span class="dots"></span><span class="pr">€17.00 /kg</span></li>
+        </ul></div>
+        <div class="panel" id="p-poultry" role="tabpanel" aria-labelledby="t-poultry"><ul class="plist">
+          <li><span class="n">Whole free-range chicken<small>Approx. 1.8kg</small></span><span class="dots"></span><span class="pr">€12.00</span></li>
+          <li><span class="n">Chicken breast<small>Skin on or off</small></span><span class="dots"></span><span class="pr">€15.50 /kg</span></li>
+          <li><span class="n">Chicken thighs<small>Boneless, great on the grill</small></span><span class="dots"></span><span class="pr">€10.50 /kg</span></li>
+          <li><span class="n">Duck breast<small>Two per pack</small></span><span class="dots"></span><span class="pr">€9.80</span></li>
+          <li><span class="n">Christmas turkey<small>Bronze, order by 10 December</small></span><span class="dots"></span><span class="pr">€16.00 /kg</span></li>
+        </ul></div>
+        <div class="panel" id="p-deli" role="tabpanel" aria-labelledby="t-deli"><ul class="plist">
+          <li><span class="n">Home-cooked ham<small>Honey &amp; mustard glaze, sliced</small></span><span class="dots"></span><span class="pr">€2.40 /100g</span></li>
+          <li><span class="n">Pork pie<small>Hot-water crust, baked here</small></span><span class="dots"></span><span class="pr">€3.90</span></li>
+          <li><span class="n">Scotch egg<small>Runny yolk, black pudding crumb</small></span><span class="dots"></span><span class="pr">€3.20</span></li>
+          <li><span class="n">Farmhouse cheddar<small>Aged 18 months</small></span><span class="dots"></span><span class="pr">€2.80 /100g</span></li>
+          <li><span class="n">Charcuterie board for 4<small>Cured meats, cheese, pickles</small></span><span class="dots"></span><span class="pr">€24.00</span></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--dark" id="bbq">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Order ahead · ready when you are</span><h2>Build your BBQ pack</h2></div><p>Pick your meats, tell us how many are coming, and choose a pickup day. We’ll have it marinated, wrapped and waiting.</p></div>
+    <form class="bbq" id="bbqForm" novalidate>
+      <div>
+        <div class="presets" aria-label="Quick start packs">
+          <button type="button" class="chip" data-preset="burger,sausage,chicken" aria-pressed="false">Classic</button>
+          <button type="button" class="chip" data-preset="ribs,brisket,sausage,wings" aria-pressed="false">Smokehouse</button>
+          <button type="button" class="chip" data-preset="picanha,lamb,chicken,ribs,halloumi" aria-pressed="false">The Feast</button>
+        </div>
+        <fieldset style="border:0"><legend class="sr">Choose meats</legend>
+        <div class="meats" id="meats"></div></fieldset>
+        <div class="field">
+          <span class="lbl" id="gl">How many guests?</span>
+          <div class="guests">
+            <button type="button" class="step" data-g="-1" aria-label="One guest fewer">−</button>
+            <output id="gOut" aria-live="polite" aria-labelledby="gl">10</output>
+            <button type="button" class="step" data-g="1" aria-label="One guest more">+</button>
+            <input type="range" id="gRange" min="4" max="60" value="10" aria-labelledby="gl">
+          </div>
+        </div>
+        <div class="field">
+          <span class="lbl">Pickup day</span>
+          <div class="days" id="days"></div>
+        </div>
+        <div class="field">
+          <label for="ptime">Pickup time</label>
+          <select class="sel" id="ptime"><option>08:00 – 10:00</option><option>10:00 – 12:00</option><option selected>12:00 – 14:00</option><option>14:00 – 16:00</option><option>16:00 – 17:30</option></select>
+        </div>
+      </div>
+      <aside class="receipt" aria-live="polite">
+        <h3>Hartwell’s</h3>
+        <div class="c">BBQ order ticket</div>
+        <ul class="rl" id="rl"></ul>
+        <div class="rsum">
+          <div><span>Guests</span><span id="rG">10</span></div>
+          <div><span>Raw weight approx.</span><span id="rW">0 kg</span></div>
+          <div><span>Pickup</span><span id="rP">–</span></div>
+          <div id="rD" hidden><span>Pack discount (4+ items) 10%</span><span id="rDv"></span></div>
+        </div>
+        <div class="rtotal"><span>Total</span><b id="rT">€0.00</b></div>
+        <button class="btn btn--ox" type="submit">Request this pack</button>
+        <p class="note">Pay in the shop when you collect. Free house rub with every pack.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="cuts">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Know your cuts</span><h2>The cuts guide</h2></div><p>Hover or tap a part of the animal to see what it’s good for, how to cook it and what it costs this week.</p></div>
+    <div class="cuts">
+      <div>
+        <div class="animal-tabs" role="tablist" aria-label="Animal">
+          <button role="tab" aria-selected="true" data-animal="beef">Beef</button>
+          <button role="tab" aria-selected="false" data-animal="pork">Pork</button>
+        </div>
+        <div class="chart"><svg id="chart" viewBox="0 0 620 345" role="group" aria-label="Butcher’s cuts diagram"></svg><span class="chart__hint">Tap a cut</span></div>
+      </div>
+      <div class="cutinfo" id="cutinfo" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--kraft" id="about">
+  <div class="wrap about">
+    <div class="about__pics rv">
+      <img class="a" src="https://images.unsplash.com/photo-1551028150-64b9f398f678?w=900&q=70&auto=format&fit=crop" alt="A T-bone steak on crushed ice with chillies" width="900" height="1000" loading="lazy">
+      <img class="b" src="https://images.unsplash.com/photo-1618164436241-4473940d1f5c?w=700&q=70&auto=format&fit=crop" alt="A wedge of farmhouse cheese with tomatoes and basil" width="700" height="600" loading="lazy">
+    </div>
+    <div class="rv">
+      <span class="tag">Our story</span>
+      <h2 class="h2">Sixty years behind the same counter</h2>
+      <p>Grandad Arthur opened Hartwell’s in 1962 with one block, one knife and a handshake deal with the farm up the lane. We still buy from that farm. Today Tom and his sister Ellen run the shop, and Ellen’s deli counter has grown into a little cheese and pie shop of its own.</p>
+      <p>We buy whole animals, so nothing goes to waste and we can cut anything you like. If you’re not sure what to cook, ask: we’ll tell you exactly how long and how hot.</p>
+      <blockquote>“If you wouldn’t feed it to your own family, it doesn’t go in the window.”</blockquote>
+      <span class="sig">Tom Hartwell, third generation</span>
+      <div class="stats">
+        <div><b data-count="1962">1962</b><span>Opened on Market Row</span></div>
+        <div><b data-count="20">20</b><span>Miles to our furthest farm</span></div>
+        <div><b data-count="400">400</b><span>Sausages made each week</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">From the shop</span><h2>Fresh this week</h2></div></div>
+    <div class="gal">
+      <figure class="w t rv"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1000&q=70&auto=format&fit=crop" alt="Charred slow-smoked brisket slices" width="1000" height="900" loading="lazy"><figcaption>12-hour brisket</figcaption></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=600&q=70&auto=format&fit=crop" alt="Sliced medium-rare steak" width="600" height="440" loading="lazy"><figcaption>Ribeye, rested</figcaption></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=70&auto=format&fit=crop" alt="Grilled skewers and vegetables on a tray" width="600" height="440" loading="lazy"><figcaption>BBQ skewers</figcaption></figure>
+      <figure class="w rv"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=1000&q=70&auto=format&fit=crop" alt="Sliced grilled bavette on a board" width="1000" height="440" loading="lazy"><figcaption>Bavette, sliced thin</figcaption></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=600&q=70&auto=format&fit=crop" alt="Steak with asparagus in a skillet" width="600" height="440" loading="lazy"><figcaption>Skillet supper</figcaption></figure>
+      <figure class="rv"><img src="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=600&q=70&auto=format&fit=crop" alt="Roast beef with baby potatoes" width="600" height="440" loading="lazy"><figcaption>Sunday roast</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--kraft" id="reviews">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Said at the counter</span><h2>Regulars, in their words</h2></div><p><b style="font:400 32px var(--f-d)">4.9</b> / 5 from 312 reviews</p></div>
+    <div class="revs">
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote><p>“Ordered the Feast pack for my dad’s 60th. Thirty people, zero leftovers, and Tom wrote cooking times on every parcel.”</p></blockquote><cite>Priya N. (fictional)</cite></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote><p>“The dry-aged ribeye has ruined supermarket steak for me forever. Worth every penny.”</p></blockquote><cite>Callum R. (fictional)</cite></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">★★★★★</div><blockquote><p>“Ellen’s pork pies and the 18-month cheddar are my Saturday ritual. Friendliest shop in town.”</p></blockquote><cite>Margaret L. (fictional)</cite></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="head" style="justify-content:center;text-align:center"><div><span class="tag">Good to know</span><h2>Questions we get asked</h2></div></div>
+    <div class="faq">
+      <div class="q"><button aria-expanded="false">How far ahead should I order a BBQ pack?<span class="pm" aria-hidden="true"></span></button><div class="a"><div><p>Two days is ideal, so we can marinate everything overnight. For 30+ guests, give us a week. Same-day orders are fine if you call before 10am.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Where does your meat come from?<span class="pm" aria-hidden="true"></span></button><div class="a"><div><p>All our beef, pork and lamb comes from nine family farms within twenty miles. The farm names are on the board by the till, and we’re happy to tell you which animal your joint came from.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Do you do gluten-free sausages?<span class="pm" aria-hidden="true"></span></button><div class="a"><div><p>Yes. Our pork &amp; leek, Cumberland and chilli &amp; fennel are all made with gluten-free rusk. We make a separate batch first thing on Thursdays.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Can I order my Christmas turkey here?<span class="pm" aria-hidden="true"></span></button><div class="a"><div><p>Order in the shop or by phone by 10 December. Bronze turkeys, rib of beef, gammon and pigs in blankets are all available, and collection runs 21 to 24 December.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Do you deliver?<span class="pm" aria-hidden="true"></span></button><div class="a"><div><p>We deliver locally on Fridays for orders over €40, within five miles of the shop. Delivery is €4.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--kraft" id="visit">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Come and say hello</span><h2>Opening hours</h2></div></div>
+    <div class="visit">
+      <div class="hours rv">
+        <span class="open-now" id="openNow"><i></i><span>Checking…</span></span>
+        <table id="hoursTable" aria-label="Opening hours"></table>
+        <p class="addr"><b>Hartwell’s Butcher &amp; Deli</b><br>14 Market Row, Old Town<br><a href="tel:+441234567890">01234 567 890</a> · <a href="mailto:shop@hartwells.example">shop@hartwells.example</a></p>
+      </div>
+      <div class="map rv" role="img" aria-label="Map: Hartwell’s is on Market Row, next to the church square">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="400" fill="#E9DFCB"/>
+          <path d="M-20 300C120 260 200 330 320 290S520 250 640 280" stroke="#B9CBC4" stroke-width="26" fill="none"/>
+          <g stroke="#FBF8F2" stroke-width="18" fill="none" stroke-linecap="round"><path d="M-10 160H620"/><path d="M250-10V410"/><path d="M60 -10L170 410"/><path d="M430 -10C420 120 470 240 520 410"/></g>
+          <g stroke="#D9C6A6" stroke-width="1" fill="none"><path d="M-10 160H620"/><path d="M250-10V410"/></g>
+          <g fill="#DCCFB5"><rect x="270" y="60" width="70" height="80" rx="4"/><rect x="355" y="60" width="55" height="80" rx="4"/><rect x="270" y="180" width="140" height="70" rx="4"/><rect x="90" y="60" width="140" height="80" rx="4"/><rect x="105" y="180" width="125" height="80" rx="4"/><rect x="470" y="60" width="110" height="80" rx="4"/></g>
+          <rect x="285" y="190" width="60" height="50" rx="4" fill="#B7C4A0"/><text x="315" y="270" text-anchor="middle" font-family="Courier Prime" font-size="12" fill="#4A3F36">Church Sq.</text>
+          <text x="560" y="152" text-anchor="end" font-family="Courier Prime" font-size="13" fill="#4A3F36" font-weight="700">MARKET ROW</text>
+          <text x="40" y="330" font-family="Courier Prime" font-size="12" fill="#5E7F78">River Lune</text>
+          <g class="pin" transform="translate(372 160)"><path d="M0 0C-16-22-22-30-22-42a22 22 0 0 1 44 0c0 12-6 20-22 42z" fill="#6E1A1A" stroke="#1F1A16" stroke-width="2"/><circle cy="-42" r="8" fill="#F1E7D6"/></g>
+        </svg>
+        <div class="map__card"><b>14 Market Row</b><br>Free parking behind the church</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap contact">
+    <div class="rv">
+      <span class="tag">Special orders</span>
+      <h2 class="h2">Need something special?</h2>
+      <p>Whole hog roasts, wedding platters, a crown of lamb or just a big order for the freezer: send us the details and we’ll call you back the same day.</p>
+      <p style="margin-top:22px"><a class="btn btn--line" href="tel:+441234567890">Call 01234 567 890</a></p>
+    </div>
+    <form class="form rv" id="contactForm">
+      <div><label for="cn">Your name</label><input id="cn" name="name" autocomplete="name" required></div>
+      <div><label for="cp">Phone</label><input id="cp" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="full"><label for="ce">Email</label><input id="ce" name="email" type="email" autocomplete="email"></div>
+      <div class="full"><label for="ct">What is it for?</label><select id="ct"><option>Party or BBQ</option><option>Wedding or event</option><option>Christmas order</option><option>Freezer box</option><option>Something else</option></select></div>
+      <div class="full"><label for="cm">Tell us what you need</label><textarea id="cm" placeholder="E.g. hog roast for 80 people on 14 June"></textarea></div>
+      <div class="full"><button class="btn btn--ox" type="submit">Send request</button></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Hartwell’s home">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#F1E7D6"/><circle cx="32" cy="32" r="25.5" fill="none" stroke="#6E1A1A" stroke-width="1.5" stroke-dasharray="2 3"/><path d="M15 24.5h23.5l7.5-4.5v16l-7.5-4.5H15a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z" fill="#6E1A1A"/><circle cx="19" cy="28" r="1.8" fill="#F1E7D6"/><rect x="39.5" y="33" width="4.5" height="14" rx="2.2" fill="#6E1A1A"/><path d="M22 44c3-4 6-4 9 0" stroke="#6E1A1A" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+          <span><b>Hartwell’s</b><small>Butcher &amp; Deli · 1962</small></span>
+        </a>
+        <p style="margin-top:16px;color:#DCCFBE;max-width:34ch;font-size:15px">Family butchers on Market Row. Dry-aged beef, free-range pork and a deli counter worth the trip.</p>
+        <div class="soc">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.3 0-4 2.4-4 4v3H7v4h3v11h4V12h3.5l.5-4z"/></svg></a>
+          <a href="tel:+441234567890" aria-label="Call the shop"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Hours</h4><ul><li>Mon – Fri 8:00 – 17:30</li><li>Saturday 7:30 – 16:00</li><li>Sunday closed</li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="#offers">Weekly offers</a></li><li><a href="#bbq">BBQ packs</a></li><li><a href="#counter">Price list</a></li><li><a href="#cuts">Cuts guide</a></li></ul></div>
+      <div><h4>Find us</h4><ul><li>14 Market Row</li><li>Old Town</li><li><a href="tel:+441234567890">01234 567 890</a></li></ul></div>
+    </div>
+    <div class="foot__bot"><span>© Hartwell’s Butcher &amp; Deli. A fictional business.</span><span>Concept site by <a href="/" style="color:#F5C9A8">SiteQuest Studio</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions"><a href="tel:+441234567890">Call</a><a class="p" href="#bbq">Order ahead</a></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.documentElement.classList.add("js");
+const gbp=n=>"€"+n.toFixed(2);
+let tT;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),3200)}
+
+/* reveal + counters */
+function countUp(el){const end=+el.dataset.count;if(RM){el.textContent=end;return}const s=performance.now(),d=1400,from=end>1000?end-60:0;
+  (function f(t){const p=Math.min(1,(t-s)/d),e=1-Math.pow(1-p,3);el.textContent=Math.round(from+(end-from)*e);if(p<1)requestAnimationFrame(f)})(s)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");const tg=e.target;setTimeout(()=>tg.classList.remove("rv","in"),1000);$$("[data-count]",e.target).forEach(countUp);if(e.target.dataset.count)countUp(e.target);io.unobserve(e.target)}),{rootMargin:"0px 0px -6% 0px"});
+$$(".rv").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){el.classList.add("in","now");$$("[data-count]",el).forEach(countUp);setTimeout(()=>el.classList.remove("rv","in"),1100)}else io.observe(el)});
+$$("[data-count]").forEach(el=>{if(!el.closest(".rv"))io.observe(el)});
+
+/* hero parallax */
+const px=$("#parallax");
+if(!RM&&px){let tk=false;addEventListener("scroll",()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{const y=Math.min(scrollY,700);px.style.transform=`scale(1.08) translateY(${y*0.06}px)`;tk=false})},{passive:true})}
+
+/* offers countdown to Saturday 16:00 */
+function cd(){const n=new Date(),t=new Date(n);t.setDate(n.getDate()+((6-n.getDay()+7)%7));t.setHours(16,0,0,0);if(t<=n)t.setDate(t.getDate()+7);
+  let s=Math.floor((t-n)/1000);const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600),m=Math.floor(s%3600/60);$("#cd").textContent=`${d}d ${h}h ${String(m).padStart(2,"0")}m`}
+cd();setInterval(cd,30000);
+
+/* counter tabs */
+const tabs=$$(".ctabs [role=tab]");
+tabs.forEach((b,i)=>{b.addEventListener("click",()=>sel(i));b.addEventListener("keydown",e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();sel((i+k+tabs.length)%tabs.length,true)}})});
+function sel(i,focus){tabs.forEach((b,j)=>{const on=i===j;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;$("#"+b.getAttribute("aria-controls")).classList.toggle("on",on)});if(focus)tabs[i].focus()}
+
+/* BBQ builder */
+const MEATS=[
+ {id:"burger",n:"Dry-aged beef burgers",d:"1 × 170g per person",p:2.6,g:170},
+ {id:"sausage",n:"Pork & herb sausages",d:"2 per person",p:1.9,g:130},
+ {id:"chicken",n:"Chicken thigh skewers",d:"2 per person, lemon & garlic",p:3.2,g:180},
+ {id:"ribs",n:"Sticky pork ribs",d:"300g per person",p:3.8,g:300},
+ {id:"brisket",n:"Smoked brisket",d:"150g, pre-cooked 12h",p:4.6,g:150},
+ {id:"lamb",n:"Lamb koftas",d:"2 per person, mint yoghurt",p:3.4,g:140},
+ {id:"picanha",n:"Picanha steak",d:"150g per person",p:5.9,g:150},
+ {id:"wings",n:"Spiced chicken wings",d:"4 per person",p:2.2,g:200},
+ {id:"halloumi",n:"Halloumi & veg skewers",d:"1 per person, veggie",p:2.4,g:120}
+];
+const tick='<svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#1F1A16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+$("#meats").innerHTML=MEATS.map(m=>`<label class="meat"><input type="checkbox" value="${m.id}"><span class="box">${tick}</span><span><b>${m.n}</b><small>${m.d}</small></span><span class="pp">${gbp(m.p)} pp</span></label>`).join("");
+let guests=10;const gR=$("#gRange");
+function setG(v){guests=Math.max(4,Math.min(60,v));gR.value=guests;$("#gOut").textContent=guests;calc()}
+$$("[data-g]").forEach(b=>b.addEventListener("click",()=>setG(guests+ +b.dataset.g)));
+gR.addEventListener("input",()=>setG(+gR.value));
+$("#meats").addEventListener("change",()=>{$$(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));calc()});
+$$(".chip").forEach(c=>c.addEventListener("click",()=>{const ids=c.dataset.preset.split(",");$$("#meats input").forEach(i=>i.checked=ids.includes(i.value));$$(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));calc()}));
+/* pickup days */
+const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let pick=null;const days=[];{const d=new Date();d.setHours(12);d.setDate(d.getDate()+1);while(days.length<6){days.push(new Date(d));d.setDate(d.getDate()+1)}}
+$("#days").innerHTML=days.map((d,i)=>`<button type="button" class="day" data-i="${i}" aria-pressed="false" ${d.getDay()===0?"disabled aria-label='Sunday, closed'":""}><small>${DN[d.getDay()]}</small><b>${d.getDate()}</b><small>${d.getDay()===0?"closed":MN[d.getMonth()]}</small></button>`).join("");
+$$("#days .day").forEach(b=>b.addEventListener("click",()=>{pick=+b.dataset.i;$$("#days .day").forEach(x=>x.setAttribute("aria-pressed",x===b));calc()}));
+{const first=$$("#days .day").find(b=>!b.disabled&&+b.dataset.i>0)||$$("#days .day:not(:disabled)")[0];first.click()}
+$("#ptime").addEventListener("change",calc);
+function calc(){
+  const chosen=MEATS.filter(m=>$(`#meats input[value=${m.id}]`).checked);
+  const rl=$("#rl");
+  rl.innerHTML=chosen.length?chosen.map(m=>`<li><span>${m.n} ×${guests}</span><span>${gbp(m.p*guests)}</span></li>`).join(""):'<li class="empty">Pick some meats to start</li>';
+  let sub=chosen.reduce((s,m)=>s+m.p*guests,0);const disc=chosen.length>=4?sub*.1:0;
+  $("#rD").hidden=!disc;$("#rDv").textContent="−"+gbp(disc);
+  $("#rG").textContent=guests;
+  $("#rW").textContent=(chosen.reduce((s,m)=>s+m.g,0)*guests/1000).toFixed(1)+" kg";
+  const d=pick!=null?days[pick]:null;$("#rP").textContent=d?`${DN[d.getDay()]} ${d.getDate()} ${MN[d.getMonth()]}, ${$("#ptime").value.split(" ")[0]}`:"–";
+  $("#rT").textContent=gbp(sub-disc);
+}
+$(".chip").click();
+$("#bbqForm").addEventListener("submit",e=>{e.preventDefault();if(!$$("#meats input:checked").length){toast("Pick at least one meat first");return}toast("Demo only: nothing was sent. Your pack would be ready to collect!")});
+$("#contactForm").addEventListener("submit",e=>{e.preventDefault();toast("Demo only: nothing was sent. Thanks!")});
+
+/* cuts guide */
+const COW={
+ outline:"M128 96C170 70 300 78 420 74C485 72 538 84 552 116C566 150 560 204 544 236L518 252C420 264 300 264 200 260C160 257 132 242 120 210C112 172 112 122 128 96Z",
+ extra:'<path class="solid" d="M555 112c18 6 24 30 18 70l-5 26-6-2 4-28c3-28 0-50-14-58z"/><path class="solid" d="M60 82c-6-16-2-30 8-36-2 12 0 22 6 30zM104 80c4-15 14-24 26-24-8 8-12 17-12 27z"/>',
+ head:{id:"cheek",d:"M132 102C104 86 74 80 48 92C26 104 18 132 28 152C38 170 62 175 82 168C102 162 120 152 130 140Z",lb:[70,132]},
+ legs:[{id:"shin",d:"M150 246h38l-4 74h-28z",lb:null},{id:"shin",d:"M206 252h32l-3 68h-26z"},{id:"leg",d:"M452 248h40l-6 72h-28z"},{id:"leg",d:"M506 240h34l-4 80h-26z"}],
+ hooves:'<rect class="solid" x="155" y="312" width="30" height="10" rx="2"/><rect class="solid" x="208" y="312" width="28" height="10" rx="2"/><rect class="solid" x="457" y="312" width="30" height="10" rx="2"/><rect class="solid" x="509" y="312" width="28" height="10" rx="2"/>',
+ regions:[
+  {id:"neck",p:"100,50 178,50 168,280 100,280",lb:[146,126]},
+  {id:"chuck",p:"178,50 272,50 268,168 174,164",lb:[222,118]},
+  {id:"brisket",p:"174,164 268,168 266,280 168,280",lb:[218,222]},
+  {id:"rib",p:"272,50 352,50 352,160 268,168",lb:[310,118]},
+  {id:"plate",p:"268,168 352,160 352,280 266,280",lb:[310,222]},
+  {id:"sirloin",p:"352,50 448,50 448,128 352,136",lb:[400,104]},
+  {id:"fillet",p:"352,136 448,128 448,152 352,160",lb:[400,148]},
+  {id:"flank",p:"352,160 448,152 472,280 352,280",lb:[408,222]},
+  {id:"rump",p:"448,50 506,50 498,156 448,152",lb:[476,110]},
+  {id:"topside",p:"506,50 620,50 620,280 472,280 448,152 498,156",lb:[512,196]}
+ ]};
+const PIG={
+ outline:"M112 108C150 70 420 64 502 94C548 114 558 176 538 216C518 246 440 256 300 256C190 256 122 246 106 206C96 170 96 130 112 108Z",
+ extra:'<path class="outline" d="M540 120c22-6 32 8 22 18-8 8-20-2-12-10 6-6 18-2 18 8"/><path class="solid" d="M92 92l22-34 12 40z"/>',
+ head:{id:"cheek",d:"M122 112C94 100 64 106 44 126L24 138C14 148 16 166 28 172L52 180C78 192 108 190 124 178Z",lb:[78,148]},
+ legs:[{id:"hock",d:"M150 240h36l-3 56h-30z"},{id:"hock",d:"M204 246h32l-3 50h-26z"},{id:"hock",d:"M440 246h36l-4 50h-28z"},{id:"hock",d:"M492 236h36l-4 60h-28z"}],
+ hooves:'<rect class="solid" x="153" y="290" width="30" height="9" rx="2"/><rect class="solid" x="206" y="290" width="27" height="9" rx="2"/><rect class="solid" x="443" y="290" width="29" height="9" rx="2"/><rect class="solid" x="495" y="290" width="29" height="9" rx="2"/>',
+ snout:'<ellipse class="solid" cx="24" cy="155" rx="5" ry="10"/><circle class="solid" cx="66" cy="128" r="4"/>',
+ regions:[
+  {id:"shoulder",p:"100,50 240,50 236,170 100,166",lb:[168,118]},
+  {id:"hand",p:"100,166 236,170 234,290 100,290",lb:[170,222]},
+  {id:"loin",p:"240,50 420,50 420,150 236,152",lb:[330,108]},
+  {id:"belly",p:"236,152 420,150 424,290 234,290",lb:[330,214]},
+  {id:"pleg",p:"420,50 620,50 620,290 424,290",lb:[484,170]}
+ ]};
+const INFO={
+ cheek:{n:"Cheek",a:"beef",t:"Head",d:"Rich, sticky and full of collagen. Ask a day ahead.",best:"Braise, stew",cook:"3 hours low and slow in red wine",pr:"€14 /kg"},
+ neck:{n:"Neck & clod",t:"Forequarter",d:"Hard-working muscle with big beefy flavour. Most of it goes into our steak mince.",best:"Mince, stews, burgers",cook:"Slow braise or mince",pr:"€11 /kg"},
+ chuck:{n:"Chuck",t:"Forequarter",d:"The braising king. Our feather blade comes from here, tender as butter after a long cook.",best:"Pot roast, chilli, pies",cook:"Braise 3 hours at 150°C",pr:"€16.50 /kg"},
+ brisket:{n:"Brisket",t:"Forequarter",d:"Layered with fat, built for smoke. We sell it rolled for roasting or flat for the smoker.",best:"Smoking, salt beef",cook:"Smoke 10–12 hours at 110°C",pr:"€15 /kg"},
+ rib:{n:"Fore rib",t:"Middle",d:"Where ribeye and rib of beef come from. Generous marbling, the butcher’s favourite steak.",best:"Ribeye, roast rib",cook:"Hot pan, rest as long as you cook",pr:"€34 /kg"},
+ plate:{n:"Short plate",t:"Middle",d:"Home of short ribs and skirt. Deep flavour, great value.",best:"Short ribs, skirt steak",cook:"Ribs braised, skirt seared fast",pr:"€13 /kg"},
+ sirloin:{n:"Sirloin",t:"Hindquarter",d:"The classic steak with a ribbon of fat. Dry-aged 28 days on the bone.",best:"Steaks, roasting joint",cook:"2–3 min a side, then rest",pr:"€30 /kg"},
+ fillet:{n:"Fillet",t:"Hindquarter",d:"The tenderest cut on the animal, lean and mild. Whole fillets for Wellington on request.",best:"Fillet steak, Wellington, tartare",cook:"Sear, then finish in the oven",pr:"€52 /kg"},
+ flank:{n:"Flank",t:"Hindquarter",d:"Open-grained and flavourful. Our bavette is a staff favourite.",best:"Bavette, fajitas",cook:"Very hot grill, slice against the grain",pr:"€19 /kg"},
+ rump:{n:"Rump",t:"Hindquarter",d:"More chew, more flavour than sirloin. Picanha is cut from the top of the rump.",best:"Rump steak, picanha",cook:"Grill medium-rare",pr:"€22 /kg"},
+ topside:{n:"Topside & silverside",t:"Hindquarter",d:"Lean roasting joints. Topside gets a jacket of fat to keep it juicy.",best:"Sunday roast, roast beef sandwiches",cook:"20 min at 220°C, then 20 min per 500g at 180°C",pr:"€18 /kg"},
+ shin:{n:"Shin",t:"Fore leg",d:"Marrow-rich and silky when cooked slowly. The secret to a great stew.",best:"Osso buco, stew, stock",cook:"4 hours, lid on",pr:"€12 /kg"},
+ leg:{n:"Leg (hind shin)",t:"Hind leg",d:"Like shin, a little leaner. Superb in a ragù.",best:"Ragù, broth",cook:"Long, slow simmer",pr:"€12 /kg"},
+ pcheek:{n:"Pig cheeks",t:"Head",d:"Tiny, cheap and melting after a slow braise. A chef’s secret.",best:"Braise in cider",cook:"2½ hours at 160°C",pr:"€9 /kg"},
+ shoulder:{n:"Shoulder (collar)",t:"Forequarter",d:"Well marbled and forgiving. The one for pulled pork.",best:"Pulled pork, roasting",cook:"6 hours low, or roast hot then low",pr:"€9.50 /kg"},
+ hand:{n:"Hand & spring",t:"Forequarter",d:"Cheaper roasting joint with superb crackling.",best:"Slow roast, sausages",cook:"Roast 3 hours at 170°C",pr:"€8 /kg"},
+ loin:{n:"Loin",t:"Middle",d:"Chops, tenderloin and back bacon all come from the loin. Lean with a fat cap.",best:"Chops, roast loin, bacon",cook:"Chops 4 min a side, rest 5",pr:"€13.50 /kg"},
+ belly:{n:"Belly",t:"Middle",d:"Layers of meat and fat, scored for crackling. Also where streaky bacon starts.",best:"Roast belly, ribs, streaky",cook:"30 min at 230°C then 2 hours at 160°C",pr:"€12 /kg"},
+ pleg:{n:"Leg (ham)",t:"Hindquarter",d:"Large, lean muscle. We cure and cook our own hams from it.",best:"Roast leg, gammon, ham",cook:"Boil then glaze, or roast",pr:"€10 /kg"},
+ hock:{n:"Hock (trotter end)",t:"Legs",d:"Gelatin-rich and full of flavour. Brilliant in soups and terrines.",best:"Ham hock terrine, pea soup",cook:"Simmer 3 hours",pr:"€5 /kg"}
+};
+const SHORT={rib:"Rib",plate:"Plate",pcheek:"Cheek",leg:"Leg",pleg:"Leg"};
+let animal="beef",curCut=null;
+function drawChart(){
+  const A=animal==="beef"?COW:PIG,sv=$("#chart");
+  const head=Object.assign({},A.head,{id:animal==="beef"?"cheek":"pcheek"});
+  const lab=(r,x,y)=>`<text class="lb" data-for="${r}" x="${x}" y="${y}" text-anchor="middle">${SHORT[r]||INFO[r].n.split(" ")[0]}</text>`;
+  const rg=(id,attr,tag)=>`<${tag} class="rg" data-cut="${id}" ${attr} tabindex="0" role="button" aria-label="${INFO[id].n}"/>`;
+  sv.innerHTML=`<defs><clipPath id="body"><path d="${A.outline}"/></clipPath></defs>${A.extra}
+   <g clip-path="url(#body)">${A.regions.map(r=>rg(r.id,`points="${r.p}"`,"polygon")).join("")}</g>
+   ${rg(head.id,`d="${head.d}"`,"path")}${A.legs.map(l=>rg(l.id,`d="${l.d}"`,"path")).join("")}${A.hooves}${A.snout||""}
+   <path class="outline" d="${A.outline}"/>
+   ${A.regions.map(r=>lab(r.id,r.lb[0],r.lb[1])).join("")}${lab(head.id,head.lb[0],head.lb[1])}
+   ${animal==="beef"?lab("shin",196,338)+lab("leg",496,338):lab("hock",194,314)}`;
+  if(animal==="beef")sv.insertAdjacentHTML("beforeend",'<circle class="solid" cx="64" cy="118" r="4" style="fill:#1F1A16"/>');
+  $$(".rg",sv).forEach(el=>{const c=el.dataset.cut;el.addEventListener("mouseenter",()=>show(c));el.addEventListener("focus",()=>show(c));el.addEventListener("click",()=>show(c));el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();show(c)}})});
+  show(animal==="beef"?"sirloin":"belly");
+}
+function show(c){if(c===curCut)return;curCut=c;const i=INFO[c],box=$("#cutinfo");
+  $$("#chart .rg").forEach(r=>r.classList.toggle("on",r.dataset.cut===c));$$("#chart .lb").forEach(r=>r.classList.toggle("on",r.dataset.for===c));
+  box.classList.remove("swap");void box.offsetWidth;box.classList.add("swap");
+  box.innerHTML=`<span class="tag">${animal==="beef"?"Beef":"Pork"} · ${i.t}</span><span class="price">${i.pr}</span><h3>${i.n}</h3><p>${i.d}</p><dl><dt>Best for</dt><dd>${i.best}</dd><dt>How to cook</dt><dd>${i.cook}</dd></dl>`;}
+$$(".animal-tabs button").forEach(b=>b.addEventListener("click",()=>{animal=b.dataset.animal;curCut=null;$$(".animal-tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));drawChart()}));
+drawChart();
+
+/* FAQ */
+$$(".q button").forEach(b=>b.addEventListener("click",()=>{const q=b.parentElement,open=q.hasAttribute("data-open");$$(".q").forEach(x=>{x.removeAttribute("data-open");$("button",x).setAttribute("aria-expanded","false")});if(!open){q.setAttribute("data-open","");b.setAttribute("aria-expanded","true")}}));
+
+/* hours */
+const HRS=[null,[8,17.5],[8,17.5],[8,17.5],[8,17.5],[8,17.5],[7.5,16]];
+const FN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const fmt=h=>`${Math.floor(h)}:${h%1?"30":"00"}`;
+(function(){const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+  $("#hoursTable").innerHTML=[1,2,3,4,5,6,0].map(i=>`<tr class="${i===d?"today":""}"><td>${FN[i]}</td><td>${HRS[i]?fmt(HRS[i][0])+" – "+fmt(HRS[i][1]):"Closed"}</td></tr>`).join("");
+  const t=HRS[d],open=t&&h>=t[0]&&h<t[1],el=$("#openNow");el.classList.toggle("yes",!!open);
+  let nxt="";if(!open){for(let k=0;k<8;k++){const j=(d+k)%7,tt=HRS[j];if(tt&&(k>0||h<tt[0])){nxt=`opens ${k===0?"today":k===1?"tomorrow":FN[j]} at ${fmt(tt[0])}`;break}}}
+  $("span",el).textContent=open?`Open now · until ${fmt(t[1])}`:`Closed · ${nxt}`;})();
+</script>
+</body>
+</html>

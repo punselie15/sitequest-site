@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paws &amp; Suds · Dog grooming salon</title>
+<meta name="description" content="Paws & Suds: a friendly dog grooming salon. Clear prices by dog size and coat, easy online booking, no cages and lots of treats. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#FFD23F">
+<meta property="og:title" content="Paws & Suds · Muddy in, fluffy out">
+<meta property="og:description" content="Dog grooming with clear prices by size and coat, and online booking.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23FFD23F'/%3E%3Cellipse cx='32' cy='40' rx='11' ry='9' fill='%231B2A4A'/%3E%3Ccircle cx='19' cy='28' r='5' fill='%231B2A4A'/%3E%3Ccircle cx='27' cy='20' r='5' fill='%231B2A4A'/%3E%3Ccircle cx='37' cy='20' r='5' fill='%231B2A4A'/%3E%3Ccircle cx='45' cy='28' r='5' fill='%231B2A4A'/%3E%3Ccircle cx='48' cy='14' r='5' fill='%23fff' stroke='%233EC1F3' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sun:#FFD23F; --sun-2:#FFE89A; --sky:#3EC1F3; --sky-2:#C9EEFC; --coral:#FF6B8B; --coral-2:#FFD3DD;
+  --mint:#7ED6B5; --navy:#1B2A4A; --navy-2:#34466B; --cream:#FFFBF2; --white:#fff; --muted:#56607A;
+  --f-d:"Fredoka", system-ui, sans-serif; --f-b:"Nunito", system-ui, sans-serif;
+  --r:28px; --pop:0 6px 0 var(--navy);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--cream);color:var(--navy);font:400 17px/1.6 var(--f-b);overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:10px}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:var(--f-d);font-weight:700;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(40px,5.4vw,72px)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:2px solid var(--navy);border-radius:999px;padding:6px 14px;font:600 14px var(--f-d);letter-spacing:.02em}
+.hl{position:relative;white-space:nowrap;z-index:0}
+.hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:.06em;height:.32em;background:var(--sky-2);z-index:-1;border-radius:6px;transform:rotate(-1.5deg)}
+
+.concept{background:var(--navy);color:var(--cream);font-size:13px;text-align:center;padding:8px 16px;line-height:1.45}
+.concept a{color:var(--sun);font-weight:700}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,251,242,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:2px solid var(--navy)}
+.nav__in{display:flex;align-items:center;gap:26px;height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:50px;height:50px;flex:none}
+.brand b{font:700 26px/1 var(--f-d)}
+.brand b i{font-style:normal;color:var(--coral)}
+.nav__links{display:flex;gap:6px;margin-left:auto;list-style:none}
+.nav__links a{text-decoration:none;font-weight:700;padding:8px 14px;border-radius:999px;transition:background .2s}
+.nav__links a:hover{background:var(--sun-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 26px;border-radius:999px;font:600 18px var(--f-d);text-decoration:none;border:2.5px solid var(--navy);box-shadow:var(--pop);transition:transform .15s,box-shadow .15s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--navy)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--navy)}
+.btn--coral{background:var(--coral);color:var(--white)}
+.btn--sun{background:var(--sun)}
+.btn--white{background:var(--white)}
+.nav .btn{min-height:46px;padding:8px 20px;font-size:16px;box-shadow:0 4px 0 var(--navy)}
+
+/* hero */
+.hero{position:relative;background:var(--sun);padding:60px 0 140px;overflow:hidden;isolation:isolate}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(56px,8vw,118px);margin:20px 0 22px}
+.hero h1 span{display:inline-block;animation:bob 3.6s ease-in-out infinite}
+.hero h1 span:nth-child(2){animation-delay:-.6s;color:var(--white);-webkit-text-stroke:3px var(--navy);paint-order:stroke fill}
+@keyframes bob{50%{transform:translateY(-6px) rotate(-1deg)}}
+.lede{font-size:clamp(18px,1.6vw,21px);max-width:42ch;font-weight:600}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;align-items:center;gap:14px;margin-top:34px;font-weight:700;font-size:15px;flex-wrap:wrap}
+.faces{display:flex}
+.faces img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid var(--sun);margin-left:-12px;background:var(--sun-2)}
+.faces img:first-child{margin-left:0}
+.trust b{font:700 22px var(--f-d)}
+.hero__pic{position:relative;justify-self:center;width:min(480px,100%);aspect-ratio:1}
+.hero__pic .ring{position:absolute;inset:0;border-radius:50%;border:3px dashed var(--navy);animation:spin 40s linear infinite}
+.hero__pic .disc{position:absolute;inset:6%;border-radius:50%;overflow:hidden;border:4px solid var(--navy);background:var(--sky-2);box-shadow:12px 14px 0 var(--navy)}
+.hero__pic .disc img{width:100%;height:100%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sticker{position:absolute;background:var(--white);border:2.5px solid var(--navy);border-radius:20px;padding:10px 14px;font:600 15px/1.2 var(--f-d);box-shadow:0 5px 0 var(--navy);animation:wob 5s ease-in-out infinite}
+.sticker b{display:block;font-size:22px}
+.sticker--a{left:-6%;top:12%;transform:rotate(-6deg);background:var(--coral);color:#fff}
+.sticker--b{right:-4%;bottom:12%;transform:rotate(5deg);animation-delay:-2.5s;background:var(--mint)}
+@keyframes wob{50%{translate:0 -10px}}
+.bubbles{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.bub{position:absolute;bottom:-80px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fff 0 12%,rgba(255,255,255,.55) 13% 22%,rgba(255,255,255,.12) 40%,rgba(62,193,243,.18) 70%,rgba(255,255,255,.6) 100%);border:1.5px solid rgba(255,255,255,.85);animation:rise linear infinite;pointer-events:auto;cursor:pointer}
+@keyframes rise{0%{transform:translate(0,0)}50%{transform:translate(var(--sx),-55vh)}100%{transform:translate(0,-115vh)}}
+.bub.pop{animation:pop .35s ease-out forwards!important}
+@keyframes pop{to{transform:scale(1.8);opacity:0}}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:90px;z-index:1}
+
+.ticker{background:var(--navy);color:var(--sun);overflow:hidden;transform:rotate(-1.5deg);margin:-30px -20px 0;position:relative;z-index:2;border-block:3px solid var(--sun)}
+.ticker__row{display:flex;gap:40px;width:max-content;padding:16px 0;animation:tick 30s linear infinite;font:600 26px/1 var(--f-d);white-space:nowrap}
+.ticker__row span::after{content:"🫧";margin-left:40px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{scroll-margin-top:88px}
+.sec{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.head p{max-width:42ch;color:var(--muted);font-weight:600}
+.head h2{margin-top:14px}
+
+/* prices */
+.coat{display:inline-flex;gap:6px;background:var(--white);border:2.5px solid var(--navy);border-radius:999px;padding:5px;flex-wrap:wrap}
+.coat button{padding:9px 18px;border-radius:999px;font:600 16px var(--f-d);min-height:44px;transition:background .2s,color .2s}
+.coat button[aria-pressed=true]{background:var(--navy);color:var(--sun)}
+.ptable{margin-top:28px;background:var(--white);border:3px solid var(--navy);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 0 var(--navy)}
+.ptable table{width:100%;border-collapse:collapse}
+.ptable th,.ptable td{padding:18px 16px;text-align:center;border-bottom:2px dashed #E3E6EE}
+.ptable tr:last-child td{border-bottom:0}
+.ptable thead th{background:var(--sky-2);font:600 18px/1.15 var(--f-d);border-bottom:3px solid var(--navy);vertical-align:bottom}
+.ptable thead th small{display:block;font:600 13px var(--f-b);color:var(--muted)}
+.ptable thead th svg{display:block;margin:0 auto 6px;height:40px;width:auto}
+.ptable th[scope=row]{text-align:left;font:600 19px var(--f-d)}
+.ptable th[scope=row] small{display:block;font:600 14px var(--f-b);color:var(--muted)}
+.ptable td{font:700 22px var(--f-d);transition:background .2s}
+.ptable td.flash{animation:flash .6s}
+@keyframes flash{30%{background:var(--sun-2);transform:scale(1.08)}}
+.ptable .col-on{background:#FFF7D6}
+.extras{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.extras span{background:var(--white);border:2px solid var(--navy);border-radius:16px;padding:10px 16px;font-weight:700}
+.extras b{font-family:var(--f-d);color:var(--coral)}
+
+/* booking */
+.booking{background:var(--sky);position:relative;overflow:hidden}
+.booking .head p{color:var(--navy)}
+.bk>*{min-width:0}
+.bk{display:grid;grid-template-columns:1.4fr .9fr;gap:28px;align-items:start}
+.steps{background:var(--white);border:3px solid var(--navy);border-radius:var(--r);padding:30px;box-shadow:0 10px 0 var(--navy)}
+.step{padding-bottom:26px;margin-bottom:26px;border-bottom:2px dashed #E3E6EE}
+.step:last-child{border:0;margin:0;padding:0}
+.step h3{display:flex;align-items:center;gap:12px;font-size:24px;margin-bottom:16px}
+.step h3 i{font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--sun);border:2.5px solid var(--navy);display:grid;place-items:center;font-size:17px;flex:none}
+.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.size{border:2.5px solid var(--navy);border-radius:20px;padding:14px 8px 12px;text-align:center;transition:transform .2s,background .2s;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px}
+.size svg{width:auto;transition:transform .3s}
+.size b{font:600 17px var(--f-d)}
+.size small{font-size:13px;color:var(--muted);font-weight:700}
+.size:hover{transform:translateY(-3px)}
+.size:hover svg{transform:rotate(-6deg)}
+.size[aria-pressed=true]{background:var(--sun);box-shadow:0 5px 0 var(--navy)}
+.svcs{display:grid;gap:10px}
+.svc{display:flex;align-items:center;gap:14px;border:2.5px solid var(--navy);border-radius:18px;padding:14px 16px;cursor:pointer;transition:background .2s;min-height:64px}
+.svc input{position:absolute;opacity:0;pointer-events:none}
+.svc .dot{width:24px;height:24px;border-radius:50%;border:2.5px solid var(--navy);flex:none;display:grid;place-items:center}
+.svc .dot::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--coral);transform:scale(0);transition:transform .2s}
+.svc:has(input:checked){background:var(--coral-2)}
+.svc:has(input:checked) .dot::after{transform:scale(1)}
+.svc:has(input:focus-visible){outline:3px solid var(--sky);outline-offset:2px}
+.svc b{font:600 18px var(--f-d);display:block}
+.svc small{color:var(--muted);font-weight:600;font-size:14px}
+.svc .pr{margin-left:auto;font:700 20px var(--f-d);white-space:nowrap}
+.days{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{flex:none;width:68px;border:2.5px solid var(--navy);border-radius:18px;padding:8px 0;text-align:center;line-height:1.15;transition:background .2s;min-height:70px}
+.day small{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.day b{font:700 24px var(--f-d)}
+.day[aria-pressed=true]{background:var(--navy);color:var(--sun)}
+.day:disabled{opacity:.35;cursor:not-allowed;border-style:dashed}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.slot{border:2px solid var(--navy);border-radius:14px;min-height:46px;font:600 16px var(--f-d);transition:background .2s}
+.slot:hover:not(:disabled){background:var(--sun-2)}
+.slot[aria-pressed=true]{background:var(--sun);box-shadow:0 4px 0 var(--navy)}
+.slot:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed;border-style:dashed}
+.det{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.det label{display:block;font-weight:800;font-size:14px;margin-bottom:5px}
+.det input,.det textarea{width:100%;min-height:50px;padding:12px 14px;border:2.5px solid var(--navy);border-radius:14px;background:var(--cream)}
+.det input:focus,.det textarea:focus{outline:none;background:#fff;box-shadow:0 0 0 4px var(--sky-2)}
+.det .full{grid-column:1/-1}
+.ticket{position:sticky;top:100px;background:var(--navy);color:var(--cream);border-radius:var(--r);padding:28px;border:3px solid var(--navy);box-shadow:0 10px 0 rgba(27,42,74,.45)}
+.ticket h3{font-size:28px;color:var(--sun)}
+.ticket .for{font-weight:700;color:var(--sky-2);margin-top:2px}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;margin:20px 0;font-size:15px}
+.ticket dt{color:var(--sky-2);font-weight:700}
+.ticket dd{text-align:right;font-weight:700}
+.ticket .tot{display:flex;justify-content:space-between;align-items:center;background:var(--sun);color:var(--navy);border-radius:18px;padding:14px 18px}
+.ticket .tot b{font:700 38px/1 var(--f-d)}
+.ticket .btn{width:100%;margin-top:18px;border-color:var(--sun);box-shadow:0 6px 0 var(--sun)}
+.ticket .fine{font-size:13px;color:var(--sky-2);text-align:center;margin-top:12px}
+.bigpaw{position:absolute;right:-60px;top:40px;width:280px;opacity:.14;transform:rotate(18deg)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.pol{background:var(--white);padding:12px 12px 16px;border:2.5px solid var(--navy);border-radius:18px;box-shadow:0 6px 0 var(--navy);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.pol:nth-child(odd){transform:rotate(-2.5deg)}
+.pol:nth-child(even){transform:rotate(2deg)}
+.pol:hover{transform:rotate(0) scale(1.04)}
+.pol img{aspect-ratio:1;object-fit:cover;width:100%;border-radius:10px;background:var(--sky-2)}
+.pol figcaption{font:600 19px var(--f-d);margin-top:10px;display:flex;justify-content:space-between;align-items:center}
+.pol figcaption small{font:700 13px var(--f-b);color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about__img{position:relative}
+.about__img img{border-radius:40px 40px 40px 140px;border:3px solid var(--navy);box-shadow:14px 14px 0 var(--coral);aspect-ratio:4/5;object-fit:cover;width:100%}
+.about p{color:var(--muted);font-weight:600;margin-top:16px}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.perk{display:flex;gap:12px;align-items:center;background:var(--white);border:2px solid var(--navy);border-radius:18px;padding:12px 14px;font-weight:800;font-size:15px}
+.perk span{font-size:24px}
+.team{display:flex;gap:18px;margin-top:30px;flex-wrap:wrap}
+.mem{display:flex;gap:10px;align-items:center}
+.mem svg{width:52px;height:52px}
+.mem b{display:block;font:600 18px/1.1 var(--f-d)}
+.mem small{color:var(--muted);font-weight:700}
+.nums{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
+.nums b{display:block;font:700 44px/1 var(--f-d);color:var(--coral)}
+.nums span{font-weight:700;color:var(--muted);font-size:14px}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{border:3px solid var(--navy);border-radius:var(--r);padding:28px;background:var(--white);box-shadow:0 8px 0 var(--navy)}
+.rev:nth-child(1){background:var(--sun-2)}.rev:nth-child(2){background:var(--coral-2)}.rev:nth-child(3){background:var(--sky-2)}
+.rev .stars{font-size:20px;letter-spacing:2px}
+.rev p{font:500 21px/1.35 var(--f-d);margin:12px 0 18px}
+.rev cite{font-style:normal;font-weight:800;font-size:14px}
+
+/* faq */
+.faq{max-width:840px;margin-inline:auto;display:grid;gap:12px}
+.q{background:var(--white);border:2.5px solid var(--navy);border-radius:22px;overflow:hidden}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;text-align:left;font:600 19px/1.3 var(--f-d);min-height:60px}
+.q .pl{flex:none;width:34px;height:34px;border-radius:50%;background:var(--sun);border:2px solid var(--navy);display:grid;place-items:center;font:700 20px/1 var(--f-d);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.q[data-open] .pl{transform:rotate(135deg);background:var(--coral);color:#fff}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.q[data-open] .a{grid-template-rows:1fr}
+.q .a>div{overflow:hidden}
+.q .a p{padding:0 22px 20px;color:var(--muted);font-weight:600}
+
+/* visit */
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px}
+.hours{background:var(--white);border:3px solid var(--navy);border-radius:var(--r);padding:30px;box-shadow:0 8px 0 var(--navy)}
+.hours h3{font-size:30px}
+.status{display:inline-flex;gap:8px;align-items:center;margin-top:10px;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;background:var(--cream);border:2px solid var(--navy)}
+.status i{width:10px;height:10px;border-radius:50%;background:#B0B6C4}
+.status.open i{background:#2FB67C}
+.hours ul{list-style:none;margin-top:16px}
+.hours li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:2px dashed #E3E6EE;font-weight:700}
+.hours li.today{color:var(--coral)}
+.map{position:relative;border:3px solid var(--navy);border-radius:var(--r);overflow:hidden;min-height:400px;background:#DFF3E9;box-shadow:0 8px 0 var(--navy)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map__c{position:absolute;left:18px;bottom:18px;background:var(--white);border:2.5px solid var(--navy);border-radius:18px;padding:10px 16px;font-weight:700;font-size:14px}
+.map__c b{font:600 19px var(--f-d);display:block}
+.mpin{animation:jump 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes jump{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-14px)}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;background:var(--coral-2);border:3px solid var(--navy);border-radius:40px;padding:50px;box-shadow:0 10px 0 var(--navy)}
+.contact p{color:var(--muted);font-weight:600;margin-top:14px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .full{grid-column:1/-1}
+.form label{display:block;font-weight:800;font-size:14px;margin-bottom:5px}
+.form input,.form textarea{width:100%;min-height:50px;padding:12px 14px;border:2.5px solid var(--navy);border-radius:14px;background:#fff}
+.form textarea{min-height:110px;resize:vertical}
+
+.foot{background:var(--navy);color:var(--cream);padding:76px 0 32px;margin-top:110px;position:relative}
+.foot::before{content:"";position:absolute;left:0;right:0;top:-38px;height:40px;background:var(--navy);-webkit-mask:radial-gradient(28px at 50% 0,transparent 98%,#000) 0 0/56px 40px;mask:radial-gradient(28px at 50% 0,transparent 98%,#000) 0 0/56px 40px;transform:scaleY(-1)}
+.foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.foot h4{font:600 18px var(--f-d);color:var(--sun);margin-bottom:12px}
+.foot ul{list-style:none;color:#C7CEE0;font-weight:600;font-size:15px}
+.foot li{padding:3px 0}
+.foot a{text-decoration:none}.foot a:hover{color:#fff}
+.soc{display:flex;gap:10px;margin-top:18px}
+.soc a{width:46px;height:46px;border-radius:50%;background:var(--navy-2);display:grid;place-items:center;transition:background .2s,transform .2s}
+.soc a:hover{background:var(--coral);transform:rotate(-8deg)}
+.soc svg{width:20px;height:20px;fill:#fff}
+.foot__bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:22px;border-top:2px dashed rgba(255,255,255,.15);font-size:14px;color:#C7CEE0;font-weight:600}
+
+.mbar{display:none}
+.toast{position:fixed;left:50%;bottom:26px;z-index:99;background:var(--navy);color:var(--sun);padding:14px 24px;border-radius:999px;border:3px solid var(--sun);font-weight:800;transform:translate(-50%,170%);opacity:0;transition:transform .5s cubic-bezier(.3,1.6,.5,1),opacity .3s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.burst{position:fixed;z-index:98;pointer-events:none;border-radius:50%;border:2px solid var(--sky);background:radial-gradient(circle at 30% 30%,#fff 0 15%,rgba(201,238,252,.6) 40%,transparent 70%);animation:fly 1.4s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--bx),var(--by)) scale(.4);opacity:0}}
+.js .rv{opacity:0;transform:translateY(30px) scale(.97);transition:opacity .7s ease,transform .7s cubic-bezier(.3,1.4,.5,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.now{transition:none}
+
+@media (max-width:1040px){
+  .bk{grid-template-columns:1fr}
+  .ticket{position:relative;top:0}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav__links{display:none}.nav .btn{margin-left:auto}
+  .hero__grid,.about,.visit,.contact{grid-template-columns:1fr}
+  .hero{padding:40px 0 120px}
+  .hero__pic{width:min(380px,92%);margin-top:10px}
+  .revs{grid-template-columns:1fr}
+  .contact{padding:30px 20px;border-radius:28px}
+  .ptable{overflow-x:auto}
+  .ptable table{min-width:560px}
+}
+@media (max-width:600px){
+  .sec{padding:76px 0}
+  .brand b{font-size:21px}.brand svg{width:42px;height:42px}
+  .nav .btn{padding:8px 14px;font-size:15px}
+  .sizes{grid-template-columns:repeat(2,1fr)}
+  .slots{grid-template-columns:repeat(3,1fr)}
+  .steps{padding:20px 16px}
+  .ticket{padding:22px 18px}
+  .det,.form,.perks{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr);gap:14px}
+  .pol{padding:8px 8px 10px}
+  .pol figcaption{font-size:16px}
+  .pol figcaption small{display:none}
+  .foot__grid{grid-template-columns:1fr}
+  .sticker{font-size:13px;padding:8px 10px}.sticker b{font-size:18px}
+  .sticker--a{left:-2%}.sticker--b{right:-2%}
+  .ptable table{min-width:0}
+  .ptable th,.ptable td{padding:12px 6px}
+  .ptable thead th{font-size:14px}
+  .ptable thead th svg{height:28px}
+  .ptable thead th small{font-size:11px}
+  .ptable th[scope=row]{font-size:15px}
+  .ptable th[scope=row] small{display:none}
+  .ptable td{font-size:17px}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--cream);border-top:2.5px solid var(--navy);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+  .mbar a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;border:2.5px solid var(--navy);font:600 17px var(--f-d);text-decoration:none;background:#fff}
+  .mbar a.p{background:var(--coral);color:#fff}
+  body{padding-bottom:72px}
+  .toast{bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+  .bubbles{display:none}
+}
+</style>
+</head>
+<body>
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#pets">More pet groomer examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Paws &amp; Suds home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#FFD23F" stroke="#1B2A4A" stroke-width="3"/><ellipse cx="32" cy="42" rx="10.5" ry="8.5" fill="#1B2A4A"/><circle cx="19.5" cy="31" r="4.6" fill="#1B2A4A"/><circle cx="27" cy="23.5" r="4.6" fill="#1B2A4A"/><circle cx="37" cy="23.5" r="4.6" fill="#1B2A4A"/><circle cx="44.5" cy="31" r="4.6" fill="#1B2A4A"/><circle cx="50" cy="11" r="7" fill="#fff" stroke="#3EC1F3" stroke-width="2.5"/><circle cx="48" cy="9" r="2" fill="#C9EEFC"/><circle cx="58" cy="21" r="4" fill="#fff" stroke="#3EC1F3" stroke-width="2"/></svg>
+      <b>Paws <i>&amp;</i> Suds</b>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#gallery">Happy dogs</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn--coral" href="#book">Book a groom</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+  <div class="wrap hero__grid">
+    <div>
+      <span class="pill">🛁 Dog grooming on Station Road</span>
+      <h1><span>Muddy in,</span><br><span>fluffy out.</span></h1>
+      <p class="lede">Baths, haircuts and nail trims for dogs of every size. No cages, no rush, and more treats than strictly necessary.</p>
+      <div class="hero__cta">
+        <a class="btn btn--coral" href="#book">Book a groom</a>
+        <a class="btn btn--white" href="#prices">See prices</a>
+      </div>
+      <div class="trust">
+        <div class="faces">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=120&q=70&auto=format&fit=crop" alt="" width="44" height="44">
+          <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=120&q=70&auto=format&fit=crop" alt="" width="44" height="44">
+          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=120&q=70&auto=format&fit=crop" alt="" width="44" height="44">
+        </div>
+        <span><b>4.9 ★</b> from 420+ wagging tails</span>
+      </div>
+    </div>
+    <div class="hero__pic">
+      <span class="ring"></span>
+      <div class="disc"><img src="https://images.unsplash.com/photo-1625316708582-7c38734be31d?w=900&q=70&auto=format&fit=crop" alt="A fluffy grey schnauzer with its tongue out against a yellow background" width="900" height="900"></div>
+      <div class="sticker sticker--a"><b>No cages</b>ever, promise</div>
+      <div class="sticker sticker--b"><b>Fresh towel</b>for every pup</div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C160 80 320 0 480 30S800 90 960 50 1280 0 1440 40V90H0Z" fill="#FFFBF2"/></svg>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker__row">
+  <span>Bath &amp; blow-dry</span><span>Breed cuts</span><span>Nail trims</span><span>Puppy first groom</span><span>De-shedding</span><span>Teeth brushing</span>
+  <span>Bath &amp; blow-dry</span><span>Breed cuts</span><span>Nail trims</span><span>Puppy first groom</span><span>De-shedding</span><span>Teeth brushing</span>
+</div></div>
+
+<section class="sec" id="prices">
+  <div class="wrap">
+    <div class="head"><div><span class="pill">💸 No surprises</span><h2>Prices by <span class="hl">size &amp; coat</span></h2></div><p>Pick your dog’s coat type and the table updates. Not sure? Choose your best guess and we’ll confirm when you arrive.</p></div>
+    <div class="coat" role="group" aria-label="Coat type">
+      <button type="button" aria-pressed="true" data-coat="0">Smooth coat</button>
+      <button type="button" aria-pressed="false" data-coat="1">Long or curly</button>
+      <button type="button" aria-pressed="false" data-coat="2">Double coat</button>
+    </div>
+    <div class="ptable rv"><table id="ptable"><caption class="sr">Grooming prices by dog size</caption></table></div>
+    <div class="extras"><span>Teeth brushing <b>+€6</b></span><span>Flea bath <b>+€8</b></span><span>Blueberry facial <b>+€5</b></span><span>Matted coat <b>from €10</b></span></div>
+  </div>
+</section>
+
+<section class="sec booking" id="book">
+  <svg class="bigpaw" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="42" rx="12" ry="10" fill="#fff"/><circle cx="17" cy="29" r="6" fill="#fff"/><circle cx="26" cy="19" r="6" fill="#fff"/><circle cx="38" cy="19" r="6" fill="#fff"/><circle cx="47" cy="29" r="6" fill="#fff"/></svg>
+  <div class="wrap">
+    <div class="head"><div><span class="pill">📅 Online booking</span><h2 style="color:#fff;-webkit-text-stroke:2.5px var(--navy);paint-order:stroke fill">Book a groom</h2></div><p>Four quick steps. You’ll get a text the day before, and a photo when your dog is ready to go home.</p></div>
+    <form class="bk" id="bookForm" novalidate>
+      <div class="steps">
+        <div class="step"><h3><i>1</i>How big is your dog?</h3><div class="sizes" id="sizes" role="group" aria-label="Dog size"></div></div>
+        <div class="step"><h3><i>2</i>Pick a treatment</h3><div class="svcs" id="svcs" role="radiogroup" aria-label="Treatment"></div></div>
+        <div class="step"><h3><i>3</i>Choose a day and time</h3><div class="days" id="days" role="group" aria-label="Day"></div><div class="slots" id="slots" role="group" aria-label="Time"></div></div>
+        <div class="step"><h3><i>4</i>About your dog</h3>
+          <div class="det">
+            <div><label for="dn">Dog’s name</label><input id="dn" placeholder="Biscuit"></div>
+            <div><label for="db">Breed</label><input id="db" placeholder="Cockapoo"></div>
+            <div><label for="on">Your name</label><input id="on" autocomplete="name"></div>
+            <div><label for="op">Mobile</label><input id="op" type="tel" autocomplete="tel"></div>
+            <div class="full"><label for="nt">Anything we should know?</label><textarea id="nt" placeholder="Nervous of dryers, loves cheese…"></textarea></div>
+          </div>
+        </div>
+      </div>
+      <aside class="ticket" aria-live="polite">
+        <h3>Your booking</h3>
+        <p class="for" id="tFor">for your good dog</p>
+        <dl>
+          <dt>Size</dt><dd id="tSize">–</dd>
+          <dt>Treatment</dt><dd id="tSvc">–</dd>
+          <dt>Coat</dt><dd id="tCoat">–</dd>
+          <dt>When</dt><dd id="tWhen">Pick a slot</dd>
+          <dt>Takes about</dt><dd id="tDur">–</dd>
+        </dl>
+        <div class="tot"><span style="font-weight:800">Total</span><b id="tTot">€0</b></div>
+        <button class="btn btn--coral" type="submit">Book this slot</button>
+        <p class="fine">Pay after the groom. Free to cancel up to 24h before.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="head"><div><span class="pill">📸 Wall of fame</span><h2>Happy <span class="hl">customers</span></h2></div><p>Every dog gets a glamour shot before going home. Here are a few of this month’s regulars.</p></div>
+    <div class="gal">
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=600&q=70&auto=format&fit=crop" alt="A fluffy white dog running happily across grass" width="600" height="600" loading="lazy"><figcaption>Pippin <small>Full groom</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&q=70&auto=format&fit=crop" alt="A smiling beagle looking at the camera" width="600" height="600" loading="lazy"><figcaption>Rolo <small>Bath &amp; brush</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&q=70&auto=format&fit=crop" alt="A brown dog running out of the sea" width="600" height="600" loading="lazy"><figcaption>Nova <small>Post-beach rescue</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1772606270537-6eb199b55aed?w=600&q=70&auto=format&fit=crop" alt="A corgi smiling in front of yellow flowers" width="600" height="600" loading="lazy"><figcaption>Waffles <small>De-shed</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&q=70&auto=format&fit=crop" alt="A tricolour terrier against a pink wall" width="600" height="600" loading="lazy"><figcaption>Maple <small>Nail trim</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=600&q=70&auto=format&fit=crop" alt="A black and white border collie with a big grin" width="600" height="600" loading="lazy"><figcaption>Scout <small>Full groom</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&q=70&auto=format&fit=crop" alt="A black pug in a jumper on a yellow background" width="600" height="600" loading="lazy"><figcaption>Bean <small>Facial</small></figcaption></figure>
+      <figure class="pol rv"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=70&auto=format&fit=crop" alt="Two small dogs running together on a path" width="600" height="600" loading="lazy"><figcaption>Bo &amp; Dot <small>Sibling spa</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about" style="padding-top:20px">
+  <div class="wrap about">
+    <div class="about__img rv"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=900&q=70&auto=format&fit=crop" alt="A golden retriever enjoying a bath with a groomer" width="900" height="1125" loading="lazy"></div>
+    <div class="rv">
+      <span class="pill">🐾 About us</span>
+      <h2 style="margin-top:14px">Groomers who are <span class="hl">dog people</span> first</h2>
+      <p>Paws &amp; Suds started when Maya couldn’t find a groomer who’d take her anxious rescue, Pickle, without a cage. So she trained, opened a tiny salon on Station Road, and never looked back.</p>
+      <p>We book one dog at a time per groomer, so nobody waits in a kennel and nervous pups get all the time they need.</p>
+      <div class="perks">
+        <div class="perk"><span>🚫</span>Cage-free salon</div>
+        <div class="perk"><span>🎓</span>Qualified groomers</div>
+        <div class="perk"><span>🌿</span>Gentle, natural shampoos</div>
+        <div class="perk"><span>🦴</span>Unlimited treats</div>
+      </div>
+      <div class="team">
+        <div class="mem"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#FFD3DD" stroke="#1B2A4A" stroke-width="2.5"/><circle cx="26" cy="22" r="8" fill="#1B2A4A"/><path d="M12 42c3-8 8-11 14-11s11 3 14 11" fill="#1B2A4A"/></svg><div><b>Maya</b><small>Owner &amp; head groomer</small></div></div>
+        <div class="mem"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#C9EEFC" stroke="#1B2A4A" stroke-width="2.5"/><circle cx="26" cy="22" r="8" fill="#1B2A4A"/><path d="M12 42c3-8 8-11 14-11s11 3 14 11" fill="#1B2A4A"/></svg><div><b>Theo</b><small>Breed cut specialist</small></div></div>
+        <div class="mem"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#BFEBD9" stroke="#1B2A4A" stroke-width="2.5"/><circle cx="26" cy="22" r="8" fill="#1B2A4A"/><path d="M12 42c3-8 8-11 14-11s11 3 14 11" fill="#1B2A4A"/></svg><div><b>Pickle</b><small>Chief welcome officer</small></div></div>
+      </div>
+      <div class="nums">
+        <div><b data-count="6800">6800</b><span>dogs pampered</span></div>
+        <div><b data-count="12">12</b><span>years grooming</span></div>
+        <div><b data-count="0">0</b><span>cages, ever</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head"><div><span class="pill">⭐ Reviews</span><h2>Tails are <span class="hl">wagging</span></h2></div></div>
+    <div class="revs">
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">⭐⭐⭐⭐⭐</div><blockquote><p>“Our cockapoo used to shake at the groomer’s. Now she drags us through the door. That says everything.”</p></blockquote><cite>Laura &amp; Biscuit (fictional)</cite></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">⭐⭐⭐⭐⭐</div><blockquote><p>“Booking online took a minute and they sent a photo of Rolo looking very handsome. Smells amazing for days.”</p></blockquote><cite>Tom H. (fictional)</cite></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 out of 5">⭐⭐⭐⭐⭐</div><blockquote><p>“Two huskies, one appointment, zero fur left on my sofa. Theo is a wizard with a de-shedding brush.”</p></blockquote><cite>Amira K. (fictional)</cite></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head" style="justify-content:center;text-align:center"><div><span class="pill">🤔 FAQ</span><h2>Ruff questions</h2></div></div>
+    <div class="faq">
+      <div class="q"><button aria-expanded="false">How long does a groom take?<span class="pl" aria-hidden="true">+</span></button><div class="a"><div><p>A bath and brush takes about an hour; a full groom 1.5 to 3 hours depending on size and coat. We’ll text you when your dog is ready.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">My dog is nervous. Can you help?<span class="pl" aria-hidden="true">+</span></button><div class="a"><div><p>Absolutely. We offer quiet first-thing slots, take breaks whenever needed and can do a short “meet and treat” visit before the first groom, free of charge.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">When can my puppy have a first groom?<span class="pl" aria-hidden="true">+</span></button><div class="a"><div><p>From about 12 weeks, once their vaccinations are done. The puppy intro is a short, gentle session to get used to the sounds and the table.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">Do you groom cats?<span class="pl" aria-hidden="true">+</span></button><div class="a"><div><p>We’re a dogs-only salon, which keeps things calm for everyone. We’re happy to recommend a lovely cat groomer nearby.</p></div></div></div>
+      <div class="q"><button aria-expanded="false">What if my dog is matted?<span class="pl" aria-hidden="true">+</span></button><div class="a"><div><p>We’ll always put comfort first. Light matting can be brushed out (from €10); heavy matting is kindest to clip short and start fresh.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head"><div><span class="pill">📍 Find us</span><h2>Pop in and <span class="hl">say woof</span></h2></div></div>
+    <div class="visit">
+      <div class="hours rv">
+        <h3>Opening hours</h3>
+        <span class="status" id="status"><i></i><span>…</span></span>
+        <ul id="hrs"></ul>
+        <p style="margin-top:18px;font-weight:700">22 Station Road, Northgate<br><a href="tel:+441234567321">01234 567 321</a> · <a href="mailto:woof@pawsandsuds.example">woof@pawsandsuds.example</a></p>
+      </div>
+      <div class="map rv" role="img" aria-label="Map: Paws &amp; Suds is on Station Road, opposite the park">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="400" fill="#DFF3E9"/>
+          <rect x="360" y="40" width="200" height="150" rx="40" fill="#BFEBD9"/>
+          <g fill="#7ED6B5"><circle cx="400" cy="80" r="16"/><circle cx="450" cy="140" r="20"/><circle cx="520" cy="90" r="14"/></g>
+          <path d="M470 120c18 0 26 14 18 24" stroke="#3EC1F3" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <g stroke="#fff" stroke-width="20" fill="none" stroke-linecap="round"><path d="M-10 230H620"/><path d="M300 -10V410"/><path d="M80 410L200 230"/></g>
+          <g stroke="#FFD23F" stroke-width="3" stroke-dasharray="12 12" fill="none"><path d="M-10 230H620"/></g>
+          <g fill="#FFE89A" stroke="#1B2A4A" stroke-width="2"><rect x="60" y="80" width="90" height="90" rx="16"/><rect x="170" y="80" width="100" height="90" rx="16"/><rect x="330" y="260" width="110" height="80" rx="16"/><rect x="470" y="260" width="100" height="80" rx="16"/></g>
+          <text x="420" y="225" font-family="Fredoka" font-weight="600" font-size="14" fill="#1B2A4A">STATION ROAD</text>
+          <text x="420" y="30" font-family="Fredoka" font-weight="600" font-size="14" fill="#1B2A4A">Dog park</text>
+          <g class="mpin"><path d="M220 210c-18-22-24-30-24-42a24 24 0 0 1 48 0c0 12-6 20-24 42z" fill="#FF6B8B" stroke="#1B2A4A" stroke-width="3"/><g fill="#1B2A4A"><ellipse cx="220" cy="173" rx="7" ry="6"/><circle cx="211" cy="164" r="3"/><circle cx="217" cy="159" r="3"/><circle cx="223" cy="159" r="3"/><circle cx="229" cy="164" r="3"/></g></g>
+        </svg>
+        <div class="map__c"><b>Paws &amp; Suds</b>Opposite the dog park · free parking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" style="padding-top:20px;padding-bottom:0">
+  <div class="wrap">
+    <div class="contact rv">
+      <div>
+        <span class="pill">💌 Say hello</span>
+        <h2 style="margin-top:14px;font-size:clamp(36px,4.4vw,56px)">Got a question?</h2>
+        <p>Unusual breed, a nervous rescue or a dog that thinks baths are a conspiracy? Drop us a line and we’ll reply the same day.</p>
+        <p style="margin-top:20px"><a class="btn btn--sun" href="tel:+441234567321">📞 01234 567 321</a></p>
+      </div>
+      <form class="form" id="contactForm">
+        <div><label for="cn">Your name</label><input id="cn" autocomplete="name" required></div>
+        <div><label for="ce">Email</label><input id="ce" type="email" autocomplete="email" required></div>
+        <div class="full"><label for="cd">Dog’s name and breed</label><input id="cd" placeholder="Pickle, terrier cross"></div>
+        <div class="full"><label for="cm">Message</label><textarea id="cm"></textarea></div>
+        <div class="full"><button class="btn btn--coral" type="submit">Send message</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Paws &amp; Suds home"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="28" fill="#FFD23F" stroke="#FFFBF2" stroke-width="3"/><ellipse cx="32" cy="42" rx="10.5" ry="8.5" fill="#1B2A4A"/><circle cx="19.5" cy="31" r="4.6" fill="#1B2A4A"/><circle cx="27" cy="23.5" r="4.6" fill="#1B2A4A"/><circle cx="37" cy="23.5" r="4.6" fill="#1B2A4A"/><circle cx="44.5" cy="31" r="4.6" fill="#1B2A4A"/><circle cx="50" cy="11" r="7" fill="#fff" stroke="#3EC1F3" stroke-width="2.5"/><circle cx="58" cy="21" r="4" fill="#fff" stroke="#3EC1F3" stroke-width="2"/></svg><b>Paws <i>&amp;</i> Suds</b></a>
+        <p style="margin-top:14px;color:#C7CEE0;max-width:32ch;font-weight:600;font-size:15px">Cage-free dog grooming on Station Road. Muddy in, fluffy out.</p>
+        <div class="soc">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3.3v13.2a2.8 2.8 0 1 1-2-2.7V9.1a6.1 6.1 0 1 0 5.3 6V8.6a7.6 7.6 0 0 0 4.5 1.5V6.8a4.5 4.5 0 0 1-4.5-4.8z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.3 0-4 2.4-4 4v3H7v4h3v11h4V12h3.5l.5-4z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Hours</h4><ul><li>Tue – Fri 8:30 – 17:30</li><li>Saturday 8:00 – 15:00</li><li>Sun &amp; Mon closed</li></ul></div>
+      <div><h4>Grooming</h4><ul><li><a href="#prices">Prices</a></li><li><a href="#book">Book online</a></li><li><a href="#gallery">Happy dogs</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>22 Station Road, Northgate</li><li><a href="tel:+441234567321">01234 567 321</a></li><li><a href="mailto:woof@pawsandsuds.example">woof@pawsandsuds.example</a></li></ul></div>
+    </div>
+    <div class="foot__bot"><span>© Paws &amp; Suds. A fictional business.</span><span>Concept site by <a href="/" style="color:var(--sun)">SiteQuest Studio</a></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions"><a href="tel:+441234567321">Call</a><a class="p" href="#book">Book a groom</a></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.documentElement.classList.add("js");
+let tT;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),3400)}
+
+function countUp(el){const end=+el.dataset.count;if(RM||!end){el.textContent=end.toLocaleString("en-IE");return}const s=performance.now();
+  (function f(t){const p=Math.min(1,(t-s)/1400);el.textContent=Math.round(end*(1-Math.pow(1-p,3))).toLocaleString("en-IE");if(p<1)requestAnimationFrame(f)})(s)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const tg=e.target;tg.classList.add("in");$$("[data-count]",tg).forEach(countUp);setTimeout(()=>tg.classList.remove("rv","in"),900);io.unobserve(tg)}),{rootMargin:"0px 0px -6% 0px"});
+$$(".rv").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight){el.classList.add("in","now");$$("[data-count]",el).forEach(countUp);setTimeout(()=>el.classList.remove("rv","in"),900)}else io.observe(el)});
+
+/* bubbles */
+function popAt(x,y,n=10){if(RM)return;for(let i=0;i<n;i++){const b=document.createElement("span");b.className="burst";const s=10+Math.random()*24;
+  b.style.cssText=`left:${x-s/2}px;top:${y-s/2}px;width:${s}px;height:${s}px;--bx:${(Math.random()-.5)*220}px;--by:${-60-Math.random()*200}px`;document.body.appendChild(b);setTimeout(()=>b.remove(),1500)}}
+if(!RM){const box=$("#bubbles");for(let i=0;i<18;i++){const b=document.createElement("span");b.className="bub";const s=14+Math.random()*58;
+  b.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;--sx:${(Math.random()-.5)*80}px;animation-duration:${10+Math.random()*12}s;animation-delay:${-Math.random()*20}s`;
+  b.addEventListener("click",e=>{b.classList.add("pop");popAt(e.clientX,e.clientY,6);setTimeout(()=>{b.classList.remove("pop");b.style.animationDelay="0s"},400)});box.appendChild(b)}}
+
+/* data */
+const SIZES=[{n:"Small",d:"up to 10kg",e:"Westie, Shih Tzu",h:34},{n:"Medium",d:"10–20kg",e:"Cocker, Cockapoo",h:44},{n:"Large",d:"20–35kg",e:"Labrador, Collie",h:54},{n:"Giant",d:"35kg+",e:"Bernese, Newfie",h:64}];
+const SVC=[
+ {id:"bath",n:"Bath & brush",d:"Shampoo, blow-dry, brush, ears, nails",p:[30,38,46,56],coat:[0,6,10],t:[60,70,80,100]},
+ {id:"full",n:"Full groom",d:"Everything in the bath, plus a breed or custom cut",p:[45,55,65,80],coat:[0,8,14],t:[90,110,140,180]},
+ {id:"tidy",n:"Tidy up",d:"Face, feet and bottom trim between grooms",p:[22,26,30,36],coat:[0,4,6],t:[40,45,50,60]},
+ {id:"puppy",n:"Puppy intro",d:"Under 6 months: gentle bath and a first trim",p:[25,25,28,30],coat:[0,0,0],t:[45,45,50,50]},
+ {id:"nails",n:"Nail trim & paw balm",d:"Walk-ins welcome too",p:[12,12,14,15],coat:[0,0,0],t:[15,15,20,20]}
+];
+const COATS=["Smooth","Long or curly","Double"];
+const dog=h=>`<svg viewBox="0 0 64 54" style="height:${h}px" aria-hidden="true"><path d="M12 30c0-7 6-11 14-11h14c3 0 5-2 6-5l2-6c1-2 4-2 5 0l2 6h3c3 0 5 3 4 6l-1 3c-1 2-3 3-5 3h-3v18h-6v-9H22v9h-6V36c-2 0-4-3-4-6z" fill="#1B2A4A"/><path d="M12 30c-4 0-7-3-8-7" stroke="#1B2A4A" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="56" cy="15" r="1.6" fill="#FFD23F"/></svg>`;
+let coat=0,size=1,svc="full",day=null,slot=null;
+
+/* price table */
+function table(flash){const t=$("#ptable");
+  t.innerHTML=`<caption class="sr">Grooming prices by dog size</caption><thead><tr><th scope="col" style="text-align:left">Treatment</th>${SIZES.map((s,i)=>`<th scope="col" data-c="${i}">${dog(s.h*.7)}${s.n}<small>${s.d}</small></th>`).join("")}</tr></thead><tbody>${SVC.map(v=>`<tr><th scope="row">${v.n}<small>${v.d}</small></th>${v.p.map((p,i)=>`<td data-c="${i}" class="${flash&&v.coat[coat]?"flash":""}">€${p+v.coat[coat]}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  $$("[data-c]",t).forEach(c=>{c.addEventListener("mouseenter",()=>$$(`[data-c="${c.dataset.c}"]`,t).forEach(x=>x.classList.add("col-on")));c.addEventListener("mouseleave",()=>$$(".col-on",t).forEach(x=>x.classList.remove("col-on")))});}
+$$(".coat button").forEach(b=>b.addEventListener("click",()=>{coat=+b.dataset.coat;$$(".coat button").forEach(x=>x.setAttribute("aria-pressed",x===b));table(true);book()}));
+table();
+
+/* booking */
+$("#sizes").innerHTML=SIZES.map((s,i)=>`<button type="button" class="size" data-i="${i}" aria-pressed="${i===size}">${dog(s.h)}<b>${s.n}</b><small>${s.d}</small></button>`).join("");
+$$("#sizes .size").forEach(b=>b.addEventListener("click",()=>{size=+b.dataset.i;$$("#sizes .size").forEach(x=>x.setAttribute("aria-pressed",x===b));book()}));
+function svcs(){$("#svcs").innerHTML=SVC.map(v=>`<label class="svc"><input type="radio" name="svc" value="${v.id}" ${v.id===svc?"checked":""}><span class="dot"></span><span><b>${v.n}</b><small>${v.d}</small></span><span class="pr">€${v.p[size]+v.coat[coat]}</span></label>`).join("");
+  $$("#svcs input").forEach(i=>i.addEventListener("change",()=>{svc=i.value;book()}))}
+const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const days=[];{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+1);while(days.length<10){days.push(new Date(d));d.setDate(d.getDate()+1)}}
+const closed=d=>d.getDay()===0||d.getDay()===1;
+$("#days").innerHTML=days.map((d,i)=>`<button type="button" class="day" data-i="${i}" aria-pressed="false" ${closed(d)?"disabled":""} aria-label="${DN[d.getDay()]} ${d.getDate()} ${MN[d.getMonth()]}${closed(d)?", closed":""}"><small>${DN[d.getDay()]}</small><b>${d.getDate()}</b><small>${closed(d)?"shut":MN[d.getMonth()]}</small></button>`).join("");
+$$("#days .day").forEach(b=>b.addEventListener("click",()=>{day=+b.dataset.i;slot=null;$$("#days .day").forEach(x=>x.setAttribute("aria-pressed",x===b));slots();book()}));
+const TIMES=["08:30","09:30","10:30","11:30","12:30","13:30","14:30","15:30"];
+function taken(di,ti){const v=Math.sin((days[di].getDate()*31+ti*7)*9.13)*1e4;return v-Math.floor(v)<.26}
+function slots(){if(day==null){$("#slots").innerHTML="";return}const sat=days[day].getDay()===6;
+  $("#slots").innerHTML=TIMES.map((t,i)=>{const off=(sat&&i>5)||taken(day,i);return `<button type="button" class="slot" data-t="${t}" aria-pressed="${slot===t}" ${off?"disabled":""} aria-label="${t}${off?", taken":""}">${t}</button>`}).join("");
+  $$("#slots .slot").forEach(b=>b.addEventListener("click",()=>{slot=b.dataset.t;$$("#slots .slot").forEach(x=>x.setAttribute("aria-pressed",x===b));book()}))}
+function book(){svcs();const v=SVC.find(x=>x.id===svc),m=v.t[size]+(svc==="full"||svc==="bath"?coat*15:0);
+  $("#tSize").textContent=`${SIZES[size].n} (${SIZES[size].d})`;$("#tSvc").textContent=v.n;$("#tCoat").textContent=COATS[coat];
+  $("#tDur").textContent=m>=60?`${Math.floor(m/60)}h${m%60?" "+m%60+"m":""}`:`${m} min`;
+  $("#tWhen").textContent=day!=null&&slot?`${DN[days[day].getDay()]} ${days[day].getDate()} ${MN[days[day].getMonth()]}, ${slot}`:day!=null?"Pick a time":"Pick a day";
+  $("#tTot").textContent="€"+(v.p[size]+v.coat[coat]);}
+$("#dn").addEventListener("input",e=>{$("#tFor").textContent=e.target.value.trim()?`for ${e.target.value.trim()} 🐶`:"for your good dog"});
+{const first=$$("#days .day:not(:disabled)")[0];first.click();const s=$("#slots .slot:not(:disabled)");if(s)s.click()}
+$("#bookForm").addEventListener("submit",e=>{e.preventDefault();if(day==null||!slot){toast("Pick a day and a time first");return}
+  const r=e.submitter?e.submitter.getBoundingClientRect():{left:innerWidth/2,top:innerHeight/2,width:0,height:0};popAt(r.left+r.width/2,r.top+r.height/2,18);
+  toast(`Demo only: nothing was sent. ${$("#dn").value.trim()||"Your dog"} would be booked in!`)});
+$("#contactForm").addEventListener("submit",e=>{e.preventDefault();toast("Demo only: nothing was sent. Woof, thanks!")});
+
+/* faq */
+$$(".q button").forEach(b=>b.addEventListener("click",()=>{const q=b.parentElement,o=q.hasAttribute("data-open");$$(".q").forEach(x=>{x.removeAttribute("data-open");$("button",x).setAttribute("aria-expanded","false")});if(!o){q.setAttribute("data-open","");b.setAttribute("aria-expanded","true")}}));
+
+/* hours */
+const H=[null,null,[8.5,17.5],[8.5,17.5],[8.5,17.5],[8.5,17.5],[8,15]],FN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const f=h=>`${Math.floor(h)}:${h%1?"30":"00"}`;
+{const n=new Date(),d=n.getDay(),h=n.getHours()+n.getMinutes()/60;
+ $("#hrs").innerHTML=[1,2,3,4,5,6,0].map(i=>`<li class="${i===d?"today":""}"><span>${FN[i]}</span><span>${H[i]?f(H[i][0])+" – "+f(H[i][1]):"Closed"}</span></li>`).join("");
+ const o=H[d]&&h>=H[d][0]&&h<H[d][1];$("#status").classList.toggle("open",!!o);$("#status span").textContent=o?`Open now, until ${f(H[d][1])}`:"Closed right now"}
+</script>
+</body>
+</html>
