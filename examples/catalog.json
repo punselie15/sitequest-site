@@ -289,6 +289,14 @@
    "blurb": "Elegant bistro: a real text menu with prices, a table booking flow, chef’s story and a photo gallery."
   },
   {
+   "id": "sumiandshari",
+   "cat": "restaurant",
+   "name": "Sumi & Shari",
+   "path": "/examples/sumiandshari/",
+   "kind": "Sushi restaurant with 3D ordering",
+   "blurb": "A 3D sushi conveyor you pick from with chopsticks, roll-your-own maki with a live price, an omakase reveal, table booking and pickup or delivery."
+  },
+  {
    "id": "lantern",
    "cat": "bar",
    "name": "The Lantern",

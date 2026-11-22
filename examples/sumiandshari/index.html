@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sumi &amp; Shari · Sushi counter &amp; kaiten</title>
+<meta name="description" content="Sumi &amp; Shari sushi counter: pick plates off a 3D conveyor with chopsticks, roll your own maki, lift the lid on the chef’s omakase, book the counter or order for pickup and delivery. A concept site by SiteQuest Studio.">
+<meta name="theme-color" content="#F5EFE4">
+<meta property="og:title" content="Sumi &amp; Shari · Every piece, a single brushstroke">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5EFE4'/%3E%3Ccircle cx='32' cy='32' r='23' fill='none' stroke='%231A1A1F' stroke-width='5' stroke-dasharray='118 30' transform='rotate(-40 32 32)' stroke-linecap='round'/%3E%3Cellipse cx='31' cy='39' rx='13' ry='6' fill='%23fff' stroke='%231A1A1F' stroke-width='2'/%3E%3Cpath d='M17 37C19 30 28 27.5 35 28.5S46 32 46.5 35C43 38 25 39 17 37Z' fill='%23EE7A47' stroke='%231A1A1F' stroke-width='2'/%3E%3Crect x='43' y='43' width='15' height='15' rx='2' fill='%23C8371F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --washi:#F5EFE4; --washi-2:#ECE3D2; --paper:#FBF8F2; --ink:#1A1A1F; --ink-2:#5F5A54; --line:rgba(26,26,31,.1);
+  --indigo:#1C3253; --indigo-2:#2A4A78; --shu:#C8371F; --shu-2:#A72B16; --gold:#B8913F; --hinoki:#D9BC8E; --matcha:#6E8B4A; --salmon:#EE7A47;
+  --f-d:"Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif; --f-b:"Zen Kaku Gothic New", system-ui, sans-serif;
+  --sh-1:0 1px 2px rgba(40,30,20,.06),0 8px 22px -10px rgba(40,30,20,.22);
+  --sh-2:0 2px 6px rgba(40,30,20,.06),0 34px 70px -30px rgba(30,25,20,.45);
+  --ease:cubic-bezier(.2,.8,.2,1); --spring:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--washi);color:var(--ink);font:400 16px/1.65 var(--f-b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+main,header,footer,.concept{position:relative;z-index:1}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--shu);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--f-d);font-weight:800;letter-spacing:-.01em;line-height:1.08}
+section{scroll-margin-top:70px}
+.jp{font-family:var(--f-d);font-weight:600;letter-spacing:.08em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.concept{background:var(--ink);color:#EFE7DA;font-size:13px;text-align:center;padding:7px 16px}
+.concept a{color:#F2A77F;font-weight:700;text-decoration:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(245,239,228,.78);backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 1px 0 var(--line),0 12px 30px -20px rgba(30,25,20,.45)}
+.nav__in{display:flex;align-items:center;gap:22px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo svg{width:46px;height:46px;flex:none;transition:transform .7s var(--spring)}
+.logo:hover svg{transform:rotate(-14deg)}
+.logo__t{display:grid;line-height:1}
+.logo__t b{font:800 23px/1 var(--f-d);letter-spacing:-.01em}
+.logo__t b i{font-style:normal;color:var(--shu)}
+.logo__t small{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);margin-top:5px}
+.nav ul{display:flex;gap:2px;list-style:none;margin-left:auto}
+.nav ul a{text-decoration:none;font-weight:500;padding:8px 12px;border-radius:8px;position:relative}
+.nav ul a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;background:var(--shu);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav ul a:hover::after{transform:none}
+.bag{display:flex;align-items:center;gap:10px;background:var(--ink);color:#F7F1E6;padding:9px 10px 9px 16px;border-radius:12px;font-weight:700;transition:transform .3s var(--spring);min-height:44px}
+.bag:hover{transform:translateY(-2px)}
+.bag b{background:var(--shu);color:#fff;min-width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:13px;padding:0 7px}
+.bag.bump{animation:bump .55s var(--spring)}
+@keyframes bump{35%{transform:scale(1.14) rotate(-3deg)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--shu);color:#fff;font-weight:700;padding:14px 24px;border-radius:12px;text-decoration:none;box-shadow:0 12px 26px -12px rgba(200,55,31,.75),inset 0 1px 0 rgba(255,255,255,.18);transition:transform .35s var(--spring),background .2s;white-space:nowrap;min-height:48px}
+.btn:hover{transform:translateY(-2px);background:#D64428}
+.btn:active{transform:scale(.97)}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btn--ink{background:var(--ink);box-shadow:0 12px 26px -14px rgba(0,0,0,.6)}
+.btn--ink:hover{background:#2C2C33}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(26,26,31,.35)}
+.btn--ghost:hover{background:rgba(26,26,31,.06)}
+.btn--light{background:var(--paper);color:var(--ink);box-shadow:var(--sh-1)}
+.btn svg{width:18px;height:18px}
+
+/* ink */
+.ul{position:relative;display:inline-block;white-space:nowrap}
+.ul>svg{position:absolute;left:-3%;bottom:-.16em;width:106%;height:.3em;z-index:-1;fill:var(--shu);opacity:.9;clip-path:inset(0 100% 0 0);transition:clip-path 1.1s .25s cubic-bezier(.6,.1,.2,1)}
+.in .ul>svg,.ul.in>svg{clip-path:inset(0 0 0 0)}
+.inkline{display:block;width:min(1240px,100% - 32px);margin:0 auto;height:28px;fill:var(--ink);opacity:.85;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s cubic-bezier(.6,.1,.2,1)}
+.inkline.in{clip-path:inset(0 0 0 0)}
+.enso{position:absolute;pointer-events:none;fill:var(--ink)}
+.enso .m{fill:none;stroke:#fff;stroke-dasharray:1;stroke-dashoffset:1;stroke-linecap:round}
+.enso.in .m{animation:ensoDraw 2.2s .2s cubic-bezier(.55,.05,.25,1) forwards}
+@keyframes ensoDraw{to{stroke-dashoffset:0}}
+.kick{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--shu);margin-bottom:16px}
+.kick .jp{font-size:15px;letter-spacing:.3em;color:var(--ink);text-transform:none}
+.kick::before{content:"";width:30px;height:2px;background:currentColor}
+.vjp{position:absolute;writing-mode:vertical-rl;font:800 clamp(60px,9vw,130px)/1 var(--f-d);color:var(--ink);opacity:.05;pointer-events:none;letter-spacing:.1em;user-select:none;will-change:transform}
+
+/* hero */
+.hero{position:relative;padding:34px 0 26px;overflow:clip}
+.hero__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px;align-items:center;position:relative}
+.hero__txt{position:relative;z-index:2;padding:20px 0 30px}
+.hero .enso{width:min(520px,46vw);left:-90px;top:-40px;opacity:.09}
+.hero h1{font-size:clamp(44px,5.6vw,84px);line-height:1.02}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ln>span{display:block;transform:translateY(108%);animation:rise 1.1s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+@keyframes rise{to{transform:none}}
+.hero__lede{max-width:40ch;font-size:18px;color:#3F3B37;margin:18px 0 26px;opacity:0;animation:fadeUp .9s .45s var(--ease) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .6s var(--ease) forwards}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;opacity:0;animation:fadeUp .9s .75s var(--ease) forwards}
+.legend span{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;background:rgba(251,248,242,.75);padding:5px 12px 5px 6px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line)}
+.legend i,.pdot{width:20px;height:20px;border-radius:50%;display:inline-block;flex:none;box-shadow:inset 0 0 0 4px rgba(255,255,255,.85),0 1px 3px rgba(0,0,0,.25)}
+.legend small{display:block;width:100%;font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.stage{position:relative;height:clamp(440px,calc(100vh - 190px),640px);opacity:0;animation:stageIn 1.2s .2s var(--ease) forwards}
+@keyframes stageIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.stage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;touch-action:pan-y}
+.stage__hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;background:rgba(251,248,242,.88);padding:7px 14px;border-radius:999px;box-shadow:var(--sh-1);white-space:nowrap;pointer-events:none;transition:opacity .5s}
+.stage__hint svg{width:18px;height:18px}
+.tip{position:absolute;left:0;top:0;pointer-events:none;background:var(--ink);color:#F7F1E6;border-radius:10px;padding:7px 12px;font-size:13.5px;white-space:nowrap;transform:translate(-50%,-130%) scale(.9);opacity:0;transition:opacity .2s,transform .25s var(--spring)}
+.tip.on{opacity:1;transform:translate(-50%,-130%) scale(1)}
+.tip b{color:#F2A77F}
+.noren{position:absolute;right:3%;top:0;display:flex;gap:4px;z-index:3;pointer-events:auto}
+.noren span{width:44px;height:104px;background:linear-gradient(180deg,#1C3253,#233D64);color:#F5EFE4;display:flex;justify-content:center;padding-top:14px;font:800 20px/1.05 var(--f-d);writing-mode:vertical-rl;border-radius:0 0 4px 4px;transform-origin:top;animation:sway 5s ease-in-out infinite;box-shadow:0 10px 20px -12px rgba(0,0,0,.5);transition:transform .5s var(--spring)}
+.noren span:nth-child(2){animation-delay:-1.7s}.noren span:nth-child(3){animation-delay:-3.1s}
+.noren span::after{content:"";position:absolute}
+.noren:hover span:nth-child(1){transform:rotate(14deg)}.noren:hover span:nth-child(3){transform:rotate(-14deg)}
+@keyframes sway{50%{transform:rotate(2.2deg) skewX(-1deg)}}
+.nogl .stage__fallback{display:grid}
+.stage__fallback{display:none;position:absolute;inset:0;place-items:center;text-align:center;padding:30px}
+
+.ticker{background:var(--ink);color:#EFE7DA;overflow:hidden;white-space:nowrap;padding:12px 0;font-size:15px;position:relative;z-index:1}
+.ticker__in{display:inline-flex;gap:48px;animation:tick 38s linear infinite;padding-left:48px}
+.ticker b{color:#F2A77F;font-weight:700}
+.ticker .jp{color:#fff;margin-right:10px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+.sec{padding:110px 0;position:relative}
+.sec__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px;position:relative}
+.sec h2{font-size:clamp(38px,5vw,70px)}
+.sec__head p{max-width:44ch;color:var(--ink-2);font-size:17px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* menu */
+.mbar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.tabs{display:flex;gap:4px;padding:5px;background:rgba(26,26,31,.06);border-radius:14px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{padding:9px 16px;border-radius:10px;font-weight:500;white-space:nowrap;color:var(--ink-2);transition:background .3s,color .3s;min-height:42px}
+.tabs button[aria-selected=true]{background:var(--paper);color:var(--ink);font-weight:700;box-shadow:var(--sh-1)}
+.view{display:flex;align-items:center;gap:10px;font-weight:500}
+.view button{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;box-shadow:inset 0 0 0 1.5px var(--line);min-height:42px;transition:background .2s}
+.view button[aria-pressed=true]{background:var(--ink);color:#F7F1E6;box-shadow:none}
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--paper);border-radius:20px;display:flex;flex-direction:column;box-shadow:var(--sh-1);transition:transform .5s var(--spring),box-shadow .4s;overflow:hidden;animation:cardIn .6s var(--ease) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh-2)}
+.card__media{position:relative;aspect-ratio:4/3;background:radial-gradient(70% 60% at 50% 60%,#fff 0,#F1EADD 70%);overflow:hidden}
+.card__media::after{content:"";position:absolute;left:22%;right:22%;bottom:16%;height:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(60,40,20,.22),transparent);z-index:0}
+.card__media img,.card__media canvas{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:contain;z-index:1;transition:transform .7s var(--ease)}
+.card:hover .card__media img{transform:scale(1.05) rotate(-2deg)}
+.card__media canvas{z-index:2}
+.card__3d{position:absolute;right:10px;top:10px;z-index:3;font-size:12px;font-weight:700;letter-spacing:.06em;background:rgba(251,248,242,.9);padding:6px 10px;border-radius:8px;box-shadow:var(--sh-1);min-height:32px}
+.card__3d[aria-pressed=true]{background:var(--ink);color:#fff}
+.card .pdot{position:absolute;left:12px;top:12px;z-index:3;width:22px;height:22px}
+.card__body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card__name{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.card h3{font-size:22px}
+.card__name .jp{font-size:14px;color:var(--ink-2);white-space:nowrap}
+.card p{font-size:14px;color:var(--ink-2);flex:1;line-height:1.5}
+.card__foot{display:flex;align-items:center;gap:8px;margin-top:6px}
+.price{font:800 22px/1 var(--f-d);margin-right:auto}
+.price small{font:400 12.5px var(--f-b);color:var(--ink-2);display:block;margin-top:4px}
+.add{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff;font-weight:700;padding:9px 14px;border-radius:10px;min-height:42px;transition:transform .3s var(--spring),background .2s}
+.add:hover{background:var(--shu);transform:translateY(-1px)}
+.add svg{width:16px;height:16px}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--matcha);text-transform:uppercase}
+/* the conveyor view of the menu */
+.beltwrap{position:relative;overflow:hidden;margin:0 -16px;padding:26px 16px 34px;
+  background:linear-gradient(180deg,transparent 0,transparent 62%,#2D3038 62%,#3A3E47 66%,#2D3038 100%)}
+.beltwrap::before{content:"";position:absolute;left:0;right:0;top:62%;bottom:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 2px,transparent 2px 46px);animation:slats 4s linear infinite}
+@keyframes slats{to{background-position:-46px 0}}
+.belt .menu{display:flex;width:max-content;gap:20px;animation:belt var(--belt,80s) linear infinite}
+.belt .card{width:250px;flex:none}
+.beltwrap:hover .menu,.beltwrap:focus-within .menu{animation-play-state:paused}
+@keyframes belt{to{transform:translateX(-50%)}}
+.sides{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.side{display:flex;align-items:center;gap:12px;background:var(--paper);border-radius:16px;padding:12px 12px 12px 14px;box-shadow:var(--sh-1)}
+.side b{display:block;font-weight:700;line-height:1.25}
+.side small{color:var(--ink-2)}
+.side .add{margin-left:auto;padding:8px 12px}
+.side__ic{width:42px;height:42px;border-radius:12px;flex:none;display:grid;place-items:center;font-size:22px;background:var(--washi-2)}
+
+/* builder */
+.roll{background:linear-gradient(180deg,rgba(28,50,83,0),rgba(28,50,83,.06))}
+.roll__grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:26px;align-items:start}
+.rstage{position:relative;height:540px;border-radius:26px;overflow:hidden;background:radial-gradient(70% 70% at 50% 55%,#FFFDF8,#EDE3D1);box-shadow:var(--sh-2)}
+.rstage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;touch-action:pan-y;cursor:grab}
+.rstage__sum{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(251,248,242,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:10px 14px;font-size:14px;box-shadow:var(--sh-1)}
+.rstage__sum b{font-family:var(--f-d)}
+.rstage .stage__hint{bottom:auto;top:12px}
+.rpanel{background:var(--paper);border-radius:26px;box-shadow:var(--sh-2);padding:8px 0 0;overflow:hidden}
+.rgrp{padding:14px 20px;border-bottom:1px solid var(--line)}
+.rgrp h3{font:700 15px/1.2 var(--f-b);display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.rgrp h3 i{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:12.5px}
+.rgrp h3 small{font-weight:400;color:var(--ink-2);margin-left:auto}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;background:var(--washi);font-size:14px;font-weight:500;min-height:40px;transition:background .2s,box-shadow .2s,transform .3s var(--spring)}
+.chip:hover{background:var(--washi-2)}
+.chip:active{transform:scale(.95)}
+.chip[aria-pressed=true]{background:#fff;box-shadow:inset 0 0 0 2px var(--ink);font-weight:700}
+.chip i{width:14px;height:14px;border-radius:4px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+.chip small{color:var(--ink-2);font-weight:400}
+.rfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;background:var(--washi)}
+.total small{display:block;color:var(--ink-2);font-size:13px}
+.total b{font:800 36px/1 var(--f-d);font-variant-numeric:tabular-nums;display:inline-block}
+.total b.tick{animation:tickP .45s var(--spring)}
+@keyframes tickP{40%{transform:translateY(-4px) scale(1.07);color:var(--shu)}}
+.linkbtn{font-weight:700;text-decoration:underline;text-underline-offset:3px;padding:6px 2px}
+
+/* omakase */
+.oma{background:var(--indigo);color:#EFE7DA;overflow:hidden}
+.oma::before{content:"";position:absolute;inset:0;opacity:.35;background:radial-gradient(60% 70% at 80% 40%,rgba(120,150,200,.35),transparent 70%)}
+.oma .kick{color:#F2A77F}.oma .kick .jp{color:#fff}
+.oma h2{color:#fff}
+.oma__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:50px;align-items:center;position:relative}
+.oma p{color:#C9CEDA;font-size:17px;max-width:44ch}
+.oma ul{list-style:none;margin:22px 0 28px;display:grid;gap:8px}
+.oma li{display:flex;gap:10px;align-items:baseline}
+.oma li::before{content:"";width:7px;height:7px;background:var(--shu);transform:rotate(45deg);flex:none;position:relative;top:-2px}
+.oma__price{font:800 48px/1 var(--f-d);color:#fff;margin-bottom:22px}
+.oma__price small{font:400 15px var(--f-b);color:#C9CEDA}
+.oma__btns{display:flex;flex-wrap:wrap;gap:12px}
+.oma .btn--ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.oma .btn--ghost:hover{background:rgba(255,255,255,.08)}
+.obox{position:relative;perspective:1400px;aspect-ratio:16/11;max-width:620px;margin-inline:auto;width:100%}
+.obox__tray{position:absolute;inset:0;border-radius:18px;background:linear-gradient(160deg,#2a1212,#120707);padding:5%;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),inset 0 0 0 10px #1a0b0b,inset 0 0 0 12px #6b1d12;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:3%}
+.opc{position:relative;border-radius:10px;background:radial-gradient(circle at 50% 60%,#B33A22,#8E2414);box-shadow:inset 0 2px 8px rgba(0,0,0,.45);display:grid;place-items:center;overflow:hidden}
+.opc img{width:120%;max-width:none;transform:scale(.3) translateY(30px);opacity:0;transition:transform .7s var(--spring),opacity .4s}
+.opc span{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:11.5px;font-weight:700;color:#fff;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.obox.open .opc img{transform:none;opacity:1}
+.obox.open .opc span{opacity:1;transform:none}
+.obox__lid{position:absolute;inset:-2%;border-radius:20px;background:
+  radial-gradient(120% 80% at 30% 10%,rgba(255,255,255,.14),transparent 50%),linear-gradient(160deg,#25252c,#0d0d10);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.08),inset 0 0 0 9px rgba(0,0,0,.25);display:grid;place-items:center;transform-origin:50% 0;transition:transform 1.2s cubic-bezier(.6,-.15,.25,1),opacity .6s .6s;z-index:3;cursor:pointer}
+.obox__lid::before{content:"";position:absolute;inset:7%;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(184,145,63,.5)}
+.obox__lid .seal{width:92px;height:92px;background:var(--shu);border-radius:10px;display:grid;place-items:center;color:#fff;font:800 25px/1.05 var(--f-d);writing-mode:vertical-rl;letter-spacing:.06em;transform:rotate(-5deg);box-shadow:inset 0 0 0 4px rgba(255,255,255,.18)}
+.obox__lid em{position:absolute;bottom:12%;font-style:normal;color:#D9C18A;letter-spacing:.3em;font-size:12px;text-transform:uppercase}
+.obox.open .obox__lid{transform:translateY(-62%) rotateX(68deg) rotateZ(-7deg);opacity:0;pointer-events:none}
+.oma .obox__note{text-align:center;margin:16px auto 0;font-size:13.5px;color:#C9CEDA;margin-top:16px}
+
+/* story */
+.story__grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.photos{display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.photos figure{border-radius:20px;overflow:hidden;position:relative;box-shadow:var(--sh-1)}
+.photos figure:first-child{grid-row:span 2}
+.photos img{width:100%;height:100%;object-fit:cover}
+.wash{-webkit-mask-image:linear-gradient(100deg,#000 40%,transparent 60%);mask-image:linear-gradient(100deg,#000 40%,transparent 60%);-webkit-mask-size:300% 100%;mask-size:300% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;transition:-webkit-mask-position 1.6s cubic-bezier(.6,.1,.2,1),mask-position 1.6s cubic-bezier(.6,.1,.2,1)}
+.wash.in{-webkit-mask-position:0 0;mask-position:0 0}
+.story p{font-size:17px;color:#3F3B37;margin-bottom:14px;max-width:52ch}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.nums div{border-top:2px solid var(--ink);padding-top:10px}
+.nums b{display:block;font:800 40px/1 var(--f-d)}
+.nums small{color:var(--ink-2);font-size:14px}
+.sign{display:flex;align-items:center;gap:12px;margin-top:22px;font-weight:700}
+.sign .hk{width:42px;height:42px;background:var(--shu);color:#fff;border-radius:6px;display:grid;place-items:center;font:800 20px var(--f-d);transform:rotate(-6deg)}
+
+/* booking */
+.book__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start}
+.bcard{background:var(--paper);border-radius:26px;box-shadow:var(--sh-2);overflow:hidden;position:relative}
+.steps{display:flex;padding:18px 22px 0;gap:6px;list-style:none}
+.steps li{flex:1;height:5px;border-radius:3px;background:rgba(26,26,31,.1);position:relative;overflow:hidden}
+.steps li::after{content:"";position:absolute;inset:0;background:var(--shu);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.steps li.on::after{transform:none}
+.bstep{padding:18px 22px 22px;display:none}
+.bstep.on{display:block;animation:fadeUp .5s var(--ease)}
+.bstep h3{font-size:26px;margin-bottom:4px}
+.bstep>p{color:var(--ink-2);margin-bottom:16px}
+.pick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pick button{padding:12px 6px;border-radius:12px;background:var(--washi);font-weight:700;min-height:48px;transition:background .2s,box-shadow .2s}
+.pick button[aria-pressed=true]{background:var(--ink);color:#fff}
+.pick button[disabled]{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding-bottom:6px;scroll-snap-type:x mandatory}
+.days button{flex:none;width:68px;padding:10px 0;border-radius:12px;background:var(--washi);display:grid;gap:2px;justify-items:center;scroll-snap-align:start;transition:background .2s}
+.days button b{font:800 22px/1 var(--f-d)}
+.days button small{font-size:12px;color:var(--ink-2)}
+.days button[aria-pressed=true]{background:var(--ink);color:#fff}
+.days button[aria-pressed=true] small{color:#ccc}
+.days button[disabled]{opacity:.4;cursor:not-allowed}
+.slotg{margin-top:14px}
+.slotg h4{font:700 13px var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.seats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.seats button{text-align:left;padding:12px;border-radius:14px;background:var(--washi);display:grid;gap:2px;min-height:48px}
+.seats button b{font-size:15px}
+.seats button small{color:var(--ink-2);font-size:12.5px;line-height:1.35}
+.seats button[aria-pressed=true]{background:#fff;box-shadow:inset 0 0 0 2px var(--ink)}
+.seats button[disabled]{opacity:.4;cursor:not-allowed}
+.form{display:grid;gap:12px}
+.form label{display:grid;gap:5px;font-size:14px;font-weight:500}
+.form input,.form textarea,.form select{border:0;border-radius:12px;padding:12px 14px;background:var(--washi);font-size:16px;width:100%;box-shadow:inset 0 0 0 1px var(--line)}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;box-shadow:inset 0 0 0 2px var(--ink);background:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bnav{display:flex;justify-content:space-between;gap:10px;padding:0 22px 22px}
+.bsum{background:var(--washi);border-radius:14px;padding:12px 14px;font-size:14.5px;margin-bottom:14px}
+.done-card{text-align:center;padding:30px 22px 34px}
+.stamp{display:inline-grid;place-items:center;width:110px;height:110px;border:5px solid var(--shu);color:var(--shu);border-radius:14px;font:800 30px/1.05 var(--f-d);writing-mode:vertical-rl;letter-spacing:.08em;transform:rotate(-8deg);opacity:.9}
+.on .stamp,.done.on .stamp{animation:stampIn .6s .1s var(--spring) both}
+@keyframes stampIn{from{transform:rotate(-8deg) scale(2.2);opacity:0}}
+.done-card h3{font-size:32px;margin:18px 0 8px}
+.done-card p{color:var(--ink-2);max-width:40ch;margin:0 auto 18px}
+.book__info p{color:var(--ink-2);font-size:17px;margin-bottom:18px}
+.book__info ul{list-style:none;display:grid;gap:12px}
+.book__info li{display:flex;gap:12px;align-items:flex-start}
+.book__info li b{display:block}
+.book__info li span{color:var(--ink-2);font-size:14.5px}
+.book__info .ic{width:40px;height:40px;border-radius:12px;background:var(--paper);display:grid;place-items:center;flex:none;box-shadow:var(--sh-1);font-size:19px}
+
+/* reviews + faq */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--paper);border-radius:20px;padding:24px;box-shadow:var(--sh-1);position:relative}
+.rev::before{content:"“";position:absolute;right:18px;top:-6px;font:800 90px/1 var(--f-d);color:var(--shu);opacity:.18}
+.rev .st{color:var(--shu);letter-spacing:2px;margin-bottom:8px}
+.rev p{font-size:16px;margin-bottom:14px}
+.rev small{color:var(--ink-2)}
+.note{font-size:13px;color:var(--ink-2);margin-top:14px}
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 4px;font:700 19px/1.3 var(--f-d)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:30px;height:30px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex:none;font-style:normal;transition:transform .4s var(--spring),background .2s;box-shadow:var(--sh-1)}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--shu);color:#fff}
+.faq .ans{overflow:hidden;transition:height .4s var(--ease)}
+.faq .ans p{padding:0 4px 20px;color:var(--ink-2);max-width:64ch}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+.map{position:relative;border-radius:26px;overflow:hidden;background:#EDE4D2;min-height:420px;box-shadow:var(--sh-1)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{transform-box:fill-box;transform-origin:center}
+.map .ripple{transform-box:fill-box;transform-origin:center;animation:ripple 2.4s ease-out infinite}
+@keyframes ripple{from{transform:scale(.4);opacity:.8}to{transform:scale(2.4);opacity:0}}
+.map__lbl{position:absolute;left:16px;bottom:16px;background:var(--paper);padding:10px 14px;border-radius:12px;box-shadow:var(--sh-1);font-size:14px}
+.vcard{background:var(--paper);border-radius:26px;padding:30px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--sh-1)}
+.vcard h3{font-size:34px}
+.hours{list-style:none;display:grid;gap:2px}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;border-radius:10px;font-size:15px}
+.hours li span:last-child{text-align:right}
+.hours li.today{font-weight:700;background:var(--washi)}
+.open{display:inline-flex;align-items:center;gap:9px;font-weight:700;align-self:flex-start;background:var(--washi);padding:6px 14px 6px 10px;border-radius:999px}
+.open::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--matcha);box-shadow:0 0 0 4px rgba(110,139,74,.25);animation:live 2s infinite}
+.open.closed::before{background:var(--shu);box-shadow:0 0 0 4px rgba(200,55,31,.2);animation:none}
+@keyframes live{50%{box-shadow:0 0 0 8px rgba(110,139,74,0)}}
+.vlinks{display:flex;flex-wrap:wrap;gap:10px}
+
+footer{background:var(--ink);color:#CFC7BA;padding:60px 0 calc(40px + env(safe-area-inset-bottom));margin-top:40px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+footer .logo{color:#fff}
+footer .logo__t small{color:#A9A196}
+footer h4{font:700 13px var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:10px}
+footer p,footer li{font-size:14.5px;line-height:1.8}
+footer ul{list-style:none}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.soc{display:flex;gap:10px;margin-top:14px}
+.soc a{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);transition:background .2s}
+.soc a:hover{background:var(--shu)}
+.soc svg{width:19px;height:19px}
+.foot__base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:20px;font-size:13.5px}
+.foot__base a{color:#F2A77F;font-weight:700}
+
+/* cart */
+.scrim{position:fixed;inset:0;background:rgba(20,20,25,.4);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s;z-index:60}
+.scrim.on{opacity:1;pointer-events:auto}
+.cart{position:fixed;z-index:70;top:10px;right:10px;bottom:10px;width:min(440px,calc(100% - 20px));background:var(--washi);border-radius:24px;display:flex;flex-direction:column;overflow:hidden;transform:translateX(calc(100% + 30px));transition:transform .55s var(--ease);visibility:hidden}
+.cart.on{transform:none;box-shadow:0 30px 80px -20px rgba(0,0,0,.55);visibility:visible}
+.cart__h{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 10px}
+.cart__h h3{font-size:30px}
+.x{width:44px;height:44px;border-radius:50%;background:rgba(26,26,31,.07);font-size:22px;transition:background .2s,transform .3s var(--spring)}
+.x:hover{background:rgba(26,26,31,.14);transform:rotate(90deg)}
+.mode{display:grid;grid-template-columns:1fr 1fr;margin:0 20px 10px;padding:4px;background:rgba(26,26,31,.07);border-radius:12px}
+.mode button{padding:9px;border-radius:9px;font-weight:700;color:var(--ink-2);min-height:42px}
+.mode button[aria-pressed=true]{background:var(--paper);color:var(--ink);box-shadow:var(--sh-1)}
+.cart__list{flex:1;overflow:auto;overscroll-behavior:contain;list-style:none;padding:0 14px}
+.line{display:grid;grid-template-columns:58px 1fr auto;gap:12px;padding:10px;margin-bottom:8px;border-radius:16px;background:var(--paper);box-shadow:var(--sh-1);align-items:center;animation:cardIn .4s var(--ease) both}
+.line img{width:58px;height:58px;object-fit:contain;border-radius:12px;background:#F1EADD}
+.line b{display:block;font-weight:700;line-height:1.25}
+.line small{display:block;color:var(--ink-2);font-size:12.5px;line-height:1.4}
+.qty{display:inline-flex;align-items:center;border-radius:10px;margin-top:6px;background:var(--washi)}
+.qty button{width:36px;height:34px;font-size:17px;border-radius:10px}
+.qty button:hover{background:rgba(26,26,31,.08)}
+.qty span{min-width:18px;text-align:center;font-weight:700}
+.line__p{font-weight:700;align-self:start}
+.empty{text-align:center;padding:50px 10px;color:var(--ink-2)}
+.empty b{display:block;font:800 24px/1.2 var(--f-d);color:var(--ink);margin-bottom:8px}
+.cart__f{padding:14px 20px calc(18px + env(safe-area-inset-bottom));display:grid;gap:10px;border-top:1px solid var(--line);background:var(--paper)}
+.cart__f label{display:grid;gap:4px;font-size:13px;font-weight:500;color:var(--ink-2)}
+.cart__f select,.cart__f input{border:0;border-radius:10px;padding:11px 12px;background:var(--washi);font-size:16px;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);width:100%}
+.cart__row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sum{display:flex;justify-content:space-between;font-size:14px;color:var(--ink-2)}
+.sum.big{font-size:16px;color:var(--ink);font-weight:700;align-items:baseline}
+.sum.big b{font:800 28px/1 var(--f-d)}
+.hidden{display:none!important}
+.done{position:absolute;inset:0;background:var(--washi);display:grid;place-items:center;text-align:center;padding:30px;opacity:0;pointer-events:none;transition:opacity .4s}
+.done.on{opacity:1;pointer-events:auto}
+.done h4{font:800 38px/1.05 var(--f-d);margin:18px 0 10px}
+.done p{max-width:32ch;margin:0 auto 20px;color:var(--ink-2)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,160%);background:var(--ink);color:#F7F1E6;padding:12px 20px;border-radius:12px;font-weight:500;z-index:90;box-shadow:0 14px 30px -12px rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:transform .45s var(--spring),opacity .25s,visibility 0s .45s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible;transition:transform .45s var(--spring),opacity .25s}
+.mbar2{display:none}
+/* chopsticks flight */
+.fly{position:fixed;left:0;top:0;z-index:95;pointer-events:none;width:120px;height:90px}
+.fly img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.25))}
+.fly svg{position:absolute;left:30%;top:-150%;width:120%;height:240%;overflow:visible;animation:chopIn .42s var(--ease) both}
+.fly .s1{transform-origin:20% 95%;animation:pinchA .2s .3s ease-in both}
+.fly .s2{transform-origin:20% 95%;animation:pinchB .2s .3s ease-in both}
+@keyframes chopIn{from{transform:translate(40px,-60px);opacity:0}}
+@keyframes pinchA{to{transform:rotate(3deg)}}
+@keyframes pinchB{to{transform:rotate(-3deg)}}
+
+@media (max-width:1080px){
+  .menu{grid-template-columns:repeat(3,1fr)}
+  .sides{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+  #navBook{margin-left:auto}
+}
+@media (max-width:900px){
+  .hero__grid,.roll__grid,.oma__grid,.story__grid,.book__grid,.visit{grid-template-columns:1fr}
+  .hero__txt{padding:6px 0 0}
+  .stage{height:min(62vw,430px)}
+  .noren{display:none}
+  .rstage{height:min(80vw,440px);position:sticky;top:76px;z-index:5}
+  .oma__grid{gap:34px}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot>div:first-child{grid-column:1/-1}
+  .revs{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 32px)}
+  .nav__in{height:62px;gap:10px}
+  .logo svg{width:40px;height:40px}
+  .logo__t b{font-size:20px}
+  .nav .bag span{display:none}
+  #navBook{display:none}
+  .nav .bag{margin-left:auto}
+  .hero{padding-top:20px}
+  .hero__lede{font-size:16px;margin:14px 0 20px}
+  .hero__grid{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero__txt{display:contents}
+  .hero h1{font-size:40px}
+  .hero__cta{display:none}
+  .stage{order:4;height:320px;margin:-6px -16px 0}
+  .legend{order:5;margin-top:6px;justify-content:center}
+  .legend small{text-align:center}
+  .sec{padding:76px 0}
+  .menu{grid-template-columns:1fr 1fr;gap:12px}
+  .card h3{font-size:18px}
+  .card__name{flex-direction:column;gap:0}
+  .card p{display:none}
+  .card__body{padding:10px 12px 12px}
+  .card__foot{flex-wrap:wrap}
+  .add{padding:8px 12px}
+  .belt .card{width:200px}
+  .sides{grid-template-columns:1fr}
+  .rstage{height:300px;border-radius:20px;top:70px}
+  .rstage__sum{display:none}
+  .rgrp{padding:12px 16px}
+  .rfoot{padding:14px 16px;position:sticky;bottom:0}
+  .total b{font-size:30px}
+  .pick{grid-template-columns:repeat(4,1fr)}
+  .seats{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .nums b{font-size:30px}
+  .opc span{font-size:9.5px;line-height:1.15;bottom:3px;padding:0 2px}
+  .obox{aspect-ratio:4/3}
+  .map{min-height:300px}
+  .vcard{padding:22px}
+  .foot{grid-template-columns:1fr}
+  .cart{top:auto;left:0;right:0;bottom:0;width:100%;height:90dvh;border-radius:24px 24px 0 0;transform:translateY(105%)}
+  .mbar2{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(245,239,228,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--line),0 -10px 30px -18px rgba(0,0,0,.35);transition:transform .4s var(--ease)}
+  .mbar2 .btn{padding:12px 10px;min-height:50px}
+  .mbar2.hide{transform:translateY(110%)}
+  body{padding-bottom:76px}
+  .toast{bottom:92px}
+  footer{margin-bottom:-76px;padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 64 64">
+      <path fill="currentColor" d="M44.5 10.3L42.9 9.2L41.1 8.2L39.3 7.3L37.3 6.6L35.3 6.1L33.3 5.8L31.2 5.8L29.1 5.9L27 6.2L25 6.7L23.1 7.4L21.1 8.2L19.3 9.2L17.5 10.2L15.8 11.4L14.2 12.7L12.7 14.1L11.2 15.7L9.9 17.3L8.7 19L7.7 20.9L6.8 22.8L6.1 24.8L5.6 26.9L5.3 29L5.3 31.1L5.4 33.2L5.7 35.3L6.1 37.4L6.7 39.4L7.5 41.3L8.3 43.2L9.3 45L10.4 46.8L11.6 48.5L12.9 50.1L14.3 51.7L15.9 53.1L17.5 54.5L19.3 55.7L21.1 56.7L23.1 57.6L25.2 58.2L27.3 58.6L29.4 58.7L31.5 58.7L33.6 58.5L35.7 58.2L37.7 57.6L39.7 57L41.6 56.2L43.5 55.3L45.2 54.2L47 53.1L48.6 51.9L50.1 50.5L51.6 49.1L53 47.5L54.2 45.8L55.2 44.1L56.1 42.2L56.8 40.2L57.3 38.2L57.6 36.2L57.7 34.1L57.6 32.1L57.4 30.1L56.9 28.1L56.4 26.2L55.7 24.3L54.6 24.7L55.1 26.5L55.4 28.3L55.7 30.2L55.8 32.1L55.7 34L55.4 35.8L55 37.6L54.3 39.4L53.5 41.1L52.6 42.7L51.5 44.2L50.3 45.5L49 46.8L47.6 47.9L46.1 48.9L44.6 49.8L43.1 50.6L41.5 51.3L39.9 51.9L38.3 52.4L36.6 52.8L35 53.1L33.3 53.2L31.6 53.2L29.9 53.1L28.3 52.8L26.7 52.3L25.1 51.7L23.7 51L22.2 50.2L20.9 49.2L19.7 48.2L18.5 47L17.5 45.8L16.5 44.6L15.6 43.3L14.7 41.9L14 40.5L13.3 39.1L12.7 37.6L12.2 36.1L11.8 34.5L11.6 32.9L11.5 31.3L11.5 29.7L11.8 28.1L12.1 26.5L12.7 24.9L13.4 23.5L14.2 22.1L15.1 20.7L16.1 19.5L17.3 18.4L18.4 17.3L19.6 16.3L20.9 15.3L22.2 14.4L23.6 13.6L25 12.8L26.5 12.2L28.1 11.6L29.7 11.2L31.3 10.9L33 10.8L34.7 10.8L36.4 11L38.1 11.4L39.7 11.9L41.2 12.6L42.7 13.4Z"/>
+      <ellipse cx="31" cy="39.5" rx="13.5" ry="6.2" fill="#FBF6EC" stroke="#1A1A1F" stroke-width="1.6"/>
+      <path d="M16.5 37.8C18 30.2 27 27.6 35 28.6C41 29.3 45.6 31.6 46.6 35.2C44 37.8 37 38.8 31 38.4C24.5 38 19 38.6 16.5 37.8Z" fill="#EE7A47" stroke="#1A1A1F" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M24.2 30.7l2.8 6.2M30.2 29.3l3 7.9M36.2 29.3l2.9 8.2M41.6 30.8l2.2 5.4" stroke="#FCE3D2" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+      <g transform="rotate(-6 50.5 50.5)"><rect x="42" y="42" width="17" height="17" rx="2.5" fill="#C8371F"/><text x="50.5" y="54.7" font-size="11.5" text-anchor="middle" fill="#FBF6EC" font-family="Shippori Mincho,Hiragino Mincho ProN,serif" font-weight="800">墨</text></g>
+    </symbol>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter>
+  </defs>
+</svg>
+
+<div class="concept">Concept site by <a href="/">SiteQuest Studio</a> · <a href="/examples/#restaurant">More restaurant examples</a> · Names, prices and reviews are made up.</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="#top" aria-label="Sumi and Shari, home">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span class="logo__t"><b>Sumi <i>&amp;</i> Shari</b><small>Sushi counter · 墨と舎利</small></span>
+    </a>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#roll">Roll your own</a></li>
+      <li><a href="#omakase">Omakase</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn--ghost" href="#book" style="padding:10px 16px;min-height:44px" id="navBook">Book a table</a>
+    <button class="bag" id="bagBtn" aria-label="Open your order"><span>Order</span><b id="bagCount">0</b></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero__grid">
+    <div class="hero__txt">
+      <svg class="enso" id="heroEnso" viewBox="0 0 400 400" aria-hidden="true"></svg>
+      <p class="kick"><span class="jp">いらっしゃいませ</span>Willow Quay</p>
+      <h1 id="h1" aria-label="Every piece, a single brushstroke."><span class="ln"><span>Every piece,</span></span><span class="ln"><span>a single <span class="ul">brushstroke.<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path/></svg></span></span></span></h1>
+      <p class="hero__lede">Hand-pressed nigiri, rolls you design yourself and a conveyor that never stops. Pick a plate straight off the belt, or take a seat at the counter.</p>
+      <div class="hero__cta">
+        <a class="btn" href="#menu">Order for pickup<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#book">Book the counter</a>
+      </div>
+      <div class="legend" id="legend" aria-label="Plate colours and prices"></div>
+    </div>
+    <div class="stage" id="heroStage" role="img" aria-label="A 3D sushi conveyor belt with plates of nigiri, maki and sashimi going round. Every dish on it is also in the menu below.">
+      <div class="noren" aria-hidden="true"><span>墨</span><span>と</span><span>舎利</span></div>
+      <span class="stage__hint" id="heroHint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20 17 5M9 21 19 8"/></svg>Tap a plate to pick it up with chopsticks</span>
+      <div class="tip" id="tip"></div>
+      <div class="stage__fallback"><p><b>Your browser can’t show the 3D conveyor.</b><br>Everything on it is in the menu below.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Today’s specials"><div class="ticker__in" id="ticker"></div></div>
+
+<section class="sec" id="menu" aria-labelledby="menuH">
+  <span class="vjp" style="right:2%;top:60px" aria-hidden="true">お品書き</span>
+  <div class="wrap">
+    <div class="sec__head rv">
+      <div><p class="kick"><span class="jp">お品書き</span>The menu</p><h2 id="menuH">Pick it, <span class="ul">see it<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path/></svg></span>, order it</h2></div>
+      <p>Every piece comes with a plate colour, so you always know the price. Hover a dish (or tap 3D) to turn it around before you add it.</p>
+    </div>
+    <div class="mbar">
+      <div class="tabs" role="tablist" aria-label="Menu sections" id="tabs"></div>
+      <div class="view" role="group" aria-label="Menu view">
+        <button aria-pressed="true" data-view="grid"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6v6H1zM9 1h6v6H9zM1 9h6v6H1zM9 9h6v6H9z" fill="currentColor"/></svg>Grid</button>
+        <button aria-pressed="false" data-view="belt"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="4" width="14" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="5" cy="8" r="1.6" fill="currentColor"/><circle cx="11" cy="8" r="1.6" fill="currentColor"/></svg>On the belt</button>
+      </div>
+    </div>
+    <div id="menuWrap"><div class="menu" id="menuGrid" aria-live="polite"></div></div>
+    <div class="sides" id="sides"></div>
+  </div>
+</section>
+
+<svg class="inkline" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+
+<section class="sec roll" id="roll" aria-labelledby="rollH">
+  <span class="vjp" style="left:1%;top:80px" aria-hidden="true">巻物</span>
+  <div class="wrap">
+    <div class="sec__head rv">
+      <div><p class="kick"><span class="jp">巻物</span>Roll your own</p><h2 id="rollH">Design your <span class="ul">roll<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path/></svg></span></h2></div>
+      <p>Choose the wrap, the rice and up to three fillings. Watch your roll come together, then add it to your order. Eight pieces, made when you order.</p>
+    </div>
+    <div class="roll__grid">
+      <div class="rstage" id="rollStage" aria-label="3D preview of your roll">
+        <span class="stage__hint" id="rollHint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10M14 8l4 4-4 4M10 8l-4 4 4 4"/></svg>Drag to turn the board</span>
+        <div class="rstage__sum" id="rollSum" aria-live="polite"></div>
+        <div class="stage__fallback"><p><b>Your browser can’t show 3D.</b><br>You can still build and order your roll.</p></div>
+      </div>
+      <div class="rpanel">
+        <div id="rollOpts"></div>
+        <div class="rfoot">
+          <div class="total"><small>8 pieces</small><b id="rollPrice">€0.00</b></div>
+          <button class="linkbtn" id="rollRandom">Surprise me</button>
+          <button class="btn" id="rollAdd">Add roll</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec oma" id="omakase" aria-labelledby="omaH">
+  <span class="vjp" style="right:2%;top:40px;color:#fff;opacity:.06" aria-hidden="true">おまかせ</span>
+  <div class="wrap oma__grid">
+    <div class="rv">
+      <p class="kick"><span class="jp">おまかせ</span>Omakase</p>
+      <h2 id="omaH">Leave it to the chef</h2>
+      <p style="margin-top:16px">“Omakase” means “I’ll leave it to you”. Chef Aiko picks the best of today’s fish and makes eight pieces, one by one, in the order they taste best.</p>
+      <ul>
+        <li>Eight pieces, chosen this morning</li>
+        <li>Miso soup and pickled ginger</li>
+        <li>At the counter, or in a box to take home</li>
+      </ul>
+      <div class="oma__price">€42 <small>per person</small></div>
+      <div class="oma__btns">
+        <button class="btn" id="omaOpen">Lift the lid</button>
+        <button class="btn btn--ghost" id="omaAdd">Add to order</button>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="obox" id="obox">
+        <div class="obox__tray" id="otray"></div>
+        <button class="obox__lid" id="olid" aria-label="Lift the lid to see today’s omakase"><span class="seal">おまかせ</span><em>Today’s eight</em></button>
+      </div>
+      <p class="obox__note" id="onote">Tap the box to see what the chef picked today.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec story" id="story" aria-labelledby="storyH">
+  <div class="wrap story__grid">
+    <div class="photos">
+      <figure class="wash"><img src="https://images.unsplash.com/photo-1711991022613-63df8929f311?w=900&q=70&auto=format&fit=crop" alt="A chef slicing a block of tuna on a wooden board" loading="lazy" width="900" height="1200"></figure>
+      <figure class="wash"><img src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?w=700&q=70&auto=format&fit=crop" alt="Small plates being finished with chopsticks at the counter" loading="lazy" width="700" height="520"></figure>
+      <figure class="wash"><img src="https://images.unsplash.com/photo-1681270496598-13c5365730c8?w=700&q=70&auto=format&fit=crop" alt="A hand placing a garnish on a piece of fish" loading="lazy" width="700" height="520"></figure>
+    </div>
+    <div class="rv">
+      <p class="kick"><span class="jp">物語</span>Our story</p>
+      <h2 id="storyH" style="font-size:clamp(36px,4.4vw,60px);margin-bottom:20px">Ink, rice and <span class="ul">patience<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path/></svg></span></h2>
+      <p><b>Sumi</b> is ink. <b>Shari</b> is sushi rice. Chef Aiko trained as a calligrapher before she ever held a knife, and she still makes sushi the way she paints: one confident stroke, no going back.</p>
+      <p>The rice is seasoned with a blend of red and white vinegar and served at body temperature. The fish comes in fresh six mornings a week. The conveyor is there for fun. The counter is there for the full story.</p>
+      <div class="nums">
+        <div><b data-count="12">12</b><small>seats at the counter</small></div>
+        <div><b data-count="6">6</b><small>fish deliveries a week</small></div>
+        <div><b data-count="37">37</b><small>℃, the perfect rice</small></div>
+      </div>
+      <div class="sign"><span class="hk" aria-hidden="true">愛</span>Chef Aiko and the counter team</div>
+    </div>
+  </div>
+</section>
+
+<svg class="inkline" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+
+<section class="sec" id="book" aria-labelledby="bookH">
+  <span class="vjp" style="left:1%;top:70px" aria-hidden="true">ご予約</span>
+  <div class="wrap book__grid">
+    <div class="book__info rv">
+      <p class="kick"><span class="jp">ご予約</span>Reservations</p>
+      <h2 id="bookH" style="font-size:clamp(38px,5vw,66px);margin-bottom:18px">Save your <span class="ul">seat<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path/></svg></span></h2>
+      <p>Book in four quick steps. You’ll get a confirmation right away, and we hold your table for 15 minutes.</p>
+      <ul>
+        <li><span class="ic" aria-hidden="true">🍣</span><div><b>The counter</b><span>Watch the chef up close. Best for 1 to 4 people.</span></div></li>
+        <li><span class="ic" aria-hidden="true">🪑</span><div><b>A table by the belt</b><span>Grab plates as they pass. Great with kids.</span></div></li>
+        <li><span class="ic" aria-hidden="true">🎎</span><div><b>The tatami room</b><span>A private room for 4 to 8. Shoes off, please.</span></div></li>
+      </ul>
+    </div>
+    <div class="bcard rv" id="bcard">
+      <ol class="steps" id="bsteps" aria-hidden="true"><li class="on"></li><li></li><li></li><li></li></ol>
+      <div class="bstep on" data-s="0">
+        <h3>How many guests?</h3><p>For groups bigger than 8, give us a call.</p>
+        <div class="pick" id="bGuests"></div>
+      </div>
+      <div class="bstep" data-s="1">
+        <h3>Which day?</h3><p>We’re closed on Mondays.</p>
+        <div class="days" id="bDays"></div>
+      </div>
+      <div class="bstep" data-s="2">
+        <h3>Time and seat</h3><p id="bDayLbl">Pick a time.</p>
+        <div id="bTimes"></div>
+        <div class="seats" id="bSeats"></div>
+      </div>
+      <div class="bstep" data-s="3">
+        <h3>Your details</h3>
+        <div class="bsum" id="bSum"></div>
+        <form class="form" id="bForm" novalidate>
+          <div class="row2"><label>Name<input id="bName" autocomplete="name" required></label><label>Phone or email<input id="bContact" autocomplete="email" required></label></div>
+          <label>Allergies or a special occasion? (optional)<textarea id="bNote" rows="2" placeholder="E.g. no shellfish, it’s a birthday"></textarea></label>
+        </form>
+      </div>
+      <div class="bstep" data-s="4"><div class="done-card"><span class="stamp" aria-hidden="true">予約</span><h3>See you soon!</h3><p id="bDone"></p><button class="btn btn--ink" id="bAgain">Make another booking</button></div></div>
+      <div class="bnav" id="bnav"><button class="btn btn--ghost" id="bBack">Back</button><button class="btn" id="bNext" disabled>Next</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews" aria-labelledby="revH" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec__head rv"><div><p class="kick"><span class="jp">お客様の声</span>Guests</p><h2 id="revH">Kind words</h2></div></div>
+    <div class="revs">
+      <figure class="rev rv"><div class="st" aria-label="5 out of 5">★★★★★</div><p>“The chopsticks thing on the website made my kids want to come. The real conveyor made them never want to leave.”</p><small>Mara, sample review</small></figure>
+      <figure class="rev rv" style="transition-delay:.1s"><div class="st" aria-label="5 out of 5">★★★★★</div><p>“Sat at the counter for the omakase. Eight pieces, eight little stories. The seared salmon with yuzu salt was the best thing I ate this year.”</p><small>Tomas, sample review</small></figure>
+      <figure class="rev rv" style="transition-delay:.2s"><div class="st" aria-label="5 out of 5">★★★★★</div><p>“I built a roll online with black rice and mango, and it looked exactly like the picture when I picked it up.”</p><small>Noor, sample review</small></figure>
+    </div>
+    <p class="note">These reviews are examples written for this concept site, not real guests.</p>
+  </div>
+</section>
+
+<section class="sec" id="faq" aria-labelledby="faqH" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec__head rv"><div><p class="kick"><span class="jp">質問</span>Questions</p><h2 id="faqH">Good to know</h2></div></div>
+    <div class="faq rv" id="faqList"></div>
+  </div>
+</section>
+
+<section class="sec" id="visit" aria-labelledby="visitH" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec__head rv"><div><p class="kick"><span class="jp">地図</span>Visit</p><h2 id="visitH">Find the red seal</h2></div><p>On the corner of Willow Quay, by the old footbridge. Look for the indigo curtain.</p></div>
+    <div class="visit rv">
+      <div class="map" role="img" aria-label="Map: Sumi and Shari is at 21 Willow Quay, next to the footbridge, a 4 minute walk from the station">
+        <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="420" fill="#EDE4D2"/>
+          <g fill="#E3D8C2"><rect x="30" y="30" width="150" height="110" rx="8"/><rect x="210" y="30" width="170" height="110" rx="8"/><rect x="410" y="30" width="170" height="80" rx="8"/><rect x="30" y="270" width="190" height="120" rx="8"/><rect x="420" y="250" width="160" height="140" rx="8"/></g>
+          <path d="M-20 205 C 120 170 200 240 320 210 S 520 160 640 200" fill="none" stroke="#9FB3CC" stroke-width="44" stroke-linecap="round" opacity=".85"/>
+          <path d="M-20 205 C 120 170 200 240 320 210 S 520 160 640 200" fill="none" stroke="#6E8DB4" stroke-width="2" stroke-dasharray="2 10" opacity=".7"/>
+          <g fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"><path d="M0 160H600M195 0V420M395 0V420M0 250H600"/></g>
+          <path d="M282 172 L292 248" stroke="#8A6A45" stroke-width="12" stroke-linecap="round"/>
+          <text x="40" y="222" font-family="Shippori Mincho,serif" font-size="15" fill="#2A4A78" font-style="italic">the canal</text>
+          <g font-family="Zen Kaku Gothic New,sans-serif" font-size="12" fill="#5F5A54"><text x="408" y="148">Willow Quay</text><text x="203" y="98" transform="rotate(-90 203 98)">Mill Lane</text></g>
+          <g transform="translate(500 330)"><rect x="-38" y="-16" width="76" height="32" rx="8" fill="#1A1A1F"/><text y="5" text-anchor="middle" font-family="Zen Kaku Gothic New,sans-serif" font-size="12" fill="#fff">Station</text></g>
+          <path d="M470 312 C 430 270 360 260 320 190" fill="none" stroke="#1A1A1F" stroke-width="2.5" stroke-dasharray="4 7" stroke-linecap="round"/>
+          <circle class="ripple" cx="310" cy="160" r="26" fill="#C8371F" opacity=".4"/>
+          <g class="pin"><rect x="292" y="138" width="36" height="36" rx="5" fill="#C8371F" transform="rotate(-6 310 156)"/><text x="310" y="163" text-anchor="middle" font-family="Shippori Mincho,serif" font-weight="800" font-size="19" fill="#fff">墨</text></g>
+        </svg>
+        <div class="map__lbl"><b>4 min</b> walk from the station</div>
+      </div>
+      <div class="vcard">
+        <span class="open" id="openNow">Open now</span>
+        <h3>21 Willow Quay</h3>
+        <ul class="hours" id="hours"></ul>
+        <div class="vlinks"><a class="btn" href="#book">Book a table</a><a class="btn btn--ghost" href="tel:+10123456722">Call 012 345 6722</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" aria-label="Sumi and Shari, back to top"><svg aria-hidden="true" style="color:#F5EFE4"><use href="#mark"/></svg><span class="logo__t"><b>Sumi <i>&amp;</i> Shari</b><small>Sushi counter · 墨と舎利</small></span></a>
+        <p style="margin-top:16px;max-width:36ch">Every piece, a single brushstroke. Nigiri, rolls and omakase on Willow Quay.</p>
+        <div class="soc">
+          <a href="#" aria-label="Instagram (demo)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="TikTok (demo)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.4 2.4 1.9 4 4.3 4.2v3.1c-1.6 0-3-.5-4.2-1.3v6.4a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.2a2.5 2.5 0 1 0 1.6 2.3V3z"/></svg></a>
+          <a href="#" aria-label="Facebook (demo)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v6h4v-6h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Hours</h4><ul id="fHours"></ul></div>
+      <div><h4>Contact</h4><ul><li>21 Willow Quay</li><li><a href="tel:+10123456722">012 345 6722</a></li><li><a href="#book">Book a table</a></li><li><a href="#menu">Order for pickup or delivery</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>Sumi &amp; Shari is a fictional restaurant, a concept by <a href="/">SiteQuest Studio</a>.</span><span>Want a site like this? <a href="/#pricing">Get a free preview</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar2" id="mbar2"><button class="btn btn--ink" id="mOrder">Order · <span id="mTotal">€0.00</span></button><a class="btn" href="#book">Book a table</a></div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="cart" id="cart" aria-label="Your order" aria-hidden="true">
+  <div class="cart__h"><h3>Your order</h3><button class="x" id="cartX" aria-label="Close your order">×</button></div>
+  <div class="mode" role="group" aria-label="Pickup or delivery"><button aria-pressed="true" data-mode="pickup">Pickup</button><button aria-pressed="false" data-mode="delivery">Delivery</button></div>
+  <ul class="cart__list" id="cartList"></ul>
+  <div class="cart__f">
+    <div class="cart__row">
+      <label><span id="slotLbl">Pickup time</span><select id="slot"></select></label>
+      <label>Your name<input id="who" maxlength="30" autocomplete="name" placeholder="For the bag"></label>
+    </div>
+    <label id="addrRow" class="hidden">Delivery address<input id="addr" autocomplete="street-address" placeholder="Street, number and postcode"></label>
+    <div class="sum hidden" id="feeRow"><span id="feeLbl">Delivery</span><span id="fee">€2.95</span></div>
+    <div class="sum big"><span>Total</span><b id="sum">€0.00</b></div>
+    <button class="btn" id="checkout" disabled>Place order</button>
+  </div>
+  <div class="done" id="done"><div>
+    <span class="stamp" aria-hidden="true">注文</span>
+    <h4 id="doneH">Arigatō!<br>Your order is in.</h4>
+    <p id="doneMsg">This is a demo, so nothing was sent or charged.</p>
+    <button class="btn btn--ink" id="doneOk">Back to the menu</button>
+  </div></div>
+</aside>
+<div class="toast" id="toastMsg" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches||/[?&]still/.test(location.search);
+const PHONE=matchMedia("(max-width:760px)").matches;
+const LITE=PHONE||(navigator.hardwareConcurrency||8)<=4;
+const eur=n=>"€"+n.toFixed(2);
+let seedN=11;const rnd=()=>(seedN=(seedN*16807)%2147483647)/2147483647;const R_=(a,b)=>a+rnd()*(b-a);
+const pickR=a=>a[Math.floor(Math.random()*a.length)];
+
+/* ================= data ================= */
+const TIER={white:{n:"White",p:3.5,c:"#ECE6DA",rim:"#B9AE9C"},indigo:{n:"Indigo",p:4.5,c:"#2A4A78",rim:"#1C3253"},red:{n:"Vermilion",p:5.5,c:"#C8371F",rim:"#9B2512"},gold:{n:"Gold",p:7,c:"#C7A04B",rim:"#9C7A2E"}};
+const ROLLS={
+  kappa:{wrap:"nori",rice:"white",fill:["cucumber"],top:"sesame",sauce:"none",thin:1},
+  sakemaki:{wrap:"nori",rice:"white",fill:["salmon","avocado"],top:"none",sauce:"none"},
+  california:{wrap:"ura",rice:"white",fill:["crab","avocado","cucumber"],top:"tobiko",sauce:"none"},
+  spicytuna:{wrap:"ura",rice:"white",fill:["tuna","cucumber"],top:"scallion",sauce:"spicy"},
+  dragon:{wrap:"ura",rice:"white",fill:["shrimp","cucumber"],top:"avo",sauce:"tare"},
+};
+const ITEMS=[
+  {id:"sake",cat:"nigiri",n:"Salmon",jp:"サーモン",tier:"indigo",pcs:"2 pieces",d:"Cold-water salmon, brushed with a little nikiri soy.",k:{t:"nigiri",f:"salmon"}},
+  {id:"aburi",cat:"nigiri",n:"Seared salmon",jp:"炙り",tier:"red",pcs:"2 pieces",d:"Torched at the counter and finished with yuzu salt.",k:{t:"nigiri",f:"aburi"},tag:"Chef’s pick"},
+  {id:"maguro",cat:"nigiri",n:"Lean tuna",jp:"鮪",tier:"red",pcs:"2 pieces",d:"Akami: the clean, deep-red cut, lightly marinated in soy.",k:{t:"nigiri",f:"tuna"}},
+  {id:"otoro",cat:"nigiri",n:"Fatty tuna",jp:"大トロ",tier:"gold",pcs:"2 pieces",d:"The marbled belly cut that melts on your tongue.",k:{t:"nigiri",f:"otoro"}},
+  {id:"hamachi",cat:"nigiri",n:"Yellowtail",jp:"はまち",tier:"red",pcs:"2 pieces",d:"Buttery and mild, with a sliver of green chilli.",k:{t:"nigiri",f:"hamachi"}},
+  {id:"ebi",cat:"nigiri",n:"Prawn",jp:"海老",tier:"white",pcs:"2 pieces",d:"Sweet poached prawn, butterflied over rice.",k:{t:"nigiri",f:"ebi"}},
+  {id:"tamago",cat:"nigiri",n:"Sweet omelette",jp:"玉子",tier:"white",pcs:"2 pieces",d:"Layered egg, made every morning. Vegetarian.",k:{t:"nigiri",f:"tamago",band:1},tag:"Vegetarian"},
+  {id:"unagi",cat:"nigiri",n:"Grilled eel",jp:"鰻",tier:"gold",pcs:"2 pieces",d:"Charcoal-grilled and glazed with sweet tare.",k:{t:"nigiri",f:"unagi",band:1}},
+  {id:"kappa",cat:"maki",n:"Cucumber roll",jp:"かっぱ巻",tier:"white",pcs:"6 pieces",d:"Crisp cucumber and toasted sesame. Vegan.",k:{t:"maki",r:"kappa"},tag:"Vegan"},
+  {id:"sakemaki",cat:"maki",n:"Salmon avocado",jp:"鮭巻",tier:"indigo",pcs:"6 pieces",d:"Salmon and ripe avocado in a classic nori roll.",k:{t:"maki",r:"sakemaki"}},
+  {id:"california",cat:"maki",n:"California",jp:"カリフォルニア",tier:"red",pcs:"6 pieces",d:"Crab, avocado and cucumber, rolled in orange tobiko.",k:{t:"maki",r:"california"}},
+  {id:"spicytuna",cat:"maki",n:"Spicy tuna",jp:"スパイシー",tier:"red",pcs:"6 pieces",d:"Tuna, cucumber, spring onion and a line of spicy mayo.",k:{t:"maki",r:"spicytuna"},tag:"Spicy"},
+  {id:"dragon",cat:"maki",n:"Dragon roll",jp:"ドラゴン",tier:"gold",pcs:"6 pieces",d:"Tempura prawn inside, avocado scales outside, sweet tare.",k:{t:"maki",r:"dragon"},tag:"Chef’s pick"},
+  {id:"sashimi_s",cat:"sashimi",n:"Salmon sashimi",jp:"刺身",tier:"red",pcs:"5 slices",d:"Thick slices on shiso, with fresh wasabi and daikon.",k:{t:"sashimi",f:"salmon"}},
+  {id:"sashimi_t",cat:"sashimi",n:"Tuna sashimi",jp:"刺身",tier:"gold",pcs:"5 slices",d:"Akami tuna, cut thick, with fresh wasabi.",k:{t:"sashimi",f:"tuna"}},
+  {id:"ikura",cat:"sashimi",n:"Salmon roe",jp:"いくら",tier:"gold",pcs:"2 pieces",d:"Gunkan: a nori boat filled with glossy salmon roe.",k:{t:"gunkan"}},
+];
+const BYID=Object.fromEntries(ITEMS.map(i=>[i.id,i]));
+ITEMS.forEach(i=>i.p=TIER[i.tier].p);
+const CATS=[["all","All"],["nigiri","Nigiri · 握り"],["maki","Rolls · 巻物"],["sashimi","Sashimi · 刺身"]];
+const SIDES=[["miso","Miso soup","🥣",3.5],["edamame","Edamame, sea salt","🫛",4.5],["wakame","Seaweed salad","🥗",5],["mochi","Matcha mochi (2)","🍡",5.5],["matcha","Iced matcha latte","🍵",4.2],["yuzu","Yuzu soda","🍋",3.8],["sake","Sake, 180 ml","🍶",9],["tea","Hot genmaicha","🫖",2.8]];
+
+/* ================= ink brush shapes ================= */
+const f1=v=>+v.toFixed(1);
+function ensoPath(cx,cy,r,w0,a0,sweep,n,seed){let o=[],inn=[];for(let i=0;i<=n;i++){const t=i/n,a=(a0+sweep*t)*Math.PI/180;
+  const w=w0*(.55+.45*Math.sin(Math.min(1,t*4)*Math.PI/2))*(1-.85*Math.max(0,t-.6)/.4)+w0*.04;
+  const rr=r+Math.sin(t*23*seed)*w0*.06+Math.sin(t*7.3+seed)*r*.012+t*r*.06;
+  o.push([cx+Math.cos(a)*(rr+w/2),cy+Math.sin(a)*(rr+w/2)]);inn.push([cx+Math.cos(a)*(rr-w/2),cy+Math.sin(a)*(rr-w/2)])}
+  return "M"+o.concat(inn.reverse()).map(p=>f1(p[0])+" "+f1(p[1])).join("L")+"Z"}
+function ensoLine(cx,cy,r,a0,sweep){const a=a0*Math.PI/180,b=(a0+sweep)*Math.PI/180;return `M${f1(cx+Math.cos(a)*r)} ${f1(cy+Math.sin(a)*r)}A${r} ${r} 0 1 0 ${f1(cx+Math.cos(b)*r)} ${f1(cy+Math.sin(b)*r)}`}
+function strokePath(x0,x1,y,w,n,bend,s){let t1=[],b1=[];for(let i=0;i<=n;i++){const t=i/n,x=x0+(x1-x0)*t;
+  const ww=w*(.5+.5*Math.sin(Math.min(1,t*5)*Math.PI/2))*(1-.8*Math.max(0,t-.55)/.45)+.6;const yy=y-Math.sin(t*Math.PI)*bend+Math.sin(t*19+s)*.5;
+  t1.push([x,yy-ww/2+Math.sin(t*41+s)*.35]);b1.push([x,yy+ww/2+Math.sin(t*33+s)*.3])}
+  return "M"+t1.concat(b1.reverse()).map(p=>f1(p[0])+" "+f1(p[1])).join("L")+"Z"}
+$$(".ul>svg path").forEach((p,i)=>p.setAttribute("d",strokePath(4,296,13,15,50,3,i)));
+$$(".inkline path").forEach((p,i)=>p.setAttribute("d",strokePath(0,1200,14,16,90,4,i+3)));
+{const e=$("#heroEnso");e.innerHTML=`<defs><mask id="em"><path class="m" pathLength="1" stroke-width="48" d="${ensoLine(200,200,165,-55,-322)}"/></mask></defs><path mask="url(#em)" filter="url(#rough)" d="${ensoPath(200,200,160,30,-55,-322,120,1.7)}"/>`;e.classList.add("enso");}
+
+/* ================= legend + ticker ================= */
+$("#legend").innerHTML=Object.values(TIER).map(t=>`<span><i style="background:${t.c}"></i>${t.n} ${eur(t.p)}</span>`).join("")+`<small>The plate colour is the price, at the counter and online.</small>`;
+{const t=["<span class='jp'>本日</span>Today’s catch: <b>Yellowtail belly</b>","Hand-dived <b>scallops</b> on the gold plates","<b>Omakase</b> at the counter from 18:00","Tuesday: <b>kids eat free</b> from the white plates","Pickup ready in <b>about 20 minutes</b>"];
+ $("#ticker").innerHTML=[...t,...t].map(s=>`<span>${s}</span>`).join("");}
+
+/* ================= 3D ================= */
+let GL=false;try{GL=!!window.THREE&&!!document.createElement("canvas").getContext("webgl")}catch(e){}
+const SEG=LITE?.6:1,sg=n=>Math.max(6,Math.round(n*SEG));
+const STAGES=[];
+function stage3(host,o={}){
+  const R=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:"high-performance"});
+  R.setPixelRatio(Math.min(devicePixelRatio,o.dpr||(LITE?1.5:2)));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+  if(o.shadow){R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap}
+  const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(o.fov||30,1,.1,200);
+  scene.add(new THREE.HemisphereLight(0xfff8ee,0x6b5a48,.7));
+  const key=new THREE.DirectionalLight(0xfff3e0,1.15);key.position.set(4,10,6);scene.add(key);
+  if(o.shadow){key.castShadow=true;key.shadow.mapSize.set(1024,1024);Object.assign(key.shadow.camera,{left:-9,right:9,top:9,bottom:-9,near:1,far:40});key.shadow.radius=5;key.shadow.bias=-.0008}
+  const rim=new THREE.DirectionalLight(0xc8dcff,.6);rim.position.set(-6,5,-7);scene.add(rim);
+  const fill=new THREE.DirectionalLight(0xffe6c8,.35);fill.position.set(-5,2,6);scene.add(fill);
+  const S={R,scene,cam,host,vis:!host,tick:null};
+  if(host){host.prepend(R.domElement);
+    const size=()=>{const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();S.onSize&&S.onSize(w,h)};
+    S.size=size;size();new ResizeObserver(size).observe(host);new IntersectionObserver(([e])=>S.vis=e.isIntersecting,{rootMargin:"80px"}).observe(host)}
+  STAGES.push(S);return S}
+let lastT=performance.now();
+function loop(now){requestAnimationFrame(loop);const dt=Math.min(.05,(now-lastT)/1000);lastT=now;if(document.hidden)return;STAGES.forEach(s=>{if(s.vis&&s.tick){s.tick(dt,now/1000);s.R.render(s.scene,s.cam)}})}
+
+/* ---- textures and materials ---- */
+const TX={},MT={};
+function ctex(w,h,f,rep){const c=document.createElement("canvas");c.width=w;c.height=h;f(c.getContext("2d"),w,h);const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;if(rep){t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep,rep)}return t}
+const tx=(k,f)=>TX[k]||(TX[k]=f());
+function riceT(kind){return ctex(256,256,(g,w,h)=>{const dark=kind==="black";g.fillStyle=dark?"#2E2230":"#EAE3D3";g.fillRect(0,0,w,h);
+  for(let i=0;i<620;i++){const x=R_(0,w),y=R_(0,h);g.fillStyle=dark?`rgb(${R_(55,95)|0},${R_(35,55)|0},${R_(60,95)|0})`:`rgb(255,${R_(250,255)|0},${R_(238,250)|0})`;g.beginPath();g.ellipse(x,y,R_(5,8),R_(2.3,3.3),R_(0,3.14),0,7);g.fill();g.strokeStyle=dark?"rgba(0,0,0,.4)":"rgba(140,120,90,.25)";g.lineWidth=1;g.stroke()}
+  if(kind==="sesame")for(let i=0;i<150;i++){g.fillStyle=i%3?"#F6EBD0":"#2A231C";g.beginPath();g.ellipse(R_(0,w),R_(0,h),3.4,1.8,R_(0,3),0,7);g.fill()}
+  if(kind==="tobiko"){for(let i=0;i<900;i++){g.fillStyle=`rgb(${R_(235,255)|0},${R_(95,130)|0},${R_(20,40)|0})`;g.beginPath();g.arc(R_(0,w),R_(0,h),R_(2.4,3.6),0,7);g.fill()}}
+ },1.6)}
+function fishT(kind){return ctex(512,256,(g,w,h)=>{
+  const lg=(a,b,c)=>{const gr=g.createLinearGradient(0,0,0,h);gr.addColorStop(0,a);gr.addColorStop(.5,b);gr.addColorStop(1,c);g.fillStyle=gr;g.fillRect(0,0,w,h)};
+  const lines=(n,col,wa,wb,dx)=>{for(let i=0;i<n;i++){const x=i*(w+200)/n-100;g.strokeStyle=col;g.lineWidth=R_(wa,wb);g.beginPath();g.moveTo(x,0);g.bezierCurveTo(x+dx*.4,h*.3,x-dx*.1,h*.7,x+dx,h);g.stroke()}};
+  if(kind==="salmon"||kind==="aburi"){lg("#EE6D38","#F59457","#EC6A35");lines(12,"rgba(255,236,220,.82)",5,9,60);lines(12,"rgba(255,220,200,.35)",14,22,60);
+    if(kind==="aburi"){for(let i=0;i<70;i++){const x=R_(0,w),y=R_(0,h),r=R_(8,30),gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,"rgba(70,32,12,.75)");gr.addColorStop(1,"rgba(120,60,20,0)");g.fillStyle=gr;g.fillRect(x-r,y-r,r*2,r*2)}
+      for(let i=0;i<120;i++){g.fillStyle="rgba(255,240,200,.5)";g.fillRect(R_(0,w),R_(0,h),2,2)}}}
+  else if(kind==="tuna"){lg("#A3122A","#BF1E36","#9B0F25");lines(8,"rgba(255,120,130,.16)",8,16,40);for(let i=0;i<400;i++){g.fillStyle="rgba(60,0,10,.12)";g.fillRect(R_(0,w),R_(0,h),3,1)}}
+  else if(kind==="otoro"){lg("#E39C98","#EFB5AE","#DE918D");for(let i=0;i<40;i++){const x=R_(-60,w),y=R_(0,h);g.strokeStyle=`rgba(255,246,240,${R_(.5,.9)})`;g.lineWidth=R_(1.5,4);g.beginPath();g.moveTo(x,y);g.bezierCurveTo(x+40,y+R_(-40,40),x+90,y+R_(-40,40),x+R_(120,200),y+R_(-30,30));g.stroke()}}
+  else if(kind==="hamachi"){const gr=g.createLinearGradient(0,0,0,h);gr.addColorStop(0,"#C9605D");gr.addColorStop(.16,"#E5A79A");gr.addColorStop(.32,"#F5E4D2");gr.addColorStop(1,"#F0DCC6");g.fillStyle=gr;g.fillRect(0,0,w,h);lines(10,"rgba(255,255,255,.35)",3,6,30);g.fillStyle="#4E8B3A";g.beginPath();g.ellipse(w*.5,h*.55,26,7,.3,0,7);g.fill()}
+  else if(kind==="ebi"){g.fillStyle="#FBF1E6";g.fillRect(0,0,w,h);for(let x=10;x<w;x+=56){const gr=g.createLinearGradient(x,0,x+34,0);gr.addColorStop(0,"rgba(240,96,52,0)");gr.addColorStop(.5,"rgba(238,88,46,.95)");gr.addColorStop(1,"rgba(240,96,52,0)");g.fillStyle=gr;g.fillRect(x,0,34,h)}g.fillStyle="rgba(255,255,255,.5)";g.fillRect(0,h*.46,w,h*.08)}
+  else if(kind==="tamago"){g.fillStyle="#F4C640";g.fillRect(0,0,w,h);for(let y=0;y<h;y+=R_(10,22)){g.fillStyle=`rgba(190,120,20,${R_(.12,.3)})`;g.fillRect(0,y,w,2)}for(let i=0;i<60;i++){g.fillStyle="rgba(140,80,20,.35)";g.beginPath();g.ellipse(R_(0,w),R_(0,h),R_(4,16),R_(2,6),0,0,7);g.fill()}}
+  else if(kind==="unagi"){g.fillStyle="#6A3216";g.fillRect(0,0,w,h);for(let i=0;i<300;i++){g.fillStyle=`rgba(${R_(120,170)|0},${R_(60,90)|0},20,.35)`;g.fillRect(R_(0,w),R_(0,h),R_(4,20),R_(2,6))}g.strokeStyle="rgba(25,8,0,.6)";g.lineWidth=10;for(let x=-200;x<w;x+=70){g.beginPath();g.moveTo(x,0);g.lineTo(x+140,h);g.stroke()}}
+ })}
+function std(o){return new THREE.MeshStandardMaterial(Object.assign({roughness:.6,metalness:0},o))}
+function gloss(o){return LITE?std(Object.assign({roughness:.32},o)):new THREE.MeshPhysicalMaterial(Object.assign({roughness:.34,clearcoat:.6,clearcoatRoughness:.28},o))}
+function mat(k){if(MT[k])return MT[k];let m;
+  if(k==="rice"||k==="rice:black"||k==="rice:sesame"||k==="rice:tobiko"||k==="rice:black:sesame"||k==="rice:black:tobiko"){const kind=k.includes("tobiko")?"tobiko":k.includes("sesame")?"sesame":k.includes("black")?"black":"white";const t=tx("r"+kind+(k.includes("black")&&kind!=="black"?"b":""),()=>riceT(kind==="white"?"white":kind));m=std({map:t,bumpMap:t,bumpScale:.012,roughness:.88})}
+  else if(["salmon","aburi","tuna","otoro","hamachi","ebi","tamago","unagi"].includes(k)){m=gloss({map:tx(k,()=>fishT(k)),roughness:k==="tamago"?.55:k==="unagi"?.25:.34});if(k==="unagi"&&!LITE)m.clearcoat=1;if(k==="tamago"&&!LITE)m.clearcoat=.1}
+  else if(k==="nori")m=std({map:tx("nori",()=>ctex(128,128,(g,w,h)=>{g.fillStyle="#1C261B";g.fillRect(0,0,w,h);for(let i=0;i<500;i++){g.fillStyle=`rgba(${R_(40,70)|0},${R_(60,85)|0},${R_(40,55)|0},.5)`;g.fillRect(R_(0,w),R_(0,h),R_(1,5),1)}},2)),roughness:.75,side:THREE.DoubleSide});
+  else if(k==="soy")m=std({color:"#F2B2BE",roughness:.5,side:THREE.DoubleSide});
+  else if(k==="ikura")m=gloss({color:"#F2520F",emissive:0x5a1300,roughness:.08,transparent:true,opacity:.94});
+  else if(k==="wood")m=std({map:tx("wood",()=>ctex(512,512,(g,w,h)=>{g.fillStyle="#D7B989";g.fillRect(0,0,w,h);for(let y=0;y<h;y+=R_(3,9)){g.strokeStyle=`rgba(150,100,50,${R_(.08,.28)})`;g.lineWidth=R_(.6,2.2);g.beginPath();g.moveTo(0,y);for(let x=0;x<=w;x+=32)g.lineTo(x,y+Math.sin(x*.02+y)*3);g.stroke()}},1)),roughness:.62});
+  else if(k==="lacquer")m=std({color:"#17171B",roughness:.28,metalness:.1});
+  else if(k==="steel")m=std({color:"#5A606B",roughness:.35,metalness:.75});
+  else if(k==="slat")m=std({color:"#3B4049",roughness:.45,metalness:.55});
+  else{const C={avocado:["#B9CF6A",.4],cucumber:["#8FBF5C",.45],crab:["#FFF6EE",.5],shrimp:["#E3AE54",.7],mango:["#FFB13B",.35],cheese:["#FBF8F0",.5],green:["#3F7E2E",.5],wasabi:["#97B852",.7],daikon:["#F7F5EF",.6],ginger:["#EBA197",.4],sauceT:["#3A1A0B",.12],sauceS:["#F28A4B",.3],chop:["#1A1A1F",.3],chopR:["#C8371F",.3],cream:["#FBF6EC",.2],scallion:["#5DA03E",.4],tobikoB:["#F46A1F",.15],sesW:["#F4E8CC",.6],sesB:["#2A231C",.6],soyL:["#2A1208",.05],tea:["#7E9C6B",.3]};
+    const c=C[k]||["#ccc",.5];m=std({color:c[0],roughness:c[1],side:k==="green"?THREE.DoubleSide:THREE.FrontSide})}
+  return MT[k]=m}
+const mesh=(g,m,cast=1)=>{const o=new THREE.Mesh(g,typeof m==="string"?mat(m):m);o.castShadow=!!cast;o.receiveShadow=true;return o};
+
+/* ---- shapes ---- */
+function slab(L,T,W,o={}){const g=new THREE.BoxGeometry(L,T,W,sg(24),2,sg(8));const p=g.attributes.position,dr=o.droop??.26,sl=o.slant??.32;
+  for(let i=0;i<p.count;i++){let x=p.getX(i),y=p.getY(i),z=p.getZ(i);const u=x/(L/2);z*=1-.16*u*u;y*=1-.35*u*u;y+=-dr*u*u+Math.sin(u*3+z*4)*.012;x+=z*sl;p.setXYZ(i,x,y,z)}
+  g.computeVertexNormals();return g}
+function riceGeo(sx=.95,sy=.42,sz=.5){const g=new THREE.SphereGeometry(1,sg(30),sg(16));const p=g.attributes.position;
+  for(let i=0;i<p.count;i++){let x=p.getX(i),y=p.getY(i),z=p.getZ(i);if(y<-.45)y=-.45;const n=1+Math.sin(x*23+z*17)*Math.sin(y*29+x*11)*.035;p.setXYZ(i,x*sx*n,(y+.45)*sy,z*sz*n)}
+  g.computeVertexNormals();return g}
+function nigiri(f,band){const G=new THREE.Group();G.add(mesh(riceGeo(),"rice"));
+  const fish=mesh(slab(2.15,.2,.98),f);fish.position.y=.66;G.add(fish);
+  if(f==="ebi"){[-.18,.18].forEach(z=>{const t=mesh(new THREE.ConeGeometry(.2,.5,sg(10)),std({color:"#E8552C",roughness:.4}));t.position.set(1.12,.62,z*.8+.14);t.rotation.set(z,0,-1.25);G.add(t)})}
+  if(f==="hamachi"){}
+  if(band){const b=mesh(new THREE.CylinderGeometry(1,1,.3,sg(28),1,true),"nori");b.rotation.z=Math.PI/2;b.scale.set(.46,1,.55);b.position.y=.42;G.add(b)}
+  if(f==="unagi"){const s=mesh(slab(2,.03,.8,{droop:.24}),"sauceT",0);s.position.y=.78;G.add(s)}
+  return G}
+function gunkan(){const G=new THREE.Group();const r=mesh(riceGeo(.62,.36,.44),"rice");G.add(r);
+  const n=mesh(new THREE.CylinderGeometry(1,1,.74,sg(30),1,true),"nori");n.scale.set(.68,1,.5);n.position.y=.37;G.add(n);
+  const sp=new THREE.SphereGeometry(.12,sg(12),sg(10));for(let i=0;i<(LITE?12:18);i++){const a=R_(0,6.28),d=Math.sqrt(rnd());const b=mesh(sp,"ikura");b.position.set(Math.cos(a)*d*.5,.62+R_(0,.12),Math.sin(a)*d*.34);G.add(b)}
+  const c=mesh(new THREE.CylinderGeometry(.2,.2,.04,sg(16)),"cucumber");c.position.set(.25,.78,.15);c.rotation.set(.5,0,.3);G.add(c);return G}
+function leaf(){const s=new THREE.Shape();s.moveTo(0,-1);for(let i=0;i<=16;i++){const t=i/16,a=-Math.PI/2+t*Math.PI;const r=Math.sin(t*Math.PI)*.62*(1+(i%2)*.06);s.lineTo(Math.cos(a)*r*1.1+0,(-1+t*2)*.95)}
+  for(let i=16;i>=0;i--){const t=i/16,a=-Math.PI/2+t*Math.PI;const r=Math.sin(t*Math.PI)*.62*(1+(i%2)*.06);s.lineTo(-Math.cos(a)*r*1.1,(-1+t*2)*.95)}
+  const g=new THREE.ShapeGeometry(s,4);g.rotateX(-Math.PI/2);return g}
+function sashimi(f){const G=new THREE.Group();const l=mesh(leaf(),"green",0);l.position.y=.02;l.rotation.y=.4;l.scale.set(1.2,1,1.3);G.add(l);
+  const d=mesh(riceGeo(.55,.5,.45),"daikon");d.position.set(-.25,0,-.55);G.add(d);
+  for(let i=0;i<3;i++){const s=mesh(slab(1.25,.28,.75,{droop:.06,slant:.45}),f);s.position.set(-.55+i*.48,.42-i*.04,.12);s.rotation.set(0,.25,-.62);G.add(s)}
+  const w=mesh(riceGeo(.2,.22,.2),"wasabi");w.position.set(.95,0,.55);G.add(w);return G}
+const FILL={salmon:{n:"Salmon",p:2.5,c:"#F07B45",w:.26,d:.15},tuna:{n:"Tuna",p:3,c:"#B3172E",w:.26,d:.15},crab:{n:"Crab",p:2,c:"#E64A2E",w:.12,d:.12,cyl:1},shrimp:{n:"Tempura prawn",p:3,c:"#E3AE54",w:.3,d:.16},avocado:{n:"Avocado",p:1,c:"#9DBE55",w:.13,half:1},cucumber:{n:"Cucumber",p:.5,c:"#6FA544",w:.11,d:.11},mango:{n:"Mango",p:1,c:"#FFB13B",w:.22,d:.12},cheese:{n:"Cream cheese",p:1,c:"#FBF8F0",w:.22,d:.1},tamago:{n:"Omelette",p:1,c:"#F4C640",w:.22,d:.12},asparagus:{n:"Asparagus",p:1,c:"#5C8A2E",w:.08,cyl:1}};
+const WRAP={nori:{n:"Nori outside",p:0},ura:{n:"Rice outside",p:.5},soy:{n:"Pink soy paper",p:1}};
+const RICE={white:{n:"White rice",p:0,c:"#F4EFE4"},black:{n:"Black rice",p:1,c:"#3A2A3A"}};
+const TOP={none:{n:"Nothing",p:0},sesame:{n:"Sesame",p:.3,c:"#E9DCB8"},tobiko:{n:"Tobiko",p:1.5,c:"#F46A1F"},scallion:{n:"Spring onion",p:.5,c:"#5DA03E"},aburi:{n:"Seared salmon",p:3.5,c:"#E8743E"},avo:{n:"Avocado",p:2,c:"#9DBE55"}};
+const SAUCE={none:{n:"None",p:0},spicy:{n:"Spicy mayo",p:.5,c:"#F28A4B"},tare:{n:"Sweet tare",p:.5,c:"#4A2412"}};
+const FILLMAT={};
+function fillMat(id){return FILLMAT[id]||(FILLMAT[id]=id==="salmon"?mat("salmon"):id==="tuna"?mat("tuna"):std({color:FILL[id].c,roughness:id==="avocado"||id==="mango"?.35:.55}))}
+function makiSlice(cfg){const G=new THREE.Group(),R=.6,H=.5;const ura=cfg.wrap==="ura",blk=cfg.rice==="black";
+  const rk="rice"+(blk?":black":"");const sideK=ura&&(cfg.top==="sesame"||cfg.top==="tobiko")?rk+":"+cfg.top:rk;
+  let inner;
+  if(ura){G.add(mesh(new THREE.CylinderGeometry(R,R,H,sg(36)),[mat(sideK),mat(rk),mat(rk)]));
+    const ring=mesh(new THREE.RingGeometry(R*.56,R*.63,sg(36)),"nori",0);ring.rotation.x=-Math.PI/2;ring.position.y=H/2+.004;G.add(ring);inner=R*.5}
+  else{const wk=cfg.wrap==="soy"?"soy":"nori";G.add(mesh(new THREE.CylinderGeometry(R,R,H,sg(36),1,true),wk));
+    const ring=mesh(new THREE.RingGeometry(R-.05,R+.004,sg(36)),wk,0);ring.rotation.x=-Math.PI/2;ring.position.y=H/2+.004;G.add(ring);
+    G.add(mesh(new THREE.CylinderGeometry(R-.04,R-.04,H-.004,sg(36)),[mat(rk),mat(rk),mat(rk)],0));inner=(R-.05)*(cfg.thin?.5:.62)}
+  const fl=cfg.fill.slice(0,3),n=fl.length,pos=n===1?[[0,0]]:n===2?[[-.13,0],[.13,0]]:[[-.13,-.08],[.13,-.08],[0,.13]];
+  fl.forEach((id,i)=>{const F=FILL[id],sc=Math.min(1,inner/.33)*(n===1?1.7:n===2?1.45:1.25);let g;
+    if(F.cyl)g=new THREE.CylinderGeometry(F.w*sc,F.w*sc,H+.014,sg(14));
+    else if(F.half)g=new THREE.CylinderGeometry(F.w*1.4*sc,F.w*1.4*sc,H+.014,sg(14),1,false,0,Math.PI);
+    else g=new THREE.BoxGeometry(F.w*sc,H+.014,F.d*sc);
+    const m=mesh(g,fillMat(id),0);m.position.set(pos[i][0]*sc*1.1,0,pos[i][1]*sc*1.1);m.rotation.y=i*1.1+.3;G.add(m);
+    if(id==="crab"){const w=mesh(new THREE.CylinderGeometry(F.w*sc*.72,F.w*sc*.72,H+.018,sg(12)),"crab",0);w.position.copy(m.position);G.add(w)}});
+  const top=H/2;let lift=top;
+  if(cfg.top==="aburi"||cfg.top==="avo"){const s=mesh(slab(1.25,.09,.62,{droop:.12,slant:.15}),cfg.top==="aburi"?"aburi":"avocado");s.position.y=top+.05;s.rotation.y=.5;G.add(s);lift=top+.1}
+  else if(cfg.top==="tobiko"&&!ura){const sp=new THREE.SphereGeometry(.035,6,5);for(let i=0;i<26;i++){const a=R_(0,6.28),d=R_(.1,R-.06);const b=mesh(sp,"tobikoB",0);b.position.set(Math.cos(a)*d,top+.02,Math.sin(a)*d);G.add(b)}}
+  else if(cfg.top==="sesame"){const sp=new THREE.SphereGeometry(.03,5,4);for(let i=0;i<20;i++){const a=R_(0,6.28),d=R_(.05,R-.08);const b=mesh(sp,i%3?"sesW":"sesB",0);b.scale.set(1.4,.5,.8);b.position.set(Math.cos(a)*d,top+.01,Math.sin(a)*d);G.add(b)}}
+  else if(cfg.top==="scallion"){const tg=new THREE.TorusGeometry(.055,.018,5,10);for(let i=0;i<9;i++){const a=R_(0,6.28),d=R_(.05,R-.12);const b=mesh(tg,"scallion",0);b.rotation.x=Math.PI/2+R_(-.4,.4);b.position.set(Math.cos(a)*d,top+.02,Math.sin(a)*d);G.add(b)}}
+  if(cfg.sauce&&cfg.sauce!=="none"){const pts=[];for(let i=0;i<=6;i++)pts.push(new THREE.Vector3(-R*.85+i*R*1.7/6,lift+.03,(i%2?.24:-.24)));
+    G.add(mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts),sg(40),.02,6),cfg.sauce==="spicy"?"sauceS":"sauceT",0))}
+  const out=new THREE.Group();out.add(G);G.position.y=0;out.userData.h=H;return out}
+function makiPair(cfg){const G=new THREE.Group();[-.66,.66].forEach((x,i)=>{const s=makiSlice(cfg);s.position.set(x,.25,i?-.1:.1);s.rotation.y=i*.9;G.add(s)});return G}
+function buildItem(k){if(k.t==="nigiri")return nigiri(k.f,k.band);if(k.t==="gunkan")return gunkan();if(k.t==="sashimi")return sashimi(k.f);if(k.t==="maki")return makiPair(k.cfg||ROLLS[k.r]);if(k.t==="slice"){const s=makiSlice(k.cfg);s.position.y=.25;s.rotation.x=.25;return s}return new THREE.Group()}
+function pairOnPlate(item){const G=new THREE.Group();const k=item.k;
+  if(k.t==="nigiri"||k.t==="gunkan"){[-1,1].forEach(z=>{const p=buildItem(k);p.scale.setScalar(k.t==="gunkan"?.72:.44);p.position.z=z*(k.t==="gunkan"?.34:.25);p.rotation.y=R_(-.08,.08);G.add(p)})}
+  else{const p=buildItem(k);p.scale.setScalar(k.t==="sashimi"?.62:.62);G.add(p)}
+  G.position.y=.14;return G}
+function plateMesh(tier){const t=TIER[tier],g=new THREE.Group();
+  const body=mesh(new THREE.CylinderGeometry(1.05,.78,.12,sg(40)),std({color:t.c,roughness:tier==="gold"?.3:.22,metalness:tier==="gold"?.6:0}));body.position.y=.06;g.add(body);
+  const inner=mesh(new THREE.CylinderGeometry(.8,.8,.02,sg(40)),"cream",0);inner.position.y=.125;g.add(inner);
+  const rim=mesh(new THREE.TorusGeometry(1.02,.035,6,sg(40)),std({color:t.rim,roughness:.3,metalness:tier==="gold"?.6:0}),0);rim.rotation.x=Math.PI/2;rim.position.y=.12;g.add(rim);return g}
+function disposeTree(o){o.traverse(m=>{if(m.isMesh&&m.geometry)m.geometry.dispose()})}
+
+/* ================= viewer + snapshots ================= */
+const SNAP={};let V=null;
+function fallbackSnap(it){const c=it.k.t==="maki"?"#1C261B":"#F4EFE4";const f={salmon:"#EE7A47",aburi:"#C8642E",tuna:"#B3172E",otoro:"#E9A3A1",hamachi:"#F1DCC8",ebi:"#F07B45",tamago:"#F4C640",unagi:"#6A3216"}[it.k.f]||"#F2520F";
+  const svg=it.k.t==="maki"?`<circle cx="110" cy="96" r="44" fill="${c}"/><circle cx="110" cy="96" r="38" fill="#F4EFE4"/><circle cx="104" cy="92" r="12" fill="#F07B45"/><circle cx="120" cy="102" r="9" fill="#9DBE55"/><circle cx="210" cy="100" r="44" fill="${c}"/><circle cx="210" cy="100" r="38" fill="#F4EFE4"/><circle cx="210" cy="100" r="14" fill="#F07B45"/>`
+   :`<ellipse cx="160" cy="130" rx="95" ry="34" fill="#F4EFE4" stroke="#ddd"/><path d="M60 118C80 70 230 66 262 110C230 130 90 134 60 118Z" fill="${f}"/>`;
+  return "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">${svg}</svg>`)}
+function initViewer(){V=stage3(null,{dpr:2});V.R.setPixelRatio(1);V.R.setSize(480,360,false);V.cam.aspect=4/3;V.cam.updateProjectionMatrix();V.cache={};V.cur=null;V.rot=0;}
+function viewerShow(key,k){if(V.cur)V.scene.remove(V.cur);let o=V.cache[key];if(!o){o=new THREE.Group();const p=buildItem(k);o.add(p);
+  const b=new THREE.Box3().setFromObject(p),c=b.getCenter(new THREE.Vector3());p.position.sub(c);o.userData.r=b.getSize(new THREE.Vector3()).length()/2;V.cache[key]=o}
+  V.cur=o;V.scene.add(o);const r=o.userData.r,d=r/Math.sin(V.cam.fov*Math.PI/360)*.82;V.cam.position.set(0,d*.55,d*.84);V.cam.lookAt(0,-r*.05,0);return o}
+function snapshot(key,k,rotY=.55){if(!V)return null;const o=viewerShow(key,k);o.rotation.set(0,rotY,0);V.R.setSize(480,360,false);V.R.render(V.scene,V.cam);return V.R.domElement.toDataURL("image/png")}
+const snapOf=id=>SNAP[id]||(BYID[id]?fallbackSnap(BYID[id]):"");
+
+/* ================= hero conveyor ================= */
+const HERO={};
+function initHero(){
+  const host=$("#heroStage"),S=stage3(host,{shadow:!LITE,fov:30});HERO.S=S;
+  const {scene,cam}=S,L=3.4,RR=1.95,P=4*L+2*Math.PI*RR;
+  const at=s=>{s=((s%P)+P)%P;if(s<2*L)return[-L+s,RR,0];s-=2*L;const a1=Math.PI*RR;if(s<a1){const t=s/RR;return[L+Math.sin(t)*RR,Math.cos(t)*RR,t]}s-=a1;if(s<2*L)return[L-s,-RR,Math.PI];s-=2*L;const t=s/RR;return[-L-Math.sin(t)*RR,-Math.cos(t)*RR,Math.PI+t]};
+  const stad=r=>{const s=new THREE.Shape();s.moveTo(-L,r);s.lineTo(L,r);s.absarc(L,0,r,Math.PI/2,-Math.PI/2,true);s.lineTo(-L,-r);s.absarc(-L,0,r,-Math.PI/2,-Math.PI*1.5,true);return s};
+  const ring=(r0,r1,h,y,m)=>{const s=r0>0?stad(r1):stad(r1);if(r0>0)s.holes.push(stad(r0));const g=new THREE.ExtrudeGeometry(s,{depth:h,bevelEnabled:false,curveSegments:sg(28)});g.rotateX(Math.PI/2);g.translate(0,y,0);return mesh(g,m)};
+  const W=new THREE.Group();scene.add(W);HERO.W=W;
+  W.add(ring(RR-.8,RR+.8,.14,0,"lacquer"));
+  W.add(ring(RR+.8,RR+.98,.4,.2,"steel"));W.add(ring(RR-.98,RR-.8,.4,.2,"steel"));
+  W.add(ring(RR+.98,RR+1.9,.5,.16,"wood"));
+  W.add(ring(0,RR-.98,.5,.12,"wood"));
+  const flo=new THREE.Mesh(new THREE.PlaneGeometry(40,40),new THREE.ShadowMaterial({opacity:.18}));flo.rotation.x=-Math.PI/2;flo.position.y=-.4;flo.receiveShadow=true;scene.add(flo);
+  // island props: soy dish, ginger, tea cups
+  const soy=new THREE.Group();soy.add(mesh(new THREE.CylinderGeometry(.42,.32,.12,sg(28)),"cream"));const sl=mesh(new THREE.CylinderGeometry(.34,.34,.02,sg(28)),"soyL",0);sl.position.y=.05;soy.add(sl);soy.position.set(-1.6,.18,.1);W.add(soy);
+  const gin=new THREE.Group();gin.add(mesh(new THREE.CylinderGeometry(.42,.36,.08,sg(24)),"lacquer"));const gm=mesh(riceGeo(.32,.22,.28),"ginger");gm.position.y=.04;gin.add(gm);gin.position.set(-.4,.16,-.2);W.add(gin);
+  [[1.1,.15],[2.2,-.25]].forEach(([x,z])=>{const c=mesh(new THREE.CylinderGeometry(.3,.24,.62,sg(24)),"tea");c.position.set(x,.43,z);W.add(c)});
+  const vase=mesh(new THREE.CylinderGeometry(.16,.26,.9,sg(20)),"lacquer");vase.position.set(3.2,.57,.1);W.add(vase);
+  const twig=new THREE.Group();for(let i=0;i<3;i++){const b=mesh(new THREE.CylinderGeometry(.015,.02,1.1,5),"chop",0);b.position.set(0,.5,0);b.rotation.z=(i-1)*.35;const pivot=new THREE.Group();pivot.add(b);for(let k=0;k<4;k++){const fl=mesh(new THREE.SphereGeometry(.07,6,5),std({color:"#F3B9C4",roughness:.6}),0);fl.position.set(Math.sin((i-1)*.35)*-(.2+k*.22),.15+k*.25,R_(-.05,.05));pivot.add(fl)}twig.add(pivot)}twig.position.set(3.2,.95,.1);W.add(twig);
+  // slats
+  const NS=Math.floor(P/.43),slatG=new THREE.BoxGeometry(.36,.06,1.5);const slats=new THREE.InstancedMesh(slatG,mat("slat"),NS);slats.receiveShadow=true;W.add(slats);
+  const dummy=new THREE.Object3D();
+  // plates
+  const NP=PHONE?7:10,pool=ITEMS.filter(i=>!["sashimi_t"].includes(i.id));
+  const hitG=new THREE.CylinderGeometry(1.15,1.15,1.1,12),hitM=new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false});
+  const plates=[];let order=pool.slice().sort(()=>Math.random()-.5);
+  function fill(pl,item,pop){if(pl.food){pl.g.remove(pl.food);disposeTree(pl.food)}if(pl.plate){pl.g.remove(pl.plate)}
+    pl.item=item;pl.plate=plateMesh(item.tier);pl.g.add(pl.plate);pl.food=pairOnPlate(item);pl.g.add(pl.food);pl.empty=false;pl.pop=pop?0:1}
+  for(let i=0;i<NP;i++){const g=new THREE.Group();W.add(g);const hit=new THREE.Mesh(hitG,hitM);hit.position.y=.4;g.add(hit);const pl={g,hit,s:i*P/NP,lift:0};hit.userData.pl=pl;fill(pl,order[i%order.length]);plates.push(pl)}
+  // chopsticks
+  const CH=new THREE.Group(),sticks=[];[-1,1].forEach(sd=>{const st=new THREE.Group();const g=new THREE.CylinderGeometry(.075,.032,4.4,sg(10));g.translate(0,2.2,0);st.add(mesh(g,"chop",0));const band=mesh(new THREE.CylinderGeometry(.078,.074,.5,sg(10)),"chopR",0);band.position.y=3.6;st.add(band);st.position.x=sd*.13;st.userData.sd=sd;CH.add(st);sticks.push(st)});
+  CH.rotation.set(.55,0,-.75);CH.visible=false;W.add(CH);
+  const pick={on:false};
+  // interaction
+  const ray=new THREE.Raycaster(),mp=new THREE.Vector2();let hover=null;const cv=S.R.domElement,tip=$("#tip");
+  function hitAt(e){const r=cv.getBoundingClientRect();mp.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mp,cam);const h=ray.intersectObjects(plates.map(p=>p.hit),false)[0];return h?h.object.userData.pl:null}
+  let mx=0,my=0;
+  cv.addEventListener("pointermove",e=>{const r=cv.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;if(e.pointerType!=="mouse")return;const pl=hitAt(e);hover=pl&&!pl.empty?pl:null;cv.style.cursor=hover?"pointer":"default"});
+  cv.addEventListener("pointerleave",()=>{hover=null;mx=my=0});
+  cv.addEventListener("click",e=>{const pl=hitAt(e);if(pl&&!pl.empty&&!pick.on)startPick(pl)});
+  function startPick(pl){pick.on=true;pick.t=0;pick.pl=pl;pick.done=false;CH.visible=true;$("#heroHint").style.opacity=0;
+    pick.piece=pl.food.children[pl.food.children.length-1];pick.other=pl.food.children.length>1?pl.food.children[0]:null;pl.empty=true;hover=null}
+  const tmp=new THREE.Vector3(),tgt=new THREE.Vector3(),start=new THREE.Vector3();
+  HERO.pickId=id=>{const pl=plates.find(p=>!p.empty&&p.item.id===id);if(pl&&!pick.on)startPick(pl)};
+  // camera fit
+  let camD=20,az=0,el=.72;
+  S.onSize=(w,h)=>{const a=w/h;az=a<1.45?1.25:0;el=a<1.45?.66:.7;const hf=Math.tan(cam.fov*Math.PI/360);const span=a<1.45?8:13.6;camD=Math.max(span/2/(hf*a),(a<1.45?6.4:6.4)/2/hf/Math.sin(el))*.95};
+  S.onSize(host.clientWidth,host.clientHeight);
+  let sOff=0,time=0;const speed=REDUCED?0:.62;
+  S.tick=(dt,t)=>{time+=dt;sOff+=dt*speed;
+    for(let i=0;i<NS;i++){const [x,z,hd]=at(i*P/NS+sOff);dummy.position.set(x,.17,z);dummy.rotation.set(0,hd,0);dummy.updateMatrix();slats.setMatrixAt(i,dummy.matrix)}slats.instanceMatrix.needsUpdate=true;
+    plates.forEach(pl=>{const [x,z,hd]=at(pl.s+sOff);const lf=pl===hover?.22:0;pl.lift+=(lf-pl.lift)*Math.min(1,dt*10);pl.g.position.set(x,.2+pl.lift,z);pl.g.rotation.y=hd;
+      if(pl.pop<1){pl.pop=Math.min(1,pl.pop+dt*1.6);const k=pl.pop;const s=1-Math.cos(k*9)*Math.exp(-k*5)*.9;pl.food.scale.setScalar(Math.max(.01,s))}
+      if(pl.empty&&!(pick.on&&pick.pl===pl)&&z<-RR+.1&&Math.abs(x)<.5){fill(pl,pickR(pool),true)}});
+    // hover tooltip
+    if(hover){tmp.copy(hover.g.position);tmp.y+=1.1;W.localToWorld(tmp);tmp.project(cam);tip.style.left=((tmp.x+1)/2*host.clientWidth)+"px";tip.style.top=((1-tmp.y)/2*host.clientHeight)+"px";if(tip.dataset.id!==hover.item.id){tip.dataset.id=hover.item.id;tip.innerHTML=`${hover.item.n} · <b>${eur(hover.item.p)}</b> · click to pick`}tip.classList.add("on")}else tip.classList.remove("on");
+    // chopsticks
+    if(pick.on){pick.t+=dt;const T=pick.t,pl=pick.pl;pick.piece.getWorldPosition(tgt);W.worldToLocal(tgt);
+      if(T<.5){const k=1-Math.pow(1-T/.5,3);start.set(tgt.x+2.6,tgt.y+4.5,tgt.z+1.5);CH.position.lerpVectors(start,tgt.clone().add(new THREE.Vector3(0,.32,0)),k);sticks.forEach(s=>s.rotation.z=s.userData.sd*.07)}
+      else if(T<.66){CH.position.copy(tgt).add(new THREE.Vector3(0,.32,0));const k=(T-.5)/.16;sticks.forEach(s=>s.rotation.z=s.userData.sd*.07*(1-k))}
+      else{if(!pick.done){pick.done=true;CH.attach(pick.piece);if(pick.other)pick.other.userData.out=1;
+          tmp.copy(CH.position);W.localToWorld(tmp);tmp.project(cam);const r=host.getBoundingClientRect();addItem(pl.item.id,{x:r.left+(tmp.x+1)/2*r.width,y:r.top+(1-tmp.y)/2*r.height},true)}
+        const k=Math.min(1,(T-.66)/.7),e=k*k;CH.position.y+=dt*(4+e*14);CH.position.x+=dt*(2+e*6);CH.position.z+=dt*3;
+        if(pick.other){const s=Math.max(.001,1-(T-.66)*3);pick.other.scale.setScalar(pick.other.scale.x*0+s*(pick.other.userData.s0||(pick.other.userData.s0=pick.other.scale.x)))}
+        if(k>=1){CH.remove(pick.piece);disposeTree(pick.piece);if(pl.food){pl.g.remove(pl.food);disposeTree(pl.food);pl.food=null}CH.visible=false;pick.on=false}}}
+    // camera
+    const a=az+mx*.25+Math.sin(t*.18)*.05,e2=el-my*.08;cam.position.set(Math.sin(a)*Math.cos(e2)*camD,Math.sin(e2)*camD,Math.cos(a)*Math.cos(e2)*camD);cam.lookAt(az?1.5:0,-.2,az?.3:.3)};
+}
+
+/* ================= roll builder 3D ================= */
+const RB={};
+function initRoll(){const host=$("#rollStage"),S=stage3(host,{shadow:!LITE,fov:28});RB.S=S;const {scene,cam}=S;
+  const piv=new THREE.Group();scene.add(piv);
+  const board=mesh(new THREE.BoxGeometry(6.4,.26,3.8),"wood");board.position.y=-.13;piv.add(board);
+  [-2.5,2.5].forEach(x=>{const f=mesh(new THREE.BoxGeometry(.5,.42,3.5),"wood");f.position.set(x,-.47,0);piv.add(f)});
+  const flo=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.ShadowMaterial({opacity:.2}));flo.rotation.x=-Math.PI/2;flo.position.y=-.68;flo.receiveShadow=true;scene.add(flo);
+  const gin=mesh(riceGeo(.45,.3,.38),"ginger");gin.position.set(2.55,0,1.25);piv.add(gin);const wa=mesh(riceGeo(.22,.22,.2),"wasabi");wa.position.set(2.65,0,.55);piv.add(wa);
+  let slices=[],proto=null;const tilt=.62,R=.6,H=.5;
+  RB.set=(cfg,anim)=>{slices.forEach(s=>piv.remove(s));if(proto)disposeTree(proto);proto=makiSlice(cfg);slices=[];
+    for(let i=0;i<8;i++){const s=i?proto.clone():proto,row=i<4?0:1,col=i%4;s.position.set((col-1.5)*1.36+(row?.3:-.25),H/2*Math.cos(tilt)+R*Math.sin(tilt)-.02,row?-.72:.88);s.rotation.set(tilt,R_(-.25,.25),0);s.userData.t0=performance.now()/1000+(anim?i*.06:-5);piv.add(s);slices.push(s)}};
+  let theta=-.15,vel=0,drag=false,lx=0,touched=-9;const cv=S.R.domElement;
+  cv.addEventListener("pointerdown",e=>{drag=true;lx=e.clientX;vel=0;$("#rollHint").style.opacity=0;cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;theta+=dx*.01;vel=dx*.01});
+  const up=()=>{drag=false;touched=performance.now()/1000};cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",up);
+  let camD=12;S.onSize=(w,h)=>{const a=w/h,hf=Math.tan(cam.fov*Math.PI/360);camD=Math.max(6.6/2/(hf*a),4.2/2/hf)*1.02};S.onSize(host.clientWidth,host.clientHeight);
+  S.tick=(dt,t)=>{if(!drag){if(Math.abs(vel)>.0005){theta+=vel;vel*=.93}else if(t-touched>3&&!REDUCED){theta+=(Math.sin(t*.35)*.35-.1-theta)*dt*.8}}piv.rotation.y=theta;
+    slices.forEach(s=>{const k=t-s.userData.t0;if(k<0){s.scale.setScalar(.001);return}const sc=k>2?1:1-Math.cos(k*10)*Math.exp(-k*6)*.7;s.scale.setScalar(Math.max(.001,sc))});
+    cam.position.set(0,camD*.62,camD*.78);cam.lookAt(0,.15,.1)};
+}
+
+/* ================= UI: menu ================= */
+let tab="all";
+$("#tabs").innerHTML=CATS.map(([k,n],i)=>`<button role="tab" aria-selected="${i===0}" data-k="${k}">${n}</button>`).join("");
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;tab=b.dataset.k;$$("#tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));renderMenu()});
+const ADD_IC=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>`;
+function cardHTML(it,i,dup){return `<article class="card" data-id="${it.id}" style="animation-delay:${(i%8)*45}ms"${dup?' aria-hidden="true"':""}>
+  <div class="card__media"><img src="${snapOf(it.id)}" alt="${dup?"":it.n+" sushi"}" width="480" height="360"><span class="pdot" style="background:${TIER[it.tier].c}" title="${TIER[it.tier].n} plate"></span>${GL?`<button class="card__3d" aria-pressed="false" ${dup?'tabindex="-1"':""} aria-label="Turn ${it.n} in 3D">3D</button>`:""}</div>
+  <div class="card__body">${it.tag?`<span class="tag">${it.tag}</span>`:""}<div class="card__name"><h3>${it.n}</h3><span class="jp" lang="ja">${it.jp}</span></div><p>${it.d}</p>
+  <div class="card__foot"><span class="price">${eur(it.p)}<small>${it.pcs}</small></span><button class="add" data-add="${it.id}" ${dup?'tabindex="-1"':""} aria-label="Add ${it.n} to your order">${ADD_IC}Add</button></div></div></article>`}
+let view="grid";
+function renderMenu(){const list=ITEMS.filter(i=>tab==="all"||i.cat===tab);const grid=$("#menuGrid"),wrap=$("#menuWrap");stopHover();
+  if(view==="belt"){wrap.className="beltwrap belt";grid.style.setProperty("--belt",Math.max(30,list.length*9)+"s");grid.innerHTML=list.map((it,i)=>cardHTML(it,i)).join("")+list.map((it,i)=>cardHTML(it,i,1)).join("")}
+  else{wrap.className="";grid.innerHTML=list.map((it,i)=>cardHTML(it,i)).join("")}}
+$$(".view button").forEach(b=>b.onclick=()=>{view=b.dataset.view;$$(".view button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderMenu()});
+$("#sides").innerHTML=SIDES.map(s=>`<div class="side"><span class="side__ic" aria-hidden="true">${s[2]}</span><div><b>${s[1]}</b><small>${eur(s[3])}</small></div><button class="add" data-side="${s[0]}" aria-label="Add ${s[1]}">${ADD_IC}</button></div>`).join("");
+$("#menu").addEventListener("click",e=>{const a=e.target.closest("[data-add]"),s=e.target.closest("[data-side]"),t3=e.target.closest(".card__3d");
+  if(a){const img=a.closest(".card").querySelector("img");addItem(a.dataset.add,img.getBoundingClientRect())}
+  if(s){const S=SIDES.find(x=>x[0]===s.dataset.side);addLine({key:"side:"+S[0],name:S[1],note:"",unit:S[3],emoji:S[2]});pop(s)}
+  if(t3){const card=t3.closest(".card");if(t3.getAttribute("aria-pressed")==="true")stopHover();else startHover(card)}});
+// one small 3D viewer that moves into whichever card you hover
+let hovCard=null,hovCv=null;
+function startHover(card){if(!V||!card)return;stopHover();const it=BYID[card.dataset.id];hovCard=card;const media=card.querySelector(".card__media");
+  hovCv=document.createElement("canvas");hovCv.width=media.clientWidth*Math.min(2,devicePixelRatio);hovCv.height=media.clientHeight*Math.min(2,devicePixelRatio);media.appendChild(hovCv);
+  viewerShow(it.id,it.k);V.rot=.55;V.hovT=performance.now();const b=card.querySelector(".card__3d");b&&b.setAttribute("aria-pressed","true")}
+function stopHover(){if(hovCv){hovCv.remove();hovCv=null}if(hovCard){const b=hovCard.querySelector(".card__3d");b&&b.setAttribute("aria-pressed","false")}hovCard=null}
+$("#menu").addEventListener("pointerover",e=>{if(e.pointerType!=="mouse")return;const c=e.target.closest(".card");if(c&&c!==hovCard&&c.closest("#menuGrid"))startHover(c)});
+$("#menu").addEventListener("pointerout",e=>{if(e.pointerType!=="mouse"||!hovCard)return;if(!hovCard.contains(e.relatedTarget))stopHover()});
+function hoverTick(){if(!hovCv||!V)return;const w=hovCv.width,h=hovCv.height;V.R.setPixelRatio(1);V.R.setSize(w,h,false);V.cam.aspect=w/h;V.cam.updateProjectionMatrix();
+  V.rot+=REDUCED?0:.022;V.cur.rotation.y=V.rot;V.cur.rotation.x=Math.sin(V.rot*.7)*.12;V.R.render(V.scene,V.cam);const g=hovCv.getContext("2d");g.clearRect(0,0,w,h);g.drawImage(V.R.domElement,0,0)}
+
+/* ================= roll builder UI ================= */
+const roll={wrap:"ura",rice:"white",fill:["salmon","avocado","cucumber"],top:"tobiko",sauce:"spicy"};
+const BASE=7.5;const rollPrice=()=>BASE+WRAP[roll.wrap].p+RICE[roll.rice].p+roll.fill.reduce((s,f)=>s+FILL[f].p,0)+TOP[roll.top].p+SAUCE[roll.sauce].p;
+const GRPS=[["wrap","The wrap",WRAP,1],["rice","The rice",RICE,1],["fill","Fillings",FILL,3],["top","On top",TOP,1],["sauce","Sauce",SAUCE,1]];
+function renderRollOpts(){$("#rollOpts").innerHTML=GRPS.map(([k,n,D,max],gi)=>`<div class="rgrp"><h3><i>${gi+1}</i>${n}<small>${max>1?`${roll.fill.length} of ${max}`:""}</small></h3><div class="chips" role="group" aria-label="${n}">${Object.entries(D).map(([id,x])=>{const on=max>1?roll.fill.includes(id):roll[k]===id;
+  const col=x.c||(k==="wrap"?(id==="soy"?"#F2B2BE":id==="ura"?"#F4EFE4":"#1C261B"):"");return `<button class="chip" data-g="${k}" data-v="${id}" aria-pressed="${on}">${col?`<i style="background:${col}"></i>`:""}${x.n}${x.p?` <small>+${eur(x.p)}</small>`:""}</button>`}).join("")}</div></div>`).join("")}
+function rollText(){return `${WRAP[roll.wrap].n}, ${RICE[roll.rice].n.toLowerCase()}${roll.fill.length?", "+roll.fill.map(f=>FILL[f].n.toLowerCase()).join(", "):""}${roll.top!=="none"?", "+TOP[roll.top].n.toLowerCase()+" on top":""}${roll.sauce!=="none"?", "+SAUCE[roll.sauce].n.toLowerCase():""}`}
+function updRoll(anim){const p=$("#rollPrice"),v=eur(rollPrice());if(p.textContent!==v){p.textContent=v;p.classList.remove("tick");void p.offsetWidth;p.classList.add("tick")}
+  $("#rollSum").innerHTML=`<b>Your roll:</b> ${rollText()}`;$("#rollAdd").disabled=!roll.fill.length;if(GL&&RB.set)RB.set(roll,anim)}
+$("#rollOpts").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const g=b.dataset.g,v=b.dataset.v;
+  if(g==="fill"){const i=roll.fill.indexOf(v);if(i>=0)roll.fill.splice(i,1);else{if(roll.fill.length>=3){toast("Three fillings is the most that fits in a roll");return}roll.fill.push(v)}}
+  else roll[g]=v;
+  if(roll.wrap!=="ura"&&roll.top==="sesame"){}renderRollOpts();updRoll(true)});
+$("#rollRandom").onclick=()=>{const ks=Object.keys(FILL);roll.wrap=pickR(Object.keys(WRAP));roll.rice=Math.random()<.3?"black":"white";roll.fill=ks.sort(()=>Math.random()-.5).slice(0,2+(Math.random()<.5));roll.top=pickR(Object.keys(TOP));roll.sauce=pickR(Object.keys(SAUCE));renderRollOpts();updRoll(true)};
+$("#rollAdd").onclick=()=>{const cfg=JSON.parse(JSON.stringify(roll)),key="roll:"+JSON.stringify(cfg);if(!SNAP[key]&&V)SNAP[key]=snapshot(key,{t:"slice",cfg},.3);
+  addLine({key,name:"Your own roll",note:rollText()+" · 8 pieces",unit:rollPrice(),snap:key});const r=$("#rollStage").getBoundingClientRect();pickFly(SNAP[key]||"",{left:r.left+r.width/2-80,top:r.top+r.height/2-60,width:160,height:120})};
+
+/* ================= omakase ================= */
+const OMA_POOL=["otoro","aburi","hamachi","maguro","sake","ikura","unagi","ebi","tamago"];
+let omaOpen=false;
+function fillOma(){const pick=OMA_POOL.slice().sort(()=>Math.random()-.5).slice(0,7);pick.push("tamago");if(new Set(pick).size<8)pick[7]="ebi";
+  $("#otray").innerHTML=pick.map((id,i)=>`<div class="opc"><img src="${snapOf(id)}" alt="" style="transition-delay:${.35+i*.12}s"><span style="transition-delay:${.45+i*.12}s">${i+1}. ${BYID[id].n}</span></div>`).join("");
+  $("#otray").setAttribute("aria-label","Today’s omakase: "+pick.map(id=>BYID[id].n).join(", "))}
+fillOma();
+function toggleOma(){const box=$("#obox");if(!omaOpen){box.classList.add("open");omaOpen=true;$("#omaOpen").textContent="Another selection";$("#onote").textContent="A sample of what the chef might serve today. It changes daily."}
+  else{box.classList.remove("open");setTimeout(()=>{fillOma();box.classList.add("open")},REDUCED?0:900)}}
+$("#omaOpen").onclick=toggleOma;$("#olid").onclick=toggleOma;
+$("#omaAdd").onclick=e=>{addLine({key:"omakase",name:"Omakase box",note:"Chef’s choice of 8 pieces, miso soup, ginger",unit:42,snap:"otoro"});pickFly(snapOf("otoro"),$("#obox").getBoundingClientRect())};
+
+/* ================= cart ================= */
+let lines=[];try{lines=JSON.parse(localStorage.getItem("sumishari")||"[]")}catch(e){}
+const save=()=>{try{localStorage.setItem("sumishari",JSON.stringify(lines))}catch(e){}};
+let mode="pickup";
+let tT;function toast(m){const t=$("#toastMsg");t.textContent=m;t.classList.add("on");clearTimeout(tT);tT=setTimeout(()=>t.classList.remove("on"),2100)}
+function pop(el){el.animate&&el.animate([{transform:"scale(1)"},{transform:"scale(1.18)"},{transform:"scale(1)"}],{duration:380,easing:"cubic-bezier(.34,1.56,.64,1)"})}
+function bagEl(){const m=$("#mbar2");return getComputedStyle(m).display!=="none"?$("#mOrder"):$("#bagBtn")}
+function bump(){const b=bagEl();b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump")}
+const CHOP=`<svg viewBox="0 0 100 200" aria-hidden="true"><g class="s1"><path d="M18 190 L92 4" stroke="#1A1A1F" stroke-width="5" stroke-linecap="round"/><path d="M78 40 L90 9" stroke="#C8371F" stroke-width="6"/></g><g class="s2"><path d="M30 192 L99 12" stroke="#1A1A1F" stroke-width="5" stroke-linecap="round"/><path d="M85 48 L97 17" stroke="#C8371F" stroke-width="6"/></g></svg>`;
+function pickFly(src,r){if(REDUCED||!src){bump();return}
+  const el=document.createElement("div");el.className="fly";el.innerHTML=`<img src="${src}" alt="">${CHOP}`;document.body.appendChild(el);
+  const w=Math.min(150,Math.max(90,r.width||120)),h=w*.75,x0=(r.left??r.x-w/2)+((r.width||w)-w)/2,y0=(r.top??r.y-h/2)+((r.height||h)-h)/2;el.style.width=w+"px";el.style.height=h+"px";
+  const b=bagEl().getBoundingClientRect(),x1=b.left+b.width/2-w/2,y1=b.top+b.height/2-h/2,mx=(x0+x1)/2,my=Math.min(y0,y1)-120;
+  el.animate([{transform:`translate(${x0}px,${y0}px)`},{transform:`translate(${x0}px,${y0-26}px) rotate(-4deg)`,offset:.35},{transform:`translate(${mx}px,${my}px) scale(.75) rotate(-10deg)`,offset:.7},{transform:`translate(${x1}px,${y1}px) scale(.18)`,opacity:.4}],{duration:1150,delay:380,easing:"cubic-bezier(.45,0,.25,1)",fill:"both"}).onfinish=()=>{el.remove();bump()}}
+function addItem(id,from,fromHero){const it=BYID[id];addLine({key:id,name:it.n,note:`${it.pcs} · ${TIER[it.tier].n} plate`,unit:it.p,snap:id});
+  if(fromHero)pickFly(snapOf(id),{left:from.x-60,top:from.y-45,width:120,height:90});else pickFly(snapOf(id),from)}
+function addLine(it){const same=lines.find(l=>l.key===it.key);same?same.qty++:lines.push({...it,qty:1});save();renderCart();toast(`${it.name} added to your order`)}
+const total=()=>lines.reduce((s,l)=>s+l.qty*l.unit,0);
+const FEE=2.95,FREE=40,MIN=15;
+function renderCart(){const n=lines.reduce((s,l)=>s+l.qty,0),sub=total(),fee=mode==="delivery"&&sub<FREE?FEE:0,tot=sub+(mode==="delivery"?fee:0);
+  $("#bagCount").textContent=n;$("#mTotal").textContent=eur(tot);$("#sum").textContent=eur(tot);
+  $("#feeRow").classList.toggle("hidden",mode!=="delivery");$("#addrRow").classList.toggle("hidden",mode!=="delivery");$("#slotLbl").textContent=mode==="delivery"?"Delivery time":"Pickup time";
+  $("#fee").textContent=fee?eur(fee):"Free";$("#feeLbl").textContent=fee?`Delivery (free from ${eur(FREE)})`:"Delivery";
+  const short=mode==="delivery"&&sub<MIN;$("#checkout").disabled=!n||short;$("#checkout").textContent=!n?"Place order":short?`Delivery from ${eur(MIN)}`:`Place order · ${eur(tot)}`;
+  $("#cartList").innerHTML=n?lines.map((l,i)=>`<li class="line">${l.emoji?`<span class="side__ic" style="width:58px;height:58px;font-size:28px">${l.emoji}</span>`:`<img src="${snapOf(l.snap)||SNAP[l.snap]||""}" alt="">`}
+    <div><b>${l.name}</b>${l.note?`<small>${l.note}</small>`:""}<div class="qty"><button data-l="${i}" data-d="-1" aria-label="One less ${l.name}">−</button><span>${l.qty}</span><button data-l="${i}" data-d="1" aria-label="One more ${l.name}">+</button></div></div><span class="line__p">${eur(l.unit*l.qty)}</span></li>`).join("")
+    :`<li class="empty"><b>Your tray is empty</b>Pick a plate off the belt, or add something from the menu.</li>`;
+  fillSlots()}
+function fillSlots(){const s=$("#slot"),d=new Date(),lead=mode==="delivery"?45:20;d.setMinutes(Math.ceil((d.getMinutes()+lead)/15)*15,0,0);let o=`<option>As soon as possible, about ${lead} min</option>`;for(let i=0;i<8;i++){const t=new Date(d.getTime()+i*15*60000);o+=`<option>${t.toTimeString().slice(0,5)}</option>`}if(s.dataset.m!==mode){s.innerHTML=o;s.dataset.m=mode}}
+$("#cartList").addEventListener("click",e=>{const b=e.target.closest("[data-l]");if(!b)return;const l=lines[+b.dataset.l];l.qty+=+b.dataset.d;if(l.qty<1)lines.splice(+b.dataset.l,1);save();renderCart()});
+$$(".mode button").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;$$(".mode button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderCart()});
+const cart=$("#cart"),scrim=$("#scrim");let lastFocus=null;
+function openCart(){lastFocus=document.activeElement;cart.classList.add("on");cart.setAttribute("aria-hidden","false");scrim.classList.add("on");$("#mbar2").classList.add("hide");renderCart();setTimeout(()=>$("#cartX").focus(),60)}
+function closeCart(){cart.classList.remove("on");cart.setAttribute("aria-hidden","true");scrim.classList.remove("on");$("#mbar2").classList.remove("hide");lastFocus&&lastFocus.focus&&lastFocus.focus()}
+$("#bagBtn").onclick=openCart;$("#mOrder").onclick=openCart;$("#cartX").onclick=closeCart;scrim.onclick=closeCart;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&cart.classList.contains("on"))closeCart()});
+$("#checkout").onclick=()=>{const who=$("#who").value.trim(),slot=$("#slot").value,asap=slot.startsWith("As soon");
+  if(mode==="delivery"&&!$("#addr").value.trim()){toast("Please add a delivery address");$("#addr").focus();return}
+  $("#doneMsg").textContent=mode==="delivery"?`We’ll bring it ${asap?"in about 45 minutes":"at "+slot}${who?", "+who:""}. Demo only: nothing was sent or charged.`:`It’ll be ready ${asap?"in about 20 minutes":"at "+slot}${who?` under “${who}”`:""}. Demo only: nothing was sent or charged.`;
+  $("#done").classList.add("on")};
+$("#doneOk").onclick=()=>{lines=[];save();$("#done").classList.remove("on");closeCart();renderCart()};
+
+/* ================= booking ================= */
+const BK={guests:2,day:null,time:null,seat:null,step:0};
+const DAYN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+$("#bGuests").innerHTML=[1,2,3,4,5,6,7,8].map(n=>`<button data-g="${n}" aria-pressed="${n===2}">${n}</button>`).join("");
+{const out=[],d=new Date();d.setHours(12,0,0,0);for(let i=0;i<21;i++){const x=new Date(d.getTime()+i*864e5);out.push(`<button data-d="${x.toISOString().slice(0,10)}" ${x.getDay()===1?"disabled":""} aria-pressed="false" aria-label="${DAYN[x.getDay()]} ${x.getDate()} ${MON[x.getMonth()]}${x.getDay()===1?", closed":""}"><small>${i===0?"Today":i===1?"Tomorrow":DAYN[x.getDay()]}</small><b>${x.getDate()}</b><small>${MON[x.getMonth()]}</small></button>`)}$("#bDays").innerHTML=out.join("")}
+const hash=s=>[...s].reduce((a,c)=>(a*31+c.charCodeAt(0))%9973,7);
+function renderTimes(){const day=new Date(BK.day+"T12:00"),dow=day.getDay(),late=dow===5||dow===6,sun=dow===0;
+  const lunch=sun?[]:["12:00","12:30","13:00","13:30"],dinner=(sun?["17:00","17:30","18:00","18:30","19:00","19:30","20:00"]:["17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00"]).concat(late?["21:30","22:00"]:[]);
+  const now=new Date(),today=BK.day===now.toISOString().slice(0,10),mins=now.getHours()*60+now.getMinutes();
+  const btn=t=>{const full=hash(BK.day+t)%5===0,past=today&&(+t.slice(0,2)*60+ +t.slice(3))<mins+30;return `<button data-t="${t}" ${full||past?"disabled":""} aria-pressed="${BK.time===t}" aria-label="${t}${full?", fully booked":""}">${t}</button>`};
+  $("#bTimes").innerHTML=(lunch.length?`<div class="slotg"><h4>Lunch</h4><div class="pick">${lunch.map(btn).join("")}</div></div>`:"")+`<div class="slotg"><h4>Dinner</h4><div class="pick">${dinner.map(btn).join("")}</div></div>`;
+  const SE=[["counter","The counter","Watch the chef. Up to 4.",BK.guests<=4],["table","A table by the belt","Plates pass right by you.",true],["tatami","Tatami room","Private, for 4 to 8.",BK.guests>=4]];
+  $("#bSeats").innerHTML=SE.map(s=>`<button data-s="${s[0]}" ${s[3]?"":"disabled"} aria-pressed="${BK.seat===s[0]}"><b>${s[1]}</b><small>${s[2]}</small></button>`).join("");
+  $("#bDayLbl").textContent=`${day.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})} for ${BK.guests} ${BK.guests>1?"guests":"guest"}. Crossed-out times are full.`}
+function valid(){return BK.step===0?!!BK.guests:BK.step===1?!!BK.day:BK.step===2?!!(BK.time&&BK.seat):BK.step===3?!!($("#bName").value.trim()&&$("#bContact").value.trim()):true}
+function goStep(s){BK.step=s;$$(".bstep").forEach(x=>x.classList.toggle("on",+x.dataset.s===s));$$("#bsteps li").forEach((l,i)=>l.classList.toggle("on",i<=Math.min(s,3)));
+  $("#bnav").classList.toggle("hidden",s===4);$("#bBack").style.visibility=s?"visible":"hidden";$("#bNext").textContent=s===3?"Confirm booking":"Next";
+  if(s===2)renderTimes();if(s===3){const SN={counter:"at the counter",table:"at a table by the belt",tatami:"in the tatami room"};$("#bSum").innerHTML=`<b>${BK.guests} ${BK.guests>1?"guests":"guest"}</b>, ${new Date(BK.day+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})} at <b>${BK.time}</b>, ${SN[BK.seat]}.`}
+  $("#bNext").disabled=!valid()}
+$("#bcard").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.disabled)return;
+  if(b.dataset.g){BK.guests=+b.dataset.g;$$("#bGuests button").forEach(x=>x.setAttribute("aria-pressed",x===b));if(BK.seat==="counter"&&BK.guests>4||BK.seat==="tatami"&&BK.guests<4)BK.seat=null}
+  if(b.dataset.d){BK.day=b.dataset.d;BK.time=null;$$("#bDays button").forEach(x=>x.setAttribute("aria-pressed",x===b))}
+  if(b.dataset.t){BK.time=b.dataset.t;$$("#bTimes button").forEach(x=>x.setAttribute("aria-pressed",x===b))}
+  if(b.dataset.s&&b.closest("#bSeats")){BK.seat=b.dataset.s;$$("#bSeats button").forEach(x=>x.setAttribute("aria-pressed",x===b))}
+  $("#bNext").disabled=!valid()});
+$("#bForm").addEventListener("input",()=>$("#bNext").disabled=!valid());
+$("#bNext").onclick=()=>{if(!valid())return;if(BK.step===3){$("#bDone").textContent=`${$("#bName").value.trim()}, your table for ${BK.guests} is booked for ${new Date(BK.day+"T12:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})} at ${BK.time}. Demo only: nothing was sent.`;goStep(4);toast("Demo only: nothing was sent");return}goStep(BK.step+1)};
+$("#bBack").onclick=()=>goStep(Math.max(0,BK.step-1));
+$("#bAgain").onclick=()=>{BK.time=BK.seat=null;$("#bForm").reset();goStep(0)};
+goStep(0);
+
+/* ================= FAQ ================= */
+const FAQ=[["How do the plate colours work?","Every dish sits on a coloured plate and the colour is the price: white €3.50, indigo €4.50, vermilion €5.50 and gold €7. At the end we count your plates. Online, the price is shown next to each dish."],
+["Do you have vegetarian and vegan options?","Yes. The sweet omelette nigiri is vegetarian, the cucumber roll is vegan, and you can build your own roll with only vegetables. Ask the chef for the vegetable omakase."],
+["I have an allergy. Can you help?","Tell us when you book or in the order notes. We can make most dishes without sesame, shellfish or gluten (we keep gluten-free soy sauce). The kitchen is small, so we can’t promise zero traces."],
+["Do you deliver?","Yes, within 4 km of Willow Quay. Delivery is €2.95, free from €40, and the minimum order is €15. Pickup is always free and usually ready in about 20 minutes."],
+["Can I bring children?","Please do. Kids love the conveyor, and on Tuesdays children under 12 eat free from the white plates."],
+["Can I book for a group?","Up to 8 people can book online, and the tatami room is perfect for that. For bigger groups or a private evening, give us a call."]];
+$("#faqList").innerHTML=FAQ.map(([q,a])=>`<details><summary>${q}<i aria-hidden="true">+</i></summary><div class="ans"><p>${a}</p></div></details>`).join("");
+$$(".faq details").forEach(d=>{const s=d.querySelector("summary"),a=d.querySelector(".ans");s.addEventListener("click",e=>{if(REDUCED)return;e.preventDefault();
+  if(d.open){a.style.height=a.scrollHeight+"px";requestAnimationFrame(()=>a.style.height="0px");setTimeout(()=>{d.open=false;a.style.height=""},380)}
+  else{d.open=true;const h=a.scrollHeight;a.style.height="0px";requestAnimationFrame(()=>a.style.height=h+"px");setTimeout(()=>a.style.height="",420)}})});
+
+/* ================= hours ================= */
+{const H=[["Monday",null],["Tuesday",[["12:00","14:30"],["17:30","22:00"]]],["Wednesday",[["12:00","14:30"],["17:30","22:00"]]],["Thursday",[["12:00","14:30"],["17:30","22:00"]]],["Friday",[["12:00","14:30"],["17:30","23:00"]]],["Saturday",[["12:00","14:30"],["17:30","23:00"]]],["Sunday",[["17:00","21:30"]]]];
+ const now=new Date(),d=(now.getDay()+6)%7,m=now.getHours()*60+now.getMinutes(),toM=s=>+s.slice(0,2)*60+ +s.slice(3),fmt=r=>r?r.map(x=>x.join("–")).join(" & "):"Closed";
+ $("#hours").innerHTML=H.map((h,i)=>`<li class="${i===d?"today":""}"><span>${h[0]}</span><span>${fmt(h[1])}</span></li>`).join("");
+ $("#fHours").innerHTML=`<li>Tue–Sat 12:00–14:30</li><li>Tue–Thu 17:30–22:00</li><li>Fri–Sat 17:30–23:00</li><li>Sun 17:00–21:30 · Mon closed</li>`;
+ const r=H[d][1]||[],cur=r.find(x=>m>=toM(x[0])&&m<toM(x[1])),el=$("#openNow");
+ if(cur)el.textContent=`Open now, until ${cur[1]}`;else{const nx=r.find(x=>m<toM(x[0]));let txt;if(nx)txt=`Closed now, opens at ${nx[0]}`;else{let k=1;while(!H[(d+k)%7][1])k++;txt=`Closed now, opens ${k===1?"tomorrow":H[(d+k)%7][0]} at ${H[(d+k)%7][1][0][0]}`}el.textContent=txt;el.classList.add("closed")}}
+
+/* ================= motion ================= */
+{const nav=$("#nav");const onS=()=>nav.classList.toggle("scrolled",scrollY>30);addEventListener("scroll",onS,{passive:true});onS();
+ // reveal anything on screen or already scrolled past, so jumping via a link never leaves gaps
+ let rvs=$$(".rv,.inkline,.wash,.ul,.enso");const sweep=()=>{const lim=innerHeight*.92;rvs=rvs.filter(el=>{if(el.getBoundingClientRect().top<lim){el.classList.add("in");return false}return true})};
+ let sw=false;addEventListener("scroll",()=>{if(sw)return;sw=true;requestAnimationFrame(()=>{sweep();sw=false})},{passive:true});addEventListener("resize",sweep);sweep();
+ const sv=setInterval(()=>{sweep();if(!rvs.length)clearInterval(sv)},500);
+ const cio=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;cio.unobserve(en.target);const el=en.target,to=+el.dataset.count;if(REDUCED)return;const t0=performance.now();(function f(){const k=Math.min(1,(performance.now()-t0)/1400);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})()}),{threshold:.6});
+ $$("[data-count]").forEach(el=>cio.observe(el));
+ const vj=$$(".vjp");if(!REDUCED){let ticking=false;addEventListener("scroll",()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{vj.forEach(v=>{const r=v.parentElement.getBoundingClientRect();v.style.transform=`translateY(${(r.top*-.12).toFixed(1)}px)`});ticking=false})},{passive:true})}}
+
+/* ================= boot ================= */
+renderMenu();renderRollOpts();renderCart();
+if(GL){
+  try{initViewer();
+    // pre-render every dish once, so cards, cart and the omakase box share the same 3D look
+    ITEMS.forEach(it=>{SNAP[it.id]=snapshot(it.id,it.k)});
+    $$("#menuGrid img").forEach(im=>{const id=im.closest(".card").dataset.id;im.src=SNAP[id]});fillOma();renderCart();
+    initHero();initRoll();updRoll(true);
+    STAGES.push({vis:true,tick:hoverTick,R:{render(){}},scene:null,cam:null});
+    requestAnimationFrame(loop);
+  }catch(err){console.warn(err);GL=false}
+}
+if(!GL){$("#heroStage").classList.add("nogl");$("#rollStage").classList.add("nogl");$("#heroHint").remove();$("#rollHint").remove();updRoll()}
+</script>
+</body>
+</html>
