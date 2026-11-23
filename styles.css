@@ -949,10 +949,10 @@ a.case:hover .case__link { text-decoration: underline; text-underline-offset: 3p
 }
 
 /* SiteQuest logo */
-.logo__img { display: block; height: 30px; width: auto; }
-.footer .logo__img { height: 36px; }
-.rv .logo__img { height: 28px; }
-@media (max-width: 640px) { .logo__img { height: 26px; } }
+.logo__img { display: block; height: 38px; width: auto; }
+.footer .logo__img { height: 44px; }
+.rv .logo__img { height: 34px; }
+@media (max-width: 640px) { .logo__img { height: 32px; } }
 
 /* ===== Site menu v3: visual, short, fun ===== */
 .ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
