@@ -145,6 +145,13 @@ if (window.gsap && !REDUCED) {
   $$(".reveal").forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 88%" } }));
   gsap.to(".steps__progress", { scaleX: 1, ease: "none", scrollTrigger: { trigger: "#steps", start: "top 80%", end: "bottom 55%", scrub: true } });
   gsap.from("#steps li", { opacity: 0, y: 30, stagger: .12, duration: .9, ease: "expo.out", scrollTrigger: { trigger: "#steps", start: "top 80%" } });
+  // When the page changes height (filtering the portfolio, "Show all", late images), re-measure the scroll
+  // animations. Without this, every heading below the portfolio stayed invisible after picking a filter.
+  let rt, lastH = document.body.scrollHeight;
+  new ResizeObserver(() => {
+    const h = document.body.scrollHeight; if (h === lastH) return; lastH = h;
+    clearTimeout(rt); rt = setTimeout(() => ScrollTrigger.refresh(), 120);
+  }).observe(document.body);
 } else {
   $$(".reveal").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
 }
@@ -709,15 +716,26 @@ $("#fClear").addEventListener("click", () => {
 });
 function setStyleFilter(v) { show.style = v; picks.style.render(); syncClear(); renderGrid(); }
 
+// Build the live previews in small slices instead of many at once, so scrolling the portfolio doesn't stutter
+const thumbQueue = [];
+let thumbBusy = false;
+function drainThumbs() {
+  const t0 = performance.now();
+  while (thumbQueue.length && performance.now() - t0 < 12) {
+    const th = thumbQueue.shift();
+    if (!th.isConnected || $(".mini", th)) continue;
+    th.insertAdjacentHTML("beforeend", `<div class="mini">${renderSite(siteById(th.dataset.id), { motion: 1, thumb: true, name: myName() })}</div>`);
+    sizeThumb(th);
+  }
+  if (thumbQueue.length) setTimeout(drainThumbs, 0); else thumbBusy = false;
+}
 const thumbIO = new IntersectionObserver(entries => entries.forEach(en => {
   if (!en.isIntersecting) return;
-  const th = en.target; thumbIO.unobserve(th);
-  const s = siteById(th.dataset.id);
-  th.insertAdjacentHTML("beforeend", `<div class="mini">${renderSite(s, { motion: 1, thumb: true, name: myName() })}</div>`);
-  sizeThumb(th);
+  thumbIO.unobserve(en.target); thumbQueue.push(en.target);
+  if (!thumbBusy) { thumbBusy = true; setTimeout(drainThumbs, 0); }
 }), { rootMargin: "300px" });
 function sizeThumb(th) {
-  const m = $(".mini", th); if (!m) return;
+  const m = $(".mini", th); if (!m || !th.clientWidth) return;
   const sc = th.clientWidth / 1280; m.style.transform = `scale(${sc})`;
   th.style.setProperty("--scroll-to", -Math.max(0, m.offsetHeight * sc - th.clientHeight) + "px");
 }
@@ -741,7 +759,7 @@ const thumbRO = new ResizeObserver(es => es.forEach(e => sizeThumb(e.target)));
     const card = (it, dup) => {
       const s = it.id && siteById(it.id); if (it.id && !s) return "";
       const name = it.full ? it.name : s.name, url = it.full ? it.url : slug(s.name) + ".com";
-      const inner = it.full ? `<img src="img/work/${it.full}.jpg" alt="" loading="lazy">` : `<div class="mini" data-mini="${it.id}"></div>`;
+      const inner = it.full ? `<img src="img/work/${it.full}.webp" onerror="this.onerror=null;this.src=this.src.replace('.webp','.jpg')" alt="" loading="lazy" decoding="async" width="1200" height="750">` : `<div class="mini" data-mini="${it.id}"></div>`;
       const attrs = dup ? ' tabindex="-1" aria-hidden="true"' : "";
       const open = it.full ? `href="portfolio/${it.full}/"` : `href="#portfolio" data-concept="${it.id}"`;
       return `<a class="reel__item" ${open}${attrs}><div class="reel__shot"><div class="reel__bar"><i></i><i></i><i></i><span>${url}</span></div><div class="reel__view">${inner}</div></div><p><b>${name}</b><span>${it.kind}</span></p></a>`;
@@ -774,6 +792,7 @@ function renderGrid() {
     const cf = $("#clearF"); if (cf) cf.addEventListener("click", () => $("#fClear").click());
     return;
   }
+  $$(".card__thumb", g).forEach(t => { thumbIO.unobserve(t); thumbRO.unobserve(t); });
   g.innerHTML = visible.map(s => `
     <article class="card">
       <button class="card__thumb" type="button" data-id="${s.id}" aria-label="Open ${s.name}, ${s.industry} concept"><span class="card__tag">Concept</span></button>
@@ -781,7 +800,9 @@ function renderGrid() {
       <div class="card__meta"><div><h3>${esc(myName() || s.name)}</h3><p>${s.industry} · ${s.style} · ${s.cx} · ${ANIM_LABEL[s.anim] || "Still"}</p></div><span class="card__pk">${s.pk}</span></div>
     </article>`).join("");
   $$(".card__thumb", g).forEach(t => { thumbIO.observe(t); thumbRO.observe(t); });
-  if (window.gsap && !REDUCED) gsap.from($$(".card", g), { opacity: 0, y: 20, duration: .6, stagger: .04, ease: "expo.out" });
+  // Fade the cards in with CSS (the old per-card GSAP tween cost ~130ms per filter tap with all 85 shown)
+  // (only the first screenful; cards further down simply appear when you scroll to them)
+  if (!REDUCED) $$(".card", g).slice(0, 9).forEach((c, i) => { c.style.setProperty("--i", i); c.classList.add("is-new"); });
 }
 $("#grid").addEventListener("click", e => {
   const f = e.target.closest("[data-fav]");

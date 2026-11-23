@@ -172,7 +172,8 @@ button,input{font:inherit;color:inherit}
   const cats = data.categories.filter((c) => data.sites.some((s) => s.cat === c.id));
   const sitesOf = (id) => data.sites.filter((s) => s.cat === id);
   const host = (s) => s.name.toLowerCase().replace(/[’'&]/g, "").replace(/[^a-z0-9]+/g, "") + ".com";
-  const thumb = (s) => s.thumb || `/examples/thumbs/${s.id}.jpg`;
+  // Smaller .webp copies (made by tools/optimize-site-images.cjs); the img falls back to the .jpg if one is missing
+  const thumb = (s) => (s.thumb || `/examples/thumbs/${s.id}.jpg`).replace(/\.jpg$/, ".webp");
 
   $("#chips").innerHTML = cats.map((c) => `<a class="chip" href="#${c.id}" data-id="${c.id}"><span aria-hidden="true">${c.icon}</span>${esc(c.label)} <b>${sitesOf(c.id).length}</b></a>`).join("");
   $("#list").innerHTML = cats.map((c) => `
@@ -185,7 +186,7 @@ button,input{font:inherit;color:inherit}
         <article class="card reveal">
           <a class="card__shot" href="${s.path}" aria-label="Open ${esc(s.name)}">
             <div class="card__chrome" aria-hidden="true"><i></i><i></i><i></i><span>${host(s)}</span></div>
-            <img src="${thumb(s)}" alt="${esc(s.name)}, homepage" loading="lazy" width="1200" height="750">
+            <img src="${thumb(s)}" onerror="this.onerror=null;this.src=this.src.replace('.webp','.jpg')" alt="${esc(s.name)}, homepage" loading="lazy" decoding="async" width="1200" height="750">
           </a>
           <div class="card__body">
             <p class="card__kind">${esc(s.kind)}</p>
@@ -206,12 +207,21 @@ button,input{font:inherit;color:inherit}
 
   // highlight the chip of the category in view
   const chips = [...document.querySelectorAll(".chip")];
+  const row = $("#chips");
+  // Highlight a chip and slide only the chip row sideways. (scrollIntoView here used to cancel the page's own
+  // scroll, so tapping a business type stopped halfway down the page.)
+  let lockUntil = 0;
+  const mark = (id, smooth) => {
+    chips.forEach((c) => c.classList.toggle("on", c.dataset.id === id));
+    const on = chips.find((c) => c.dataset.id === id);
+    if (on) row.scrollTo({ left: on.offsetLeft - (row.clientWidth - on.offsetWidth) / 2, behavior: smooth ? "smooth" : "auto" });
+  };
   const spy = new IntersectionObserver((es) => es.forEach((e) => {
-    if (!e.isIntersecting) return;
-    chips.forEach((c) => c.classList.toggle("on", c.dataset.id === e.target.id));
-    const on = chips.find((c) => c.dataset.id === e.target.id);
-    on?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+    if (!e.isIntersecting || performance.now() < lockUntil) return;
+    mark(e.target.id, true);
   }), { rootMargin: "-45% 0px -50% 0px" });
+  // While the page glides to a chosen type, keep that chip lit instead of flickering through every type passed
+  row.addEventListener("click", (e) => { const c = e.target.closest(".chip"); if (c) { lockUntil = performance.now() + 1200; mark(c.dataset.id, true); } });
   document.querySelectorAll(".cat").forEach((el) => spy.observe(el));
 
   // links like /examples/#barber land on that category (and flash it)
@@ -219,6 +229,7 @@ button,input{font:inherit;color:inherit}
     const id = decodeURIComponent(location.hash.slice(1));
     const el = id && document.getElementById(id);
     if (!el) return;
+    lockUntil = performance.now() + 1200; mark(id, false);
     el.scrollIntoView();
     el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
   };
