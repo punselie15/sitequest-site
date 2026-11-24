@@ -306,14 +306,16 @@ function deviceToggle(browser, onChange) {
 
 /* ============ Pricing config (single source of truth) ============ */
 const PACKAGES = {
-  essential: { name: "Essential", price: 499, pages: 5, days: 7, look: "Simple and minimal", short: "A calm, clean site with everything a small business needs.", for: "For freelancers, starters and small local businesses.",
-    feats: ["Up to 5 pages", "Custom design in your colours and fonts", "Looks great on phone and desktop", "Contact form", "Basic SEO and fast loading", "Subtle animations", "SSL and launch included"] },
+  basic: { name: "Basic", price: 299, pages: 3, days: 5, look: "Simple and minimal", short: "A calm, tidy site that gets you online quickly.", for: "For starters and side businesses that need a clean site online fast.",
+    feats: ["Up to 3 pages", "Clean design in your colours", "Looks great on phone and desktop", "Contact form", "Fast loading", "SSL and launch included"] },
+  essential: { name: "Essential", price: 499, pages: 5, days: 7, look: "Warm and personal", short: "A custom design with photos, motion and your own character.", for: "For freelancers and small local businesses that want to look their best.",
+    feats: ["Up to 5 pages", "Custom design in your colours and fonts", "Photo-led layouts and a gallery", "Subtle animations", "Google Maps", "Basic SEO set up"], newFrom: 1 },
   business: { name: "Business", price: 999, pages: 10, days: 14, look: "Premium and complete", short: "A polished, high-end site with ordering, bookings and more.", for: "For established businesses that want to stand out and sell more.",
     feats: ["Up to 10 pages", "More custom layouts and sections", "Richer animations and interactions", "Advanced forms and Google Maps", "Analytics set up", "Stronger SEO structure", "Edit your own text and photos (CMS)"], newFrom: 1 },
   signature: { name: "Signature", price: 1999, pages: 20, days: 21, look: "Your own identity", short: "A one-of-a-kind site with its own look, motion and story.", for: "For brands that want a site people talk about.",
     feats: ["Up to 20 pages", "Fully bespoke design and storytelling", "Advanced animation and scroll effects", "Custom functionality included", "Advanced SEO set up", "Blog included", "Priority planning and support"], newFrom: 1 },
 };
-const PK_ORDER = ["essential", "business", "signature"];
+const PK_ORDER = ["basic", "essential", "business", "signature"];
 const ADDONS = [
   { group: "Branding", items: [
     { id: "logo", name: "Logo design", desc: "3 concepts, 2 revisions, all file formats.", price: 99, feature: true },
@@ -325,7 +327,7 @@ const ADDONS = [
   { group: "Features", items: [
     { id: "booking", name: "Online booking", desc: "Connect Calendly, Cal.com or similar.", price: 99 },
     { id: "form", name: "Advanced contact form", desc: "Multi-step, file uploads, auto-replies.", price: 39, inc: ["business", "signature"] },
-    { id: "maps", name: "Google Maps", desc: "Interactive map with your location.", price: 19, inc: ["business", "signature"] },
+    { id: "maps", name: "Google Maps", desc: "Interactive map with your location.", price: 19, inc: ["essential", "business", "signature"] },
     { id: "whatsapp", name: "WhatsApp button", desc: "Customers message you in one tap.", price: 29 },
     { id: "newsletter", name: "Newsletter signup", desc: "Mailchimp, Brevo or similar.", price: 49 },
     { id: "blog", name: "Blog", desc: "Write and publish posts yourself.", price: 79, inc: ["signature"] },
@@ -380,19 +382,20 @@ function renderPkView() {
 }
 function renderCompare() {
   const rows = [
-    ["Pages", "Up to 5", "Up to 10", "Up to 20"],
-    ["Design", "Custom, from our system", "More custom layouts", "Fully bespoke"],
-    ["Mobile and desktop", 1, 1, 1],
-    ["Contact form", 1, "Advanced", "Advanced"],
-    ["Animations", "Subtle", "Rich", "Advanced, scroll-driven"],
-    ["Edit your own content", 0, 1, 1],
-    ["Analytics", 0, 1, 1],
-    ["Google Maps", 0, 1, 1],
-    ["Blog", 0, 0, 1],
-    ["SEO", "Basic", "Enhanced", "Advanced"],
-    ["Custom functionality", 0, "Small extras", 1],
-    ["Revision rounds", "2", "2", "3"],
-    ["Live after approval", "7 days", "14 days", "21 days"],
+    ["Pages", "Up to 3", "Up to 5", "Up to 10", "Up to 20"],
+    ["Design", "Clean, from our templates", "Custom, from our system", "More custom layouts", "Fully bespoke"],
+    ["Mobile and desktop", 1, 1, 1, 1],
+    ["Contact form", 1, 1, "Advanced", "Advanced"],
+    ["Photo gallery", 0, 1, 1, 1],
+    ["Animations", "Minimal", "Subtle", "Rich", "Advanced, scroll-driven"],
+    ["Google Maps", 0, 1, 1, 1],
+    ["Edit your own content", 0, 0, 1, 1],
+    ["Analytics", 0, 0, 1, 1],
+    ["Blog", 0, 0, 0, 1],
+    ["SEO", "Fast loading", "Basic", "Enhanced", "Advanced"],
+    ["Custom functionality", 0, 0, "Small extras", 1],
+    ["Revision rounds", "2", "2", "2", "3"],
+    ["Live after approval", "5 days", "7 days", "14 days", "21 days"],
   ];
   const cell = v => v === 1 ? `<span class="yes">Included</span>` : v === 0 ? `<span class="no">Add-on</span>` : v;
   const act = i => PK_ORDER[i] === pkState.pk ? "is-active" : "";
@@ -899,7 +902,7 @@ addEventListener("load", () => setTimeout(() => {
 }, 0));
 
 /* ============ Calculator ============ */
-const calc = Object.assign({ kind: "website", style: null, step: 0, pk: "essential", minPk: "essential", pagesSel: ["Home", "About us", "Services", "Contact"], pages: 0, langs: 0, addons: [], care: "basic" }, store.get("calc", {}));
+const calc = Object.assign({ kind: "website", style: null, step: 0, pk: "essential", minPk: "basic", pagesSel: ["Home", "About us", "Services", "Contact"], pages: 0, langs: 0, addons: [], care: "basic" }, store.get("calc", {}));
 if (!PACKAGES[calc.pk]) calc.pk = "essential";
 if (!Array.isArray(calc.pagesSel)) calc.pagesSel = ["Home", "About us", "Services", "Contact"];
 
@@ -925,7 +928,7 @@ const ICON = {
   brand: `<svg viewBox="0 0 48 48"><path d="M24 6 34 24 24 42 14 24z"/><path d="M24 6v15"/><circle cx="24" cy="24" r="3"/></svg>`,
 };
 const KINDS = [
-  { id: "website", name: "A website", d: "Show who you are and get more customers.", from: 499 },
+  { id: "website", name: "A website", d: "Show who you are and get more customers.", from: 299 },
   { id: "store", name: "An online shop", d: "Sell your products online.", from: 798 },
   { id: "app", name: "An app or portal", d: "Bookings, logins or your own tool.", from: 1198 },
   { id: "brand", name: "Just a logo", d: "A logo and brand colours, no website.", from: 99 },
@@ -936,7 +939,7 @@ const PAGE_OPTS = [
   ["Book online", "Customers book a time"], ["Blog / news", "Updates and articles"], ["Questions", "Answers to common questions"],
   ["Vacancies", "Jobs at your business"], ["Contact", "Address, map and form"],
 ];
-const SIZES = { essential: "Small", business: "Medium", signature: "Large" };
+const SIZES = { basic: "Starter", essential: "Small", business: "Medium", signature: "Large" };
 /* Line icons for the site menu (24px grid, stroke) */
 const ICO = {
   home: "M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z",
@@ -976,13 +979,14 @@ const POPULAR = ["logo", "booking", "whatsapp", "newsletter", "blog", "copy", "l
 const BUILD_STEPS = ["What", "Look", "Pages", "Extras", "You", "Your menu"];
 const isBrand = () => calc.kind === "brand";
 const BRAND_IDS = ADDONS.find(g => g.group === "Branding").items.map(a => a.id);
-const PK_RANK = { essential: 0, business: 1, signature: 2 };
+const PK_RANK = { basic: 0, essential: 1, business: 2, signature: 3 };
 
 // The package follows the number of pages, so nobody has to understand packages.
 function autoPk() {
   const n = calc.pagesSel.length;
-  let pk = n <= 5 ? "essential" : n <= 10 ? "business" : "signature";
-  if (calc.kind === "app" && PK_RANK[pk] < 1) pk = "business";
+  let pk = n <= 3 ? "basic" : n <= 5 ? "essential" : n <= 10 ? "business" : "signature";
+  if (calc.kind === "store" && PK_RANK[pk] < 1) pk = "essential";
+  if (calc.kind === "app" && PK_RANK[pk] < 2) pk = "business";
   if (PK_RANK[calc.minPk] > PK_RANK[pk]) pk = calc.minPk;
   calc.pk = pk;
   calc.pages = Math.max(0, n - PACKAGES[pk].pages);
@@ -1226,7 +1230,7 @@ function addFiles(list) {
   stage.addEventListener("input", e => { const k = e.target.dataset.f; if (k) { brief.f[k] = e.target.value; saveBrief(); if (e.target.getAttribute("aria-invalid") === "true") validWishes(true); if (k === "bName") { me.name = e.target.value.trim(); saveMe(); hero.syncInput(); } } });
   stage.addEventListener("change", e => {
     if (e.target.id === "fileIn") { addFiles(e.target.files); return; }
-    if (e.target.dataset.special !== undefined) { calc.minPk = e.target.checked ? "signature" : "essential"; renderCalc(); return; }
+    if (e.target.dataset.special !== undefined) { calc.minPk = e.target.checked ? "signature" : "basic"; renderCalc(); return; }
     if (e.target.dataset.call !== undefined) { brief.f.call = e.target.checked; saveBrief(); renderStage(false); if (brief.f.call) $("#bPhone")?.focus(); }
   });
   stage.addEventListener("toggle", e => { if (e.target.classList && e.target.classList.contains("xt-more")) xtOpen = e.target.open; }, true);
@@ -1270,7 +1274,7 @@ function briefPayload() {
     ["What happens if I don’t like the preview?", "Tell us what’s off and we’ll take another pass. If it still isn’t right, you walk away. No invoice, no hard feelings. We keep the design files."],
     ["Who owns my website?", "You do. Your domain, your content and the finished site are yours once it’s paid. If you ever leave, we hand everything over."],
     ["Are there monthly costs?", "Only if you choose a care plan, which covers hosting, updates and backups. You can also host it yourself. Your domain name renews yearly with your registrar, usually around €10–15."],
-    ["How long does it take?", "Essential sites go live about 7 days after you approve the preview, Business about 14, Signature about 21. It depends on how quickly we get your text and photos."],
+    ["How long does it take?", "Basic sites go live about 5 days after you approve the preview, Essential about 7, Business about 14, Signature about 21. It depends on how quickly we get your text and photos."],
     ["Do I need technical knowledge?", "No. We handle the technical side. With Business and Signature you can edit your own text and photos in a simple editor."],
     ["Can I add pages or languages later?", "Yes. Extra pages are €49 each, extra languages €5 each to set up. Translation is quoted separately, or you supply your own text."],
     ["Can I move my site to another provider?", "Yes, any time. We give you the files and help you move. No lock-in."],

@@ -108,7 +108,7 @@ function projectBrief() {
   if (!inspo.length && !isBrand()) open.push("No saved inspiration: ask which showroom concepts they like.");
   if (!studioUsed && !isBrand()) open.push("Design studio not used: colours and fonts still to choose.");
   if (f.call) open.push(`Client asked for a call${f.callTime ? ` (${f.callTime.toLowerCase()})` : ""}: plan it within two working days.`);
-  if (calc.addons.includes("store") && calc.pk === "essential") open.push("Online store on Essential: check whether Business suits the product count better.");
+  if (calc.addons.includes("store") && (calc.pk === "basic" || calc.pk === "essential")) open.push("Online store on Essential: check whether Business suits the product count better.");
   if (!menuFiles.length && !calc.addons.some(id => ["logo", "mini", "brand"].includes(id))) open.push("No logo sent and none ordered: ask for their logo in SVG or a large PNG.");
 
   return {

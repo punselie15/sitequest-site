@@ -1,6 +1,6 @@
 /* =========================================================
    Halden Coffee: the three package demos (a fictional coffee shop in Utrecht).
-   Essential = simple and minimal, Business = premium and complete,
+   Basic = simple and minimal, Essential = warm and personal, Business = premium and complete,
    Signature = its own identity, all in, still calm.
    Each demo is a container-query layout, so it adapts to the
    desktop and mobile preview sizes.
@@ -15,8 +15,8 @@
     brunch: "1424847651672-bf20a4b0982b", pourover: "1442512595331-e89e73853f31", roast: "1511537190424-bbbab87ac5eb",
   };
 
-  /* ---------- Essential: simple and minimal ---------- */
-  const essential = () => {
+  /* ---------- Basic: simple and minimal ---------- */
+  const basic = () => {
     const menu = [["Espresso", "2.60"], ["Cortado", "3.10"], ["Flat white", "3.80"], ["Cappuccino", "3.60"], ["Filter coffee", "3.20"], ["Chai latte", "4.00"], ["Croissant", "2.80"], ["Cardamom bun", "3.40"]];
     return `<div class="hd hd-e">
 <style>
@@ -67,6 +67,118 @@
     <form onsubmit="return false"><input placeholder="Your name" aria-label="Your name"><input placeholder="Email" aria-label="Email"><textarea placeholder="Your message" aria-label="Message"></textarea><a class="h-cta" data-demo>Send</a></form></div></section>
   <footer><span>© 2026 Halden Coffee</span><span>Instagram · hello@halden-coffee.com</span></footer>
 </div></div>`;
+  };
+
+  /* ---------- Essential: warm and personal (between Basic and Business) ---------- */
+  const essential = () => {
+    const favs = [["Flat white", "Our house blend, silky and sweet", "3.80", P.pour], ["Cardamom bun", "Baked every morning at six", "3.40", P.buns], ["Pour over", "Today’s single origin, brewed slowly", "4.50", P.pourover]];
+    const gallery = [P.interior, P.cheers, P.croissant, P.latteMarble];
+    return `<div class="hd hd-m">
+<style>
+.hd{container-type:inline-size;min-height:100%;-webkit-font-smoothing:antialiased}
+.hd *{box-sizing:border-box;margin:0}
+.hd a{color:inherit;text-decoration:none;cursor:pointer}
+.hd-m{--bg:#F6F0E8;--card:#FFFDF9;--ink:#2B211C;--mut:#7A6A5E;--car:#C2773A;--soft:#EADFD1;--line:rgba(43,33,28,.12);background:var(--bg);color:var(--ink);font:400 15.5px/1.6 "Geist",system-ui,sans-serif}
+.hd-m .h-in{width:min(100% - 2*clamp(20px,5cqi,64px),1120px);margin-inline:auto}
+.hd-m .h-serif{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+.hd-m nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.hd-m .h-logo{display:flex;align-items:center;gap:10px;font:400 24px/1 "DM Serif Display",serif}
+.hd-m .h-logo i{width:30px;height:30px;border-radius:50%;background:var(--car);display:grid;place-items:center;color:#fff;font:400 16px "DM Serif Display",serif;font-style:normal}
+.hd-m .h-links{display:flex;gap:26px;font-size:14px;color:var(--mut)}
+.hd-m .h-links a:hover{color:var(--ink)}
+.hd-m .h-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:99px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:500;transition:transform .3s,background .3s}
+.hd-m .h-btn:hover{transform:translateY(-2px);background:var(--car)}
+.hd-m .h-btn.h-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.hd-m .h-btn.h-ghost:hover{background:var(--card)}
+.hd-m .h-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5cqi,64px);align-items:center;padding:clamp(28px,5cqi,64px) 0 clamp(56px,8cqi,104px)}
+.hd-m .h-open{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:99px;background:var(--card);font-size:13px;box-shadow:0 0 0 1px var(--line)}
+.hd-m .h-open i{width:7px;height:7px;border-radius:50%;background:#5FA36F}
+.hd-m h1{font-size:clamp(44px,6.6cqi,86px);line-height:1;margin:20px 0 18px;animation:hdmup .9s cubic-bezier(.2,.7,.1,1) both}
+.hd-m h1 em{font-style:italic;color:var(--car)}
+.hd-m .h-lead{color:var(--mut);max-width:40ch;font-size:clamp(15px,1.5cqi,17px)}
+.hd-m .h-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hd-m .h-pics{position:relative;aspect-ratio:1/1.02}
+.hd-m .h-big{position:absolute;inset:0 0 10% 12%;border-radius:200px 200px 24px 24px;background:${ph(P.plants, 1100)};animation:hdmin 1.1s cubic-bezier(.2,.7,.1,1) both}
+.hd-m .h-small{position:absolute;left:0;bottom:0;width:42%;aspect-ratio:1;border-radius:20px;background:${ph(P.croissant, 600)};box-shadow:0 0 0 8px var(--bg),0 30px 50px -30px rgba(43,33,28,.6);animation:hdmin 1.1s .15s cubic-bezier(.2,.7,.1,1) both}
+.hd-m .h-badge{position:absolute;right:-4px;top:12%;background:var(--card);border-radius:16px;padding:12px 14px;font-size:12.5px;line-height:1.35;box-shadow:0 20px 40px -24px rgba(43,33,28,.5)}
+.hd-m .h-badge b{display:block;font:400 18px "DM Serif Display",serif}
+@keyframes hdmup{from{opacity:0;transform:translateY(18px)}}
+@keyframes hdmin{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.hd-m section{padding:clamp(56px,8cqi,104px) 0}
+.hd-m .h-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:clamp(24px,3.4cqi,40px)}
+.hd-m .h-kick{font-size:13px;color:var(--car);font-weight:500}
+.hd-m h2{font-size:clamp(32px,4.4cqi,54px);line-height:1.04;margin-top:8px}
+.hd-m .h-favs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2cqi,22px)}
+.hd-m .h-fav{background:var(--card);border-radius:22px;padding:10px 10px 18px;box-shadow:0 0 0 1px var(--line);transition:transform .4s cubic-bezier(.2,.7,.1,1),box-shadow .4s}
+.hd-m .h-fav:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--line),0 26px 40px -28px rgba(43,33,28,.55)}
+.hd-m .h-fav i{display:block;aspect-ratio:4/3;border-radius:14px;margin-bottom:14px}
+.hd-m .h-fav div{display:flex;justify-content:space-between;gap:10px;padding:0 8px}
+.hd-m .h-fav b{font:400 22px/1.15 "DM Serif Display",serif}
+.hd-m .h-fav span{color:var(--car);font-weight:500}
+.hd-m .h-fav p{padding:4px 8px 0;color:var(--mut);font-size:14px}
+.hd-m .h-story{background:var(--soft)}
+.hd-m .h-story .h-in{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,6cqi,80px);align-items:center}
+.hd-m .h-story i{display:block;aspect-ratio:4/5;border-radius:24px;background:${ph(P.roast, 900)}}
+.hd-m .h-story p{color:var(--mut);margin-top:16px;max-width:44ch}
+.hd-m .h-facts{display:flex;gap:28px;margin-top:26px}
+.hd-m .h-facts b{display:block;font:400 34px/1 "DM Serif Display",serif;color:var(--ink)}
+.hd-m .h-facts span{font-size:13px;color:var(--mut)}
+.hd-m .h-gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:clamp(300px,40cqi,460px)}
+.hd-m .h-gal i{border-radius:18px;transition:filter .4s}
+.hd-m .h-gal i:first-child{grid-row:1/3}
+.hd-m .h-gal i:last-child{grid-column:2/4}
+.hd-m .h-gal i:hover{filter:brightness(1.06) saturate(1.1)}
+.hd-m .h-visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4cqi,28px)}
+.hd-m .h-card{background:var(--card);border-radius:22px;padding:clamp(20px,3cqi,32px);box-shadow:0 0 0 1px var(--line)}
+.hd-m .h-map{position:relative;height:150px;border-radius:14px;overflow:hidden;background:#E8E0D3;margin:16px 0 18px}
+.hd-m .h-map::before{content:"";position:absolute;inset:-20%;background:repeating-linear-gradient(30deg,transparent 0 40px,rgba(43,33,28,.07) 40px 42px),repeating-linear-gradient(-60deg,transparent 0 60px,rgba(43,33,28,.06) 60px 62px)}
+.hd-m .h-map::after{content:"";position:absolute;left:-10%;right:-10%;top:58%;height:18px;background:#BFD0CB;transform:rotate(-7deg)}
+.hd-m .h-pin{position:absolute;left:48%;top:30%;z-index:1;width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--car);box-shadow:0 8px 16px -6px rgba(0,0,0,.4)}
+.hd-m .h-hours div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.hd-m .h-hours div:last-child{border:0}
+.hd-m form{display:grid;gap:10px;margin-top:16px}
+.hd-m input,.hd-m textarea{width:100%;font:inherit;font-size:14.5px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:inherit;outline:none}
+.hd-m textarea{height:84px;resize:none}
+.hd-m form .h-btn{justify-self:start}
+.hd-m footer{padding:32px 0 36px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+@container (max-width:640px){
+  .hd-m .h-links{display:none}
+  .hd-m .h-hero,.hd-m .h-story .h-in,.hd-m .h-visit{grid-template-columns:1fr}
+  .hd-m .h-pics{aspect-ratio:1/.95}
+  .hd-m .h-favs{grid-template-columns:1fr}
+  .hd-m .h-gal{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .hd-m .h-gal i{aspect-ratio:1;grid-row:auto!important;grid-column:auto!important}
+  .hd-m .h-story i{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){.hd-m *{animation:none!important}}
+</style>
+<div class="h-in" id="top">
+  <nav><a class="h-logo" data-goto="top"><i>h</i>Halden</a><div class="h-links"><a data-goto="s1">Favourites</a><a data-goto="s2">Our story</a><a data-goto="s3">Gallery</a><a data-goto="s4">Visit</a></div><a class="h-btn" data-goto="s4">Find us</a></nav>
+  <div class="h-hero">
+    <div><span class="h-open"><i></i>Open today until 17:00</span>
+      <h1 class="h-serif">Your daily cup, <em>made with care.</em></h1>
+      <p class="h-lead">A small coffee bar on the Oudegracht. Beans we roast ourselves, buns from the oven at six and a seat by the window with your name on it.</p>
+      <div class="h-acts"><a class="h-btn" data-goto="s1">See our favourites</a><a class="h-btn h-ghost" data-goto="s4">Plan your visit</a></div></div>
+    <div class="h-pics" aria-hidden="true"><span class="h-big"></span><span class="h-small"></span><span class="h-badge"><b>Fresh bakes</b>every morning</span></div>
+  </div>
+</div>
+<section id="s1" style="padding-top:0"><div class="h-in">
+  <div class="h-head"><div><span class="h-kick">Most loved</span><h2 class="h-serif">Our favourites</h2></div><a class="h-btn h-ghost" data-demo>Full menu</a></div>
+  <div class="h-favs">${favs.map(f => `<a class="h-fav" data-demo><i style="background:${ph(f[3], 700)}"></i><div><b>${f[0]}</b><span>€${f[2]}</span></div><p>${f[1]}</p></a>`).join("")}</div>
+</div></section>
+<section class="h-story" id="s2"><div class="h-in"><i role="img" aria-label="Roasting coffee"></i>
+  <div><span class="h-kick">Our story</span><h2 class="h-serif">Roasted around the corner.</h2><p>Halden started in 2016 with one small roaster and a lot of curiosity. We still roast every Tuesday, a few streets from the café, so the coffee in your cup is never more than a week old.</p>
+    <div class="h-facts"><div><b>2016</b><span>Since</span></div><div><b>6</b><span>Tables</span></div><div><b>7 days</b><span>Bean to cup</span></div></div></div></div></section>
+<section id="s3"><div class="h-in"><div class="h-head"><div><span class="h-kick">Gallery</span><h2 class="h-serif">A look inside</h2></div></div>
+  <div class="h-gal">${gallery.map(g => `<i style="background:${ph(g, 900)}"></i>`).join("")}</div></div></section>
+<section id="s4" style="padding-top:0"><div class="h-in h-visit">
+  <div class="h-card"><span class="h-kick">Visit</span><h2 class="h-serif" style="font-size:clamp(28px,3.4cqi,40px)">Oudegracht 112</h2><div class="h-map" role="img" aria-label="Map"><span class="h-pin"></span></div>
+    <div class="h-hours"><div><span>Monday – Friday</span><span>7:30 – 17:00</span></div><div><span>Saturday – Sunday</span><span>9:00 – 17:00</span></div></div></div>
+  <div class="h-card"><span class="h-kick">Say hello</span><h2 class="h-serif" style="font-size:clamp(28px,3.4cqi,40px)">Questions or a big order?</h2>
+    <form onsubmit="return false"><input placeholder="Your name" aria-label="Your name"><input placeholder="Email" aria-label="Email"><textarea placeholder="Your message" aria-label="Message"></textarea><a class="h-btn" data-demo>Send message</a></form></div>
+</div></section>
+<div class="h-in"><footer><a class="h-logo" data-goto="top" style="font-size:20px"><i style="width:26px;height:26px;font-size:14px">h</i>Halden</a><span>© 2026 Halden Coffee · Instagram · hello@halden-coffee.com</span></footer></div>
+</div>`;
   };
 
   /* ---------- Business: premium, luxurious and complete ---------- */
@@ -344,5 +456,5 @@ ${BEAN_DEFS}
 </div>`;
   };
 
-  Object.assign(HALDEN, { essential, business, signature });
+  Object.assign(HALDEN, { basic, essential, business, signature });
 })();
