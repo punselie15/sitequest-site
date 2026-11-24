@@ -306,11 +306,11 @@ function deviceToggle(browser, onChange) {
 
 /* ============ Pricing config (single source of truth) ============ */
 const PACKAGES = {
-  essential: { name: "Essential", price: 499, pages: 5, days: 7, for: "For freelancers, starters and small local businesses.",
+  essential: { name: "Essential", price: 499, pages: 5, days: 7, look: "Simple and minimal", short: "A calm, clean site with everything a small business needs.", for: "For freelancers, starters and small local businesses.",
     feats: ["Up to 5 pages", "Custom design in your colours and fonts", "Looks great on phone and desktop", "Contact form", "Basic SEO and fast loading", "Subtle animations", "SSL and launch included"] },
-  business: { name: "Business", price: 999, pages: 10, days: 14, for: "For established businesses that want to stand out and sell more.",
+  business: { name: "Business", price: 999, pages: 10, days: 14, look: "Premium and complete", short: "A polished, high-end site with ordering, bookings and more.", for: "For established businesses that want to stand out and sell more.",
     feats: ["Up to 10 pages", "More custom layouts and sections", "Richer animations and interactions", "Advanced forms and Google Maps", "Analytics set up", "Stronger SEO structure", "Edit your own text and photos (CMS)"], newFrom: 1 },
-  signature: { name: "Signature", price: 1999, pages: 20, days: 21, for: "For brands that want a site people talk about.",
+  signature: { name: "Signature", price: 1999, pages: 20, days: 21, look: "Your own identity", short: "A one-of-a-kind site with its own look, motion and story.", for: "For brands that want a site people talk about.",
     feats: ["Up to 20 pages", "Fully bespoke design and storytelling", "Advanced animation and scroll effects", "Custom functionality included", "Advanced SEO set up", "Blog included", "Priority planning and support"], newFrom: 1 },
 };
 const PK_ORDER = ["essential", "business", "signature"];
@@ -361,6 +361,7 @@ function renderPkInfo() {
   const p = PACKAGES[pkState.pk], idx = PK_ORDER.indexOf(pkState.pk);
   const prev = idx > 0 ? PACKAGES[PK_ORDER[idx - 1]].name : null;
   $("#pkInfo").innerHTML = `
+    <p class="pk__look">${p.look}</p>
     <div class="pk__name">${p.name}</div>
     <div class="pk__price"><b>${eur(p.price)}</b><span>starting price, excl. VAT</span></div>
     <p class="pk__for">${p.for}</p>
@@ -375,7 +376,7 @@ function renderPkView() {
   v.innerHTML = HALDEN[pkState.pk]();
   v.scrollTop = 0;
   if (window.gsap && !REDUCED) gsap.fromTo(v.firstElementChild, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .6, ease: "expo.out" });
-  $("#pkUrl").textContent = { essential: "halden-coffee.com", business: "halden-coffee.com/shop", signature: "halden-coffee.com/harvest-26" }[pkState.pk];
+  $("#pkUrl").textContent = "halden-coffee.com";
 }
 function renderCompare() {
   const rows = [
@@ -399,15 +400,22 @@ function renderCompare() {
     <tbody>${rows.map(r => `<tr><th scope="row">${r[0]}</th>${r.slice(1).map((v, i) => `<td class="${act(i)}">${cell(v)}</td>`).join("")}</tr>`).join("")}</tbody>`;
 }
 (() => {
+  // Package cards: name, price, the look you get, and how much is included (one to three marks)
   const seg = $("#pkSeg");
+  seg.innerHTML = PK_ORDER.map((k, i) => { const p = PACKAGES[k]; return `
+    <button type="button" class="pk__tier" data-pk="${k}" aria-pressed="${k === pkState.pk}">
+      <span class="pk__tier-top"><b>${p.name}</b><span class="pk__lvl" aria-hidden="true">${PK_ORDER.map((_, j) => `<i class="${j <= i ? "on" : ""}"></i>`).join("")}</span></span>
+      <span class="pk__tier-price">from <strong>${eur(p.price)}</strong></span>
+      <span class="pk__tier-look">${p.look}</span>
+      <span class="pk__tier-sub">${p.short}</span>
+    </button>`; }).join("");
   $$("button", seg).forEach(b => b.addEventListener("click", () => {
+    if (b.dataset.pk === pkState.pk) return;
     $$("button", seg).forEach(x => x.setAttribute("aria-pressed", x === b));
-    pkState.pk = b.dataset.pk; segPill(seg); renderPkInfo(); renderPkView(); renderCompare();
+    pkState.pk = b.dataset.pk; renderPkInfo(); renderPkView(); renderCompare();
   }));
   deviceToggle($("#pkBrowser"));
   renderPkInfo(); renderPkView(); renderCompare();
-  requestAnimationFrame(() => segPill(seg));
-  document.fonts && document.fonts.ready.then(() => segPill(seg));
 })();
 
 /* ============ Design studio ============ */

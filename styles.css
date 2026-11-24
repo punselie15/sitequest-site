@@ -1262,3 +1262,46 @@ a.case:hover .case__link { text-decoration: underline; text-underline-offset: 3p
   .filters .pick__btn.is-set { color: var(--porcelain); }
   .pick__clear { grid-column: 1 / -1; justify-self: start; margin: 0; padding: 4px 8px; }
 }
+
+/* ===== Packages: clear choice cards ===== */
+.pk__head { display: grid; grid-template-columns: 1fr minmax(0, 44ch); align-items: end; gap: 20px 48px; margin-bottom: clamp(28px, 4vw, 44px); }
+.pk__head .lede { margin: 0; }
+.pk__tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: clamp(32px, 4vw, 52px); }
+.pk__tier { position: relative; display: grid; gap: 6px; align-content: start; text-align: left; padding: 20px 22px 22px; border: 0; border-radius: 22px; background: #fff; color: var(--ink); box-shadow: 0 0 0 1px var(--line); cursor: pointer; transition: background .35s var(--ease), color .35s, box-shadow .35s, transform .35s var(--ease); }
+.pk__tier:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px var(--ink-2), 0 18px 36px -26px rgba(8,38,37,.5); }
+.pk__tier:focus-visible { outline: 2px solid var(--lagoon); outline-offset: 3px; }
+.pk__tier-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.pk__tier-top b { font-family: var(--f-display); font-size: var(--step-2); font-weight: 600; letter-spacing: -.03em; font-variation-settings: "wdth" 85; line-height: 1; }
+.pk__lvl { display: flex; gap: 4px; }
+.pk__lvl i { width: 8px; height: 8px; border-radius: 50%; background: var(--porcelain-2); box-shadow: inset 0 0 0 1px var(--line); }
+.pk__lvl i.on { background: var(--pollen); box-shadow: none; }
+.pk__tier-price { font-size: var(--step--1); color: var(--ink-2); }
+.pk__tier-price strong { font-family: var(--f-display); font-size: var(--step-1); color: var(--ink); font-weight: 600; letter-spacing: -.02em; margin-left: 2px; }
+.pk__tier-look { justify-self: start; margin-top: 10px; padding: 4px 10px; border-radius: 99px; background: var(--porcelain); font-size: .8rem; font-weight: 500; }
+.pk__tier-sub { font-size: .9rem; color: var(--ink-2); line-height: 1.45; margin-top: 4px; }
+.pk__tier[aria-pressed="true"] { background: var(--lagoon); color: var(--porcelain); box-shadow: 0 24px 44px -26px rgba(14,59,58,.75); transform: none; }
+.pk__tier[aria-pressed="true"] .pk__tier-price, .pk__tier[aria-pressed="true"] .pk__tier-sub { color: rgba(244,245,242,.72); }
+.pk__tier[aria-pressed="true"] .pk__tier-price strong { color: var(--porcelain); }
+.pk__tier[aria-pressed="true"] .pk__tier-look { background: rgba(244,245,242,.12); color: var(--petal); }
+.pk__tier[aria-pressed="true"] .pk__lvl i:not(.on) { background: rgba(244,245,242,.15); box-shadow: none; }
+.pk__tier[aria-pressed="true"]::after { content: ""; position: absolute; left: 50%; bottom: -9px; width: 18px; height: 18px; background: var(--lagoon); border-radius: 3px; transform: translateX(-50%) rotate(45deg); }
+.pk__look { font-size: var(--step--1); font-weight: 500; color: var(--lagoon); display: flex; align-items: center; gap: 10px; }
+.pk__look::before { content: ""; width: 24px; height: 2px; background: var(--pollen); }
+.pk__info { gap: 18px; }
+.pk__feat li::before { width: 16px; height: 16px; margin-top: 3px; background: var(--lagoon) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2 7 10.6l4.6-5' fill='none' stroke='%23F4F5F2' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat; box-shadow: none; }
+.pk__feat li.new::before { background-color: #B07A12; }
+@media (max-width: 960px) {
+  .pk__head { grid-template-columns: 1fr; }
+  .pk__stage { display: flex; flex-direction: column; }
+  .pk__stage > div { order: -1; width: 100%; }
+}
+@media (max-width: 700px) {
+  .pk__tiers { gap: 6px; }
+  .pk__tier { padding: 14px 12px 14px; border-radius: 16px; gap: 4px; }
+  .pk__tier-top { flex-direction: column-reverse; align-items: flex-start; gap: 8px; }
+  .pk__tier-top b { font-size: 1.15rem; }
+  .pk__tier-price { font-size: .78rem; }
+  .pk__tier-price strong { font-size: 1rem; display: block; margin: 0; }
+  .pk__tier-look { margin-top: 4px; padding: 3px 8px; font-size: .7rem; }
+  .pk__tier-sub { display: none; }
+}
