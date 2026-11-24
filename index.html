@@ -32,7 +32,7 @@
     </a>
     <nav aria-label="Main">
       <ul class="nav__links" id="navLinks">
-        <li><a href="#work">Reviews</a></li>
+        <li><a href="reviews/">Reviews</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="examples/">Examples</a></li>
         <li><a href="#promise">How it works</a></li>
@@ -98,18 +98,16 @@
   </div>
 </section>
 
-<!-- ============ WORK ============ -->
+<!-- ============ REVIEWS (teaser; the full reviews live on /reviews/) ============ -->
 <section class="section work" id="work">
   <div class="wrap">
     <div class="work__head">
       <div>
         <h2 class="reveal">Client reviews</h2>
-        <p class="lede reveal">Three real businesses we designed and built for. All three are live, and all three rated us 5 out of 5.</p>
+        <p class="lede reveal">Real businesses we designed and built for. All of them are live, and every one rated us 5 out of 5.</p>
       </div>
-      <p class="work__score reveal" id="workScore"></p>
     </div>
-    <div class="work__grid" id="workGrid"></div>
-    <div class="founder reveal" id="founder"></div>
+    <div class="rteaser reveal" id="reviewTeaser"></div>
   </div>
 </section>
 
@@ -143,7 +141,11 @@
       <p class="reveal">Our favourites are at the top. Filter by business or style, and tap the heart to save one to your menu.</p>
     </div>
     <div class="filters">
-      <div class="filters__cats" id="fIndustry" role="group" aria-label="Category"></div>
+      <div class="filters__track is-start" id="fTrack">
+        <button class="filters__arrow filters__arrow--prev" type="button" aria-label="Scroll categories left" tabindex="-1"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="filters__cats" id="fIndustry" role="group" aria-label="Category"></div>
+        <button class="filters__arrow filters__arrow--next" type="button" aria-label="Scroll categories right" tabindex="-1"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6 4.5 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
       <div class="filters__bar">
         <div class="pick" id="pStyle"></div>
         <div class="pick" id="pCx"></div>
@@ -285,7 +287,7 @@
     </a>
         <p class="kicker" style="margin-top:14px;max-width:32ch">Websites, webshops, apps and logos. See it before you pay.</p>
       </div>
-      <div><h4>Explore</h4><ul><li><a href="#work">Reviews</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="examples/">Examples by business</a></li><li><a href="#packages">Prices</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="reviews/">Reviews</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="examples/">Examples by business</a></li><li><a href="#packages">Prices</a></li></ul></div>
       <div><h4>Start</h4><ul><li><a href="#pricing">Get a free quote</a></li><li><a href="#promise">How it works</a></li><li><a href="mailto:hello@sitequest.studio">hello@sitequest.studio</a></li></ul></div>
       <div><h4>Legal</h4><ul><li><a href="legal.html#terms">Terms</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#cookies">Cookies</a></li></ul></div>
     </div>
@@ -327,6 +329,7 @@
 <script src="sites3.js"></script>
 <script src="sites4.js"></script>
 <script src="portfolio.js"></script>
+<script src="reviews.js"></script>
 <script src="app.js"></script>
 <script src="briefdoc.js"></script>
 </body>

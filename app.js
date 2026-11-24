@@ -666,14 +666,32 @@ const ORDERED = (() => {
   return out;
 })();
 $("#showTotal").textContent = SITES.length;
-function chipRow(el, list, key) {
-  el.insertAdjacentHTML("beforeend", list.map(v => `<button class="chip" type="button" data-v="${v}" aria-pressed="${show[key] === v}">${v}</button>`).join(""));
+function chipRow(el, list, key, count) {
+  el.insertAdjacentHTML("beforeend", list.map(v => `<button class="chip" type="button" data-v="${v}" aria-pressed="${show[key] === v}">${v}${count ? ` <b>${count(v)}</b>` : ""}</button>`).join(""));
   el.addEventListener("click", e => {
     const b = e.target.closest(".chip"); if (!b) return;
     show[key] = b.dataset.v; $$(".chip", el).forEach(x => x.setAttribute("aria-pressed", x === b)); renderGrid(); syncClear();
+    centerChip(el, b);
   });
 }
-chipRow($("#fIndustry"), INDUSTRY_GROUPS, "industry");
+// Slide only the chip row (never the page) so the chosen category sits in view
+function centerChip(row, chip) {
+  row.scrollTo({ left: chip.offsetLeft - (row.clientWidth - chip.offsetWidth) / 2, behavior: REDUCED ? "auto" : "smooth" });
+}
+chipRow($("#fIndustry"), INDUSTRY_GROUPS, "industry", g => g === "All" ? SITES.length : SITES.filter(s => s.group === g).length);
+// Category row: soft edge fades and arrows only where there is more to scroll to
+(() => {
+  const track = $("#fTrack"), row = $("#fIndustry"); if (!track) return;
+  const sync = () => {
+    const max = row.scrollWidth - row.clientWidth;
+    track.classList.toggle("is-start", row.scrollLeft < 4);
+    track.classList.toggle("is-end", row.scrollLeft > max - 4);
+  };
+  row.addEventListener("scroll", sync, { passive: true }); addEventListener("resize", sync); sync();
+  $$(".filters__arrow", track).forEach(btn => btn.addEventListener("click", () => {
+    row.scrollBy({ left: (btn.classList.contains("filters__arrow--next") ? 1 : -1) * row.clientWidth * .7, behavior: REDUCED ? "auto" : "smooth" });
+  }));
+})();
 
 /* Choice menus: a button that opens a popover of options. */
 const picks = {};
@@ -712,6 +730,7 @@ function syncClear() { $("#fClear").hidden = show.industry === "All" && show.sty
 $("#fClear").addEventListener("click", () => {
   show.industry = show.style = show.cx = show.pk = "All";
   $$("#fIndustry .chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.v === "All"));
+  $("#fIndustry").scrollTo({ left: 0, behavior: REDUCED ? "auto" : "smooth" });
   Object.values(picks).forEach(p => p.render()); syncClear(); renderGrid();
 });
 function setStyleFilter(v) { show.style = v; picks.style.render(); syncClear(); renderGrid(); }
@@ -862,40 +881,7 @@ $("#mInspire").addEventListener("click", () => {
   setTimeout(() => toast(`Saved. ${s.name} and the ${s.style} style are in your site menu.`), 300);
 });
 
-/* ============ Our work + founder (from portfolio.js) ============ */
-(() => {
-  const work = typeof PORTFOLIO !== "undefined" ? PORTFOLIO : [];
-  const f = typeof FOUNDER !== "undefined" ? FOUNDER : {};
-  const starRow = n => `<span class="case__stars" aria-hidden="true">${"★".repeat(n)}${"☆".repeat(5 - n)}</span>`;
-  // Big alternating case studies: the work is the proof, so it gets the room
-  $("#workGrid").innerHTML = work.map((p, i) => `
-    <article class="case${i % 2 ? " case--flip" : ""}">
-      <a class="case__img" ${p.url ? `href="${esc(p.url)}" target="_blank" rel="noopener"` : ""} aria-label="Visit ${esc(p.name)}">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)} homepage" loading="lazy">` : ""}</a>
-      <div class="case__body">
-        <span class="case__kind">${esc(p.kind || "")}</span>
-        <h3>${esc(p.name)}</h3>
-        ${p.built ? `<p class="case__built">${esc(p.built)}</p>` : ""}
-        ${p.result ? `<p class="case__result">${esc(p.result)}</p>` : ""}
-        ${p.quote ? `<blockquote class="case__quote">${p.stars ? starRow(p.stars) : ""}<p>“${esc(p.quote)}”</p>${p.by ? `<cite>${esc(p.by)}</cite>` : ""}</blockquote>`
-          : p.stars ? `<p class="case__rating">${starRow(p.stars)}<span>Rated ${p.stars} out of 5 by ${esc(p.by || p.name)}</span></p>` : ""}
-        ${p.url ? `<a class="case__link" href="${esc(p.url)}" target="_blank" rel="noopener">Visit ${esc(p.url.replace(/^https?:\/\//, ""))} <span aria-hidden="true">↗</span></a>` : ""}
-      </div>
-    </article>`).join("");
-  // Average rating, only from real ratings
-  const rated = work.filter(p => p.stars);
-  if (rated.length) {
-    const avg = rated.reduce((a, p) => a + p.stars, 0) / rated.length;
-    $("#workScore").innerHTML = `${starRow(Math.round(avg))}<b>${avg.toFixed(1)}</b><span>from ${rated.length} client${rated.length > 1 ? "s" : ""}</span>`;
-  } else $("#workScore").hidden = true;
-  // The founder block only appears once there is a real story to tell (fill FOUNDER in portfolio.js)
-  if (!f.story) { $("#founder").hidden = true; return; }
-  $("#founder").innerHTML = `
-    ${f.photo ? `<div class="founder__photo"><img src="${esc(f.photo)}" alt="${esc(f.name)}"></div>` : ""}
-    <div>
-      <blockquote>${esc(f.story)}</blockquote>
-      ${f.name ? `<cite>${esc(f.name)}, ${esc(f.role || "Founder")}</cite>` : ""}
-    </div>`;
-})();
+/* Client reviews are drawn by reviews.js (shared with /reviews/) */
 
 /* Live proof: how fast this page loaded in the visitor's own browser */
 addEventListener("load", () => setTimeout(() => {

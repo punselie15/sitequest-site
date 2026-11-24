@@ -26,7 +26,7 @@
   --max:1240px; --gut:clamp(16px,4vw,48px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:150px;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:164px;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{display:block;max-width:100%}
@@ -37,15 +37,16 @@ button,input{font:inherit;color:inherit}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:30;background:rgba(244,245,242,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav__in{display:flex;align-items:center;gap:16px;height:64px}
-.nav__logo img{height:36px;width:auto}
+.nav__in{display:flex;align-items:center;gap:16px;height:76px}
+.nav__logo img{height:48px;width:auto}
+.nav__back--work{margin-left:20px!important}
 .nav__back{margin-left:auto;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none}
 .nav__back:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--lagoon);color:#fff;text-decoration:none;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:transform .2s,background .2s}
 .btn:hover{background:var(--deep);transform:translateY(-1px)}
 .btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
 .btn--ghost:hover{background:#fff}
-@media (max-width:560px){.nav__back{display:none}.nav .btn{margin-left:auto;padding:8px 14px;font-size:14px}}
+@media (max-width:560px){.nav__in{height:68px}.nav__logo img{height:clamp(34px,10vw,40px)}.nav__back{display:none}.nav .btn{margin-left:auto;padding:8px 14px;font-size:14px;min-height:40px}.chips{top:68px}}
 
 /* hero */
 .hero{padding:clamp(40px,7vw,96px) 0 clamp(24px,4vw,40px)}
@@ -58,14 +59,26 @@ button,input{font:inherit;color:inherit}
 .find input{flex:1;min-width:0;min-height:52px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:12px 20px;font-size:16px}
 .find input:focus{border-color:var(--lagoon);outline:none;box-shadow:0 0 0 4px rgba(14,59,58,.12)}
 
-/* chips */
-.chips{position:sticky;top:64px;z-index:20;background:linear-gradient(var(--bg) 78%,rgba(244,245,242,0));padding:12px 0 16px}
-.chips__row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 4px;scroll-snap-type:x proximity}
+/* chips: the business-type menu */
+.chips{position:sticky;top:76px;z-index:20;background:linear-gradient(var(--bg) 80%,rgba(244,245,242,0));padding:12px 0 18px}
+.chips__track{position:relative;background:#fff;border-radius:20px;padding:5px;box-shadow:0 0 0 1px var(--line),0 18px 40px -30px rgba(8,38,37,.45)}
+.chips__row{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:0;scroll-padding-inline:44px;scroll-snap-type:x proximity}
 .chips__row::-webkit-scrollbar{display:none}
-.chip{flex:none;scroll-snap-align:start;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
-.chip:hover{border-color:var(--lagoon)}
-.chip.on{background:var(--lagoon);border-color:var(--lagoon);color:#fff}
-.chip b{font-weight:600;opacity:.55;font-size:12px}
+.chips__track:not(.is-start) .chips__row{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px);mask-image:linear-gradient(90deg,transparent,#000 56px)}
+.chips__track:not(.is-end) .chips__row{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}
+.chips__track:not(.is-start):not(.is-end) .chips__row{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent)}
+.chip{flex:none;scroll-snap-align:start;display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:8px 13px;border-radius:14px;background:transparent;border:0;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-2);white-space:nowrap;transition:background .25s,color .25s,box-shadow .25s}
+.chip span{font-size:15px;line-height:1}
+.chip:hover{background:var(--bg);color:var(--ink)}
+.chip.on{background:var(--lagoon);color:#fff;box-shadow:0 8px 18px -10px rgba(14,59,58,.7)}
+.chip b{font-weight:500;font-size:11.5px;min-width:20px;padding:1px 6px;border-radius:99px;background:var(--bg-2);color:var(--ink-2);text-align:center;font-variant-numeric:tabular-nums;transition:background .25s,color .25s}
+.chip.on b{background:rgba(255,255,255,.18);color:#fff}
+.chips__arrow{position:absolute;top:50%;z-index:2;width:34px;height:34px;margin-top:-17px;display:none;place-items:center;border:0;border-radius:50%;background:#fff;color:var(--ink);cursor:pointer;box-shadow:0 0 0 1px var(--line),0 6px 16px -6px rgba(8,38,37,.35);transition:opacity .25s,transform .25s}
+.chips__arrow svg{width:12px;height:12px}
+.chips__arrow:hover{transform:scale(1.08)}
+.chips__arrow--prev{left:6px}.chips__arrow--next{right:6px}
+@media (hover:hover) and (pointer:fine){.chips__arrow{display:grid}.chips__track.is-start .chips__arrow--prev,.chips__track.is-end .chips__arrow--next{opacity:0;pointer-events:none}}
+@media (max-width:560px){.chips__track{border-radius:18px;padding:4px}.chip{padding:7px 11px;font-size:13.5px}}
 
 /* categories */
 .cat{padding:28px 0 40px;border-top:1px solid var(--line)}
@@ -120,7 +133,8 @@ button,input{font:inherit;color:inherit}
 <header class="nav">
   <div class="wrap nav__in">
     <a class="nav__logo" href="/" aria-label="SiteQuest Studio home"><img src="/img/sitequest-logo.png" alt="SiteQuest" width="1200" height="241"></a>
-    <a class="nav__back" href="/#portfolio">← All our work</a>
+    <a class="nav__back" href="/reviews/">Reviews</a>
+    <a class="nav__back nav__back--work" href="/#portfolio">← All our work</a>
     <a class="btn" href="/#pricing">Get a free quote</a>
   </div>
 </header>
@@ -138,7 +152,11 @@ button,input{font:inherit;color:inherit}
     </div>
   </section>
 
-  <nav class="chips" aria-label="Types of business"><div class="wrap"><div class="chips__row" id="chips"></div></div></nav>
+  <nav class="chips" aria-label="Types of business"><div class="wrap"><div class="chips__track is-start" id="chipsTrack">
+    <button class="chips__arrow chips__arrow--prev" type="button" aria-label="Scroll left" tabindex="-1"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5 4 6l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="chips__row" id="chips"></div>
+    <button class="chips__arrow chips__arrow--next" type="button" aria-label="Scroll right" tabindex="-1"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5 8 6 4.5 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div></div></nav>
 
   <div class="wrap" id="list" aria-live="polite"></div>
   <p class="wrap empty" id="empty">No example for that yet. <a href="/#pricing">Tell us about your business</a> and we’ll show you a free preview of your homepage instead.</p>
@@ -175,7 +193,7 @@ button,input{font:inherit;color:inherit}
   // Smaller .webp copies (made by tools/optimize-site-images.cjs); the img falls back to the .jpg if one is missing
   const thumb = (s) => (s.thumb || `/examples/thumbs/${s.id}.jpg`).replace(/\.jpg$/, ".webp");
 
-  $("#chips").innerHTML = cats.map((c) => `<a class="chip" href="#${c.id}" data-id="${c.id}"><span aria-hidden="true">${c.icon}</span>${esc(c.label)} <b>${sitesOf(c.id).length}</b></a>`).join("");
+  $("#chips").innerHTML = cats.map((c) => `<a class="chip" href="#${c.id}" data-id="${c.id}"><span aria-hidden="true">${c.icon}</span>${esc(c.label)}<b>${sitesOf(c.id).length}</b></a>`).join("");
   $("#list").innerHTML = cats.map((c) => `
     <section class="cat" id="${c.id}" data-words="${esc([c.label, ...c.words].join(" ").toLowerCase())}">
       <div class="cat__head">
@@ -208,6 +226,11 @@ button,input{font:inherit;color:inherit}
   // highlight the chip of the category in view
   const chips = [...document.querySelectorAll(".chip")];
   const row = $("#chips");
+  // soft edge fades, and arrows (mouse only) where there is more to scroll to
+  const track = $("#chipsTrack");
+  const edges = () => { const max = row.scrollWidth - row.clientWidth; track.classList.toggle("is-start", row.scrollLeft < 4); track.classList.toggle("is-end", row.scrollLeft > max - 4); };
+  row.addEventListener("scroll", edges, { passive: true }); window.addEventListener("resize", edges); edges();
+  track.querySelectorAll(".chips__arrow").forEach((b) => b.addEventListener("click", () => row.scrollBy({ left: (b.classList.contains("chips__arrow--next") ? 1 : -1) * row.clientWidth * 0.7, behavior: "smooth" })));
   // Highlight a chip and slide only the chip row sideways. (scrollIntoView here used to cancel the page's own
   // scroll, so tapping a business type stopped halfway down the page.)
   let lockUntil = 0;
