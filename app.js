@@ -369,7 +369,7 @@ function renderPkInfo() {
     <p class="pk__for">${p.for}</p>
     ${prev ? `<p class="kicker">Everything in ${prev}, plus:</p>` : ""}
     <ul class="pk__feat">${p.feats.map(f => `<li class="${prev ? "new" : ""}">${f}</li>`).join("")}</ul>
-    <div class="pk__meta"><span>Live ${p.days} days after you approve the preview</span><span>Two revision rounds included</span><span>Pay nothing until you approve</span></div>
+    <div class="pk__meta"><span>Live ${p.days} days after you approve the preview</span><span>${pkState.pk === "signature" ? "Three" : "Two"} revision rounds included</span><span>Pay nothing until you approve</span></div>
     <a href="#pricing" class="btn" data-pick="${pkState.pk}">Choose ${p.name}</a>`;
   $("#pkInfo [data-pick]").addEventListener("click", () => { calc.minPk = pkState.pk; if (calc.kind === "brand") setKind("website"); calc.step = 2; renderCalc(); });
 }
@@ -377,6 +377,7 @@ function renderPkView() {
   const v = $("#pkView");
   v.innerHTML = HALDEN[pkState.pk]();
   v.scrollTop = 0;
+  if (HALDEN.mount) HALDEN.mount(v);
   if (window.gsap && !REDUCED) gsap.fromTo(v.firstElementChild, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .6, ease: "expo.out" });
   $("#pkUrl").textContent = "halden-coffee.com";
 }
