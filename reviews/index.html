@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t;try{t=localStorage.getItem("sq:theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Client reviews · SiteQuest Studio</title>
   <meta name="description" content="What our clients say: real businesses SiteQuest Studio designed websites, webshops, apps and logos for, with their own ratings and words.">
   <meta name="theme-color" content="#F4F5F2">
@@ -27,7 +28,7 @@
 <header class="nav" id="nav">
   <div class="wrap nav__inner">
     <a href="../" class="logo" aria-label="SiteQuest Studio home">
-      <img class="logo__img" src="../img/sitequest-header.svg" alt="SiteQuest Studio" width="905" height="146">
+      <img class="logo__img logo__img--light" src="../img/sitequest-header.svg" alt="SiteQuest Studio" width="987" height="156"><img class="logo__img logo__img--dark" src="../img/sitequest-header-dark.svg" alt="" width="987" height="156">
     </a>
     <nav aria-label="Main">
       <ul class="nav__links" id="navLinks">
@@ -39,7 +40,7 @@
         <li><a href="../#faq">FAQ</a></li>
       </ul>
     </nav>
-    <div style="display:flex;gap:8px;align-items:center">
+    <div style="display:flex;gap:8px;align-items:center" data-site-tools>
       <a href="../#pricing" class="btn btn--sm nav__cta">Get a free quote</a>
       <button class="nav__menu" id="navMenu" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
@@ -86,7 +87,7 @@
     <div class="footer__grid">
       <div>
         <a href="../" class="logo" aria-label="SiteQuest Studio home">
-          <img class="logo__img" src="../img/sitequest-header.svg" alt="SiteQuest Studio" width="905" height="146">
+          <img class="logo__img logo__img--light" src="../img/sitequest-header.svg" alt="SiteQuest Studio" width="987" height="156"><img class="logo__img logo__img--dark" src="../img/sitequest-header-dark.svg" alt="" width="987" height="156">
         </a>
         <p class="kicker" style="margin-top:14px;max-width:32ch">Websites, webshops, apps and logos. See it before you pay.</p>
       </div>
@@ -103,5 +104,6 @@
 
 <script src="../portfolio.js"></script>
 <script src="../reviews.js"></script>
+<script src="../site-ui.js"></script>
 </body>
 </html>

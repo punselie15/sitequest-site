@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t;try{t=localStorage.getItem("sq:theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Terms, privacy and cookies · SiteQuest Studio</title>
   <meta name="description" content="Terms of service, privacy policy and cookie information for SiteQuest Studio.">
   <meta name="robots" content="noindex">
@@ -21,13 +22,14 @@
     .legal ul { padding-left: 20px; display: grid; gap: 6px; }
     .legal .toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .legal .draft { margin-top: 20px; padding: 14px 16px; border-radius: 14px; background: rgba(242,193,78,.22); color: var(--ink); }
-    .legal .back { position: fixed; top: 20px; left: 24px; z-index: 5; background: var(--porcelain); box-shadow: 0 6px 20px -8px rgba(8,38,37,.25); }
+    .legal .back { position: fixed; top: 20px; left: 24px; z-index: 5; background: var(--bg-soft); box-shadow: 0 6px 20px -8px rgba(8,38,37,.25); }
+    .legal__tools { position: fixed; top: 20px; right: 24px; z-index: 5; }
     .legal mark { background: rgba(244,182,194,.45); color: var(--ink); padding: 0 4px; border-radius: 4px; }
   </style>
 </head>
 <body>
-<main class="legal">
-  <a class="btn btn--sm btn--ghost back" href="index.html">← Back to the site</a>
+<main class="legal" data-i18n-skip>
+  <a class="btn btn--sm btn--ghost back" href="index.html">← Back to the site</a><div data-site-tools class="legal__tools"></div>
   <h1>Terms, privacy and cookies</h1>
   <p class="draft"><b>Draft.</b> Highlighted parts are filled in before launch, and the whole page is checked by a legal adviser.</p>
   <div class="toc"><a class="chip" href="#terms">Terms</a><a class="chip" href="#privacy">Privacy</a><a class="chip" href="#cookies">Cookies</a></div>
@@ -88,5 +90,6 @@
 
   <p style="margin-top:56px;font-size:.9rem">Last updated: <mark>[date]</mark></p>
 </main>
+<script src="site-ui.js"></script>
 </body>
 </html>

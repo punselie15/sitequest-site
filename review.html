@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t;try{t=localStorage.getItem("sq:theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Share your experience · SiteQuest Studio</title>
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,20 +26,23 @@
     .stars button:hover { transform: scale(1.12) rotate(-6deg); }
     .rv .hint { font-size: .85rem; color: var(--ink-2); }
     .rv .prompts { display: flex; flex-wrap: wrap; gap: 6px; }
-    .consent { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 14px; background: var(--porcelain); cursor: pointer; }
+    .consent { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 14px; background: var(--bg-soft); cursor: pointer; }
     .consent input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--lagoon); flex: none; }
     .rv__acts { display: flex; flex-wrap: wrap; gap: 10px; }
     .rv__done { text-align: center; display: grid; gap: 14px; justify-items: center; }
     .rv__done blockquote { margin: 0; font-family: var(--f-display); font-size: var(--step-1); line-height: 1.3; }
     .err { color: #A3263F; font-size: 13px; }
+    html[data-theme="dark"] body { background: var(--bg); }
+    html[data-theme="dark"] .rv__card { background: var(--surface); box-shadow: 0 0 0 1px var(--line), 0 30px 60px -40px rgba(0,0,0,.6); }
+    html[data-theme="dark"] .err { color: #F08BA0; }
   </style>
 </head>
 <body>
 <main class="rv">
   <div class="rv__card" id="card">
-    <a href="index.html" class="logo" aria-label="SiteQuest Studio home">
-      <img class="logo__img" src="img/sitequest-header.svg" alt="SiteQuest Studio" width="905" height="146">
-    </a>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><a href="index.html" class="logo" aria-label="SiteQuest Studio home">
+      <img class="logo__img logo__img--light" src="img/sitequest-header.svg" alt="SiteQuest Studio" width="987" height="156"><img class="logo__img logo__img--dark" src="img/sitequest-header-dark.svg" alt="" width="987" height="156">
+    </a><div data-site-tools></div></div>
     <div>
       <h1 id="title">How was working with us?</h1>
       <p class="lede">It takes about a minute. Your words help other small businesses decide, and we only publish them with your permission. <a href="reviews/">Read what other clients said</a>.</p>
@@ -103,5 +107,6 @@
     });
   });
 </script>
+<script src="site-ui.js"></script>
 </body>
 </html>
