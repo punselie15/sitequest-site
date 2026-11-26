@@ -33,7 +33,7 @@
     var row = document.getElementById("themeRow");
     if (row) row.innerHTML = (t === "dark" ? ICON_SUN.replace(' class="i-sun"', "") : ICON_MOON.replace(' class="i-moon"', "")) + "<span>" + tr(t === "dark" ? "Light mode" : "Dark mode") + "</span>";
     var mc = document.querySelector('meta[name="theme-color"]');
-    if (mc) mc.setAttribute("content", t === "dark" ? "#0B1325" : "#F5F5F0");
+    if (mc) mc.setAttribute("content", t === "dark" ? "#2B1A12" : "#F1E6D6");
   }
   // the site opens in indigo (dark) for everyone; the light version is one tap away
 

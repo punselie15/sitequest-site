@@ -1,0 +1,130 @@
+/* =====================================================================
+   COLOUR TRY "DUNE" (2026-11-26) — owner's TikTok palette
+     Dune Ochre  #AE6C37  main warm accent / large colour areas
+     Deep Umber  #2B1A12  dark text and dark sections
+     Turquoise   #1FC7C9  a small pop only (the "pool")
+   Loaded after styles.css. To undo the whole try: remove the one
+   <link href="palette-dune.css"> line from the HTML pages.
+   Text-safe helpers (same family, only where contrast needs it):
+     sand #F1E6D6 (light background), ochre-ink #8A5530 (small ochre
+     text on sand), dune-soft #C2916B (small ochre text on umber),
+     umber-mist #C9B39C (soft text on umber). Big headings use the real ochre.
+   ===================================================================== */
+:root {
+  --dune: #AE6C37; --umber: #2B1A12; --pool: #1FC7C9;
+  --sand: #F1E6D6; --sand-2: #E6D5BE; --sand-hi: #F8F1E7;
+  --ochre-ink: #8A5530; --umber-mist: #C9B39C; --dune-soft: #C2916B;
+
+  --porcelain: var(--sand); --porcelain-2: var(--sand-2);
+  --lagoon: var(--umber); --deep: var(--umber); --graphite: var(--umber);
+  --stone: #6B4F3C; --mist: #D9C4A8;
+  --petal: var(--dune); --pollen: var(--dune);
+  --bg: var(--sand); --bg-soft: var(--sand); --surface: var(--sand-hi);
+  --accent-ink: var(--ochre-ink); --accent-line: var(--umber);
+  --nav-glass: rgba(241,230,214,.85);
+  --ink: var(--umber); --ink-2: #6B4F3C; --line: rgba(43,26,18,.14);
+  --gold: var(--dune); --gold-line: rgba(174,108,55,.55); --gold-soft: rgba(174,108,55,.14);
+  --logo-ink: var(--umber); --logo-cog: var(--dune); --logo-glow: var(--sand-hi);
+}
+.dark, .receipt { --ink-2: var(--umber-mist); --line: rgba(241,230,214,.14); }
+.dark { background: var(--umber); color: var(--sand); --ink: var(--sand); }
+
+/* dark mode: the whole site in Deep Umber */
+html[data-theme="dark"] {
+  --bg: var(--umber); --bg-soft: color-mix(in srgb, #2B1A12 94%, #AE6C37); --surface: color-mix(in srgb, #2B1A12 92%, #AE6C37);
+  --porcelain-2: color-mix(in srgb, #2B1A12 86%, #AE6C37); --mist: color-mix(in srgb, #2B1A12 72%, #AE6C37);
+  --ink: #F3E8DA; --ink-2: var(--umber-mist); --line: rgba(243,232,218,.13);
+  --accent-ink: var(--dune-soft); --accent-line: var(--dune);
+  --lagoon: color-mix(in srgb, #2B1A12 84%, #AE6C37); --deep: var(--umber);
+  --nav-glass: rgba(43,26,18,.85);
+  --logo-ink: #F3E8DA; --logo-cog: var(--dune); --logo-glow: color-mix(in srgb, #2B1A12 90%, #AE6C37);
+  --gold-line: rgba(174,108,55,.5);
+}
+html[data-theme="dark"] .dark { --ink: #F3E8DA; --line: rgba(243,232,218,.14); }
+html[data-theme="dark"] #work, html[data-theme="dark"] #packages, html[data-theme="dark"] #faq,
+html[data-theme="dark"] #portfolio, html[data-theme="dark"] .build, html[data-theme="dark"] #showroom,
+html[data-theme="dark"] .marquee { background: var(--umber); }
+html[data-theme="dark"] .section + .section, html[data-theme="dark"] .proof { border-top-color: rgba(174,108,55,.22); }
+html[data-theme="dark"] .try input::placeholder { color: #9A8572; }
+
+/* big headings on umber: Dune Ochre */
+html[data-theme="dark"] :is(h1, h2):not(:is(.mini, .browser, .reel, .card, .full__shot, .folio__shot, .card__shot, .ms, #pkView, #mView, #stView, .hero__view) *),
+.dark :is(h1, h2):not(:is(.mini, .browser, .reel, .card, .full__shot, .folio__shot, .card__shot, .ms, #pkView, #mView, #stView, .hero__view) *) { color: var(--dune); }
+
+/* ---- the "bit of turquoise": the one highlighted phrase, and the short hairline above each title ---- */
+.promise h2 em, html[data-theme="dark"] .promise h2 em { color: var(--pool); }
+.section > .wrap > h2:first-child::before, .pk__head h2::before, .build h2::before, .faq h2::before, .rteaser h2::before, .folio h2::before { background: var(--pool); }
+
+/* ---- buttons ---- */
+.btn { --b-bg: var(--umber); --b-fg: var(--sand); }
+.btn::before { background: var(--dune); }
+.btn:hover { color: var(--umber); }
+.btn--petal { --b-bg: var(--dune); --b-fg: var(--umber); }
+.btn--petal::before { background: var(--sand-hi); }
+.btn--ghost { --b-bg: transparent; --b-fg: var(--ink); }
+.btn--ghost::before { background: var(--ink); }
+html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal) { --b-bg: var(--dune); --b-fg: var(--umber); }
+html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal):hover { color: var(--umber); }
+html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal)::before { background: var(--sand); }
+.dark .btn:not(.btn--ghost):not(.btn--petal) { --b-bg: var(--dune); --b-fg: var(--umber); }
+.dark .btn:not(.btn--ghost):not(.btn--petal)::before { background: var(--sand); }
+
+/* ---- chips, tags, small accents ---- */
+.hero .chip[aria-pressed="true"], .try__kinds .chip[aria-pressed="true"] { background: var(--dune); border-color: var(--dune); color: var(--umber); }
+html:not([data-theme="dark"]) .folio__kind,
+.pk__tier-look, .pk__look, .bk em { color: var(--ochre-ink); }
+html[data-theme="dark"] .folio__kind, html[data-theme="dark"] .pk__tier-look, html[data-theme="dark"] .pk__look, html[data-theme="dark"] .bk em { color: var(--dune-soft); }
+.dark .kicker, .dark .folio__kind { color: var(--dune-soft); }
+.faq details[open] summary i { color: var(--umber); }
+.case__stars, .proof__stars, .rteaser__stars { color: var(--dune); }
+.pk__feat li.new::before { background-color: transparent; }
+:focus-visible { outline-color: var(--umber); }
+.dark :focus-visible, html[data-theme="dark"] :focus-visible { outline-color: var(--pool); }
+
+/* ---- light-mode bands: soft sand-ochre instead of celadon ---- */
+html:not([data-theme="dark"]) .proof { background: rgba(174,108,55,.16); }
+html:not([data-theme="dark"]) #faq, html:not([data-theme="dark"]) #packages { background: #EBDCC6; }
+.cmp td.is-active, .cmp th.is-active { background: var(--gold-soft); }
+.cmp tbody tr:hover td, .cmp tbody tr:hover th { background: rgba(174,108,55,.08); }
+.addon.is-included, .pick__opt[aria-selected="true"], .pg-fit, .est__split div:first-child { background: rgba(174,108,55,.16); }
+.font-opt[aria-pressed="true"] { background: rgba(174,108,55,.12); }
+
+/* ---- selected things: umber tints instead of indigo ---- */
+.nav__links a:hover, .nav__links a[aria-current="page"] { background: rgba(43,26,18,.07); }
+html[data-theme="dark"] .nav__links a:hover, html[data-theme="dark"] .nav__links a[aria-current="page"] { background: rgba(243,232,218,.08); }
+.pk-pick label:has(input:checked), .addon:has(input:checked), .care label:has(input:checked) { background: rgba(43,26,18,.05); }
+.bk[aria-pressed="true"], .bz[aria-pressed="true"], .bc[aria-pressed="true"], .pg[aria-pressed="true"],
+.field input:focus, .field textarea:focus, .field select:focus, #showName:focus, .wants__add input:focus { box-shadow: 0 0 0 3px rgba(174,108,55,.28); }
+.bk[aria-pressed="true"] { border-color: var(--dune); box-shadow: inset 0 0 0 1px var(--dune), 0 24px 40px -30px rgba(43,26,18,.5); }
+.filters__cats .chip[aria-pressed="true"] { background: var(--umber); color: var(--sand); box-shadow: 0 8px 18px -10px rgba(43,26,18,.7); }
+html[data-theme="dark"] .filters__cats .chip[aria-pressed="true"] { background: var(--dune); color: var(--umber); }
+.receipt__line span:first-child, .pg-fit small { color: var(--umber-mist); }
+html:not([data-theme="dark"]) .pg-fit small { color: var(--ink-2); }
+
+/* ---- the chosen package: umber, framed in ochre ---- */
+.pk__tier[aria-pressed="true"], html[data-theme="dark"] .pk__tier[aria-pressed="true"] { background: var(--umber); color: var(--sand); }
+.pk__tier[aria-pressed="true"]::after, html[data-theme="dark"] .pk__tier[aria-pressed="true"]::after { background: var(--umber); }
+html[data-theme="dark"] .pk__tier[aria-pressed="true"] { background: color-mix(in srgb, #2B1A12 80%, #AE6C37); }
+html[data-theme="dark"] .pk__tier[aria-pressed="true"]::after { background: color-mix(in srgb, #2B1A12 80%, #AE6C37); }
+.pk__tier[aria-pressed="true"] .pk__tier-price strong { color: var(--sand); }
+.pk__tier[aria-pressed="true"] .pk__tier-price, .pk__tier[aria-pressed="true"] .pk__tier-sub { color: rgba(241,230,214,.75); }
+.pk__tier[aria-pressed="true"] .pk__tier-look { color: var(--dune-soft); }
+
+/* ---- mock browser frames: sandy bars ---- */
+.browser__bar, .reel__bar, .full__shot .folio__chrome { background: #EADCC8; }
+.browser__dots i { background: #D2BEA4; }
+.browser__url { color: #6B4F3C; }
+.icon-btn { color: #5A4232; }
+.examples-cta { background: var(--umber); color: var(--sand); }
+html[data-theme="dark"] .examples-cta { background: color-mix(in srgb, #2B1A12 86%, #AE6C37); }
+
+/* ---- one colour scheme only (owner, 2026-11-26): no day/night switch ---- */
+.theme-btn, .lang__theme { display: none !important; }
+
+/* ---- logo: cursor and STUDIO in the same Deep Umber as the name (header uses img/sitequest-header-dune.svg) ---- */
+:root, html[data-theme="dark"] { --logo-cog: var(--umber); }
+
+/* ---- turquoise accent a touch stronger so it reads: thicker line above each section title ---- */
+.section > .wrap > h2:first-child::before, .pk__head h2::before, .build h2::before, .faq h2::before, .rteaser h2::before, .folio h2::before { width: 56px; height: 3px; }
+/* the typed example name in the hero: warm grey instead of the old green-grey */
+.try input::placeholder { color: #9A8572; }
