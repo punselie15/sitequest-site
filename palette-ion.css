@@ -1,0 +1,112 @@
+/* =====================================================================
+   COLOUR TRY "ION" (2026-11-26), owner's brief:
+     main background  Obsidian  #101014
+     text             Porcelain #F3F1EC
+     accent           Ion Blue  #2F5BFF
+   "Clean and classy": one calm obsidian page, fine porcelain hairlines
+   between sections, soft shadows, no glow, Ion Blue in a few spots.
+   The pages run in the stylesheet's dark mode (data-theme="dark" is set
+   in each page's <head>); there is no day/night switch.
+   Undo: link palette-dune.css instead, logo back to sitequest-header-dune.svg,
+   head script back to "light".
+   Helpers: obs-2 #18181D (cards), obs-3 #222228 (fields, bars),
+   pc-2 #ABABB3 (soft text, 8.6:1), ion-soft #8FA6FF (small blue text, 8.2:1;
+   full Ion Blue is 3.7:1 on obsidian, fine for big text, lines and buttons).
+   ===================================================================== */
+:root, html[data-theme="dark"] {
+  --obs: #101014; --pc: #F3F1EC; --ion: #2F5BFF;
+  --obs-2: #18181D; --obs-3: #222228; --pc-2: #ABABB3; --ion-soft: #8FA6FF;
+
+  color-scheme: dark;
+  --porcelain: var(--pc); --porcelain-2: var(--obs-3);
+  --lagoon: var(--obs-2); --deep: var(--obs); --graphite: var(--obs); --stone: var(--pc-2);
+  --mist: #3A3A42; --petal: var(--pc); --pollen: var(--ion);
+  --bg: var(--obs); --bg-soft: var(--obs-2); --surface: var(--obs-2);
+  --accent-ink: var(--ion-soft); --accent-line: var(--pc);
+  --nav-glass: rgba(16,16,20,.86);
+  --ink: var(--pc); --ink-2: var(--pc-2); --line: rgba(243,241,236,.12);
+  --gold: var(--ion); --gold-line: rgba(47,91,255,.5); --gold-soft: rgba(47,91,255,.08);
+  --logo-ink: var(--pc); --logo-cog: var(--pc); --logo-glow: transparent;
+}
+.dark, .receipt, html[data-theme="dark"] .dark { background: var(--obs); color: var(--pc); --ink: var(--pc); --ink-2: var(--pc-2); --line: rgba(243,241,236,.12); }
+.receipt { background: var(--obs-2); }
+
+/* every section the same obsidian, separated by a hairline */
+html[data-theme="dark"] :is(.hero, .proof, #showroom, #work, #packages, #faq, #portfolio, .build, .marquee, .section) { background: var(--obs); }
+html[data-theme="dark"] .section + .section, html[data-theme="dark"] .proof { border-top: 1px solid var(--line); }
+.proof { border-bottom: 1px solid var(--line); }
+.hero__brand::before { display: none; }
+
+/* headings porcelain everywhere (the old theme made them celadon) */
+html[data-theme="dark"] :is(h1, h2):not(:is(.mini, .browser, .reel, .card, .full__shot, .folio__shot, .card__shot, .ms, #pkView, #mView, #stView, .hero__view) *),
+.dark :is(h1, h2):not(:is(.mini, .browser, .reel, .card, .full__shot, .folio__shot, .card__shot, .ms, #pkView, #mView, #stView, .hero__view) *) { color: var(--pc); }
+
+/* ---- the Ion Blue accent ---- */
+.promise h2 em, html[data-theme="dark"] .promise h2 em { color: var(--ion); }
+.section > .wrap > h2:first-child::before, .pk__head h2::before, .build h2::before, .faq h2::before, .rteaser h2::before, .folio h2::before { background: var(--ion); width: 56px; height: 3px; }
+:focus-visible, .dark :focus-visible { outline-color: var(--ion-soft); }
+
+/* ---- buttons: porcelain on obsidian; hover fills Ion Blue ---- */
+.btn, html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal), .dark .btn:not(.btn--ghost):not(.btn--petal), .btn--petal { --b-bg: var(--pc); --b-fg: var(--obs); }
+.btn::before, .btn--petal::before, html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal)::before { background: var(--ion); }
+.btn:hover, .btn--petal:hover, html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal):hover { color: #fff; }
+.btn--ghost, html[data-theme="dark"] .btn--ghost { --b-bg: transparent; --b-fg: var(--pc); }
+.btn--ghost::before { background: var(--pc); }
+.btn--ghost:hover, .dark .btn--ghost:hover { color: var(--obs); }
+
+/* ---- chips, labels, small accents ---- */
+.hero .chip[aria-pressed="true"], .try__kinds .chip[aria-pressed="true"] { background: var(--pc); border-color: var(--pc); color: var(--obs); }
+.folio__kind, .pk__tier-look, .pk__look, .bk em, .kicker,
+html[data-theme="dark"] .pk__tier-look, html[data-theme="dark"] .pk__look, html[data-theme="dark"] .bk em { color: var(--ion-soft); }
+html[data-theme="dark"] .pk__tier-look { background: none; }
+.pk__look::before { background: var(--ion); }
+.faq details[open] summary i { background: var(--pc); border-color: var(--pc); color: var(--obs); }
+.case__stars, .proof__stars, .rteaser__stars { color: var(--pc); }
+.pk__feat li.new::before { background-color: transparent; }
+.bk svg { stroke: var(--pc); }
+html[data-theme="dark"] .try input { color: var(--pc); border-bottom-color: var(--pc); }
+html[data-theme="dark"] .try input::placeholder, .try input::placeholder { color: #6E6E76; }
+
+/* ---- selected things ---- */
+.nav__links a:hover, .nav__links a[aria-current="page"] { background: rgba(243,241,236,.07); }
+.cmp td.is-active, .cmp th.is-active { background: var(--gold-soft); }
+.cmp tbody tr:hover td, .cmp tbody tr:hover th { background: rgba(243,241,236,.04); }
+.addon.is-included, .pick__opt[aria-selected="true"], .pg-fit, .est__split div:first-child, .font-opt[aria-pressed="true"] { background: rgba(243,241,236,.06); }
+.pk-pick label:has(input:checked), .addon:has(input:checked), .care label:has(input:checked) { background: rgba(243,241,236,.05); }
+.bk[aria-pressed="true"], .bz[aria-pressed="true"], .bc[aria-pressed="true"], .pg[aria-pressed="true"],
+.field input:focus, .field textarea:focus, .field select:focus, #showName:focus, .wants__add input:focus { box-shadow: 0 0 0 3px rgba(47,91,255,.35); }
+.bk[aria-pressed="true"] { border-color: var(--pc); box-shadow: inset 0 0 0 1px var(--pc); }
+.bk:hover { box-shadow: inset 0 0 0 1px rgba(243,241,236,.3); }
+.filters__cats .chip[aria-pressed="true"] { background: var(--pc); color: var(--obs); box-shadow: none; }
+.filters__cats .chip[aria-pressed="true"] b { background: rgba(16,16,20,.12); color: var(--obs); }
+.receipt__line span:first-child, .pg-fit small { color: var(--pc-2); }
+.brief__side li button[aria-current="step"] span, .opts input:checked + span { background: var(--pc); color: var(--obs); }
+
+/* ---- the chosen package: a lighter card with an Ion Blue top line ---- */
+.pk__tier[aria-pressed="true"], html[data-theme="dark"] .pk__tier[aria-pressed="true"] { background: var(--obs-3); color: var(--pc); box-shadow: inset 0 0 0 1px rgba(243,241,236,.25), 0 24px 48px -32px rgba(0,0,0,.7); }
+.pk__tier[aria-pressed="true"]::before { background: var(--ion); }
+.pk__tier[aria-pressed="true"]::after, html[data-theme="dark"] .pk__tier[aria-pressed="true"]::after { background: var(--obs-3); box-shadow: 1px 1px 0 rgba(243,241,236,.25); }
+.pk__tier[aria-pressed="true"] .pk__tier-price strong { color: var(--pc); }
+.pk__tier[aria-pressed="true"] .pk__tier-price, .pk__tier[aria-pressed="true"] .pk__tier-sub { color: var(--pc-2); }
+.pk__lvl i.on, .pk__tier[aria-pressed="true"] .pk__lvl i.on { background: var(--ion); }
+
+/* ---- mock browser frames and cards ---- */
+.browser__bar, .reel__bar, .full__shot .folio__chrome { background: var(--obs-3); border-color: rgba(243,241,236,.06); }
+.browser__dots i, .reel__bar i, .full__shot .folio__chrome i { background: #3A3A42; }
+.browser__url, .full__shot .folio__chrome span { color: var(--pc-2); background: rgba(243,241,236,.06); }
+.icon-btn { color: var(--pc-2); }
+.examples-cta { background: var(--obs-2); color: var(--pc); box-shadow: inset 0 0 0 1px var(--line) !important; }
+.examples-cta__go { background: var(--pc); color: var(--obs); border-radius: var(--r-lux); font-weight: 500; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; }
+
+/* soft, low shadows */
+.browser, .reel__shot, .full__shot, .folio__shot, .case__img, .build__stage, .ticket, .brief__box, .filters, .pk__info, .lang__menu { box-shadow: 0 0 0 1px var(--line), 0 18px 40px -30px rgba(0,0,0,.6) !important; }
+
+/* ---- one colour scheme only: no day/night switch ---- */
+.theme-btn, .lang__theme { display: none !important; }
+
+/* ---- logo: porcelain (an obsidian logo would disappear on the obsidian page);
+        the porcelain cursor keeps a thin obsidian outline so it stands apart from the ring.
+        Header uses img/sitequest-header-ion.svg ---- */
+.emblem__cursor .em-cog { fill: var(--pc); stroke: var(--obs); }
+html[data-theme="dark"] .logo__img--light { display: block; }
+html[data-theme="dark"] .logo__img--dark { display: none; }
