@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Example websites by business · SiteQuest Studio</title>
 <meta name="description" content="Find your type of business and click through a full example website: hair salons, barbers, cafés, restaurants, pubs, bakeries, tradespeople and more. Designed by SiteQuest Studio.">
-<meta name="theme-color" content="#F4F5F2">
+<meta name="theme-color" content="#F5F5F0">
 <link rel="canonical" href="https://sitequest.studio/examples/">
 <meta property="og:site_name" content="SiteQuest Studio">
 <meta property="og:title" content="What your website could look like · SiteQuest Studio">
@@ -21,8 +21,8 @@
 <link rel="apple-touch-icon" href="/img/icon-180.png?v=4">
 <style>
 :root{
-  --bg:#F4F5F2; --bg-2:#E9ECE7; --ink:#18201F; --ink-2:#5C6866; --lagoon:#0E3B3A; --deep:#082625;
-  --petal:#F4B6C2; --pollen:#F2C14E; --line:rgba(24,32,31,.12); --card:#fff; --accent-ink:var(--lagoon); --nav-glass:rgba(244,245,242,.86); --bg-soft:#F4F5F2; --surface:#fff;
+  --bg:#F5F5F0; --bg-2:#E8EAE5; --ink:#0E1628; --ink-2:#566074; --lagoon:#0B1325; --deep:#070D1A;
+  --petal:#A9CDBE; --pollen:#F2B53A; --line:rgba(14,22,40,.12); --card:#fff; --accent-ink:var(--lagoon); --nav-glass:rgba(245,245,240,.86); --bg-soft:#F5F5F0; --surface:#fff;
   --f-d:"Bricolage Grotesque",system-ui,sans-serif; --f-b:"Geist",system-ui,sans-serif;
   --max:1240px; --gut:clamp(16px,4vw,48px);
 }
@@ -62,7 +62,7 @@ button,input{font:inherit;color:inherit}
 
 /* chips: the business-type menu */
 .chips{position:sticky;top:76px;z-index:20;background:linear-gradient(var(--bg) 80%,rgba(244,245,242,0));padding:12px 0 18px}
-.chips__track{position:relative;background:var(--card);border-radius:20px;padding:5px;box-shadow:0 0 0 1px var(--line),0 18px 40px -30px rgba(8,38,37,.45)}
+.chips__track{position:relative;background:var(--card);border-radius:20px;padding:5px;box-shadow:0 0 0 1px var(--line),0 18px 40px -30px rgba(7,13,26,.45)}
 .chips__row{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:0;scroll-padding-inline:44px;scroll-snap-type:x proximity}
 .chips__row::-webkit-scrollbar{display:none}
 .chips__track:not(.is-start) .chips__row{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px);mask-image:linear-gradient(90deg,transparent,#000 56px)}
@@ -74,7 +74,7 @@ button,input{font:inherit;color:inherit}
 .chip.on{background:var(--lagoon);color:#fff;box-shadow:0 8px 18px -10px rgba(14,59,58,.7)}
 .chip b{font-weight:500;font-size:11.5px;min-width:20px;padding:1px 6px;border-radius:99px;background:var(--bg-2);color:var(--ink-2);text-align:center;font-variant-numeric:tabular-nums;transition:background .25s,color .25s}
 .chip.on b{background:rgba(255,255,255,.18);color:#fff}
-.chips__arrow{position:absolute;top:50%;z-index:2;width:34px;height:34px;margin-top:-17px;display:none;place-items:center;border:0;border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;box-shadow:0 0 0 1px var(--line),0 6px 16px -6px rgba(8,38,37,.35);transition:opacity .25s,transform .25s}
+.chips__arrow{position:absolute;top:50%;z-index:2;width:34px;height:34px;margin-top:-17px;display:none;place-items:center;border:0;border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;box-shadow:0 0 0 1px var(--line),0 6px 16px -6px rgba(7,13,26,.35);transition:opacity .25s,transform .25s}
 .chips__arrow svg{width:12px;height:12px}
 .chips__arrow:hover{transform:scale(1.08)}
 .chips__arrow--prev{left:6px}.chips__arrow--next{right:6px}
@@ -89,8 +89,8 @@ button,input{font:inherit;color:inherit}
 .cat__title{font:700 clamp(1.6rem,1.2rem + 1.6vw,2.4rem)/1.05 var(--f-d);letter-spacing:-.02em;display:inline-flex;gap:12px;align-items:center;border-radius:10px;padding:2px 6px;margin-left:-6px}
 .cat__link{font-size:14px;color:var(--ink-2);background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
-.card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 30px -12px rgba(8,38,37,.18);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.05),0 22px 50px -18px rgba(8,38,37,.32)}
+.card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 30px -12px rgba(7,13,26,.18);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.05),0 22px 50px -18px rgba(7,13,26,.32)}
 .card__shot{position:relative;display:block;aspect-ratio:16/10;background:var(--bg-2);overflow:hidden}
 .card__chrome{position:absolute;inset:0 0 auto 0;height:26px;background:rgba(255,255,255,.92);display:flex;align-items:center;gap:5px;padding:0 10px;z-index:2;font-size:11px;color:var(--ink-2)}
 .card__chrome i{width:8px;height:8px;border-radius:50%;background:#ddd}
@@ -129,7 +129,8 @@ button,input{font:inherit;color:inherit}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 
 /* dark mode + header tools (same as the main site) */
-html[data-theme="dark"]{color-scheme:dark;--bg:#111716;--bg-2:#1A2120;--ink:#ECEFEA;--ink-2:#A3B1AD;--line:rgba(236,239,234,.12);--card:#182020;--surface:#182020;--bg-soft:#1A2120;--lagoon:#1D5A55;--deep:#0A1F1E;--accent-ink:#8ED0C6;--nav-glass:rgba(17,23,22,.86)}
+html[data-theme="dark"]{color-scheme:dark;--bg:#0B1325;--bg-2:#121C33;--ink:#EEF1F6;--ink-2:#A6B0C3;--line:rgba(238,241,246,.12);--card:#142039;--surface:#142039;--bg-soft:#121C33;--lagoon:#24365E;--deep:#070D1A;--accent-ink:#A9CDBE;--nav-glass:rgba(11,19,37,.86)}
+html[data-theme="dark"] .btn:not(.btn--ghost){background:var(--pollen);color:#0B1325}
 .logo__img--dark{display:none}
 html[data-theme="dark"] .logo__img--light{display:none}
 html[data-theme="dark"] .logo__img--dark{display:block}
@@ -143,7 +144,7 @@ html[data-theme="dark"] .logo__img--dark{display:block}
 html[data-theme="dark"] .theme-btn .i-sun{display:block}
 html[data-theme="dark"] .theme-btn .i-moon{display:none}
 .lang{position:relative}
-.lang__menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:190px;margin:0;padding:6px;list-style:none;background:var(--surface);border-radius:16px;box-shadow:0 0 0 1px var(--line),0 24px 50px -20px rgba(8,38,37,.45);display:none}
+.lang__menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:190px;margin:0;padding:6px;list-style:none;background:var(--surface);border-radius:16px;box-shadow:0 0 0 1px var(--line),0 24px 50px -20px rgba(7,13,26,.45);display:none}
 .lang.is-open .lang__menu{display:grid}
 .lang__menu button{display:flex;justify-content:space-between;gap:16px;width:100%;padding:9px 12px;border:0;border-radius:10px;background:none;color:var(--ink);font-size:14px;text-align:left;cursor:pointer}
 .lang__menu button small{color:var(--ink-2);font-size:11px;letter-spacing:.06em}

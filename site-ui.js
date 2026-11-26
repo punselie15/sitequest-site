@@ -33,7 +33,7 @@
     var row = document.getElementById("themeRow");
     if (row) row.innerHTML = (t === "dark" ? ICON_SUN.replace(' class="i-sun"', "") : ICON_MOON.replace(' class="i-moon"', "")) + "<span>" + tr(t === "dark" ? "Light mode" : "Dark mode") + "</span>";
     var mc = document.querySelector('meta[name="theme-color"]');
-    if (mc) mc.setAttribute("content", t === "dark" ? "#111716" : "#F4F5F2");
+    if (mc) mc.setAttribute("content", t === "dark" ? "#0B1325" : "#F5F5F0");
   }
   // follow the device until the visitor picks one themselves
   try {
