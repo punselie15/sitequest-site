@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>(function(){var t;try{t=localStorage.getItem("sq:theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
+<script>(function(){var t;try{t=localStorage.getItem("sq:theme")}catch(e){}if(!t)t="dark";document.documentElement.setAttribute("data-theme",t)})()</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Example websites by business · SiteQuest Studio</title>
 <meta name="description" content="Find your type of business and click through a full example website: hair salons, barbers, cafés, restaurants, pubs, bakeries, tradespeople and more. Designed by SiteQuest Studio.">
@@ -16,14 +16,14 @@
 <meta property="og:image" content="https://sitequest.studio/img/icon-512.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Jost:wght@300..700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png?v=4">
 <link rel="apple-touch-icon" href="/img/icon-180.png?v=4">
 <style>
 :root{
-  --bg:#F5F5F0; --bg-2:#E8EAE5; --ink:#0E1628; --ink-2:#566074; --lagoon:#0B1325; --deep:#070D1A;
+  --bg:#F5F5F0; --bg-2:#E8EAE5; --ink:#0E1628; --ink-2:#566074; --lagoon:#0B1325; --deep:#0B1325;
   --petal:#A9CDBE; --pollen:#F2B53A; --line:rgba(14,22,40,.12); --card:#fff; --accent-ink:var(--lagoon); --nav-glass:rgba(245,245,240,.86); --bg-soft:#F5F5F0; --surface:#fff;
-  --f-d:"Bricolage Grotesque",system-ui,sans-serif; --f-b:"Geist",system-ui,sans-serif;
+  --f-d:"Bodoni Moda",Georgia,serif; --f-b:"Jost",system-ui,sans-serif;
   --max:1240px; --gut:clamp(16px,4vw,48px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -53,7 +53,7 @@ button,input{font:inherit;color:inherit}
 .hero{padding:clamp(40px,7vw,96px) 0 clamp(24px,4vw,40px)}
 .hero__kicker{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
 .hero__kicker::before{content:"";width:28px;height:2px;background:var(--pollen)}
-.hero h1{font:700 clamp(2.4rem,1.4rem + 4.6vw,5.2rem)/.98 var(--f-d);letter-spacing:-.035em;margin:14px 0 18px;max-width:14ch}
+.hero h1{font:500 clamp(2.4rem,1.4rem + 4.6vw,5.2rem)/.98 var(--f-d);letter-spacing:-.01em;margin:14px 0 18px;max-width:14ch}
 .hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--petal) 62% 92%,transparent 92%)}
 .hero p{font-size:clamp(1.05rem,1rem + .3vw,1.25rem);color:var(--ink-2);max-width:56ch}
 .find{margin-top:26px;display:flex;gap:10px;max-width:560px}
@@ -86,7 +86,7 @@ button,input{font:inherit;color:inherit}
 .cat:target .cat__title,.cat.flash .cat__title{animation:flash 1.6s ease}
 @keyframes flash{0%,40%{background:var(--pollen)}100%{background:transparent}}
 .cat__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-.cat__title{font:700 clamp(1.6rem,1.2rem + 1.6vw,2.4rem)/1.05 var(--f-d);letter-spacing:-.02em;display:inline-flex;gap:12px;align-items:center;border-radius:10px;padding:2px 6px;margin-left:-6px}
+.cat__title{font:500 clamp(1.6rem,1.2rem + 1.6vw,2.4rem)/1.05 var(--f-d);letter-spacing:-.01em;display:inline-flex;gap:12px;align-items:center;border-radius:10px;padding:2px 6px;margin-left:-6px}
 .cat__link{font-size:14px;color:var(--ink-2);background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
 .card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 30px -12px rgba(7,13,26,.18);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
@@ -99,7 +99,7 @@ button,input{font:inherit;color:inherit}
 .card:hover .card__shot img{transform:scale(1.04)}
 .card__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card__kind{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
-.card h3{font:700 1.35rem/1.15 var(--f-d);letter-spacing:-.01em}
+.card h3{font:500 1.35rem/1.15 var(--f-d);letter-spacing:-.01em}
 .card p{color:var(--ink-2);font-size:15px}
 .card__go{margin-top:auto;padding-top:10px;display:flex;gap:8px;flex-wrap:wrap}
 .card__go .btn{font-size:14px;min-height:42px}
@@ -116,7 +116,7 @@ button,input{font:inherit;color:inherit}
 }
 .empty{padding:40px 0;color:var(--ink-2);display:none}
 .cta{margin:40px 0 64px;background:var(--lagoon);color:#fff;border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;gap:14px}
-.cta h2{font:700 clamp(1.8rem,1.3rem + 2vw,3rem)/1.02 var(--f-d);letter-spacing:-.02em;max-width:18ch}
+.cta h2{font:500 clamp(1.8rem,1.3rem + 2vw,3rem)/1.02 var(--f-d);letter-spacing:-.01em;max-width:18ch}
 .cta p{opacity:.85;max-width:52ch}
 .cta .btn{background:var(--pollen);color:var(--ink);justify-self:start}
 .cta .btn:hover{background:var(--card)}
@@ -129,7 +129,7 @@ button,input{font:inherit;color:inherit}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 
 /* dark mode + header tools (same as the main site) */
-html[data-theme="dark"]{color-scheme:dark;--bg:#0B1325;--bg-2:#121C33;--ink:#EEF1F6;--ink-2:#A6B0C3;--line:rgba(238,241,246,.12);--card:#142039;--surface:#142039;--bg-soft:#121C33;--lagoon:#24365E;--deep:#070D1A;--accent-ink:#A9CDBE;--nav-glass:rgba(11,19,37,.86)}
+html[data-theme="dark"]{color-scheme:dark;--bg:#0B1325;--bg-2:color-mix(in srgb, #0B1325 95%, #A9CDBE);--ink:#EEF1F6;--ink-2:#A6B0C3;--line:rgba(238,241,246,.12);--card:color-mix(in srgb, #0B1325 96%, #A9CDBE);--surface:color-mix(in srgb, #0B1325 96%, #A9CDBE);--bg-soft:color-mix(in srgb, #0B1325 95%, #A9CDBE);--lagoon:color-mix(in srgb, #0B1325 84%, #A9CDBE);--deep:#0B1325;--accent-ink:#A9CDBE;--nav-glass:rgba(11,19,37,.86)}
 html[data-theme="dark"] .btn:not(.btn--ghost){background:var(--pollen);color:#0B1325}
 .logo__img--dark{display:none}
 html[data-theme="dark"] .logo__img--light{display:none}

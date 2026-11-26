@@ -35,12 +35,7 @@
     var mc = document.querySelector('meta[name="theme-color"]');
     if (mc) mc.setAttribute("content", t === "dark" ? "#0B1325" : "#F5F5F0");
   }
-  // follow the device until the visitor picks one themselves
-  try {
-    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-      if (!store.get("theme")) root.setAttribute("data-theme", e.matches ? "dark" : "light");
-    });
-  } catch (e) {}
+  // the site opens in indigo (dark) for everyone; the light version is one tap away
 
   /* ------------------------------------------------------------------ header tools */
   var ICON_MOON = '<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
