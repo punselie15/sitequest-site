@@ -158,3 +158,8 @@ html[data-theme="dark"] .logo__img--dark { display: none; }
 /* Cards lift gently instead of snapping */
 .full, .card, .rteaser__list a, .case__img { transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
 @media (hover: hover) { .grid .card:hover { transform: translateY(-4px); } }
+/* Reviews page: the score pill keeps its size before the score is filled in */
+.rpage__score { min-height: 60px; min-width: 262px; box-sizing: border-box; }
+/* Width limits above the fold are set in em, not ch: ch changes with the font, which made headlines re-wrap when fonts arrived */
+.rpage__hero h1 { max-width: 8.2em; }
+.rpage__intro .lede, .hero .lede { max-width: 27.6em; }
