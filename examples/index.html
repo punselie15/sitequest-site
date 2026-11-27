@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>(function(){var t;try{t=localStorage.getItem("sq:theme")}catch(e){}if(!t)t="dark";document.documentElement.setAttribute("data-theme",t)})()</script>
+<script>document.documentElement.setAttribute("data-theme","dark")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Example websites by business · SiteQuest Studio</title>
 <meta name="description" content="Find your type of business and click through a full example website: hair salons, barbers, cafés, restaurants, pubs, bakeries, tradespeople and more. Designed by SiteQuest Studio.">
-<meta name="theme-color" content="#F5F5F0">
+<meta name="theme-color" content="#101014">
 <link rel="canonical" href="https://sitequest.studio/examples/">
 <meta property="og:site_name" content="SiteQuest Studio">
 <meta property="og:title" content="What your website could look like · SiteQuest Studio">
@@ -153,13 +153,55 @@ html[data-theme="dark"] .theme-btn .i-moon{display:none}
 .lang__theme button{justify-content:flex-start;align-items:center;gap:10px}
 .lang__theme svg{width:18px;height:18px}
 @media (max-width:560px){.tool-btn{min-width:34px;height:34px;padding:0 7px}.lang .tool-btn span{display:none}.ex-tools{gap:6px}.ex-tools .btn{padding:8px 12px}.theme-btn{display:none}.lang__theme{display:block}.nav__logo img{height:28px}}
+
+/* ===== Ion palette (same as the main site): obsidian, porcelain, Ion Blue. One scheme, no day/night switch. ===== */
+@font-face{font-family:"SQ Serif Fallback";src:local("Georgia");size-adjust:104.6%}
+@font-face{font-family:"SQ Sans Fallback";src:local("Arial");size-adjust:95.5%}
+:root{--f-d:"Bodoni Moda","SQ Serif Fallback",Georgia,serif;--f-b:"Jost","SQ Sans Fallback",system-ui,sans-serif}
+html[data-theme="dark"]{color-scheme:dark;--bg:#101014;--bg-2:#222228;--ink:#F3F1EC;--ink-2:#B4B0A9;--line:rgba(243,241,236,.12);--card:#18181D;--surface:#18181D;--bg-soft:#18181D;--lagoon:#18181D;--deep:#101014;--accent-ink:#8FA6FF;--nav-glass:rgba(16,16,20,.86);--pollen:#2F5BFF;--petal:#F3F1EC}
+.theme-btn,.lang__theme{display:none!important}
+.tool-btn{border-radius:4px}
+html[data-theme="dark"] .btn,html[data-theme="dark"] .btn:not(.btn--ghost){position:relative;isolation:isolate;overflow:hidden;background:#F3F1EC;color:#101014;border-radius:4px;min-height:44px;padding:12px 22px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;transition:color .35s,transform .35s cubic-bezier(.2,.7,.1,1)}
+html[data-theme="dark"] .btn::before{content:"";position:absolute;inset:0;z-index:-1;background:#2F5BFF;transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.7,.1,1)}
+html[data-theme="dark"] .btn:hover{background:#F3F1EC;color:#fff;transform:none}
+html[data-theme="dark"] .btn:hover::before{transform:none}
+html[data-theme="dark"] .btn--ghost{background:transparent;color:#F3F1EC;box-shadow:inset 0 0 0 1px rgba(243,241,236,.45)}
+html[data-theme="dark"] .btn--ghost::before{background:#F3F1EC}
+html[data-theme="dark"] .btn--ghost:hover{background:transparent;color:#101014}
+html[data-theme="dark"] .card__go .btn{font-size:11.5px;min-height:42px;padding:11px 16px;letter-spacing:.14em}
+.hero__kicker{color:var(--accent-ink)}
+.hero h1 em{background:none;color:#2F5BFF}
+.find input{border-width:1px;border-radius:4px;color:var(--ink)}
+.find input::placeholder{color:#7A7A82}
+.find input:focus{border-color:#8FA6FF;box-shadow:0 0 0 3px rgba(47,91,255,.35)}
+.chips{background:linear-gradient(var(--bg) 80%,rgba(16,16,20,0))}
+.chips__track{border-radius:6px;box-shadow:0 0 0 1px var(--line)}
+.chip{border-radius:4px}
+.chip:hover{background:rgba(243,241,236,.07)}
+.chip.on{background:#F3F1EC;color:#101014;box-shadow:none}
+.chip.on b{background:rgba(16,16,20,.12);color:#101014}
+.chips__arrow{background:#222228;box-shadow:0 0 0 1px var(--line)}
+.cat{border-top-color:var(--line)}
+@keyframes flash{0%,40%{background:rgba(47,91,255,.35)}100%{background:transparent}}
+.card{border-radius:8px;box-shadow:0 0 0 1px var(--line),0 18px 40px -30px rgba(0,0,0,.6)}
+.card:hover{box-shadow:0 0 0 1px rgba(243,241,236,.28),0 26px 50px -30px rgba(0,0,0,.8)}
+.card__chrome{background:#222228;color:var(--ink-2)}
+.card__chrome i{background:#3A3A42}
+.card__kind{font-weight:500;letter-spacing:.14em;font-size:11px}
+.cta{background:#18181D;color:var(--ink);border-radius:8px;box-shadow:inset 0 0 0 1px var(--line)}
+.cta .btn:hover{background:#F3F1EC}
+.toast{background:#F3F1EC;color:#101014}
+:focus-visible{outline-color:#8FA6FF}
+@media (max-width:560px){html[data-theme="dark"] .nav .btn{padding:9px 12px;min-height:38px;font-size:10.5px;letter-spacing:.1em}.nav__logo{flex:none}.nav__logo img{height:40px}.ex-tools{gap:6px}}
+/* keep the page still while the examples load */
+#list{min-height:120vh}
 </style>
 </head>
 <body>
 <a class="sr-only" href="#list">Skip to the examples</a>
 <header class="nav">
   <div class="wrap nav__in">
-    <a class="nav__logo" href="/" aria-label="SiteQuest Studio home"><img class="logo__img--light" src="/img/sitequest-header.svg" alt="SiteQuest Studio" width="987" height="156"><img class="logo__img--dark" src="/img/sitequest-header-dark.svg" alt="" width="987" height="156"></a>
+    <a class="nav__logo" href="/" aria-label="SiteQuest Studio home"><img src="/img/sitequest-header-ion.svg" alt="SiteQuest Studio" width="987" height="156"></a>
     <a class="nav__back" href="/reviews/">Reviews</a>
     <a class="nav__back nav__back--work" href="/#portfolio">← All our work</a>
     <div class="ex-tools" data-site-tools><a class="btn" href="/#pricing">Get a free quote</a></div>

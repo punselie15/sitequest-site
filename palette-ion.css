@@ -110,3 +110,51 @@ html[data-theme="dark"] .try input::placeholder, .try input::placeholder { color
 .emblem__cursor .em-cog { fill: var(--pc); stroke: var(--obs); }
 html[data-theme="dark"] .logo__img--light { display: block; }
 html[data-theme="dark"] .logo__img--dark { display: none; }
+
+/* =====================================================================
+   REFINEMENTS (2026-11-27): smoother loading and small design fixes.
+   Same three colours; only the supporting tones and details change.
+   ===================================================================== */
+
+/* Stand-in fonts sized like Bodoni Moda and Jost, so text doesn't re-wrap and jump when the real fonts arrive */
+@font-face { font-family: "SQ Serif Fallback"; src: local("Georgia"); size-adjust: 104.6%; }
+@font-face { font-family: "SQ Sans Fallback"; src: local("Arial"); size-adjust: 95.5%; }
+:root, html[data-theme="dark"] {
+  --f-display: "Bodoni Moda", "SQ Serif Fallback", Georgia, serif;
+  --f-body: "Jost", "SQ Sans Fallback", system-ui, sans-serif;
+  /* soft text: a warm grey that belongs with porcelain (was a cool grey) */
+  --pc-2: #B4B0A9;
+}
+
+/* Space is reserved for parts that JavaScript fills in, so nothing below them jumps */
+.reel { min-height: calc(clamp(250px, 26vw, 380px) * .632 + 92px); }
+@media (max-width: 860px) {
+  .hero__canvas-wrap, .hero__canvas-wrap.is-site { width: 100%; aspect-ratio: 5 / 4; margin: 0 auto 24px; transition: none; }
+}
+.work--page .work__grid { min-height: 110vh; }
+
+/* Animations pause while their section is off screen */
+.is-away, .is-away *, .is-away *::before, .is-away *::after { animation-play-state: paused !important; }
+
+/* Package demo placeholder while it loads */
+.pk__wait { height: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--obs-2); }
+.pk__wait i { width: 8px; height: 8px; border-radius: 50%; background: var(--pc-2); animation: pkwait 1s ease-in-out infinite alternate; }
+.pk__wait i:nth-child(2) { animation-delay: .2s; } .pk__wait i:nth-child(3) { animation-delay: .4s; }
+@keyframes pkwait { from { opacity: .2; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+
+/* Hero: room between the menu and the headline on wide screens */
+@media (min-width: 861px) { .hero { padding-top: clamp(112px, 9.5vw, 148px); } }
+
+/* Reviews page headline: the old highlight bar hid the words on this palette */
+.rpage__hero h1 em { background: none; color: var(--ion); }
+
+/* The same blue rule above every section heading */
+#work .work__head h2::before, .folio__sub h3::before { content: ""; display: block; width: 56px; height: 3px; margin-bottom: 22px; background: var(--ion); }
+.folio__sub h3::before { width: 40px; height: 2px; margin-bottom: 16px; }
+
+/* Small notes read as notes, not links */
+.footer .kicker, #portfolio > .wrap > .kicker { color: var(--pc-2); }
+
+/* Cards lift gently instead of snapping */
+.full, .card, .rteaser__list a, .case__img { transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+@media (hover: hover) { .grid .card:hover { transform: translateY(-4px); } }

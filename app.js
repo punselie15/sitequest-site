@@ -373,8 +373,23 @@ function renderPkInfo() {
     <a href="#pricing" class="btn" data-pick="${pkState.pk}">Choose ${p.name}</a>`;
   $("#pkInfo [data-pick]").addEventListener("click", () => { calc.minPk = pkState.pk; if (calc.kind === "brand") setKind("website"); calc.step = 2; renderCalc(); });
 }
+// The package demos (halden.js and their fonts) are fetched only when the packages section comes near,
+// so the first screen doesn't pay for them.
+const HALDEN_FONTS = "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Martian+Mono:wght@300..500&family=Young+Serif&family=Onest:wght@300..700&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Albert+Sans:wght@300..700&family=Imbue:opsz,wght@10..100,100..900&family=Anybody:wdth,wght@50..150,300..800&display=swap";
+let haldenLoading = null, pkNear = false;
+function loadHalden() {
+  return haldenLoading || (haldenLoading = new Promise((res, rej) => {
+    const l = document.createElement("link"); l.rel = "stylesheet"; l.href = HALDEN_FONTS; document.head.appendChild(l);
+    const sc = document.createElement("script"); sc.src = "halden.js"; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc);
+  }));
+}
 function renderPkView() {
   const v = $("#pkView");
+  if (!HALDEN.mount) {
+    v.innerHTML = `<div class="pk__wait" aria-hidden="true"><i></i><i></i><i></i></div>`;
+    if (pkNear) loadHalden().then(renderPkView, () => {});
+    return;
+  }
   v.innerHTML = HALDEN[pkState.pk]();
   v.scrollTop = 0;
   if (HALDEN.mount) HALDEN.mount(v);
@@ -420,7 +435,21 @@ function renderCompare() {
   }));
   deviceToggle($("#pkBrowser"));
   renderPkInfo(); renderPkView(); renderCompare();
+  const near = () => { if (pkNear) return; pkNear = true; renderPkView(); };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); near(); } }, { rootMargin: "1400px 0px" });
+    io.observe($("#packages"));
+  } else near();
+  // someone heading straight for the prices: don't make them wait
+  if (location.hash === "#packages" || location.hash === "#pricing") near();
+  document.addEventListener("click", e => { if (e.target.closest('a[href="#packages"]')) near(); });
 })();
+
+/* Animations only run while they are on screen (sliding reel, hero logo, demo sites): smoother scrolling, cooler phones */
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("is-away", !e.isIntersecting)), { rootMargin: "120px 0px" });
+  $$(".reel, .hero__brand, .hero__view, #pkView, .marquee, .final").forEach(el => io.observe(el));
+}
 
 /* ============ Design studio ============ */
 const PALETTES = [
