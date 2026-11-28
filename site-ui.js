@@ -33,9 +33,9 @@
     var row = document.getElementById("themeRow");
     if (row) row.innerHTML = (t === "dark" ? ICON_SUN.replace(' class="i-sun"', "") : ICON_MOON.replace(' class="i-moon"', "")) + "<span>" + tr(t === "dark" ? "Light mode" : "Dark mode") + "</span>";
     var mc = document.querySelector('meta[name="theme-color"]');
-    if (mc) mc.setAttribute("content", t === "dark" ? "#101014" : "#F3F1EC");
+    if (mc) mc.setAttribute("content", "#F5F1E8");
   }
-  // the site opens in indigo (dark) for everyone; the light version is one tap away
+  // one colour scheme (see the palette stylesheet): no day/night switch
 
   /* ------------------------------------------------------------------ header tools */
   var ICON_MOON = '<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';

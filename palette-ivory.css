@@ -1,0 +1,184 @@
+/* =====================================================================
+   COLOUR TRY "IVORY & INK" (2026-11-28), owner's pick from the five options:
+     main background  Ivory          #F5F1E8
+     text, buttons    Ink            #151411
+     cards, bands     Stone          #ECE5D6
+     accent           Antique brass  #7A5C2E   (logo cursor and STUDIO, small details)
+   One light scheme, no day/night switch. The pages keep data-theme="dark" in
+   <head> only because the layout rules are written against it; the colours
+   here are light.
+   Undo: link palette-ion.css instead, logo back to sitequest-header-ion.svg,
+   theme-color #101014 (pages and site-ui.js), Ion block in examples/index.html.
+   ===================================================================== */
+:root, html[data-theme="dark"] {
+  --obs: #F5F1E8; --pc: #151411; --ion: #7A5C2E;
+  --obs-2: #ECE5D6; --obs-3: #E4DCCA; --pc-2: #5B564C; --ion-soft: #7A5C2E;
+
+  color-scheme: light;
+  --porcelain: var(--pc); --porcelain-2: var(--obs-3);
+  --lagoon: var(--obs-2); --deep: var(--obs); --graphite: var(--obs); --stone: var(--pc-2);
+  --mist: #D3CAB6; --petal: var(--pc); --pollen: var(--ion);
+  --bg: var(--obs); --bg-soft: var(--obs-2); --surface: var(--obs-2);
+  --accent-ink: var(--ion-soft); --accent-line: var(--pc);
+  --nav-glass: rgba(245,241,232,.86);
+  --ink: var(--pc); --ink-2: var(--pc-2); --line: rgba(21,20,17,.12);
+  --gold: var(--ion); --gold-line: rgba(122,92,46,.5); --gold-soft: rgba(122,92,46,.08);
+  --logo-ink: var(--pc); --logo-cog: var(--pc); --logo-glow: transparent;
+}
+.dark, .receipt, html[data-theme="dark"] .dark { background: var(--obs); color: var(--pc); --ink: var(--pc); --ink-2: var(--pc-2); --line: rgba(21,20,17,.12); }
+.receipt { background: var(--obs-2); }
+
+/* every section the same obsidian, separated by a hairline */
+html[data-theme="dark"] :is(.hero, .proof, #showroom, #work, #packages, #faq, #portfolio, .build, .marquee, .section) { background: var(--obs); }
+html[data-theme="dark"] .section + .section, html[data-theme="dark"] .proof { border-top: 1px solid var(--line); }
+.proof { border-bottom: 1px solid var(--line); }
+.hero__brand::before { display: none; }
+
+/* headings porcelain everywhere (the old theme made them celadon) */
+html[data-theme="dark"] :is(h1, h2):not(:is(.mini, .browser, .reel, .card, .full__shot, .folio__shot, .card__shot, .ms, #pkView, #mView, #stView, .hero__view) *),
+.dark :is(h1, h2):not(:is(.mini, .browser, .reel, .card, .full__shot, .folio__shot, .card__shot, .ms, #pkView, #mView, #stView, .hero__view) *) { color: var(--pc); }
+
+/* ---- the Ion Blue accent ---- */
+.promise h2 em, html[data-theme="dark"] .promise h2 em { color: var(--ion); }
+.section > .wrap > h2:first-child::before, .pk__head h2::before, .build h2::before, .faq h2::before, .rteaser h2::before, .folio h2::before { background: var(--ion); width: 56px; height: 3px; }
+:focus-visible, .dark :focus-visible { outline-color: var(--ion-soft); }
+
+/* ---- buttons: porcelain on obsidian; hover fills Ion Blue ---- */
+.btn, html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal), .dark .btn:not(.btn--ghost):not(.btn--petal), .btn--petal { --b-bg: var(--pc); --b-fg: var(--obs); }
+.btn::before, .btn--petal::before, html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal)::before { background: var(--ion); }
+.btn:hover, .btn--petal:hover, html[data-theme="dark"] .btn:not(.btn--ghost):not(.btn--petal):hover { color: #fff; }
+.btn--ghost, html[data-theme="dark"] .btn--ghost { --b-bg: transparent; --b-fg: var(--pc); }
+.btn--ghost::before { background: var(--pc); }
+.btn--ghost:hover, .dark .btn--ghost:hover { color: var(--obs); }
+
+/* ---- chips, labels, small accents ---- */
+.hero .chip[aria-pressed="true"], .try__kinds .chip[aria-pressed="true"] { background: var(--pc); border-color: var(--pc); color: var(--obs); }
+.folio__kind, .pk__tier-look, .pk__look, .bk em, .kicker,
+html[data-theme="dark"] .pk__tier-look, html[data-theme="dark"] .pk__look, html[data-theme="dark"] .bk em { color: var(--ion-soft); }
+html[data-theme="dark"] .pk__tier-look { background: none; }
+.pk__look::before { background: var(--ion); }
+.faq details[open] summary i { background: var(--pc); border-color: var(--pc); color: var(--obs); }
+.case__stars, .proof__stars, .rteaser__stars { color: var(--pc); }
+.pk__feat li.new::before { background-color: transparent; }
+.bk svg { stroke: var(--pc); }
+html[data-theme="dark"] .try input { color: var(--pc); border-bottom-color: var(--pc); }
+html[data-theme="dark"] .try input::placeholder, .try input::placeholder { color: #8A8376; }
+
+/* ---- selected things ---- */
+.nav__links a:hover, .nav__links a[aria-current="page"] { background: rgba(21,20,17,.07); }
+.cmp td.is-active, .cmp th.is-active { background: var(--gold-soft); }
+.cmp tbody tr:hover td, .cmp tbody tr:hover th { background: rgba(21,20,17,.04); }
+.addon.is-included, .pick__opt[aria-selected="true"], .pg-fit, .est__split div:first-child, .font-opt[aria-pressed="true"] { background: rgba(21,20,17,.06); }
+.pk-pick label:has(input:checked), .addon:has(input:checked), .care label:has(input:checked) { background: rgba(21,20,17,.05); }
+.bk[aria-pressed="true"], .bz[aria-pressed="true"], .bc[aria-pressed="true"], .pg[aria-pressed="true"],
+.field input:focus, .field textarea:focus, .field select:focus, #showName:focus, .wants__add input:focus { box-shadow: 0 0 0 3px rgba(122,92,46,.35); }
+.bk[aria-pressed="true"] { border-color: var(--pc); box-shadow: inset 0 0 0 1px var(--pc); }
+.bk:hover { box-shadow: inset 0 0 0 1px rgba(21,20,17,.3); }
+.filters__cats .chip[aria-pressed="true"] { background: var(--pc); color: var(--obs); box-shadow: none; }
+.filters__cats .chip[aria-pressed="true"] b { background: rgba(245,241,232,.12); color: var(--obs); }
+.receipt__line span:first-child, .pg-fit small { color: var(--pc-2); }
+.brief__side li button[aria-current="step"] span, .opts input:checked + span { background: var(--pc); color: var(--obs); }
+
+/* ---- the chosen package: a lighter card with an Ion Blue top line ---- */
+.pk__tier[aria-pressed="true"], html[data-theme="dark"] .pk__tier[aria-pressed="true"] { background: var(--obs-3); color: var(--pc); box-shadow: inset 0 0 0 1px rgba(21,20,17,.25), 0 24px 48px -32px rgba(60,48,28,.28); }
+.pk__tier[aria-pressed="true"]::before { background: var(--ion); }
+.pk__tier[aria-pressed="true"]::after, html[data-theme="dark"] .pk__tier[aria-pressed="true"]::after { background: var(--obs-3); box-shadow: 1px 1px 0 rgba(21,20,17,.25); }
+.pk__tier[aria-pressed="true"] .pk__tier-price strong { color: var(--pc); }
+.pk__tier[aria-pressed="true"] .pk__tier-price, .pk__tier[aria-pressed="true"] .pk__tier-sub { color: var(--pc-2); }
+.pk__lvl i.on, .pk__tier[aria-pressed="true"] .pk__lvl i.on { background: var(--ion); }
+
+/* ---- mock browser frames and cards ---- */
+.browser__bar, .reel__bar, .full__shot .folio__chrome { background: var(--obs-3); border-color: rgba(21,20,17,.06); }
+.browser__dots i, .reel__bar i, .full__shot .folio__chrome i { background: #D3CAB6; }
+.browser__url, .full__shot .folio__chrome span { color: var(--pc-2); background: rgba(21,20,17,.06); }
+.icon-btn { color: var(--pc-2); }
+.examples-cta { background: var(--obs-2); color: var(--pc); box-shadow: inset 0 0 0 1px var(--line) !important; }
+.examples-cta__go { background: var(--pc); color: var(--obs); border-radius: var(--r-lux); font-weight: 500; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; }
+
+/* soft, low shadows */
+.browser, .reel__shot, .full__shot, .folio__shot, .case__img, .build__stage, .ticket, .brief__box, .filters, .pk__info, .lang__menu { box-shadow: 0 0 0 1px var(--line), 0 18px 40px -30px rgba(60,48,28,.22) !important; }
+
+/* ---- one colour scheme only: no day/night switch ---- */
+.theme-btn, .lang__theme { display: none !important; }
+
+/* ---- logo: porcelain (an obsidian logo would disappear on the obsidian page);
+        the porcelain cursor keeps a thin obsidian outline so it stands apart from the ring.
+        Header uses img/sitequest-header-ion.svg ---- */
+.emblem__cursor .em-cog { fill: var(--pc); stroke: var(--obs); }
+html[data-theme="dark"] .logo__img--light { display: block; }
+html[data-theme="dark"] .logo__img--dark { display: none; }
+
+/* =====================================================================
+   REFINEMENTS (2026-11-27): smoother loading and small design fixes.
+   Same three colours; only the supporting tones and details change.
+   ===================================================================== */
+
+/* Stand-in fonts sized like Bodoni Moda and Jost, so text doesn't re-wrap and jump when the real fonts arrive */
+@font-face { font-family: "SQ Serif Fallback"; src: local("Georgia"); size-adjust: 104.6%; }
+@font-face { font-family: "SQ Sans Fallback"; src: local("Arial"); size-adjust: 95.5%; }
+:root, html[data-theme="dark"] {
+  --f-display: "Bodoni Moda", "SQ Serif Fallback", Georgia, serif;
+  --f-body: "Jost", "SQ Sans Fallback", system-ui, sans-serif;
+  /* soft text: a warm grey that belongs with porcelain (was a cool grey) */
+  --pc-2: #5B564C;
+}
+
+/* Space is reserved for parts that JavaScript fills in, so nothing below them jumps */
+.reel { min-height: calc(clamp(250px, 26vw, 380px) * .632 + 92px); }
+@media (max-width: 860px) {
+  .hero__canvas-wrap, .hero__canvas-wrap.is-site { width: 100%; aspect-ratio: 5 / 4; margin: 0 auto 24px; transition: none; }
+}
+.work--page .work__grid { min-height: 110vh; }
+
+/* Animations pause while their section is off screen */
+.is-away, .is-away *, .is-away *::before, .is-away *::after { animation-play-state: paused !important; }
+
+/* Package demo placeholder while it loads */
+.pk__wait { height: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--obs-2); }
+.pk__wait i { width: 8px; height: 8px; border-radius: 50%; background: var(--pc-2); animation: pkwait 1s ease-in-out infinite alternate; }
+.pk__wait i:nth-child(2) { animation-delay: .2s; } .pk__wait i:nth-child(3) { animation-delay: .4s; }
+@keyframes pkwait { from { opacity: .2; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+
+/* Hero: room between the menu and the headline on wide screens */
+@media (min-width: 861px) { .hero { padding-top: clamp(112px, 9.5vw, 148px); } }
+
+/* Reviews page headline: the old highlight bar hid the words on this palette */
+.rpage__hero h1 em { background: none; color: var(--ion); }
+
+/* The same blue rule above every section heading */
+#work .work__head h2::before, .folio__sub h3::before { content: ""; display: block; width: 56px; height: 3px; margin-bottom: 22px; background: var(--ion); }
+.folio__sub h3::before { width: 40px; height: 2px; margin-bottom: 16px; }
+
+/* Small notes read as notes, not links */
+.footer .kicker, #portfolio > .wrap > .kicker { color: var(--pc-2); }
+
+/* Cards lift gently instead of snapping */
+.full, .card, .rteaser__list a, .case__img { transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+@media (hover: hover) { .grid .card:hover { transform: translateY(-4px); } }
+/* Reviews page: the score pill keeps its size before the score is filled in */
+.rpage__score { min-height: 60px; min-width: 262px; box-sizing: border-box; }
+/* Width limits above the fold are set in em, not ch: ch changes with the font, which made headlines re-wrap when fonts arrived */
+.rpage__hero h1 { max-width: 8.2em; }
+.rpage__intro .lede, .hero .lede { max-width: 27.6em; }
+
+/* ---- Ivory & Ink details (override the swapped rules above) ---- */
+html[data-theme="dark"] #packages, html[data-theme="dark"] #faq { background: #ECE5D6; }
+html[data-theme="dark"] .pk__tier:not([aria-pressed="true"]), .pk__tiers, .pk__info, .bk, .build__stage, .ticket, .brief__box, .receipt { background-color: #F5F1E8; }
+.pk__tier[aria-pressed="true"], html[data-theme="dark"] .pk__tier[aria-pressed="true"] { background: #151411; color: #F5F1E8; box-shadow: 0 24px 48px -32px rgba(60,48,28,.45); }
+.pk__tier[aria-pressed="true"]::after, html[data-theme="dark"] .pk__tier[aria-pressed="true"]::after { background: #151411; box-shadow: none; }
+.pk__tier[aria-pressed="true"] .pk__tier-price strong, .pk__tier[aria-pressed="true"] .pk__tier-top b { color: #F5F1E8; }
+.pk__tier[aria-pressed="true"] .pk__tier-price, .pk__tier[aria-pressed="true"] .pk__tier-sub { color: rgba(245,241,232,.72); }
+.pk__tier[aria-pressed="true"] .pk__tier-sub { border-top-color: rgba(245,241,232,.16); }
+.pk__tier[aria-pressed="true"] .pk__tier-look { color: #CBB083; }
+.pk__tier[aria-pressed="true"] .pk__lvl i:not(.on) { background: rgba(245,241,232,.22); }
+.pk__tier[aria-pressed="true"] .pk__lvl i.on, .pk__tier[aria-pressed="true"]::before { background: #B8975C; }
+.emblem__cursor .em-cog { fill: var(--logo-cog); stroke: var(--logo-cog); }
+:root, html[data-theme="dark"] { --logo-cog: #7A5C2E; }
+html[data-theme="dark"] .err { color: #8E2438; }
+.case__stars, .proof__stars, .rteaser__stars { color: #7A5C2E; }
+.card__tag { background: rgba(21,20,17,.8); color: #F5F1E8; }
+.card__fav { background: rgba(245,241,232,.94); }
+.card__fav svg { stroke: #151411; }
+.final p { text-shadow: none; }
+.toast { background: #151411; color: #F5F1E8; }
+.build__rail span { background: #F5F1E8; }
